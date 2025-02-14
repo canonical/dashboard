@@ -8,7 +8,7 @@ table.objectives tr.condition td, th {padding: 2px 8px 2px;}
 
 table.objectives td p, th p {margin: .2rem 0}
 
-table.objectives select {height: 1.2rem;}
+table.objectives select {height: 1.875rem;}
 
 table.objectives td.workcycle {color: white; background: #6AA84F;}
 table.objectives td.field-committed {color: white; background: #93C47D;}
