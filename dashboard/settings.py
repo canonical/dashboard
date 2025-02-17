@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+import json
+import os
+import secrets
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,12 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-&e&n(qvp!ktv&fjr(j8llvz4(5r0!2h9j0lpr=*40bw6z30exn"
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', secrets.token_hex(32))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', 'false') == 'true'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = json.loads(os.environ.get('DJANGO_ALLOWED_HOSTS', '[]'))
+
 
 
 # Application definition
@@ -80,8 +86,12 @@ WSGI_APPLICATION = "dashboard.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': os.environ.get('POSTGRESQL_DB_NAME'),
+    'USER': os.environ.get('POSTGRESQL_DB_USERNAME'),
+    'PASSWORD': os.environ.get('POSTGRESQL_DB_PASSWORD'),
+    'HOST': os.environ.get('POSTGRESQL_DB_HOSTNAME'),
+    'PORT': os.environ.get('POSTGRESQL_DB_PORT'),
     }
 }
 
