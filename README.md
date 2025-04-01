@@ -1,8 +1,10 @@
 # Dashboard
 
-A Django-based database-driven web application, to track progress of projects against a set of criteria to measure quality and progress. [Run the application from source](./dashboard#readme)
+A Django-based database-driven web application, to track progress of projects against a set of criteria to measure quality and progress.
 
 ![A sample dashboard](screenshots/dashboard.png)
+
+This repo contains the source code of the application. [Run the application from source](./dashboard#readme)
 
 This repo also contains the source code of a Kubernetes charm for operating the application as part of a Juju deployment.
 To learn about Juju and charms, see https://juju.is/docs.
