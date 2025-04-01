@@ -1,0 +1,41 @@
+# This file configures Charmcraft.
+# See https://juju.is/docs/sdk/charmcraft-config for guidance.
+
+name: dashboard
+
+type: charm
+
+bases:
+  - build-on:
+    - name: ubuntu
+      channel: "22.04"
+    run-on:
+    - name: ubuntu
+      channel: "22.04"
+
+# (Required)
+summary: Dashboard is a quality and progress tracker for projects and initiatives.
+
+# (Required)
+description: |
+  Dashboard is a Django-based web application to track quality and progress across multiple dimensions, for multiple projects.
+
+  Based on https://github.com/canonical/dashboard; for this charm, see the charmed-version branch.
+
+extensions:
+  - django-framework
+
+requires:
+  postgresql:
+    interface: postgresql_client
+    optional: false
+
+actions:
+  load-sample-data:
+    description: Load the sample data that comes with the application.
+
+links:
+  source:
+  - https://github.com/canonical/dashboard/tree/charmed-version
+
+
