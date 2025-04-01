@@ -2,10 +2,6 @@
 Dashboard
 =========
 
-A Django-based database-driven web application, to track progress of projects against a set of criteria to measure quality and progress.
-
-.. image:: https://raw.github.com/canonical/dashboard/readme-image/screenshots/dashboard.png
-
 
 Launch a development version of the application
 ===============================================
