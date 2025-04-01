@@ -21,7 +21,7 @@ Work in progress. Aspects to cover:
 - Set up Juju and craft tools, pack rock, pack charm, deploy charm.
   Before packing the rock, run:
     ```
-    cp dashboard_rock_patch/dashboard/settings.py dashboard/dashboard/settings.py
+    cp dashboard_rock_patch/dashboard/settings.py dashboard/dashboard
     ```
 - Integrate the PostgreSQL charm
 - Configure charm to work without ingress, in debug mode
