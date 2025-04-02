@@ -14,23 +14,29 @@ Installation
 
     git clone git@github.com:canonical/dashboard.git
     cd dashboard
-    python3 -m venv .venv
-    source .venv/bin/activate
-    pip install -r requirements.txt
+    make install
 
+This will create a Python virtual environment in ``.venv`` and install the required dependencies.
 
 Database setup
 ~~~~~~~~~~~~~~~~~
 
-Create the database tables
+Create the database tables and initialize them with some test data 
 
 ::
 
-    ./manage.py migrate
+    make init
 
-For convenience some data are provided in ``initial_data.yaml``, and can be loaded with::
+The above command executes two separate steps. If you want to run them separately, you can do so with:
 
-    ./manage.py loaddata initial_data.yaml
+1. Create the database tables::
+
+        make migrate
+
+2. (Optional) Load data into the database. For convenience some data are provided in ``initial_data.yaml``, and can be loaded with::
+
+        source .venv/bin/activate
+        ./manage.py loaddata initial_data.yaml
 
 
 Launch the site
@@ -38,9 +44,10 @@ Launch the site
 
 ::
 
-    ./manage.py runserver
+    make run
 
-Login in to the admin http://localhost:8000/admin (use admin user *test*, password *test*, if you loaded the provided initial data) or explore the dashboard.
+Explore the dashboard at http://localhost:8000/ or 
+login to the admin http://localhost:8000/admin (if you loaded the provided initial data, use admin user ``test``, password ``test``). 
 
 Nearly every cell in the dashboard is a link to the relevant admin view. The most interesting admin view is for *Projects*, for example http://localhost:8000/admin/projects/project/2/change/.
 
@@ -48,4 +55,6 @@ Nearly every cell in the dashboard is a link to the relevant admin view. The mos
 Automated tests
 ===============
 
-Some automated tests are included and can be executed by running ``pytest`` (while in the root directory, with the virtual environment activated).
+Some automated tests are included and can be executed by running::
+    
+    make test

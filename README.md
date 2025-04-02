@@ -1,6 +1,6 @@
 # Dashboard
 
-A Django-based database-driven web application, to track progress of projects against a set of criteria to measure quality and progress.
+A Django-based database-driven web application, to track the progress of projects against a set of criteria to measure quality and progress.
 
 ![A sample dashboard](screenshots/dashboard.png)
 
