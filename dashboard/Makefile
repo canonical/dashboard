@@ -33,6 +33,7 @@ run: init
 	$(MANAGE) runserver
 
 test: install
+	$(PIP) install -r requirements-dev.txt
 	$(PYTEST)
 
 clean:
