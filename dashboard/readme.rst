@@ -13,7 +13,7 @@ Installation
 ::
 
     git clone git@github.com:canonical/dashboard.git
-    cd dashboard
+    cd dashboard/dashboard
     make install
 
 This will create a Python virtual environment in ``.venv`` and install the required dependencies.
