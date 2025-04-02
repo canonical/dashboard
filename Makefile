@@ -11,7 +11,7 @@ help:
 	@echo "Available targets:"
 	@echo "  install    - Create virtualenv and install dependencies"
 	@echo "  migrate    - Setup database tables"
-	@echo "  init		- Load initial test data"
+	@echo "  init       - Load initial test data"
 	@echo "  run        - Start development server"
 	@echo "  test       - Run automated tests"
 	@echo "  clean      - Remove virtualenv and cache files"
