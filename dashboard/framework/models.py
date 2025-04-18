@@ -21,6 +21,7 @@ class Level(models.Model):
 
 class WorkCycle(models.Model):
     name = models.CharField(max_length=200)
+    timestamp = models.DateField()
 
     def __str__(self):
         return self.name
@@ -59,7 +60,7 @@ class WorkCycle(models.Model):
             QI.objects.get_or_create(workcycle=self, project=project)
 
     class Meta:
-        ordering = ["name"]
+        ordering = ["timestamp"]
 
 
 class ObjectiveGroup(models.Model):
