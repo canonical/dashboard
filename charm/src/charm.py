@@ -38,6 +38,7 @@ class DashboardCharm(paas_charm.django.Charm):
             process.wait()  # Raise an error if there was an error running the process.
         except (ops.pebble.APIError, ops.pebble.ChangeError, ops.pebble.ExecError):
             event.fail("unable to load sample data")
+        event.set_results({"result": "loaded sample data"})
 
 
 if __name__ == "__main__":
