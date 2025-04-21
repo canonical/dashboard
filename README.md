@@ -88,7 +88,7 @@ cd ~/dashboard/charm
 charmcraft pack
 ```
 
-In essence, the charm is a Python wrapper that receives information from Juju about related applications (in our case, a PostgreSQL database) and configures the dashboard application appropriately.
+In essence, the charm is a Python wrapper for the dashboard application. It's also common to call charms "operators". The dashboard charm receives information from Juju about related applications (in our case, a PostgreSQL database) and how we'd like the dashboard to be configured, then acts appropriately in the dashboard application's container.
 
 Creating the charm might take several minutes, so this is another good point to take a break. When you return, you should see the following output:
 
