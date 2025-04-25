@@ -5,7 +5,7 @@
 env
 
 # Ignore the SQLite database used when running the application from source
-django_app/db.sqlite3
+dashboard/db.sqlite3
 
 # Ignore packed rocks
 *.rock
