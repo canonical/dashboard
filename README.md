@@ -14,7 +14,7 @@ This repo also contains the source code of a Kubernetes charm for operating the 
 
 In this README:
 
-  - [Deploy the dashboard on your machine](#deploy-the-dashboard-on-your-machine)
+  - **[Deploy the dashboard on your machine](#deploy-the-dashboard-on-your-machine)**
     - [Prepare your environment](#prepare-your-environment)
     - [Create a container image for the application](#create-a-container-image-for-the-application)
     - [Create a charm](#create-a-charm)
@@ -26,7 +26,7 @@ In this README:
     - [Check the status of the dashboard](#check-the-status-of-the-dashboard)
     - [Open the dashboard in your browser](#open-the-dashboard-in-your-browser)
     - [Explore further](#explore-further)
-  - [Simulate a production deployment](#simulate-a-production-deployment) (work in progress)
+  - **[Simulate a production deployment](#simulate-a-production-deployment)** (work in progress)
 
 ## Deploy the dashboard on your machine
 
