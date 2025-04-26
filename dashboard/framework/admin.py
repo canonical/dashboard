@@ -21,9 +21,14 @@ class ObjectiveAdmin(admin.ModelAdmin):
     list_editable = ["group", "weight"]
 
 
+class WorkCycleAdmin(admin.ModelAdmin):
+    model = WorkCycle
+    list_display = ["name", "timestamp"]
+    list_editable = ["timestamp"]
+
 admin.site.register(Level)
 admin.site.register(ProjectStatus)
-admin.site.register(WorkCycle)
+admin.site.register(WorkCycle, WorkCycleAdmin)
 admin.site.register(ObjectiveGroup)
 # admin.site.register(Condition)
 admin.site.register(Objective, ObjectiveAdmin)

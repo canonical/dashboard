@@ -1,7 +1,11 @@
 .DS_Store
 .venv
-db.sqlite3
 **/__pycache__/
 .vscode/
 env
+
+# Ignore the SQLite database used when running the application from source
+dashboard/db.sqlite3
+
+# Ignore packed rocks
 *.rock

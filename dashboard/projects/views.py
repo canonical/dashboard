@@ -1,3 +1,4 @@
+import datetime
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
@@ -20,7 +21,7 @@ class ProjectListView(ListView):
 
         context["column_count"] = Objective.objects.count() + WorkCycle.objects.count() + 6
 
-        context["quality_cols_count"] = 3 + WorkCycle.objects.count()
+        context["quality_cols_count"] = 3 + workcycles.count()
 
         return context
 
