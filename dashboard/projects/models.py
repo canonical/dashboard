@@ -74,7 +74,7 @@ class Project(models.Model):
         return x
 
     def quality_history(self):
-        return QI.objects.filter(project=self)
+        return QI.objects.filter(project=self, workcycle__timestamp__lte=date.today())
 
     def review_freshness(self):
         # consider using the database to define these values instead
