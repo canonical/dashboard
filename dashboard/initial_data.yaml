@@ -95,7 +95,7 @@
   pk: 2
   fields:
     name: Sound
-    description: null
+    description: Sound behaviour must remain tolerable in civic society.
     group: 1
     weight: 5
 - model: framework.objective
@@ -3698,7 +3698,7 @@
     project: 3
     objective: 7
     condition: 41
-    done: false
+    done: true
 - model: projects.projectobjectivecondition
   pk: 285
   fields:
@@ -6861,7 +6861,7 @@
     project: 3
     objective: 7
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 35
   fields:
@@ -7477,7 +7477,7 @@
     project: 3
     objective: 7
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 112
   fields:
@@ -8709,7 +8709,7 @@
     project: 3
     objective: 7
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 266
   fields:
@@ -9325,7 +9325,7 @@
     project: 3
     objective: 7
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 343
   fields:
@@ -9941,7 +9941,7 @@
     project: 3
     objective: 7
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 420
   fields:
@@ -10557,7 +10557,7 @@
     project: 3
     objective: 7
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 497
   fields:
@@ -11789,7 +11789,7 @@
     project: 3
     objective: 7
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 651
   fields:
@@ -27805,7 +27805,7 @@
     project: 3
     objective: 7
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3379
   fields:
