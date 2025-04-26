@@ -1,6 +1,7 @@
 from datetime import date, timedelta
 from django.db import models
 from django.utils.text import slugify
+from django.urls import reverse
 
 from framework.models import ProjectStatus, WorkCycle, Level, Objective, Condition
 
@@ -62,6 +63,10 @@ class Project(models.Model):
                         objective=objective,
                         level=level,
                     )
+
+    def get_absolute_url(self):
+        return reverse("project", kwargs={"pk": self.pk})
+
 
     def quality_indicator(self):
         x = 0
@@ -142,6 +147,9 @@ class ProjectObjective(models.Model):
 
     def description(self):
         return self.objective.description
+
+    def projectobjectiveconditions(self):
+        return ProjectObjectiveCondition.objects.filter(project=self.project, objective=self.objective)
 
     class Meta:
         ordering = ["project", "objective"]
