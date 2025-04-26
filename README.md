@@ -12,6 +12,22 @@ This repo also contains the source code of a Kubernetes charm for operating the 
 > To use the dashboard charm in a real Juju deployment, see [TODO: docs on Charmhub] instead of this repo.
 > This repo is the right place to look if you'd like to test the charm, customise it for your own purposes, or contribute to development!
 
+In this README:
+
+  - **[Deploy the dashboard on your machine](#deploy-the-dashboard-on-your-machine)**
+    - [Prepare your environment](#prepare-your-environment)
+    - [Create a container image for the application](#create-a-container-image-for-the-application)
+    - [Create a charm](#create-a-charm)
+    - [Deploy the dashboard charm](#deploy-the-dashboard-charm)
+    - [Configure the dashboard](#configure-the-dashboard)
+    - [Deploy a PostgreSQL charm](#deploy-a-postgresql-charm)
+    - [Wait for the charms to finish deploying](#wait-for-the-charms-to-finish-deploying)
+    - [Integrate the dashboard with PostgreSQL](#integrate-the-dashboard-with-postgresql)
+    - [Check the status of the dashboard](#check-the-status-of-the-dashboard)
+    - [Open the dashboard in your browser](#open-the-dashboard-in-your-browser)
+    - [Explore further](#explore-further)
+  - **[Simulate a production deployment](#simulate-a-production-deployment)** (work in progress)
+
 ## Deploy the dashboard on your machine
 
 ### Prepare your environment
