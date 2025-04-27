@@ -39,6 +39,8 @@ ALLOWED_HOSTS = json.loads(os.environ.get('DJANGO_ALLOWED_HOSTS', '[]'))
 
 INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
+    # "django_browser_reload",
+    # ^ Used during local development only
     "projects",
     "framework",
     "dashboard",
@@ -61,6 +63,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.contrib.admindocs.middleware.XViewMiddleware",
+    # "django_browser_reload.middleware.BrowserReloadMiddleware",
+    # ^ Used during local development only
 ]
 
 ROOT_URLCONF = "dashboard.urls"
