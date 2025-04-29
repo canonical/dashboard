@@ -1,0 +1,64 @@
+name: Publish to edge
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  publish-charm:
+    name: Publish charm and rock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: setup lxd
+        uses: canonical/setup-lxd@v0.1.2
+      - name: build rock
+        run: |
+          set -x
+          sudo snap install --channel latest/stable --classic rockcraft
+          rockcraft pack --verbosity trace
+          docker run -d -p 5000:5000 --name registry registry:latest
+          rockcraft.skopeo --insecure-policy copy --dest-tls-verify=false oci-archive:$(ls *.rock) docker://localhost:5000/dashboard:latest
+      - run: |
+          docker pull localhost:5000/dashboard:latest
+      - name: build charm
+        id: charmcraft
+        working-directory: charm
+        run: |
+          set -x
+          sudo snap install --channel latest/stable --classic charmcraft
+          charmcraft pack --verbosity trace
+          echo charms=`ls *.charm` >> $GITHUB_OUTPUT
+      - run: |
+          sudo apt update && sudo apt install python3-yaml -y
+      - name: expand charmcraft.yaml
+        working-directory: charm
+        run: |
+          charmcraft expand-extensions > charmcraft.yaml.new
+          mv charmcraft.yaml.new charmcraft.yaml
+      - name: update upstream-source
+        shell: python
+        working-directory: charm
+        run: |
+          import yaml
+          
+          charmcraft_yaml = yaml.safe_load(open("charmcraft.yaml"))
+          resources = charmcraft_yaml["resources"]
+          resources[list(resources)[0]]["upstream-source"] = "localhost:5000/dashboard:latest"
+          yaml.dump(charmcraft_yaml, open("charmcraft.yaml", "w"), sort_keys=False)
+      - name: show charmcraft.yaml
+        working-directory: charm
+        run: |
+          cat charmcraft.yaml
+      - name: charm to publish
+        run: |
+          ls -lah ./charm/${{ steps.charmcraft.outputs.charms }}
+      - if: github.event_name == 'push'
+        name: publish charm
+        uses: canonical/charming-actions/upload-charm@2.7.0
+        with:
+          credentials: ${{ secrets.CHARMHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          built-charm-path: ./charm/${{ steps.charmcraft.outputs.charms }}
