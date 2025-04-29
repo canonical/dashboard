@@ -141,11 +141,10 @@ After deploying the charm, you should see the following output:
 ### Configure the dashboard
 
 ``` { name=configure-dashboard }
-juju config dashboard django-debug=true
 juju config dashboard django-allowed-hosts='*'
 ```
 
-These commands tell Juju which configuration values to use when the charm starts the dashboard's web server. We're using `django-debug=true` and `django-allowed-hosts='*'` to make it easier to access the dashboard for testing; you wouldn't use these values in a production deployment.
+This command tells Juju which configuration values to use when the charm starts the dashboard's web server. We're using `django-allowed-hosts='*'` to make it easier to access the dashboard for testing; you wouldn't use this value in a production deployment.
 
 ### Deploy a PostgreSQL charm
 
