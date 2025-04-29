@@ -1,0 +1,52 @@
+body {
+    font-family: Helvetica, sans-serif; font-size: 12px;}
+
+div.wrapper {
+    /* width: 400px; */
+    overflow-x: scroll;
+    margin-bottom: 10px;
+    border: solid black 1px;
+}
+
+table {
+    table-layout: fixed;
+     border-collapse: collapse;
+}
+
+tr.headings th {color: white; font-weight: bold;}
+tr.headings a, tr.headings a:visited {color: white}
+
+tr.column-groups td {font-weight: light; font-style: italic; color: white; text-align: center;}
+
+tr td.acountability, tr th.acountability {background: #284E13;}
+tr td.quality, tr th.quality {background: #0C343D;}
+tr td.objective, tr th.objective {background: #284E13;}
+
+tr.row-group td {background: #A0C5E8; font-weight: bold; width: 100%;}
+
+
+/* tr.headings th {rotate: -45deg; white-space: normal} */
+th.sticky {position: sticky; left: 0; background: white;}
+
+th, td {padding: 6px; white-space: nowrap;}
+
+th.project-name {font-weight: normal; text-align: left;}
+
+table a, table a:visited {color: inherit; text-decoration: none}
+
+td.na {color: black; background: #CCCCCC}
+td.paused {color: black; background: #FCE5CD}
+td.planned {color: black; background: #FFF2CC}
+td.deferred {color: black; background: #FCE5CD}
+td.blocked, td.inactive {color: black; background: #EAD1DC}
+td.needs-work {color: black; background: #E66439}
+td.needs-review {color: black; background: #E69138}
+td.mostly-met {color: black; background: #E69138}
+td.started {color: black; background: #B6D7A8}
+td.first-results {color: black; background: #6AA84F}
+td.mature-results, td.done, td.all-ok {color: white; background: #38761D}
+
+td.new {color: white; background: #38761D}
+td.acceptable {color: white; background: #B5D7A8}
+td.overdue {color: white; background: #F6B26B}
+td.unacceptable {color: white; background: #990001}
