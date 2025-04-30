@@ -94,7 +94,7 @@ The application will run in a Kubernetes cluster, so we need a container image f
 Creating the container image might take several minutes, so this is a good point to take a break. When you return, you should see the following output:
 
 > ```
-> Packed dashboard_0.8_amd64.rock
+> Packed dashboard_0.9_amd64.rock
 > ```
 
 ### Create a charm
@@ -117,10 +117,10 @@ Creating the charm might take several minutes, so this is another good point to 
 ``` { name=deploy-dashboard }
 cd ~/dashboard
 rockcraft.skopeo --insecure-policy copy --dest-tls-verify=false \
-  oci-archive:dashboard_0.8_amd64.rock \
-  docker://localhost:32000/dashboard:0.8
+  oci-archive:dashboard_0.9_amd64.rock \
+  docker://localhost:32000/dashboard:0.9
 juju deploy ./charm/dashboard_ubuntu-22.04-amd64.charm \
-  --resource django-app-image=localhost:32000/dashboard:0.8
+  --resource django-app-image=localhost:32000/dashboard:0.9
 ```
 
 The `rockcraft.skopeo` command makes the container image available to Juju.
@@ -141,11 +141,10 @@ After deploying the charm, you should see the following output:
 ### Configure the dashboard
 
 ``` { name=configure-dashboard }
-juju config dashboard django-debug=true
 juju config dashboard django-allowed-hosts='*'
 ```
 
-These commands tell Juju which configuration values to use when the charm starts the dashboard's web server. We're using `django-debug=true` and `django-allowed-hosts='*'` to make it easier to access the dashboard for testing; you wouldn't use these values in a production deployment.
+This command tells Juju which configuration values to use when the charm starts the dashboard's web server. We're using `django-allowed-hosts='*'` to make it easier to access the dashboard for testing; you wouldn't use this value in a production deployment.
 
 ### Deploy a PostgreSQL charm
 
