@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import urllib.parse
 from pathlib import Path
 
 import json
@@ -33,14 +34,22 @@ DEBUG = os.environ.get('DJANGO_DEBUG', 'false') == 'true'
 
 ALLOWED_HOSTS = json.loads(os.environ.get('DJANGO_ALLOWED_HOSTS', '[]'))
 
+STRIPPED_PREFIX = os.environ.get('DJANGO_STRIPPED_PREFIX', '')
 
+if STRIPPED_PREFIX:
+    STRIPPED_PREFIX = STRIPPED_PREFIX.rstrip('/')
+    FORCE_SCRIPT_NAME = STRIPPED_PREFIX
+    DJANGO_BASE_URL = os.environ.get('DJANGO_BASE_URL')
+    if DJANGO_BASE_URL:
+        parsed_url = urllib.parse.urlparse(DJANGO_BASE_URL)
+        CSRF_TRUSTED_ORIGINS = [
+            f"{parsed_url.scheme}://{parsed_url.netloc}",
+        ]
 
 # Application definition
 
 INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
-    # "django_browser_reload",
-    # ^ Used during local development only
     "projects",
     "framework",
     "dashboard",
@@ -63,8 +72,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.contrib.admindocs.middleware.XViewMiddleware",
-    # "django_browser_reload.middleware.BrowserReloadMiddleware",
-    # ^ Used during local development only
 ]
 
 ROOT_URLCONF = "dashboard.urls"
@@ -137,7 +144,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "static/" if not STRIPPED_PREFIX else f"{STRIPPED_PREFIX}/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type

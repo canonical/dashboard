@@ -30,6 +30,18 @@ requires:
     interface: postgresql_client
     optional: false
 
+config:
+  options:
+    stripped-prefix:
+      description: |
+        Enable this option when the ingress frontend strips the path prefix before passing requests to the application. 
+        For example, if you are using the nginx-ingress-integrator and set the following configuration:
+        juju config nginx-ingress-integrator path-routes='/documentation(/|$)(.*)' rewrite-enabled='True' rewrite-target='/$2'
+        in this case, set this configuration option to `/documentation`. 
+        This is a temporary solution until the dashboard Django application supports multiple teams. 
+        This configuration option may be removed in the future.
+      type: string
+
 actions:
   load-sample-data:
     description: Load the sample data that comes with the application.
