@@ -43,18 +43,10 @@ In this README:
     ```
     cd
     git clone https://github.com/canonical/dashboard.git
-    ```
-
- 3. Modify the dashboard application so that it takes its configuration from environment variables and expects a PostgreSQL database instead of an SQLite database:
-
-    ``` { name=modify-dashboard }
     cd ~/dashboard
-    cp dashboard_rock_patch/dashboard/settings.py dashboard/dashboard
     ```
 
-    For illustration, compare `DATABASES` in [settings.py (modified)](./dashboard_rock_patch/dashboard/settings.py) and [settings.py (original)](./dashboard/dashboard/settings.py).
-
- 4. Create a "model" in Juju:
+ 3. Create a "model" in Juju:
 
     ``` { name=create-model }
     juju add-model web-k8s
@@ -68,7 +60,7 @@ In this README:
     > Added 'web-k8s' model on microk8s/localhost with credential 'microk8s' for user 'admin'
     > ```
 
- 5. Check the architecture of your machine:
+ 4. Check the architecture of your machine:
 
     ``` { name=check-architecture }
     dpkg --print-architecture
@@ -76,7 +68,7 @@ In this README:
 
     If the output is not `amd64`, you'll need to adjust some of the commands in this README. For example, if the output is `arm64`, you'll need to replace `amd64` by `arm64`.
 
- 6. Configure the Juju model to match the architecture of your machine:
+ 5. Configure the Juju model to match the architecture of your machine:
 
     ``` { name=configure-model }
     juju set-model-constraints -m web-k8s arch=amd64  # remember to replace amd64 if needed!
