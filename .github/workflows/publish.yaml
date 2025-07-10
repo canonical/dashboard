@@ -19,9 +19,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: setup lxd
         uses: canonical/setup-lxd@v0.1.2
-      - name: prepare application source
-        run: |
-          cp dashboard_rock_patch/dashboard/settings.py dashboard/dashboard
       - name: build rock
         run: |
           set -x

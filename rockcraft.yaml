@@ -38,3 +38,26 @@ extensions:
 #     stage-packages:
 #       # list required packages or slices for your Django application below.
 #       - libpq-dev
+
+parts:
+  django-framework/install-app:
+    plugin: dump
+    source: dashboard
+    organize:
+      '*': django/app/
+      .*: django/app/
+    stage:
+      - -django/app/db.sqlite3
+      - -django/app/dashboard/settings.py
+    permissions:
+      - owner: 584792
+        group: 584792
+
+  charm-settings-py:
+    plugin: dump
+    source: dashboard_rock_patch
+    organize:
+      '*': django/app/
+    permissions:
+      - owner: 584792
+        group: 584792
