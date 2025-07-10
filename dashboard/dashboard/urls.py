@@ -16,14 +16,13 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include
-
-from projects.views import ProjectListView, ProjectDetailView
+from django.urls import include, path
+from projects.views import ProjectDetailView, ProjectListView
 
 urlpatterns = [
     path("admin/doc/", include("django.contrib.admindocs.urls")),
     path("admin/", admin.site.urls),
-    path("", ProjectListView.as_view()),
+    path("", ProjectListView.as_view(), name="project_list"),
     path("<int:pk>/", ProjectDetailView.as_view(), name="detail"),
     path("__reload__/", include("django_browser_reload.urls")),
 ]
