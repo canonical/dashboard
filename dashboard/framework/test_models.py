@@ -134,3 +134,14 @@ def test_workcycle_is_propagated_to_levelcommitments(
     assert work_cycle.levelcommitment_set.count() == 1
     assert LevelCommitment.objects.count() == 2
     assert work_cycle.levelcommitment_set.filter(work_cycle=work_cycle).exists()
+
+
+@pytest.mark.django_db
+def test_new_objective_means_new_levelcommitments(
+    project, project_objective, objective_group, condition, work_cycle
+    ):
+    assert project.levelcommitment_set.count() == 1
+    objective = Objective.objects.create(
+        name="test_objective_2", group=objective_group, weight=1
+    )
+    assert project.levelcommitment_set.count() == 2
