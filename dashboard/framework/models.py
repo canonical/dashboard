@@ -29,7 +29,7 @@ class WorkCycle(models.Model):
     def save(self, **kwargs):
         # when a new WorkCycle is added, create a LevelCommitment for it
 
-        # to do: if Conditions with new Levels are added for an Obective,
+        # to do: if Conditions with new Levels are added for an Objective,
         # we also need to propagate the LevelCommitment objects
 
         from projects.models import (
@@ -84,12 +84,27 @@ class Objective(models.Model):
     def save(self, **kwargs):
         # when a new Objective is added propagate it to all existing Projects
 
-        from projects.models import ProjectObjective, Project  # avoids circular import
+        from projects.models import ProjectObjective, Project, LevelCommitment  # avoids circular import
 
         super().save(**kwargs)
 
+
+        # go over the Projects (but not any already with a relation to this objective, because that's unnecessary)
         for project in Project.objects.exclude(objectives=self):
             ProjectObjective(project=project, objective=self).save()
+
+        levels = self.condition_set.all()
+
+        for level in Level.objects.all():
+            for project in Project.objects.all():
+                for work_cycle in WorkCycle.objects.all():
+                    l = LevelCommitment.objects.get_or_create(
+                        work_cycle=work_cycle,
+                        project=project,
+                        objective=self,
+                        level=level,
+                    )
+
 
     class Meta:
         ordering = ["group", "name"]
