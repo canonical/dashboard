@@ -2,11 +2,11 @@ name: dashboard
 # see https://documentation.ubuntu.com/rockcraft/en/1.8.0/explanation/bases/
 # for more information about bases and using 'bare' bases for chiselled rocks
 base: ubuntu@22.04 # the base environment for this Django application
-version: "0.10" # just for humans. Semantic versioning is recommended
+version: "0.11" # just for humans. Semantic versioning is recommended
 summary: A summary of your Django application # 79 char long summary
 description: |
   Dashboard is a Django application to track quality and progress of multiple
-  projects in several dimensions, and to display them in an interactive table. 
+  projects in several dimensions, and to display them in an interactive table.
 # the platforms this rock should be built on and run on.
 # you can check your architecture with `dpkg --print-architecture`
 platforms:
