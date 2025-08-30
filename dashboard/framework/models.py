@@ -45,9 +45,11 @@ class WorkCycle(models.Model):
         projectobjectives = ProjectObjective.objects.all()
 
         for level in Level.objects.all():
+            # get all projectobjectives with an ObjectiveCondition.level that matches
             for project_objective in projectobjectives.filter(
                 objective__condition__level=level
             ):
+                # make sure there is a corresponding LevelCommitment
                 l = LevelCommitment.objects.get_or_create(
                     work_cycle=self,
                     project=project_objective.project,
