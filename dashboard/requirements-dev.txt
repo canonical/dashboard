@@ -1,2 +1,5 @@
 pytest==8.3.4
 pytest_django==4.10.0
+pytest-playwright==0.7.0
+pytest-django==4.9.0
+pytest-env==1.1.5
