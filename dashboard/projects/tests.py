@@ -66,7 +66,8 @@ def test_toggling_conditions(live_server, page):
 
     # check the remaining box to get to Started
     page.get_by_test_id("toggle_condition_10").check()
-    assert ProjectObjectiveCondition.objects.get(id=10).projectobjective().status() == Level.objects.get(id=1)  expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text("Started")
+    assert ProjectObjectiveCondition.objects.get(id=10).projectobjective().status() == Level.objects.get(id=1)
+    expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text("Started")
 
     # check one more to get to First results
     page.get_by_test_id("toggle_condition_14").check()
