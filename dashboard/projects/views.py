@@ -1,9 +1,12 @@
 import datetime
-from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.shortcuts import render, HttpResponse
+from django.views.generic import ListView, DetailView, FormView
+from django.views.decorators.http import require_http_methods
 
-from .models import Project, Objective, LevelCommitment
-from framework.models import WorkCycle
+from .models import Project, LevelCommitment, ProjectObjectiveCondition
+from . import forms
+
+from framework.models import WorkCycle, Objective, ObjectiveGroup
 
 
 class ProjectListView(ListView):
@@ -19,7 +22,9 @@ class ProjectListView(ListView):
         context["objective_list"] = Objective.objects.all()
         context["objective_count"] = Objective.objects.count()
 
-        context["column_count"] = Objective.objects.count() + WorkCycle.objects.count() + 6
+        context["column_count"] = (
+            Objective.objects.count() + WorkCycle.objects.count() + 6
+        )
 
         context["quality_cols_count"] = 3 + WorkCycle.objects.count()
 
@@ -30,6 +35,7 @@ class ProjectDetailView(DetailView):
     model = Project
 
     def get_context_data(self, **kwargs):
+        print("get_context_data is being called")
 
         context = super().get_context_data(**kwargs)
 
@@ -38,9 +44,34 @@ class ProjectDetailView(DetailView):
         context["work_cycles"] = work_cycles
         context["work_cycle_count"] = work_cycles.count()
 
+        context["objectivegroup_list"] = ObjectiveGroup.objects.all()
+
         context["objective_list"] = Objective.objects.all()
         context["objective_count"] = Objective.objects.count()
 
         context["commitments"] = LevelCommitment.objects.filter(project=self.object)
 
+        context["form"] = forms.CreateTodoForm()
+
         return context
+
+
+@require_http_methods(["PUT"])
+def action_toggle_commitment(request, commitment_id):
+    commitment = LevelCommitment.objects.get(id=commitment_id)
+    commitment.committed = not commitment.committed
+    commitment.save()
+    return HttpResponse("")
+
+
+@require_http_methods(["PUT"])
+def action_toggle_condition(request, condition_id):
+    condition = ProjectObjectiveCondition.objects.get(id=condition_id)
+    condition.done = not condition.done
+    condition.save()
+    return render(
+        request,
+        "projects/partial_objectivestatus.html",
+        {"projectobjective": condition.projectobjective}
+        )
+

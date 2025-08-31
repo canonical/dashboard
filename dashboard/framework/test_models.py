@@ -19,7 +19,9 @@ def objective_group():
 
 @pytest.fixture
 def work_cycle():
-    return WorkCycle.objects.create(name="test_work_cycle_1", timestamp=datetime.date.today())
+    return WorkCycle.objects.create(
+        name="test_work_cycle_1", timestamp=datetime.date.today()
+    )
 
 
 @pytest.fixture
@@ -128,7 +130,9 @@ def test_workcycle_is_propagated_to_levelcommitments(
 ):
 
     assert work_cycle.levelcommitment_set.count() == 1
-    work_cycle = WorkCycle.objects.create(name="test_work_cycle_2", timestamp=datetime.date.today())
+    work_cycle = WorkCycle.objects.create(
+        name="test_work_cycle_2", timestamp=datetime.date.today()
+    )
 
     # there should be a new LevelCommitment
     assert work_cycle.levelcommitment_set.count() == 1
@@ -139,7 +143,7 @@ def test_workcycle_is_propagated_to_levelcommitments(
 @pytest.mark.django_db
 def test_new_objective_means_new_levelcommitments(
     project, project_objective, objective_group, condition, work_cycle
-    ):
+):
     assert project.levelcommitment_set.count() == 1
     assert work_cycle.levelcommitment_set.count() == 1
 
@@ -149,4 +153,3 @@ def test_new_objective_means_new_levelcommitments(
 
     assert project.levelcommitment_set.count() == 2
     assert work_cycle.levelcommitment_set.count() == 2
-

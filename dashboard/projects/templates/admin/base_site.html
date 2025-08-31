@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block branding %}
-<div id="site-name"><a href="{% url 'project_list' %}">Dashboard</a></div>
+<div id="site-name"><a href="{% url 'projects:project_list' %}">Dashboard</a></div>
 {% if user.is_anonymous %}
   {% include "admin/color_theme_toggle.html" %}
 {% endif %}
@@ -11,5 +11,5 @@
 
 
 {% block extrastyle %}
-    <link rel="stylesheet" type="text/css" href="{% static "admin.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin.css' %}">
 {% endblock %}

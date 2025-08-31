@@ -86,10 +86,13 @@ class Objective(models.Model):
     def save(self, **kwargs):
         # when a new Objective is added propagate it to all existing Projects
 
-        from projects.models import ProjectObjective, Project, LevelCommitment  # avoids circular import
+        from projects.models import (
+            ProjectObjective,
+            Project,
+            LevelCommitment,
+        )  # avoids circular import
 
         super().save(**kwargs)
-
 
         # go over the Projects (but not any already with a relation to this objective, because that's unnecessary)
         for project in Project.objects.exclude(objectives=self):
@@ -106,7 +109,6 @@ class Objective(models.Model):
                         objective=self,
                         level=level,
                     )
-
 
     class Meta:
         ordering = ["group", "name"]

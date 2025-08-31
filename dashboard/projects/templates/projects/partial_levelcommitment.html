@@ -1,0 +1,6 @@
+<td class="field-committed">
+  <input type="checkbox"
+    data-testid="toggle_commitment_{{ commitment.id }}"
+    {% if commitment.committed %} checked {% endif %}
+    hx-put="{% url 'projects:action_toggle_commitment' commitment.id %}" />
+</td>

@@ -1,0 +1,11 @@
+<tr class="">
+  <td class="">
+    <input type="checkbox"
+      data-testid="toggle_condition_{{ condition.id }}"
+      {% if condition.done %} checked {% endif %}
+      hx-put="{% url 'projects:action_toggle_condition' condition.id %}"
+      />
+  </td>
+  <td class="">{{ condition.name }}</td>
+  <td class="commitment-blank" colspan="{{ work_cycles|length }}"></td>
+</tr>

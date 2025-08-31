@@ -5,11 +5,11 @@
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="{% static 'styles.css' %}">
+      <link rel="stylesheet" href="{% static 'base-styles.css' %}">
       {% block extrahead %}{% endblock %}
   </head>
 
-  <body>
+  <body {% block body_attributes %}{% endblock %}>
       {% block content %}{% endblock %}
   </body>
 </html>
