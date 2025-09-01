@@ -51,7 +51,7 @@ class ProjectDetailView(DetailView):
 
         context["commitments"] = LevelCommitment.objects.filter(project=self.object)
 
-        context["form"] = forms.CreateTodoForm()
+        context["form"] = forms.ProjectDetailForm()
 
         return context
 
