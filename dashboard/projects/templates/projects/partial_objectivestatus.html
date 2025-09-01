@@ -1,0 +1,7 @@
+<td
+  id="projectobjective_status_{{ projectobjective.id }}"
+  class="{{ projectobjective.status|lower|slugify }}"
+  data-testid="projectobjective_status_{{ projectobjective.id }}"
+  hx-swap-oob="outerHTML:#projectobjective_status_{{ projectobjective.id }}">
+  {{ projectobjective.status }}
+</td>

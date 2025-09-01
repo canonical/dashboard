@@ -26,6 +26,7 @@ class WorkCycleAdmin(admin.ModelAdmin):
     list_display = ["name", "timestamp"]
     list_editable = ["timestamp"]
 
+
 admin.site.register(Level)
 admin.site.register(ProjectStatus)
 admin.site.register(WorkCycle, WorkCycleAdmin)

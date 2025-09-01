@@ -75,7 +75,7 @@ class ProjectObjectiveInline(admin.TabularInline):
         return False
 
 
-# @admin.register(ProjectObjective)
+@admin.register(ProjectObjective)
 class ProjectObjectiveAdmin(admin.ModelAdmin):
     readonly_fields = ["project", "objective", "status"]
 
@@ -138,8 +138,11 @@ class ProjectAdmin(admin.ModelAdmin):
             extra_context=extra_context,
         )
 
+@admin.register(LevelCommitment)
+class LevelCommitmentAdmin(admin.ModelAdmin):
+    list_filter = ["work_cycle", "project", "objective", "level", "committed"]
+
 
 admin.site.register(ProjectGroup)
-admin.site.register(LevelCommitment)
 # admin.site.register(QI)
-# admin.site.register(ProjectObjectiveCondition)
+admin.site.register(ProjectObjectiveCondition)

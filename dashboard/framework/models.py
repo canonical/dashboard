@@ -45,9 +45,11 @@ class WorkCycle(models.Model):
         projectobjectives = ProjectObjective.objects.all()
 
         for level in Level.objects.all():
+            # get all projectobjectives with an ObjectiveCondition.level that matches
             for project_objective in projectobjectives.filter(
                 objective__condition__level=level
             ):
+                # make sure there is a corresponding LevelCommitment
                 l = LevelCommitment.objects.get_or_create(
                     work_cycle=self,
                     project=project_objective.project,
@@ -88,7 +90,6 @@ class Objective(models.Model):
 
         super().save(**kwargs)
 
-
         # go over the Projects (but not any already with a relation to this objective, because that's unnecessary)
         for project in Project.objects.exclude(objectives=self):
             ProjectObjective(project=project, objective=self).save()
@@ -104,7 +105,6 @@ class Objective(models.Model):
                         objective=self,
                         level=level,
                     )
-
 
     class Meta:
         ordering = ["group", "name"]

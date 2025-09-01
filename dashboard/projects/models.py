@@ -67,7 +67,6 @@ class Project(models.Model):
     def get_absolute_url(self):
         return reverse("project", kwargs={"pk": self.pk})
 
-
     def quality_indicator(self):
         x = 0
         for po in self.projectobjective_set.all():
@@ -129,12 +128,12 @@ class ProjectObjective(models.Model):
 
     def status(self):
         for level in reversed(Level.objects.all()):
-            if not ProjectObjectiveCondition.objects.filter(
+            results = ProjectObjectiveCondition.objects.filter(
                 project=self.project,
                 objective=self.objective,
                 condition__level=level,
-                done=False,
-            ).exists():
+                )
+            if results.exists() and not results.filter(done=False).exists():
                 return level
 
         return self.get_if_not_started_display() or "No activity"
@@ -149,7 +148,9 @@ class ProjectObjective(models.Model):
         return self.objective.description
 
     def projectobjectiveconditions(self):
-        return ProjectObjectiveCondition.objects.filter(project=self.project, objective=self.objective)
+        return ProjectObjectiveCondition.objects.filter(
+            project=self.project, objective=self.objective
+        )
 
     class Meta:
         ordering = ["project", "objective"]
