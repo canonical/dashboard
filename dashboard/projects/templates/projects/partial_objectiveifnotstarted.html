@@ -1,0 +1,20 @@
+<td colspan="2">
+
+  <select
+    name="ifnotstarted"
+    id="projectobjective_ifnotstarted_{{ projectobjective.id }}"
+    class="{{ projectobjective.ifnotstarted|lower|slugify }}"
+    data-testid="projectobjective_ifnotstarted_{{ projectobjective.id }}">
+
+    {% for reason_value, reason_text in ifnotstarted_choices %}
+      <option
+        value="{{ reason_value }}"
+        {% if reason_value == projectobjective.if_not_started %}selected{% endif %}
+        >
+        {{ reason_text }}
+      </option>
+    {% endfor %}
+  </select>
+</td>
+
+{% for work_cycle in work_cycles %}<td class="workcycle">{{ work_cycle }}</td>{% endfor %}

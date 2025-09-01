@@ -5,7 +5,6 @@ from .views import (
     ProjectListView,
     action_toggle_commitment,
     action_toggle_condition,
-    # projectobjective_status
 )
 
 app_name = "projects"

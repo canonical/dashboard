@@ -21,8 +21,8 @@ hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
     <main id="content-start" class="content">
       <div id="content" class="colM">
         <div id="content-main">
-
           <div>
+
             <div class="submit-row">
               <div>{{ project.name }}</div>
               <div>{{ project.group }}</div>
@@ -33,62 +33,57 @@ hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
             </div>
           </div>
 
-          <div class="js-inline-admin-formset inline-group">
+          <div class="inline-group">
             <div class="tabular inline-related">
 
               <table class="objectives">
                 <tbody>
-                  {% regroup project.projectobjectivecondition_set.all by projectobjective as objective_list %}
-                  {% regroup commitments by projectobjective as commitment_list %}
-                  {% pack objective_list commitment_list as projectobjective_list %}
 
-                  {% for objective, commitment in projectobjective_list %}
+                  {% for projectobjective in project.projectobjective_set.all %}
 
                     <tr class="objective">
                       <td colspan="{{ work_cycle_count|add:'2' }}" class="objective name">
-                        {{ objective.grouper.name }}
+                        {{ projectobjective.objective.name }}
                       </td>
                     </tr>
 
                     <tr class="">
-                      <td colspan="2" class="">{{ objective.grouper.objective.description|default:"" }}</td>
+                      <td colspan="2" class="">{{ projectobjective.objective.description|default:"" }}</td>
                       <td colspan="{{ work_cycle_count }}" class="commitment-blank"></td>
                     </tr>
 
                     <tr class="">
-                      {% with projectobjective=objective.grouper %}
-                        {% include "projects/partial_objectivestatus.html" %}
-                      {% endwith %}
+                      {% include "projects/partial_objectivestatus.html" %}
                       <td></td>
                       <td colspan="{{ work_cycle_count }}" class="commitment-blank"></td>
                     </tr>
 
                     <tr class="">
-                      <td colspan="2" class="">{{ objective.grouper.if_not_started|default:"" }}</td>
-                      {% for work_cycle in work_cycles %}<td class="workcycle">{{ work_cycle }}</td>{% endfor %}
+                      {% include "projects/partial_objectiveifnotstarted.html" %}
                     </tr>
 
-                    {% regroup objective.list by level as level_list %}
-                    {% regroup commitment.list by level as commitment_list %}
-                    {% pack level_list commitment_list as objective_list %}
+                    {% regroup projectobjective.projectobjectiveconditions by level as levels %}
+                    {% regroup projectobjective.levelcommitments by level as commitments %}
+                    {% pack levels commitments as level_collections %}
 
+                    {% for condition, commitment in level_collections %}
 
-                    {% for level, commitments in objective_list %}
                       <tr class="level">
-                        <td colspan="2" class="">{{ level.grouper }}</td>
+                        <td colspan="2" class="">{{ condition.grouper }}</td>
 
-                        {% for commitment in commitments.list %}
+                        {% for commitment in commitment.list %}
                           {% include "projects/partial_levelcommitment.html" %}
                         {% endfor %}
 
                       </tr>
 
-                      {% for condition in level.list %}
-                          {% include "projects/partial_condition.html" %}
+                      {% for condition in condition.list %}
+                        {% include "projects/partial_condition.html" %}
                       {% endfor %}
 
                     {% endfor %}
                   {% endfor %}
+
                 </tbody>
               </table>
 
