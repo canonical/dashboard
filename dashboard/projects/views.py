@@ -35,6 +35,7 @@ class ProjectDetailView(DetailView):
     model = Project
 
     def get_context_data(self, **kwargs):
+        print("get_context_data is being called")
 
         context = super().get_context_data(**kwargs)
 
