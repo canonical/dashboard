@@ -152,6 +152,12 @@ class ProjectObjective(models.Model):
             project=self.project, objective=self.objective
         )
 
+    def levelcommitments(self):
+        return LevelCommitment.objects.filter(
+            project=self.project, objective=self.objective
+        )
+
+
     class Meta:
         ordering = ["project", "objective"]
         constraints = [
