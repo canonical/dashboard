@@ -86,7 +86,7 @@ The application will run in a Kubernetes cluster, so we need a container image f
 Creating the container image might take several minutes, so this is a good point to take a break. When you return, you should see the following output:
 
 > ```
-> Packed dashboard_0.12_amd64.rock
+> Packed dashboard_0.13_amd64.rock
 > ```
 
 ### Create a charm
@@ -109,10 +109,10 @@ Creating the charm might take several minutes, so this is another good point to 
 ``` { name=deploy-dashboard }
 cd ~/dashboard
 rockcraft.skopeo --insecure-policy copy --dest-tls-verify=false \
-  oci-archive:dashboard_0.12_amd64.rock \
-  docker://localhost:32000/dashboard:0.12
+  oci-archive:dashboard_0.13_amd64.rock \
+  docker://localhost:32000/dashboard:0.13
 juju deploy ./charm/dashboard_ubuntu-22.04-amd64.charm \
-  --resource django-app-image=localhost:32000/dashboard:0.12
+  --resource django-app-image=localhost:32000/dashboard:0.13
 ```
 
 The `rockcraft.skopeo` command makes the container image available to Juju.

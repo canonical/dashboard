@@ -78,6 +78,7 @@ class ProjectObjectiveInline(admin.TabularInline):
 @admin.register(ProjectObjective)
 class ProjectObjectiveAdmin(admin.ModelAdmin):
     readonly_fields = ["project", "objective", "status"]
+    list_filter = ["project", "objective", "if_not_started"]
 
     fieldsets = (
         (
@@ -143,6 +144,10 @@ class LevelCommitmentAdmin(admin.ModelAdmin):
     list_filter = ["work_cycle", "project", "objective", "level", "committed"]
 
 
+@admin.register(ProjectObjectiveCondition)
+class ProjectObjectiveConditionAdmin(admin.ModelAdmin):
+    list_filter = ["project", "objective", "condition", "done"]
+
+
 admin.site.register(ProjectGroup)
 # admin.site.register(QI)
-admin.site.register(ProjectObjectiveCondition)

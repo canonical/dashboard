@@ -3,7 +3,7 @@ from django.shortcuts import render, HttpResponse
 from django.views.generic import ListView, DetailView, FormView
 from django.views.decorators.http import require_http_methods
 
-from .models import Project, LevelCommitment, ProjectObjectiveCondition
+from .models import Project, LevelCommitment, ProjectObjectiveCondition, ProjectObjective
 from . import forms
 
 from framework.models import WorkCycle, Objective, ObjectiveGroup
@@ -51,7 +51,9 @@ class ProjectDetailView(DetailView):
 
         context["commitments"] = LevelCommitment.objects.filter(project=self.object)
 
-        context["form"] = forms.CreateTodoForm()
+        context["ifnotstarted_choices"] = ProjectObjective.STATUS_CHOICES
+
+        # context["form"] = forms.ProjectDetailForm()
 
         return context
 
@@ -74,4 +76,3 @@ def action_toggle_condition(request, condition_id):
         "projects/partial_objectivestatus.html",
         {"projectobjective": condition.projectobjective}
         )
-
