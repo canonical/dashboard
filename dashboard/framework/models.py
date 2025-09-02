@@ -19,6 +19,17 @@ class Level(models.Model):
         ordering = ["value"]
 
 
+class Reason(models.Model):
+    name = models.CharField(max_length=200)
+    value = models.SmallIntegerField()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ["value"]
+
+
 class WorkCycle(models.Model):
     name = models.CharField(max_length=200)
     timestamp = models.DateField()
@@ -27,10 +38,6 @@ class WorkCycle(models.Model):
         return self.name
 
     def save(self, **kwargs):
-        # when a new WorkCycle is added, create a LevelCommitment for it
-
-        # to do: if Conditions with new Levels are added for an Objective,
-        # we also need to propagate the LevelCommitment objects
 
         from projects.models import (
             ProjectObjective,
@@ -86,7 +93,11 @@ class Objective(models.Model):
     def save(self, **kwargs):
         # when a new Objective is added propagate it to all existing Projects
 
-        from projects.models import ProjectObjective, Project, LevelCommitment  # avoids circular import
+        from projects.models import (
+            ProjectObjective,
+            Project,
+            LevelCommitment,
+        )  # avoids circular import
 
         super().save(**kwargs)
 

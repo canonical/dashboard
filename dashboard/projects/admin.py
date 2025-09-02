@@ -55,7 +55,7 @@ class ProjectObjectiveInline(admin.TabularInline):
     inlines = [ProjectObjectiveConditionInline]
     max_num = 0
     can_delete = False
-    # fields = ("name", "description", "status",  "if_not_started")
+    # fields = ("name", "description", "status",  "unstarted_reason")
     fieldsets = (
         (
             "name",
@@ -63,7 +63,7 @@ class ProjectObjectiveInline(admin.TabularInline):
         ),
         ("description", {"fields": (("description",))}),
         ("status", {"fields": (("status",))}),
-        ("if-not-started", {"fields": (("if_not_started",))}),
+        ("if-not-started", {"fields": (("unstarted_reason",))}),
     )
     readonly_fields = ["name", "description", "status"]
     exclude = ["objective"]
@@ -78,14 +78,14 @@ class ProjectObjectiveInline(admin.TabularInline):
 @admin.register(ProjectObjective)
 class ProjectObjectiveAdmin(admin.ModelAdmin):
     readonly_fields = ["project", "objective", "status"]
-    list_filter = ["project", "objective", "if_not_started"]
+    list_filter = ["project", "objective", "unstarted_reason"]
 
     fieldsets = (
         (
             None,
             {
                 "fields": (
-                    ("if_not_started", "status"),
+                    ("unstarted_reason", "status"),
                     ("project", "objective"),
                 ),
             },
@@ -138,6 +138,7 @@ class ProjectAdmin(admin.ModelAdmin):
             form_url,
             extra_context=extra_context,
         )
+
 
 @admin.register(LevelCommitment)
 class LevelCommitmentAdmin(admin.ModelAdmin):

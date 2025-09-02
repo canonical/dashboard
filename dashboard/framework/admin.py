@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from .models import (
     Level,
+    Reason,
     ProjectStatus,
     WorkCycle,
     ObjectiveGroup,
@@ -28,6 +29,7 @@ class WorkCycleAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Level)
+admin.site.register(Reason)
 admin.site.register(ProjectStatus)
 admin.site.register(WorkCycle, WorkCycleAdmin)
 admin.site.register(ObjectiveGroup)

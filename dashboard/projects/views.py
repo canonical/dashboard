@@ -3,10 +3,15 @@ from django.shortcuts import render, HttpResponse
 from django.views.generic import ListView, DetailView, FormView
 from django.views.decorators.http import require_http_methods
 
-from .models import Project, LevelCommitment, ProjectObjectiveCondition, ProjectObjective
+from .models import (
+    Project,
+    LevelCommitment,
+    ProjectObjectiveCondition,
+    ProjectObjective,
+)
 from . import forms
 
-from framework.models import WorkCycle, Objective, ObjectiveGroup
+from framework.models import WorkCycle, Objective, ObjectiveGroup, Reason
 
 
 class ProjectListView(ListView):
@@ -35,7 +40,6 @@ class ProjectDetailView(DetailView):
     model = Project
 
     def get_context_data(self, **kwargs):
-        print("get_context_data is being called")
 
         context = super().get_context_data(**kwargs)
 
@@ -51,7 +55,7 @@ class ProjectDetailView(DetailView):
 
         context["commitments"] = LevelCommitment.objects.filter(project=self.object)
 
-        context["ifnotstarted_choices"] = ProjectObjective.STATUS_CHOICES
+        context["unstarted_reasons"] = Reason.objects.all()
 
         # context["form"] = forms.ProjectDetailForm()
 
@@ -74,5 +78,5 @@ def action_toggle_condition(request, condition_id):
     return render(
         request,
         "projects/partial_objectivestatus.html",
-        {"projectobjective": condition.projectobjective}
-        )
+        {"projectobjective": condition.projectobjective},
+    )

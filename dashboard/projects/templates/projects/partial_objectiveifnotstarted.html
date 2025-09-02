@@ -6,12 +6,12 @@
     class="{{ projectobjective.ifnotstarted|lower|slugify }}"
     data-testid="projectobjective_ifnotstarted_{{ projectobjective.id }}">
 
-    {% for reason_value, reason_text in ifnotstarted_choices %}
+    {% for reason in unstarted_reasons %}
       <option
-        value="{{ reason_value }}"
-        {% if reason_value == projectobjective.if_not_started %}selected{% endif %}
+        value="{{ reason }}"
+        {% if reason_value == projectobjective.unstarted_reason %}selected{% endif %}
         >
-        {{ reason_text }}
+        {{ reason }}
       </option>
     {% endfor %}
   </select>

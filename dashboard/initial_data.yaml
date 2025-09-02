@@ -33,6 +33,26 @@
   fields:
     name: Mature results
     value: 6
+- model: framework.reason
+  pk: 1
+  fields:
+    name: Blocked
+    value: 0
+- model: framework.reason
+  pk: 2
+  fields:
+    name: Not applicable
+    value: 0
+- model: framework.reason
+  pk: 3
+  fields:
+    name: Deferred
+    value: 0
+- model: framework.reason
+  pk: 4
+  fields:
+    name: Planned
+    value: 1
 - model: framework.workcycle
   pk: 1
   fields:
@@ -594,1123 +614,1123 @@
   fields:
     project: 1
     objective: 1
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 2
   fields:
     project: 2
     objective: 1
-    if_not_started: BL
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 3
   fields:
     project: 3
     objective: 1
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 4
   fields:
     project: 4
     objective: 1
-    if_not_started: IN
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 5
   fields:
     project: 2
     objective: 2
-    if_not_started: PL
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 6
   fields:
     project: 1
     objective: 2
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 7
   fields:
     project: 3
     objective: 2
-    if_not_started: PL
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 8
   fields:
     project: 4
     objective: 2
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 9
   fields:
     project: 2
     objective: 3
-    if_not_started: BL
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 10
   fields:
     project: 1
     objective: 3
-    if_not_started: null
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 11
   fields:
     project: 3
     objective: 3
-    if_not_started: PL
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 12
   fields:
     project: 4
     objective: 3
-    if_not_started: PL
+    unstarted_reason: 4
 - model: projects.projectobjective
   pk: 13
   fields:
     project: 2
     objective: 4
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 14
   fields:
     project: 1
     objective: 4
-    if_not_started: null
+    unstarted_reason: 4
 - model: projects.projectobjective
   pk: 15
   fields:
     project: 3
     objective: 4
-    if_not_started: PL
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 16
   fields:
     project: 4
     objective: 4
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 17
   fields:
     project: 2
     objective: 5
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 18
   fields:
     project: 1
     objective: 5
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 19
   fields:
     project: 3
     objective: 5
-    if_not_started: PL
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 20
   fields:
     project: 4
     objective: 5
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 21
   fields:
     project: 2
     objective: 6
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 22
   fields:
     project: 1
     objective: 6
-    if_not_started: PL
+    unstarted_reason: 4
 - model: projects.projectobjective
   pk: 23
   fields:
     project: 3
     objective: 6
-    if_not_started: PL
+    unstarted_reason: 1
 - model: projects.projectobjective
   pk: 24
   fields:
     project: 4
     objective: 6
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 25
   fields:
     project: 2
     objective: 7
-    if_not_started: PL
+    unstarted_reason: 4
 - model: projects.projectobjective
   pk: 26
   fields:
     project: 1
     objective: 7
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 27
   fields:
     project: 3
     objective: 7
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 28
   fields:
     project: 4
     objective: 7
-    if_not_started: BL
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 29
   fields:
     project: 2
     objective: 8
-    if_not_started: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 30
   fields:
     project: 1
     objective: 8
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 31
   fields:
     project: 3
     objective: 8
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 32
   fields:
     project: 4
     objective: 8
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 33
   fields:
     project: 2
     objective: 9
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 34
   fields:
     project: 1
     objective: 9
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 35
   fields:
     project: 3
     objective: 9
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 36
   fields:
     project: 4
     objective: 9
-    if_not_started: null
+    unstarted_reason: 1
 - model: projects.projectobjective
   pk: 37
   fields:
     project: 2
     objective: 10
-    if_not_started: BL
+    unstarted_reason: 4
 - model: projects.projectobjective
   pk: 38
   fields:
     project: 1
     objective: 10
-    if_not_started: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 39
   fields:
     project: 3
     objective: 10
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 40
   fields:
     project: 4
     objective: 10
-    if_not_started: BL
+    unstarted_reason: 4
 - model: projects.projectobjective
   pk: 41
   fields:
     project: 2
     objective: 11
-    if_not_started: DE
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 42
   fields:
     project: 1
     objective: 11
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 43
   fields:
     project: 3
     objective: 11
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 44
   fields:
     project: 4
     objective: 11
-    if_not_started: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 45
   fields:
     project: 5
     objective: 7
-    if_not_started: null
+    unstarted_reason: 4
 - model: projects.projectobjective
   pk: 46
   fields:
     project: 5
     objective: 1
-    if_not_started: PL
+    unstarted_reason: 4
 - model: projects.projectobjective
   pk: 47
   fields:
     project: 5
     objective: 2
-    if_not_started: null
+    unstarted_reason: 1
 - model: projects.projectobjective
   pk: 48
   fields:
     project: 5
     objective: 11
-    if_not_started: null
+    unstarted_reason: 1
 - model: projects.projectobjective
   pk: 49
   fields:
     project: 5
     objective: 5
-    if_not_started: IN
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 50
   fields:
     project: 5
     objective: 3
-    if_not_started: null
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 51
   fields:
     project: 5
     objective: 4
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 52
   fields:
     project: 5
     objective: 10
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 53
   fields:
     project: 5
     objective: 6
-    if_not_started: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 54
   fields:
     project: 5
     objective: 8
-    if_not_started: null
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 55
   fields:
     project: 5
     objective: 9
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 56
   fields:
     project: 6
     objective: 7
-    if_not_started: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 57
   fields:
     project: 6
     objective: 1
-    if_not_started: null
+    unstarted_reason: 1
 - model: projects.projectobjective
   pk: 58
   fields:
     project: 6
     objective: 2
-    if_not_started: PL
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 59
   fields:
     project: 6
     objective: 11
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 60
   fields:
     project: 6
     objective: 5
-    if_not_started: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 61
   fields:
     project: 6
     objective: 3
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 62
   fields:
     project: 6
     objective: 4
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 63
   fields:
     project: 6
     objective: 10
-    if_not_started: null
+    unstarted_reason: 1
 - model: projects.projectobjective
   pk: 64
   fields:
     project: 6
     objective: 6
-    if_not_started: null
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 65
   fields:
     project: 6
     objective: 8
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 66
   fields:
     project: 6
     objective: 9
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 67
   fields:
     project: 7
     objective: 7
-    if_not_started: PL
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 68
   fields:
     project: 7
     objective: 1
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 69
   fields:
     project: 7
     objective: 2
-    if_not_started: PL
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 70
   fields:
     project: 7
     objective: 11
-    if_not_started: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 71
   fields:
     project: 7
     objective: 5
-    if_not_started: BL
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 72
   fields:
     project: 7
     objective: 3
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 73
   fields:
     project: 7
     objective: 4
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 74
   fields:
     project: 7
     objective: 10
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 75
   fields:
     project: 7
     objective: 6
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 76
   fields:
     project: 7
     objective: 8
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 77
   fields:
     project: 7
     objective: 9
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 89
   fields:
     project: 9
     objective: 7
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 90
   fields:
     project: 9
     objective: 1
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 91
   fields:
     project: 9
     objective: 2
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 92
   fields:
     project: 9
     objective: 11
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 93
   fields:
     project: 9
     objective: 5
-    if_not_started: null
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 94
   fields:
     project: 9
     objective: 3
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 95
   fields:
     project: 9
     objective: 4
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 96
   fields:
     project: 9
     objective: 10
-    if_not_started: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 97
   fields:
     project: 9
     objective: 6
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 98
   fields:
     project: 9
     objective: 8
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 99
   fields:
     project: 9
     objective: 9
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 100
   fields:
     project: 10
     objective: 7
-    if_not_started: BL
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 101
   fields:
     project: 10
     objective: 1
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 102
   fields:
     project: 10
     objective: 2
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 103
   fields:
     project: 10
     objective: 11
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 104
   fields:
     project: 10
     objective: 5
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 105
   fields:
     project: 10
     objective: 3
-    if_not_started: PL
+    unstarted_reason: 4
 - model: projects.projectobjective
   pk: 106
   fields:
     project: 10
     objective: 4
-    if_not_started: DE
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 107
   fields:
     project: 10
     objective: 10
-    if_not_started: DE
+    unstarted_reason: 1
 - model: projects.projectobjective
   pk: 108
   fields:
     project: 10
     objective: 6
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 109
   fields:
     project: 10
     objective: 8
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 110
   fields:
     project: 10
     objective: 9
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 111
   fields:
     project: 11
     objective: 7
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 112
   fields:
     project: 11
     objective: 1
-    if_not_started: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 113
   fields:
     project: 11
     objective: 2
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 114
   fields:
     project: 11
     objective: 11
-    if_not_started: DE
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 115
   fields:
     project: 11
     objective: 5
-    if_not_started: DE
+    unstarted_reason: 4
 - model: projects.projectobjective
   pk: 116
   fields:
     project: 11
     objective: 3
-    if_not_started: DE
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 117
   fields:
     project: 11
     objective: 4
-    if_not_started: DE
+    unstarted_reason: 1
 - model: projects.projectobjective
   pk: 118
   fields:
     project: 11
     objective: 10
-    if_not_started: DE
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 119
   fields:
     project: 11
     objective: 6
-    if_not_started: DE
+    unstarted_reason: 1
 - model: projects.projectobjective
   pk: 120
   fields:
     project: 11
     objective: 8
-    if_not_started: DE
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 121
   fields:
     project: 11
     objective: 9
-    if_not_started: DE
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 122
   fields:
     project: 12
     objective: 7
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 123
   fields:
     project: 12
     objective: 1
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 124
   fields:
     project: 12
     objective: 2
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 125
   fields:
     project: 12
     objective: 11
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 126
   fields:
     project: 12
     objective: 5
-    if_not_started: null
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 127
   fields:
     project: 12
     objective: 3
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 128
   fields:
     project: 12
     objective: 4
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 129
   fields:
     project: 12
     objective: 10
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 130
   fields:
     project: 12
     objective: 6
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 131
   fields:
     project: 12
     objective: 8
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 132
   fields:
     project: 12
     objective: 9
-    if_not_started: null
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 133
   fields:
     project: 13
     objective: 7
-    if_not_started: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 134
   fields:
     project: 13
     objective: 1
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 135
   fields:
     project: 13
     objective: 2
-    if_not_started: null
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 136
   fields:
     project: 13
     objective: 11
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 137
   fields:
     project: 13
     objective: 5
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 138
   fields:
     project: 13
     objective: 3
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 139
   fields:
     project: 13
     objective: 4
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 140
   fields:
     project: 13
     objective: 10
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 141
   fields:
     project: 13
     objective: 6
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 142
   fields:
     project: 13
     objective: 8
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 143
   fields:
     project: 13
     objective: 9
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 144
   fields:
     project: 14
     objective: 7
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 145
   fields:
     project: 14
     objective: 1
-    if_not_started: null
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 146
   fields:
     project: 14
     objective: 2
-    if_not_started: null
+    unstarted_reason: 4
 - model: projects.projectobjective
   pk: 147
   fields:
     project: 14
     objective: 11
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 148
   fields:
     project: 14
     objective: 5
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 149
   fields:
     project: 14
     objective: 3
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 150
   fields:
     project: 14
     objective: 4
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 151
   fields:
     project: 14
     objective: 10
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 152
   fields:
     project: 14
     objective: 6
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 153
   fields:
     project: 14
     objective: 8
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 154
   fields:
     project: 14
     objective: 9
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 155
   fields:
     project: 15
     objective: 7
-    if_not_started: BL
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 156
   fields:
     project: 15
     objective: 1
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 157
   fields:
     project: 15
     objective: 2
-    if_not_started: null
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 158
   fields:
     project: 15
     objective: 11
-    if_not_started: null
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 159
   fields:
     project: 15
     objective: 5
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 160
   fields:
     project: 15
     objective: 3
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 161
   fields:
     project: 15
     objective: 4
-    if_not_started: IN
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 162
   fields:
     project: 15
     objective: 10
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 163
   fields:
     project: 15
     objective: 6
-    if_not_started: null
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 164
   fields:
     project: 15
     objective: 8
-    if_not_started: null
+    unstarted_reason: 1
 - model: projects.projectobjective
   pk: 165
   fields:
     project: 15
     objective: 9
-    if_not_started: BL
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 166
   fields:
     project: 16
     objective: 7
-    if_not_started: null
+    unstarted_reason: 1
 - model: projects.projectobjective
   pk: 167
   fields:
     project: 16
     objective: 1
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 168
   fields:
     project: 16
     objective: 2
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 169
   fields:
     project: 16
     objective: 11
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 170
   fields:
     project: 16
     objective: 5
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 171
   fields:
     project: 16
     objective: 3
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 172
   fields:
     project: 16
     objective: 4
-    if_not_started: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 173
   fields:
     project: 16
     objective: 10
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 174
   fields:
     project: 16
     objective: 6
-    if_not_started: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 175
   fields:
     project: 16
     objective: 8
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 176
   fields:
     project: 16
     objective: 9
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 177
   fields:
     project: 17
     objective: 7
-    if_not_started: null
+    unstarted_reason: 1
 - model: projects.projectobjective
   pk: 178
   fields:
     project: 17
     objective: 1
-    if_not_started: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 179
   fields:
     project: 17
     objective: 2
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 180
   fields:
     project: 17
     objective: 11
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 181
   fields:
     project: 17
     objective: 5
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 182
   fields:
     project: 17
     objective: 3
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 183
   fields:
     project: 17
     objective: 4
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 184
   fields:
     project: 17
     objective: 10
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 185
   fields:
     project: 17
     objective: 6
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 186
   fields:
     project: 17
     objective: 8
-    if_not_started: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 187
   fields:
     project: 17
     objective: 9
-    if_not_started: null
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 188
   fields:
     project: 18
     objective: 7
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 189
   fields:
     project: 18
     objective: 1
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 190
   fields:
     project: 18
     objective: 2
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 191
   fields:
     project: 18
     objective: 11
-    if_not_started: null
+    unstarted_reason: 1
 - model: projects.projectobjective
   pk: 192
   fields:
     project: 18
     objective: 5
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 193
   fields:
     project: 18
     objective: 3
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 194
   fields:
     project: 18
     objective: 4
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjective
   pk: 195
   fields:
     project: 18
     objective: 10
-    if_not_started: null
+    unstarted_reason: 3
 - model: projects.projectobjective
   pk: 196
   fields:
     project: 18
     objective: 6
-    if_not_started: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 197
   fields:
     project: 18
     objective: 8
-    if_not_started: null
+    unstarted_reason: 4
 - model: projects.projectobjective
   pk: 198
   fields:
     project: 18
     objective: 9
-    if_not_started: null
+    unstarted_reason: null
 - model: projects.projectobjectivecondition
   pk: 1
   fields:
@@ -2851,7 +2871,7 @@
     project: 5
     objective: 7
     condition: 25
-    done: true
+    done: false
 - model: projects.projectobjectivecondition
   pk: 164
   fields:
@@ -8885,7 +8905,7 @@
     project: 5
     objective: 7
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 288
   fields:
@@ -34134,7 +34154,7 @@
   pk: 1
   fields:
     password: pbkdf2_sha256$870000$wrLgDLm6LnfRMMx70aSref$+/mKdBWGs7a62LOYowsqKLv+QpJ71gCk/+cd3vPEuNY=
-    last_login: 2025-04-18 08:04:47.998945+00:00
+    last_login: 2025-09-02 21:07:04.118507+00:00
     is_superuser: true
     username: test
     first_name: ''

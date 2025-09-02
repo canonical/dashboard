@@ -3,8 +3,14 @@ from datetime import date, timedelta
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
-from framework.models import (Condition, Level, Objective, ProjectStatus,
-                              WorkCycle)
+from framework.models import (
+    Reason,
+    Condition,
+    Level,
+    Objective,
+    ProjectStatus,
+    WorkCycle,
+)
 
 
 class ProjectGroup(models.Model):
@@ -57,7 +63,6 @@ class Project(models.Model):
             # make sure there is a LevelCommitment for each WorkCycle/Level/Objective for the Project
             for objective in Objective.objects.filter(project=self):
                 for level in Level.objects.all():
-                    print(level)
                     l = LevelCommitment.objects.get_or_create(
                         work_cycle=work_cycle,
                         project=self,
@@ -73,7 +78,7 @@ class Project(models.Model):
         for po in self.projectobjective_set.all():
             # this is a horrendous way to solve the problem and there must be something more elegant
             try:
-                x = x + po.status().value * po.objective.weight
+                x = x + po.status.value * po.objective.weight
             except AttributeError:
                 pass
         return x
@@ -100,26 +105,12 @@ class Project(models.Model):
 
 class ProjectObjective(models.Model):
 
-    NA = "na"
-    PLANNED = "PL"
-    DEFERRED = "DE"
-    BLOCKED = "BL"
-    INACTIVE = "IN"
-
-    STATUS_CHOICES = [
-        (NA, "na"),
-        (PLANNED, "Planned"),
-        (DEFERRED, "Deferred"),
-        (BLOCKED, "Blocked"),
-        (INACTIVE, "Inactive"),
-    ]
-
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     objective = models.ForeignKey(Objective, on_delete=models.CASCADE)
-    if_not_started = models.CharField(
+    unstarted_reason = models.ForeignKey(
+        Reason,
+        on_delete=models.SET_NULL,
         help_text="Will be overridden by <em>Status</em> if appropriate",
-        max_length=2,
-        choices=STATUS_CHOICES,
         null=True,
         blank=True,
     )
@@ -133,14 +124,14 @@ class ProjectObjective(models.Model):
                 project=self.project,
                 objective=self.objective,
                 condition__level=level,
-                )
+            )
             if results.exists() and not results.filter(done=False).exists():
                 return level
 
-        return self.get_if_not_started_display() or "No activity"
+        return self.unstarted_reason
 
-    def status_slug(self):
-        return slugify(self.status())
+    # def status_slug(self):
+    #     return slugify(self.status())
 
     def name(self):
         return self.objective.name
