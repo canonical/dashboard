@@ -1,9 +1,10 @@
 from datetime import date, timedelta
-from django.db import models
-from django.utils.text import slugify
-from django.urls import reverse
 
-from framework.models import ProjectStatus, WorkCycle, Level, Objective, Condition
+from django.db import models
+from django.urls import reverse
+from django.utils.text import slugify
+from framework.models import (Condition, Level, Objective, ProjectStatus,
+                              WorkCycle)
 
 
 class ProjectGroup(models.Model):
@@ -152,7 +153,7 @@ class ProjectObjective(models.Model):
             project=self.project, objective=self.objective
         )
 
-      def levelcommitments(self):
+    def levelcommitments(self):
         return LevelCommitment.objects.filter(
             project=self.project, objective=self.objective
         )
