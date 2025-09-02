@@ -3,8 +3,7 @@ from datetime import date, timedelta
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
-from framework.models import (Condition, Level, Objective, ProjectStatus,
-                              WorkCycle)
+from framework.models import Condition, Level, Objective, ProjectStatus, WorkCycle
 
 
 class ProjectGroup(models.Model):
@@ -79,7 +78,7 @@ class Project(models.Model):
         return x
 
     def quality_history(self):
-        return QI.objects.filter(project=self, workcycle__timestamp__lte=date.today())
+        return QI.objects.filter(project=self)
 
     def review_freshness(self):
         # consider using the database to define these values instead
@@ -133,7 +132,7 @@ class ProjectObjective(models.Model):
                 project=self.project,
                 objective=self.objective,
                 condition__level=level,
-                )
+            )
             if results.exists() and not results.filter(done=False).exists():
                 return level
 

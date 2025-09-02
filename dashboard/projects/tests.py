@@ -61,15 +61,26 @@ def test_toggling_conditions(live_server, page):
     assert ProjectObjectiveCondition.objects.get(id=1).done == True
     assert ProjectObjectiveCondition.objects.get(id=6).done == True
     assert ProjectObjectiveCondition.objects.get(id=10).done == False
-    assert ProjectObjectiveCondition.objects.get(id=10).projectobjective().status() == "No activity"
-    expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text("No activity")
+    assert (
+        ProjectObjectiveCondition.objects.get(id=10).projectobjective().status()
+        == "No activity"
+    )
+    expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text(
+        "No activity"
+    )
 
     # check the remaining box to get to Started
     page.get_by_test_id("toggle_condition_10").check()
-    assert ProjectObjectiveCondition.objects.get(id=10).projectobjective().status() == Level.objects.get(id=1)
+    assert ProjectObjectiveCondition.objects.get(
+        id=10
+    ).projectobjective().status() == Level.objects.get(id=1)
     expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text("Started")
 
     # check one more to get to First results
     page.get_by_test_id("toggle_condition_14").check()
-    assert ProjectObjectiveCondition.objects.get(id=14).projectobjective().status() == Level.objects.get(id=2)
-    expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text("First results")
+    assert ProjectObjectiveCondition.objects.get(
+        id=14
+    ).projectobjective().status() == Level.objects.get(id=2)
+    expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text(
+        "First results"
+    )

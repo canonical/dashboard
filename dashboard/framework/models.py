@@ -86,7 +86,11 @@ class Objective(models.Model):
     def save(self, **kwargs):
         # when a new Objective is added propagate it to all existing Projects
 
-        from projects.models import ProjectObjective, Project, LevelCommitment  # avoids circular import
+        from projects.models import (
+            ProjectObjective,
+            Project,
+            LevelCommitment,
+        )  # avoids circular import
 
         super().save(**kwargs)
 
