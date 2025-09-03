@@ -33,59 +33,70 @@ hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
             </div>
           </div>
 
+          {% regroup commitments by projectobjective as commitmentgroups %}
+
           <div class="inline-group">
             <div class="tabular inline-related">
 
-              <table class="objectives">
+              {% regroup project.projectobjective_set.all by objective.group as projectobjectivegroups %}
+
+              <table class="objectives detail">
                 <tbody>
 
-                  {% for projectobjective in project.projectobjective_set.all %}
+                  {% for projectobjectivegroup, projectobjectives in projectobjectivegroups %}
 
-                    <tr class="objective">
-                      <td colspan="{{ work_cycle_count|add:'2' }}" class="objective name">
-                        {{ projectobjective.objective.name }}
-                      </td>
-                    </tr>
+                    <tr><th class="projectobjectivegroup" colspan="{{ work_cycle_count|add:'2' }}">
+                      {{ projectobjectivegroup }}
+                    </th><tr>
 
-                    <tr class="">
-                      <td colspan="2" class="">{{ projectobjective.objective.description|default:"" }}</td>
-                      <td colspan="{{ work_cycle_count }}" class="commitment-blank"></td>
-                    </tr>
+                    {% for projectobjective in projectobjectives %}
 
-                    <tr class="">
-                      {% include "projects/partial_objectivestatus.html" %}
-                      <td></td>
-                      <td colspan="{{ work_cycle_count }}" class="commitment-blank"></td>
-                    </tr>
-
-                    <tr class="">
-                      {% include "projects/partial_objectiveifnotstarted.html" %}
-                    </tr>
-
-                    {% regroup projectobjective.projectobjectiveconditions by level as levels %}
-                    {% regroup projectobjective.levelcommitments by level as commitments %}
-                    {% pack levels commitments as level_collections %}
-
-                    {% for condition, commitment in level_collections %}
-
-                      <tr class="level">
-                        <td colspan="2" class="">{{ condition.grouper }}</td>
-
-                        {% for commitment in commitment.list %}
-                          {% include "projects/partial_levelcommitment.html" %}
-                        {% endfor %}
-
+                      <tr class="objective">
+                        <td colspan="{{ work_cycle_count|add:'2' }}" class="objective name">
+                          {{ projectobjective.objective.name }}
+                        </td>
                       </tr>
 
-                      {% for condition in condition.list %}
-                        {% include "projects/partial_condition.html" %}
-                      {% endfor %}
+                      <tr class="">
+                        <td colspan="2" class="">{{ projectobjective.objective.description|default:"" }}</td>
+                        <td colspan="{{ work_cycle_count }}" class="commitment-blank"></td>
+                      </tr>
 
+                      <tr class="">
+                        {% include "projects/partial_objectivestatus.html" %}
+                        <td></td>
+                        <td colspan="{{ work_cycle_count }}" class="commitment-blank"></td>
+                      </tr>
+
+                      <tr class="">
+                        {% include "projects/partial_objectiveifnotstarted.html" %}
+                      </tr>
+
+                      {% regroup projectobjective.projectobjectiveconditions by level as levels %}
+                      {% regroup projectobjective.levelcommitments by level as commitments %}
+                      {% pack levels commitments as level_collections %}
+
+                      {% for condition, commitment in level_collections %}
+
+                        <tr class="level">
+                          <td colspan="2" class="">{{ condition.grouper }}</td>
+
+                          {% for commitment in commitment.list %}
+                            {% include "projects/partial_levelcommitment.html" %}
+                          {% endfor %}
+
+                        </tr>
+
+                        {% for condition in condition.list %}
+                          {% include "projects/partial_condition.html" %}
+                        {% endfor %}
+
+                      {% endfor %}
                     {% endfor %}
                   {% endfor %}
 
-                </tbody>
-              </table>
+                  </tbody>
+                </table>
 
             </div>
           </div>
