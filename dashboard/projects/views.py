@@ -11,7 +11,7 @@ from .models import (
 )
 from . import forms
 
-from framework.models import WorkCycle, Objective, ObjectiveGroup
+from framework.models import WorkCycle, Objective, ObjectiveGroup, Reason
 
 
 class ProjectListView(ListView):
@@ -40,7 +40,6 @@ class ProjectDetailView(DetailView):
     model = Project
 
     def get_context_data(self, **kwargs):
-        print("get_context_data is being called")
 
         context = super().get_context_data(**kwargs)
 
@@ -56,7 +55,7 @@ class ProjectDetailView(DetailView):
 
         context["commitments"] = LevelCommitment.objects.filter(project=self.object)
 
-        context["ifnotstarted_choices"] = ProjectObjective.STATUS_CHOICES
+        context["unstarted_reasons"] = Reason.objects.all()
 
         # context["form"] = forms.ProjectDetailForm()
 

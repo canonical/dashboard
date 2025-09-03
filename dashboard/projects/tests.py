@@ -63,10 +63,10 @@ def test_toggling_conditions(live_server, page):
     assert ProjectObjectiveCondition.objects.get(id=10).done == False
     assert (
         ProjectObjectiveCondition.objects.get(id=10).projectobjective().status()
-        == "No activity"
+        == None
     )
     expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text(
-        "No activity"
+        ""
     )
 
     # check the remaining box to get to Started

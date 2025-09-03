@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% load project_tags %}
+{% load i18n static %}
+
+{% block extrahead %}
+  <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+  <link rel="stylesheet" href="{% static "admin/css/base.css" %}">
+  <link rel="stylesheet" href="{% static "admin.css" %}">
+
+{% endblock %}
+
+{% block body_attributes %}
+hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+{% endblock %}
+
+{% block content %}
+
+<div id="container">
+  <div class="main" id="main">
+    <main id="content-start" class="content">
+      <div id="content" class="colM">
+        <div id="content-main">
+
+          <div>
+            <div class="submit-row">
+              <div>{{ project.name }}</div>
+              <div>{{ project.group }}</div>
+              <div>{{ project.owner }}</div>
+              <div>{{ project.driver }}</div>
+              <div>{{ project.last_review }}</div>
+              <div>{{ project.last_review_status }}</div>
+            </div>
+          </div>
+
+          <div class="js-inline-admin-formset inline-group">
+            <div class="tabular inline-related">
+
+              <table class="objectives">
+                <tbody>
+                  {% regroup project.projectobjectivecondition_set.all by projectobjective as objective_list %}
+                  {% regroup commitments by projectobjective as commitment_list %}
+                  {% pack objective_list commitment_list as projectobjective_list %}
+
+                  {% for objective, commitment in projectobjective_list %}
+
+                    <tr class="objective">
+                      <td colspan="{{ work_cycle_count|add:'2' }}" class="objective name">
+                        {{ objective.grouper.name }}
+                      </td>
+                    </tr>
+
+                    <tr class="">
+                      <td colspan="2" class="">{{ objective.grouper.objective.description|default:"" }}</td>
+                      <td colspan="{{ work_cycle_count }}" class="commitment-blank"></td>
+                    </tr>
+
+                    <tr class="">
+                      {% with projectobjective=objective.grouper %}
+                        {% include "projects/partial_objectivestatus.html" %}
+                      {% endwith %}
+                      <td></td>
+                      <td colspan="{{ work_cycle_count }}" class="commitment-blank"></td>
+                    </tr>
+
+                    <tr class="">
+                      <td colspan="2" class="">{{ objective.grouper.unstarted_reason|default:"" }}</td>
+                      {% for work_cycle in work_cycles %}<td class="workcycle">{{ work_cycle }}</td>{% endfor %}
+                    </tr>
+
+                    {% regroup objective.list by level as level_list %}
+                    {% regroup commitment.list by level as commitment_list %}
+                    {% pack level_list commitment_list as objective_list %}
+
+
+                    {% for level, commitments in objective_list %}
+                      <tr class="level">
+                        <td colspan="2" class="">{{ level.grouper }}</td>
+
+                        {% for commitment in commitments.list %}
+                          {% include "projects/partial_levelcommitment.html" %}
+                        {% endfor %}
+
+                      </tr>
+
+                      {% for condition in level.list %}
+                          {% include "projects/partial_condition.html" %}
+                      {% endfor %}
+
+                    {% endfor %}
+                  {% endfor %}
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+{% endblock content %}
