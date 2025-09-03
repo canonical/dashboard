@@ -118,7 +118,7 @@ class ProjectObjective(models.Model):
     def __str__(self):
         return " > ".join((self.project.name, self.objective.name))
 
-    def status(self):
+    def achieved_level(self):
         for level in reversed(Level.objects.all()):
             results = ProjectObjectiveCondition.objects.filter(
                 project=self.project,
@@ -128,7 +128,8 @@ class ProjectObjective(models.Model):
             if results.exists() and not results.filter(done=False).exists():
                 return level
 
-        return self.unstarted_reason
+    def status(self):
+        return self.achieved_level() or self.unstarted_reason
 
     # def status_slug(self):
     #     return slugify(self.status())
@@ -217,6 +218,10 @@ class LevelCommitment(models.Model):
         return ProjectObjective.objects.get(
             project=self.project, objective=self.objective
         )
+
+    def met(self):
+        if self.projectobjective().achieved_level():
+            return self.projectobjective().achieved_level().value >= self.level.value
 
     class Meta:
         ordering = [

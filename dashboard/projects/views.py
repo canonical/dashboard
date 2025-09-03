@@ -53,7 +53,12 @@ class ProjectDetailView(DetailView):
         context["objective_list"] = Objective.objects.all()
         context["objective_count"] = Objective.objects.count()
 
-        context["commitments"] = LevelCommitment.objects.filter(project=self.object)
+        commitments = LevelCommitment.objects.filter(project=self.object)
+        context["commitments"] = commitments
+
+        context["current_commitments"] = commitments.filter(work_cycle__is_current=True, committed=True)
+
+
 
         context["unstarted_reasons"] = Reason.objects.all()
 
