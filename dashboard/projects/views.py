@@ -3,7 +3,12 @@ from django.shortcuts import render, HttpResponse
 from django.views.generic import ListView, DetailView, FormView
 from django.views.decorators.http import require_http_methods
 
-from .models import Project, LevelCommitment, ProjectObjectiveCondition, ProjectObjective
+from .models import (
+    Project,
+    LevelCommitment,
+    ProjectObjectiveCondition,
+    ProjectObjective,
+)
 from . import forms
 
 from framework.models import WorkCycle, Objective, ObjectiveGroup
@@ -74,5 +79,5 @@ def action_toggle_condition(request, condition_id):
     return render(
         request,
         "projects/partial_objectivestatus.html",
-        {"projectobjective": condition.projectobjective}
-        )
+        {"projectobjective": condition.projectobjective},
+    )

@@ -139,6 +139,7 @@ class ProjectAdmin(admin.ModelAdmin):
             extra_context=extra_context,
         )
 
+
 @admin.register(LevelCommitment)
 class LevelCommitmentAdmin(admin.ModelAdmin):
     list_filter = ["work_cycle", "project", "objective", "level", "committed"]
