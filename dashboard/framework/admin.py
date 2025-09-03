@@ -24,8 +24,8 @@ class ObjectiveAdmin(admin.ModelAdmin):
 
 class WorkCycleAdmin(admin.ModelAdmin):
     model = WorkCycle
-    list_display = ["name", "timestamp"]
-    list_editable = ["timestamp"]
+    list_display = ["name", "timestamp", "is_current"]
+    list_editable = ["timestamp", "is_current"]
 
 
 admin.site.register(Level)

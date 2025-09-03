@@ -33,6 +33,7 @@ class Reason(models.Model):
 class WorkCycle(models.Model):
     name = models.CharField(max_length=200)
     timestamp = models.DateField()
+    is_current = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
@@ -70,6 +71,7 @@ class WorkCycle(models.Model):
 
     class Meta:
         ordering = ["timestamp"]
+
 
 
 class ObjectiveGroup(models.Model):
