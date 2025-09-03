@@ -1,3 +1,4 @@
-body {
-    font-family: Helvetica, sans-serif; font-size: 12px;}
+body {font-family: Helvetica, sans-serif; font-size: 12px;}
 
+table.objectives.detail {width: 100%;}
+table.objectives.detail .projectobjectivegroup {background: #D9EAD3; color: black; font-weight: bold; padding-top: 10px; padding-bottom: 10px; margin-top: 10px;}

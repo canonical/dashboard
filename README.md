@@ -86,7 +86,7 @@ The application will run in a Kubernetes cluster, so we need a container image f
 Creating the container image might take several minutes, so this is a good point to take a break. When you return, you should see the following output:
 
 > ```
-> Packed dashboard_0.15_amd64.rock
+> Packed dashboard_0.16_amd64.rock
 > ```
 
 ### Create a charm
@@ -109,10 +109,10 @@ Creating the charm might take several minutes, so this is another good point to 
 ``` { name=deploy-dashboard }
 cd ~/dashboard
 rockcraft.skopeo --insecure-policy copy --dest-tls-verify=false \
-  oci-archive:dashboard_0.15_amd64.rock \
-  docker://localhost:32000/dashboard:0.15
+  oci-archive:dashboard_0.16_amd64.rock \
+  docker://localhost:32000/dashboard:0.16
 juju deploy ./charm/dashboard_ubuntu-22.04-amd64.charm \
-  --resource django-app-image=localhost:32000/dashboard:0.15
+  --resource django-app-image=localhost:32000/dashboard:0.16
 ```
 
 The `rockcraft.skopeo` command makes the container image available to Juju.
@@ -159,8 +159,8 @@ Deploying the charms might take several minutes. Wait until the status of the `d
 > web-k8s  dev-controller  microk8s/localhost  3.6.4    unsupported  11:00:00+08:00
 >
 > App             Version  Status   Scale  Charm           Channel    Rev  Address         Exposed  Message
-> dashboard                blocked      1  dashboard                    0  10.152.183.219  no       missing integrations: postgresql
-> postgresql-k8s  14.15    active       1  postgresql-k8s  14/stable  495  10.152.183.145  no
+> dashboard                blocked      1  dashboard                    0  10.162.183.219  no       missing integrations: postgresql
+> postgresql-k8s  14.15    active       1  postgresql-k8s  14/stable  495  10.162.183.145  no
 >
 > Unit               Workload  Agent  Address      Ports  Message
 > dashboard/0*       blocked   idle   10.1.179.60         missing integrations: postgresql
@@ -196,7 +196,7 @@ This enables the dashboard's web server to directly interact with the database.
   > web-k8s  dev-controller  microk8s/localhost  3.6.4    unsupported  11:02:00+08:00
   >
   > App        Version  Status  Scale  Charm      Channel  Rev  Address         Exposed  Message
-  > dashboard           active      1  dashboard             0  10.152.183.219  no
+  > dashboard           active      1  dashboard             0  10.162.183.219  no
   >
   > Unit          Workload  Agent  Address      Ports  Message
   > dashboard/0*  active    idle   10.1.179.60
