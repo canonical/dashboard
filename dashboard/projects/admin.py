@@ -52,21 +52,11 @@ class LevelCommitmentInline(admin.TabularInline):
 
 class ProjectObjectiveInline(admin.TabularInline):
     model = ProjectObjective
-    inlines = [ProjectObjectiveConditionInline]
     max_num = 0
     can_delete = False
-    # fields = ("name", "description", "status",  "unstarted_reason")
-    fieldsets = (
-        (
-            "name",
-            {"fields": (("name",)), "classes": ["objective-name"]},
-        ),
-        ("description", {"fields": (("description",))}),
-        ("status", {"fields": (("status",))}),
-        ("if-not-started", {"fields": (("unstarted_reason",))}),
-    )
-    readonly_fields = ["name", "description", "status"]
-    exclude = ["objective"]
+    fields = ("name", "unstarted_reason")
+    readonly_fields = ["name"]
+    exclude = ["objective", "description", "status"]
 
     def has_add_permission(self, request, obj):
         return False
@@ -107,11 +97,8 @@ class ProjectObjectiveAdmin(admin.ModelAdmin):
 class ProjectAdmin(admin.ModelAdmin):
     inlines = [
         ProjectObjectiveInline,
-        ProjectObjectiveConditionInline,
-        LevelCommitmentInline,
     ]
     list_display = ["name", "owner", "driver", "last_review", "last_review_status"]
-    change_form_template = "admin/project_change_form.html"
     save_on_top = True
 
     fieldsets = (
@@ -127,18 +114,6 @@ class ProjectAdmin(admin.ModelAdmin):
         ),
     )
 
-    def change_view(self, request, object_id, form_url="", extra_context=None):
-        extra_context = extra_context or {}
-        extra_context["work_cycles"] = WorkCycle.objects.all()
-        extra_context["show_save_and_add_another"] = False
-
-        return super().change_view(
-            request,
-            object_id,
-            form_url,
-            extra_context=extra_context,
-        )
-
 
 @admin.register(LevelCommitment)
 class LevelCommitmentAdmin(admin.ModelAdmin):
@@ -151,4 +126,4 @@ class ProjectObjectiveConditionAdmin(admin.ModelAdmin):
 
 
 admin.site.register(ProjectGroup)
-# admin.site.register(QI)
+admin.site.register(QI)
