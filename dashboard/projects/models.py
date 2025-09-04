@@ -9,6 +9,7 @@ from framework.models import (
     Level,
     Objective,
     ProjectStatus,
+    AgreementStatus,
     WorkCycle,
 )
 
@@ -38,6 +39,9 @@ class Project(models.Model):
     last_review = models.DateField(null=True, blank=True)
     last_review_status = models.ForeignKey(
         ProjectStatus, null=True, on_delete=models.SET_NULL
+    )
+    agreement_status = models.ForeignKey(
+        AgreementStatus, null=True, on_delete=models.SET_NULL
     )
 
     def __str__(self):
