@@ -29,7 +29,7 @@ def reverse_url(
 
 
 def test_toggling_conditions(live_server, page):
-    url = reverse_url(live_server, viewname="projects:detail", args=[1])
+    url = reverse_url(live_server, viewname="projects:project_detail", args=[1])
     page.goto(url)
 
     # check ProjectObjectiveCondition

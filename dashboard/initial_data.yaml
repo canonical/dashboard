@@ -10407,7 +10407,7 @@
     project: 1
     objective: 7
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 475
   fields:
