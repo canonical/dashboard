@@ -127,7 +127,7 @@ class Objective(models.Model):
                     )
 
     class Meta:
-        ordering = ["group", "name"]
+        ordering = ["group"]
 
 
 class Condition(models.Model):
