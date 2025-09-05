@@ -58,11 +58,9 @@ class ProjectDetailView(DetailView):
 
         context["current_commitments"] = commitments.filter(work_cycle__is_current=True, committed=True)
 
-
-
         context["unstarted_reasons"] = Reason.objects.all()
 
-        # context["form"] = forms.ProjectDetailForm()
+        context["basics_form"] = forms.ProjectDetailForm(instance=self.object)
 
         return context
 
@@ -84,4 +82,15 @@ def action_toggle_condition(request, condition_id):
         request,
         "projects/partial_objectivestatus.html",
         {"projectobjective": condition.projectobjective},
+    )
+
+@require_http_methods(["POST"])
+def project_basic_form_save(request, project_id):
+    print("in project_basic_form_save")
+    instance = Project.objects.get(id=project_id)
+    form = forms.ProjectDetailForm(request.POST, instance=instance)
+    form.save()
+    return render(
+        request, "projects/partial_project_basics.html",
+        {"basics_form": form, "project": instance}
     )
