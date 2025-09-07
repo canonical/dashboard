@@ -1,0 +1,75 @@
+{% load project_tags %}
+
+<div class="inline-group">
+  <div class="tabular inline-related">
+
+    {% regroup project.projectobjective_set.all by objective.group as projectobjectivegroups %}
+
+    <table class="objectives detail">
+      <tbody>
+
+        <form method="post">
+          {{ projectobjectives_formset.management_form }}
+
+          {% for projectobjectivegroup, projectobjectives in projectobjectivegroups %}
+
+            <tr><th class="projectobjectivegroup" colspan="{{ work_cycle_count|add:'2' }}">
+              {{ projectobjectivegroup }}
+            </th></tr>
+
+            {% for projectobjective in projectobjectives %}
+
+              <tr id="projectobjective-{{ projectobjective.id }}" class="objective">
+                <td colspan="{{ work_cycle_count|add:'2' }}" class="objective name">
+                  {{ projectobjective.objective }}
+                </td>
+              </tr>
+
+              <tr class="">
+                <td colspan="2" class="objective description">
+                  {{ projectobjective.objective.description|default:"" }}
+                </td>
+                <td colspan="{{ work_cycle_count }}" class="commitment-blank"></td>
+              </tr>
+
+              <tr class="">
+                {% include "projects/partial_objectivestatus.html" %}
+                <td></td>
+                <td colspan="{{ work_cycle_count }}" class="commitment-blank"></td>
+              </tr>
+
+              <tr class="">
+                {% include "projects/partial_objectiveunstarted.html" %}
+                {% for work_cycle in work_cycles %}
+                  <td class="workcycle {% if work_cycle.is_current %}current{% endif %}">{{ work_cycle }}</td>
+                {% endfor %}
+              </tr>
+
+              {% regroup projectobjective.projectobjectiveconditions by level as levels %}
+              {% regroup projectobjective.levelcommitments by level as commitments %}
+              {% pack levels commitments as level_collections %}
+
+              {% for condition, commitment in level_collections %}
+
+                <tr id="" class="level">
+                  <td colspan="2" class="">{{ condition.grouper }}</td>
+
+                  {% for commitment in commitment.list %}
+                    {% include "projects/partial_levelcommitment.html" %}
+                  {% endfor %}
+
+                </tr>
+
+                {% for condition in condition.list %}
+                  {% include "projects/partial_condition.html" %}
+                {% endfor %}
+
+              {% endfor %}
+            {% endfor %}
+          {% endfor %}
+        </form>
+      </tbody>
+    </table>
+
+  </div>
+</div>

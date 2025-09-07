@@ -1,21 +1,26 @@
-{% if current_commitments %}
-  <table>
-    <tbody>
-      <tr><th colspan="2">Commitment</th><th>Achieved</th></tr>
-      {% for commitment in current_commitments %}
-        <tr>
-          <td><a href="#projectobjective-{{ commitment.projectobjective.id }}">{{ commitment.objective }}</a></td>
-          <td>{{ commitment.level }}</td>
-          <td>
-            <input
-              type="checkbox" disabled
-              data-testid="commitment_met_checkbox_{{ commitment.id }}"
-              {% if commitment.met %} checked {% endif %}
-              />
-            </td>
+<table
+  id="commitment-table"
+  hx-swap-oob="outerHTML"
+  hx-trigger="
+    change from:input[type='checkbox'] delay:.5s,
+    change from:select.unstarted-reason"
+  hx-get="{% url 'projects:status_projects_commitment' project.id %}">
+  <tbody>
+    <tr><th colspan="2">Commitment</th><th>Achieved</th></tr>
+    {% for commitment in current_commitments %}
+      <tr>
+        <td><a href="#projectobjective-{{ commitment.projectobjective.id }}">{{ commitment.objective }}</a></td>
+        <td>{{ commitment.level }}</td>
+        <td>
+          <input
+            type="checkbox" disabled
+            data-testid="commitment_met_checkbox_{{ commitment.id }}"
+            {% if commitment.met %} checked {% endif %}
+            />
           </td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-{% endif %}
+          <td>{% if not commitment.met %}{{ commitment.projectobjective.unstarted_reason|default:"" }}{% endif %}</td>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

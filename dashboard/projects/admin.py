@@ -98,7 +98,14 @@ class ProjectAdmin(admin.ModelAdmin):
     inlines = [
         ProjectObjectiveInline,
     ]
-    list_display = ["name", "owner", "driver", "last_review", "agreement_status", "last_review_status"]
+    list_display = [
+        "name",
+        "owner",
+        "driver",
+        "last_review",
+        "agreement_status",
+        "last_review_status",
+    ]
     save_on_top = True
 
     fieldsets = (

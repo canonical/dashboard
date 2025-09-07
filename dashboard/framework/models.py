@@ -80,7 +80,6 @@ class WorkCycle(models.Model):
         ordering = ["timestamp"]
 
 
-
 class ObjectiveGroup(models.Model):
     name = models.CharField(max_length=100)
 

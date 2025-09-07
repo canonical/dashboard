@@ -1,0 +1,19 @@
+<td colspan="2">
+  <select
+    name="ifnotstarted"
+    id="projectobjective_ifnotstarted_{{ projectobjective.id }}"
+    class="unstarted-reason"
+    data-testid="projectobjective_ifnotstarted_{{ projectobjective.id }}"
+    hx-put="{% url 'projects:action_select_reason' projectobjective.id %}"
+    hx-swap="none"
+    >
+    <option value></option>
+    {% for reason in unstarted_reasons %}
+      <option value="{{ reason.id }}"
+        {% if reason.id == projectobjective.unstarted_reason.id %}selected{% endif %}
+        >
+        {{ reason }}
+      </option>
+    {% endfor %}
+  </select>
+</td>
