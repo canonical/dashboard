@@ -89,6 +89,11 @@ def status_projects_commitment(request, project_id):
         {"project": project, "current_commitments": current_commitments},
     )
 
+    return render(
+        request,
+        "projects/partial_project_commitments.html",
+        {"project": project, "current_commitments": current_commitments},
+    )
 
 @require_http_methods("GET")
 def status_projectobjective(request, projectobjective_id):
@@ -175,12 +180,6 @@ def action_select_reason(request, projectobjective_id):
     projectobjective.save()
 
     return HttpResponse("")
-
-    return render(
-        request,
-        "projects/partial_objectivestatus.html",
-        {"projectobjective": projectobjective},
-    )
 
 
 # form methods
