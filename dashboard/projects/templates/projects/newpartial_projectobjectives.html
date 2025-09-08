@@ -13,7 +13,7 @@
 
           {% for projectobjectivegroup, projectobjectives in projectobjectivegroups %}
 
-            <tr><th class="projectobjectivegroup" colspan="{{ work_cycle_count|add:'2' }}">
+            <tr><th class="projectobjectivegroup" colspan="{{ workcycle_count|add:'2' }}">
               {{ projectobjectivegroup }}
             </th></tr>
 
@@ -22,20 +22,20 @@
               {% with projectobjective=projectobjective.instance %}
 
                 <tr id="projectobjective-{{ projectobjective.id }}" class="objective">
-                  <td colspan="{{ work_cycle_count|add:'2' }}" class="objective name">
+                  <td colspan="{{ workcycle_count|add:'2' }}" class="objective name">
                     {{ projectobjective.objective }}
                   </td>
                 </tr>
 
                 <tr class="">
                   <td colspan="2" class="">{{ projectobjective.objective.description|default:"" }}</td>
-                  <td colspan="{{ work_cycle_count }}" class="commitment-blank"></td>
+                  <td colspan="{{ workcycle_count }}" class="commitment-blank"></td>
                 </tr>
 
                 <tr class="">
                   {% include "projects/partial_objectivestatus.html" %}
                   <td></td>
-                  <td colspan="{{ work_cycle_count }}" class="commitment-blank"></td>
+                  <td colspan="{{ workcycle_count }}" class="commitment-blank"></td>
                 </tr>
 
                 <tr class="">

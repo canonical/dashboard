@@ -2,6 +2,8 @@ body {font-family: Helvetica, sans-serif; font-size: 12px;}
 
 /* general table styles */
 
+th {text-align: left;}
+
 table.objectives.detail {
     width: 100%;
     border-collapse: collapse;
@@ -14,7 +16,6 @@ th.projectobjectivegroup {
     background: #D9EAD3;
     color: black; font-weight: bold;
     padding-top: 10px; padding-bottom: 10px; margin-top: 10px;
-    text-align: left;
 }
 
 
@@ -35,3 +36,12 @@ td.blocked, td.inactive {color: black; background: #EAD1DC}
 td.started {color: black; background: #B6D7A8}
 td.first-results {color: black; background: #6AA84F}
 td.mature-results, td.done, td.all-ok {color: white; background: #38761D}
+
+/* condition items */
+
+.attributes {float: right; color: #bbb; padding-left: 1em;}
+.attributes span {padding-left: 1em;}
+
+tr.condition.candidate .attributes .condition.candidate {color: black;}
+tr.condition.not-applicable .condition.not-applicable {color: black;}
+tr.condition.not-applicable .condition.name {color: #bbb; text-decoration: line-through;;}

@@ -56,7 +56,7 @@ def project(request, id):
         {
             "project": project,
             "work_cycles": WorkCycle.objects.all(),
-            "work_cycle_count": WorkCycle.objects.count(),
+            "workcycle_count": WorkCycle.objects.count(),
             "objectivegroup_list": ObjectiveGroup.objects.all(),
             "objective_list": Objective.objects.all(),
             "objective_count": Objective.objects.count(),
@@ -73,8 +73,7 @@ def project(request, id):
     )
 
 
-# status methods
-
+# action methods
 
 @require_http_methods(["GET"])
 def status_projects_commitment(request, project_id):
@@ -90,6 +89,11 @@ def status_projects_commitment(request, project_id):
         {"project": project, "current_commitments": current_commitments},
     )
 
+    return render(
+        request,
+        "projects/partial_project_commitments.html",
+        {"project": project, "current_commitments": current_commitments},
+    )
 
 @require_http_methods("GET")
 def status_projectobjective(request, projectobjective_id):
@@ -102,6 +106,8 @@ def status_projectobjective(request, projectobjective_id):
         {"projectobjective": projectobjective},
     )
 
+
+# action methods
 
 @require_http_methods(["PUT"])
 def action_toggle_commitment(request, commitment_id):
@@ -116,16 +122,50 @@ def action_toggle_commitment(request, commitment_id):
 def action_toggle_condition(request, condition_id):
     condition = ProjectObjectiveCondition.objects.get(id=condition_id)
     condition.done = not condition.done
+    if condition.done:
+        condition.not_applicable = False
+        condition.candidate = False
     condition.save()
 
-    return HttpResponse("")
-
-    # invokes partial_objectivestatus.html, which pulls itself into the td containing status
     return render(
         request,
-        "projects/partial_objectivestatus.html",
-        {"projectobjective": condition.projectobjective},
+        "projects/partial_condition.html",
+        {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
     )
+
+
+@require_http_methods(["PUT"])
+def action_condition_toggle_candidate(request, condition_id):
+    condition = ProjectObjectiveCondition.objects.get(id=condition_id)
+    condition.candidate = not condition.candidate
+    if condition.candidate:
+        condition.not_applicable = False
+        condition.done = False
+    condition.save()
+
+    return render(
+        request,
+        "projects/partial_condition.html",
+        {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
+    )
+    return HttpResponse("")
+
+
+@require_http_methods(["PUT"])
+def action_condition_toggle_not_applicable(request, condition_id):
+    condition = ProjectObjectiveCondition.objects.get(id=condition_id)
+    condition.not_applicable = not condition.not_applicable
+    if condition.not_applicable:
+        condition.candidate = False
+        condition.done = False
+    condition.save()
+
+    return render(
+        request,
+        "projects/partial_condition.html",
+        {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
+    )
+    return HttpResponse("")
 
 
 @require_http_methods(["PUT"])
@@ -141,12 +181,8 @@ def action_select_reason(request, projectobjective_id):
 
     return HttpResponse("")
 
-    return render(
-        request,
-        "projects/partial_objectivestatus.html",
-        {"projectobjective": projectobjective},
-    )
 
+# form methods
 
 @require_http_methods(["POST"])
 def project_basic_form_save(request, project_id):

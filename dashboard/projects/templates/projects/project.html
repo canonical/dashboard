@@ -4,10 +4,8 @@
 {% load i18n static %}
 
 {% block extrahead %}
-  <script src="https://unpkg.com/htmx.org@2.0.4"></script>
   <link rel="stylesheet" href="{% static "admin.css" %}">
-
-
+  <script src="{% static 'htmx.min.js' %}"></script>
 {% endblock %}
 
 {% block body_attributes %}hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'{% endblock %}

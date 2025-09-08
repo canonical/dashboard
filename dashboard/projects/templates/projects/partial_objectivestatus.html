@@ -2,7 +2,10 @@
   id="projectobjective_status_{{ projectobjective.id }}"
   class="{{ projectobjective.status|lower|slugify }}"
   data-testid="projectobjective_status_{{ projectobjective.id }}"
-  hx-trigger="change from:select delay:.5s, change from:input[type='checkbox'] delay:.5s"
+  hx-trigger="
+    change from:select delay:.5s, 
+    change from:input[type='checkbox'] delay:.5s, 
+    click from:div.attributes delay:.5s"
   hx-get="{% url 'projects:status_projectobjective' projectobjective.id %}"
   hx-swap-oob="true">
   {{ projectobjective.status|default:"No activity" }}

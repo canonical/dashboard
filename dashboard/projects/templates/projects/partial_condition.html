@@ -1,11 +1,40 @@
-<tr>
+<tr
+  class="
+    condition
+    {% if condition.not_applicable %} not-applicable {% endif %}
+    {% if condition.candidate %} candidate {% endif %}
+  "
+>
   <td>
     <input type="checkbox"
       data-testid="toggle_condition_{{ condition.id }}"
       {% if condition.done %} checked {% endif %}
       hx-put="{% url 'projects:action_toggle_condition' condition.id %}"
+      hx-target="closest tr"
+      hx-swap="outerHTML"
       />
   </td>
-  <td class="">{{ condition.name }}</td>
-  <td class="commitment-blank" colspan="{{ work_cycles|length }}"></td>
+  <td class="condition name">
+    {{ condition.name }}
+    <div class="attributes">
+      <span
+        class="condition not-applicable"
+        hx-put="{% url 'projects:action_condition_toggle_not_applicable' condition.id %}"
+        hx-trigger="click"
+        hx-target="closest tr"
+        hx-swap="outerHTML">
+        na
+      </span>
+      <span
+        class="condition candidate"
+        hx-put="{% url 'projects:action_condition_toggle_candidate' condition.id %}"
+        hx-trigger="click"
+        hx-target="closest tr"
+        hx-swap="outerHTML"
+        >
+        candidate
+      </span>
+  </div>
+  </td>
+  <td class="commitment-blank" colspan="{{ workcycle_count }}"></td>
 </tr>
