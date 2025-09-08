@@ -1,5 +1,3 @@
-table.objectives td {border-bottom: none;}
-table.objectives tr {background: var(--body-bg)}
 table.objectives tr.objective td.name {background-color: #205067; color: white; font-weight: bold;}
 table.objectives tr.level {background-color: #f0f0f0; font-weight: bold;}
 
@@ -16,9 +14,4 @@ table.objectives td.field-committed {color: white; background: #93C47D;}
 table.objectives td.commitment-blank {color: white; background: #D9EAD3;}
 
 table.objectives td.no-activity {outline: 1px solid black;}
-table.objectives td.planned {color: black; background: #FFF2CC}
-table.objectives td.deferred {color: black; background: #FCE5CD}
-table.objectives td.blocked, td.inactive {color: black; background: #EAD1DC}
-table.objectives td.started {color: black; background: #B6D7A8}
-table.objectives td.first-results {color: black; background: #6AA84F}
-table.objectives td.mature-results, td.done, td.all-ok {color: white; background: #38761D}
+

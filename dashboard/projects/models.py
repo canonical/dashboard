@@ -75,7 +75,7 @@ class Project(models.Model):
                     )
 
     def get_absolute_url(self):
-        return reverse("projects:project_detail", kwargs={"pk": self.pk})
+        return reverse("projects:project", kwargs={"pk": self.pk})
 
     def quality_indicator(self):
         x = 0

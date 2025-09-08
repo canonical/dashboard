@@ -29,7 +29,7 @@ def reverse_url(
 
 
 def test_toggling_conditions(live_server, page):
-    url = reverse_url(live_server, viewname="projects:project_detail", args=[1])
+    url = reverse_url(live_server, viewname="projects:project", args=[1])
     page.goto(url)
 
     # check ProjectObjectiveCondition
@@ -62,12 +62,9 @@ def test_toggling_conditions(live_server, page):
     assert ProjectObjectiveCondition.objects.get(id=6).done == True
     assert ProjectObjectiveCondition.objects.get(id=10).done == False
     assert (
-        ProjectObjectiveCondition.objects.get(id=10).projectobjective().status()
-        == None
+        ProjectObjectiveCondition.objects.get(id=10).projectobjective().status() == None
     )
-    expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text(
-        ""
-    )
+    expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text("")
 
     # check the remaining box to get to Started
     page.get_by_test_id("toggle_condition_10").check()

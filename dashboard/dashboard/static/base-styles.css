@@ -1,6 +1,37 @@
 body {font-family: Helvetica, sans-serif; font-size: 12px;}
 
-table.objectives.detail {width: 100%;}
-table.objectives.detail .projectobjectivegroup {background: #D9EAD3; color: black; font-weight: bold; padding-top: 10px; padding-bottom: 10px; margin-top: 10px;}
-table.objectives.detail td.workcycle.current {color: black; font-weight: bold;}
+/* general table styles */
 
+table.objectives.detail {
+    width: 100%;
+    border-collapse: collapse;
+}
+table.objectives tr {background: var(--body-bg)}
+table.objectives td {border-bottom: none;}
+
+
+th.projectobjectivegroup {
+    background: #D9EAD3;
+    color: black; font-weight: bold;
+    padding-top: 10px; padding-bottom: 10px; margin-top: 10px;
+    text-align: left;
+}
+
+
+
+td.workcycle.current {color: black; font-weight: bold;}
+td.objective.description {font-style: italic;}
+
+/* work statuses */
+
+td.na {color: black; background: #CCCCCC}
+td.paused {color: black; background: #FCE5CD}
+td.planned {color: black; background: #FFF2CC}
+td.deferred {color: black; background: #FCE5CD}
+td.blocked, td.inactive {color: black; background: #EAD1DC}
+
+/* result statuses */
+
+td.started {color: black; background: #B6D7A8}
+td.first-results {color: black; background: #6AA84F}
+td.mature-results, td.done, td.all-ok {color: white; background: #38761D}

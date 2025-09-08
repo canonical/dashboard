@@ -1,0 +1,10 @@
+<div id="basic_form" class="submit-row">
+  <form
+    hx-post="{% url 'projects:project_basic_form_save' project.id %}"
+    hx-target="#basic_form"
+    hx-swap="outerHTML"
+    >
+    {{ basics_form }}
+    <input type="submit" value="Save" />
+  </form>
+</div>
