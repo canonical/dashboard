@@ -1773,48 +1773,62 @@
     objective: 1
     condition: 1
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 2
   fields:
     project: 2
     objective: 1
     condition: 1
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 3
   fields:
     project: 3
     objective: 1
     condition: 1
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 4
   fields:
     project: 4
     objective: 1
     condition: 1
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 5
   fields:
     project: 2
     objective: 1
     condition: 2
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 6
   fields:
     project: 1
     objective: 1
     condition: 2
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 7
   fields:
     project: 3
     objective: 1
     condition: 2
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 8
   fields:
@@ -1822,13 +1836,17 @@
     objective: 1
     condition: 2
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 9
   fields:
     project: 2
     objective: 1
     condition: 3
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 10
   fields:
@@ -1836,13 +1854,17 @@
     objective: 1
     condition: 3
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 11
   fields:
     project: 3
     objective: 1
     condition: 3
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 12
   fields:
@@ -1850,6 +1872,8 @@
     objective: 1
     condition: 3
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 13
   fields:
@@ -1857,6 +1881,8 @@
     objective: 1
     condition: 4
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 14
   fields:
@@ -1864,6 +1890,8 @@
     objective: 1
     condition: 4
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 15
   fields:
@@ -1871,6 +1899,8 @@
     objective: 1
     condition: 4
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 16
   fields:
@@ -1878,6 +1908,8 @@
     objective: 1
     condition: 4
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 17
   fields:
@@ -1885,13 +1917,17 @@
     objective: 1
     condition: 5
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 18
   fields:
     project: 1
     objective: 1
     condition: 5
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 19
   fields:
@@ -1899,13 +1935,17 @@
     objective: 1
     condition: 5
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 20
   fields:
     project: 4
     objective: 1
     condition: 5
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 21
   fields:
@@ -1913,6 +1953,8 @@
     objective: 1
     condition: 6
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 22
   fields:
@@ -1920,6 +1962,8 @@
     objective: 1
     condition: 6
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 23
   fields:
@@ -1927,6 +1971,8 @@
     objective: 1
     condition: 6
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 24
   fields:
@@ -1934,13 +1980,17 @@
     objective: 1
     condition: 6
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 25
   fields:
     project: 2
     objective: 2
     condition: 7
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 26
   fields:
@@ -1948,13 +1998,17 @@
     objective: 2
     condition: 7
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 27
   fields:
     project: 3
     objective: 2
     condition: 7
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 28
   fields:
@@ -1962,13 +2016,17 @@
     objective: 2
     condition: 7
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 29
   fields:
     project: 2
     objective: 2
     condition: 8
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 30
   fields:
@@ -1976,6 +2034,8 @@
     objective: 2
     condition: 8
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 31
   fields:
@@ -1983,6 +2043,8 @@
     objective: 2
     condition: 8
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 32
   fields:
@@ -1990,6 +2052,8 @@
     objective: 2
     condition: 8
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 33
   fields:
@@ -1997,6 +2061,8 @@
     objective: 2
     condition: 9
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 34
   fields:
@@ -2004,6 +2070,8 @@
     objective: 2
     condition: 9
     done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 35
   fields:
@@ -2011,6 +2079,8 @@
     objective: 2
     condition: 9
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 36
   fields:
@@ -2018,20 +2088,26 @@
     objective: 2
     condition: 9
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 37
   fields:
     project: 2
     objective: 2
     condition: 10
-    done: true
+    done: false
+    not_applicable: true
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 38
   fields:
     project: 1
     objective: 2
     condition: 10
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 39
   fields:
@@ -2039,6 +2115,8 @@
     objective: 2
     condition: 10
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 40
   fields:
@@ -2046,6 +2124,8 @@
     objective: 2
     condition: 10
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 41
   fields:
@@ -2053,20 +2133,26 @@
     objective: 3
     condition: 11
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 42
   fields:
     project: 1
     objective: 3
     condition: 11
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 43
   fields:
     project: 3
     objective: 3
     condition: 11
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 44
   fields:
@@ -2074,6 +2160,8 @@
     objective: 3
     condition: 11
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 45
   fields:
@@ -2081,6 +2169,8 @@
     objective: 3
     condition: 12
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 46
   fields:
@@ -2088,20 +2178,26 @@
     objective: 3
     condition: 12
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 47
   fields:
     project: 3
     objective: 3
     condition: 12
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 48
   fields:
     project: 4
     objective: 3
     condition: 12
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 49
   fields:
@@ -2109,6 +2205,8 @@
     objective: 3
     condition: 13
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 50
   fields:
@@ -2116,20 +2214,26 @@
     objective: 3
     condition: 13
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 51
   fields:
     project: 3
     objective: 3
     condition: 13
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 52
   fields:
     project: 4
     objective: 3
     condition: 13
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 53
   fields:
@@ -2137,6 +2241,8 @@
     objective: 3
     condition: 14
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 54
   fields:
@@ -2144,6 +2250,8 @@
     objective: 3
     condition: 14
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 55
   fields:
@@ -2151,13 +2259,17 @@
     objective: 3
     condition: 14
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 56
   fields:
     project: 4
     objective: 3
     condition: 14
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 57
   fields:
@@ -2165,6 +2277,8 @@
     objective: 4
     condition: 15
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 58
   fields:
@@ -2172,27 +2286,35 @@
     objective: 4
     condition: 15
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 59
   fields:
     project: 3
     objective: 4
     condition: 15
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 60
   fields:
     project: 4
     objective: 4
     condition: 15
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 61
   fields:
     project: 2
     objective: 4
     condition: 16
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 62
   fields:
@@ -2200,13 +2322,17 @@
     objective: 4
     condition: 16
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 63
   fields:
     project: 3
     objective: 4
     condition: 16
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 64
   fields:
@@ -2214,6 +2340,8 @@
     objective: 4
     condition: 16
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 65
   fields:
@@ -2221,6 +2349,8 @@
     objective: 4
     condition: 17
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 66
   fields:
@@ -2228,6 +2358,8 @@
     objective: 4
     condition: 17
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 67
   fields:
@@ -2235,6 +2367,8 @@
     objective: 4
     condition: 17
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 68
   fields:
@@ -2242,34 +2376,44 @@
     objective: 4
     condition: 17
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 69
   fields:
     project: 2
     objective: 5
     condition: 18
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 70
   fields:
     project: 1
     objective: 5
     condition: 18
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 71
   fields:
     project: 3
     objective: 5
     condition: 18
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 72
   fields:
     project: 4
     objective: 5
     condition: 18
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 73
   fields:
@@ -2277,6 +2421,8 @@
     objective: 5
     condition: 19
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 74
   fields:
@@ -2284,6 +2430,8 @@
     objective: 5
     condition: 19
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 75
   fields:
@@ -2291,20 +2439,26 @@
     objective: 5
     condition: 19
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 76
   fields:
     project: 4
     objective: 5
     condition: 19
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 77
   fields:
     project: 2
     objective: 5
     condition: 20
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 78
   fields:
@@ -2312,13 +2466,17 @@
     objective: 5
     condition: 20
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 79
   fields:
     project: 3
     objective: 5
     condition: 20
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 80
   fields:
@@ -2326,13 +2484,17 @@
     objective: 5
     condition: 20
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 81
   fields:
     project: 2
     objective: 6
     condition: 21
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 82
   fields:
@@ -2340,13 +2502,17 @@
     objective: 6
     condition: 21
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 83
   fields:
     project: 3
     objective: 6
     condition: 21
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 84
   fields:
@@ -2354,6 +2520,8 @@
     objective: 6
     condition: 21
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 85
   fields:
@@ -2361,34 +2529,44 @@
     objective: 6
     condition: 22
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 86
   fields:
     project: 1
     objective: 6
     condition: 22
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 87
   fields:
     project: 3
     objective: 6
     condition: 22
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 88
   fields:
     project: 4
     objective: 6
     condition: 22
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 89
   fields:
     project: 2
     objective: 6
     condition: 23
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 90
   fields:
@@ -2396,6 +2574,8 @@
     objective: 6
     condition: 23
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 91
   fields:
@@ -2403,6 +2583,8 @@
     objective: 6
     condition: 23
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 92
   fields:
@@ -2410,27 +2592,35 @@
     objective: 6
     condition: 23
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 93
   fields:
     project: 2
     objective: 7
     condition: 24
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 94
   fields:
     project: 1
     objective: 7
     condition: 24
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 95
   fields:
     project: 3
     objective: 7
     condition: 24
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 96
   fields:
@@ -2438,6 +2628,8 @@
     objective: 7
     condition: 24
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 97
   fields:
@@ -2445,6 +2637,8 @@
     objective: 7
     condition: 25
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 98
   fields:
@@ -2452,6 +2646,8 @@
     objective: 7
     condition: 25
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 99
   fields:
@@ -2459,6 +2655,8 @@
     objective: 7
     condition: 25
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 100
   fields:
@@ -2466,6 +2664,8 @@
     objective: 7
     condition: 25
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 101
   fields:
@@ -2473,13 +2673,17 @@
     objective: 7
     condition: 26
     done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 102
   fields:
     project: 1
     objective: 7
     condition: 26
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 103
   fields:
@@ -2487,6 +2691,8 @@
     objective: 7
     condition: 26
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 104
   fields:
@@ -2494,6 +2700,8 @@
     objective: 7
     condition: 26
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 105
   fields:
@@ -2501,6 +2709,8 @@
     objective: 8
     condition: 27
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 106
   fields:
@@ -2508,6 +2718,8 @@
     objective: 8
     condition: 27
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 107
   fields:
@@ -2515,6 +2727,8 @@
     objective: 8
     condition: 27
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 108
   fields:
@@ -2522,6 +2736,8 @@
     objective: 8
     condition: 27
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 109
   fields:
@@ -2529,6 +2745,8 @@
     objective: 8
     condition: 28
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 110
   fields:
@@ -2536,13 +2754,17 @@
     objective: 8
     condition: 28
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 111
   fields:
     project: 3
     objective: 8
     condition: 28
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 112
   fields:
@@ -2550,6 +2772,8 @@
     objective: 8
     condition: 28
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 113
   fields:
@@ -2557,13 +2781,17 @@
     objective: 8
     condition: 29
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 114
   fields:
     project: 1
     objective: 8
     condition: 29
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 115
   fields:
@@ -2571,13 +2799,17 @@
     objective: 8
     condition: 29
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 116
   fields:
     project: 4
     objective: 8
     condition: 29
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 117
   fields:
@@ -2585,13 +2817,17 @@
     objective: 8
     condition: 30
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 118
   fields:
     project: 1
     objective: 8
     condition: 30
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 119
   fields:
@@ -2599,27 +2835,35 @@
     objective: 8
     condition: 30
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 120
   fields:
     project: 4
     objective: 8
     condition: 30
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 121
   fields:
     project: 2
     objective: 9
     condition: 31
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 122
   fields:
     project: 1
     objective: 9
     condition: 31
-    done: true
+    done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 123
   fields:
@@ -2627,13 +2871,17 @@
     objective: 9
     condition: 31
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 124
   fields:
     project: 4
     objective: 9
     condition: 31
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 125
   fields:
@@ -2641,20 +2889,26 @@
     objective: 9
     condition: 32
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 126
   fields:
     project: 1
     objective: 9
     condition: 32
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 127
   fields:
     project: 3
     objective: 9
     condition: 32
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 128
   fields:
@@ -2662,27 +2916,35 @@
     objective: 9
     condition: 32
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 129
   fields:
     project: 2
     objective: 9
     condition: 33
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 130
   fields:
     project: 1
     objective: 9
     condition: 33
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 131
   fields:
     project: 3
     objective: 9
     condition: 33
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 132
   fields:
@@ -2690,20 +2952,26 @@
     objective: 9
     condition: 33
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 133
   fields:
     project: 2
     objective: 10
     condition: 34
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 134
   fields:
     project: 1
     objective: 10
     condition: 34
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 135
   fields:
@@ -2711,6 +2979,8 @@
     objective: 10
     condition: 34
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 136
   fields:
@@ -2718,6 +2988,8 @@
     objective: 10
     condition: 34
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 137
   fields:
@@ -2725,6 +2997,8 @@
     objective: 10
     condition: 35
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 138
   fields:
@@ -2732,13 +3006,17 @@
     objective: 10
     condition: 35
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 139
   fields:
     project: 3
     objective: 10
     condition: 35
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 140
   fields:
@@ -2746,13 +3024,17 @@
     objective: 10
     condition: 35
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 141
   fields:
     project: 2
     objective: 10
     condition: 36
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 142
   fields:
@@ -2760,13 +3042,17 @@
     objective: 10
     condition: 36
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 143
   fields:
     project: 3
     objective: 10
     condition: 36
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 144
   fields:
@@ -2774,48 +3060,62 @@
     objective: 10
     condition: 36
     done: false
+    not_applicable: true
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 145
   fields:
     project: 2
     objective: 11
     condition: 37
-    done: true
+    done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 146
   fields:
     project: 1
     objective: 11
     condition: 37
-    done: true
+    done: false
+    not_applicable: true
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 147
   fields:
     project: 3
     objective: 11
     condition: 37
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 148
   fields:
     project: 4
     objective: 11
     condition: 37
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 149
   fields:
     project: 2
     objective: 11
     condition: 38
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 150
   fields:
     project: 1
     objective: 11
     condition: 38
-    done: true
+    done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 151
   fields:
@@ -2823,13 +3123,17 @@
     objective: 11
     condition: 38
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 152
   fields:
     project: 4
     objective: 11
     condition: 38
-    done: true
+    done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 153
   fields:
@@ -2837,6 +3141,8 @@
     objective: 11
     condition: 39
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 154
   fields:
@@ -2844,13 +3150,17 @@
     objective: 11
     condition: 39
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 155
   fields:
     project: 3
     objective: 11
     condition: 39
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 156
   fields:
@@ -2858,27 +3168,35 @@
     objective: 11
     condition: 39
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 157
   fields:
     project: 2
     objective: 11
     condition: 40
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 158
   fields:
     project: 1
     objective: 11
     condition: 40
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 159
   fields:
     project: 3
     objective: 11
     condition: 40
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 160
   fields:
@@ -2886,6 +3204,8 @@
     objective: 11
     condition: 40
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 161
   fields:
@@ -2893,6 +3213,8 @@
     objective: 7
     condition: 24
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 162
   fields:
@@ -2900,6 +3222,8 @@
     objective: 7
     condition: 26
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 163
   fields:
@@ -2907,6 +3231,8 @@
     objective: 7
     condition: 25
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 164
   fields:
@@ -2914,6 +3240,8 @@
     objective: 1
     condition: 1
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 165
   fields:
@@ -2921,13 +3249,17 @@
     objective: 1
     condition: 2
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 166
   fields:
     project: 5
     objective: 1
     condition: 3
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 167
   fields:
@@ -2935,13 +3267,17 @@
     objective: 1
     condition: 4
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 168
   fields:
     project: 5
     objective: 1
     condition: 5
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 169
   fields:
@@ -2949,6 +3285,8 @@
     objective: 1
     condition: 6
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 170
   fields:
@@ -2956,6 +3294,8 @@
     objective: 2
     condition: 7
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 171
   fields:
@@ -2963,27 +3303,35 @@
     objective: 2
     condition: 8
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 172
   fields:
     project: 5
     objective: 2
     condition: 9
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 173
   fields:
     project: 5
     objective: 2
     condition: 10
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 174
   fields:
     project: 5
     objective: 11
     condition: 37
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 175
   fields:
@@ -2991,6 +3339,8 @@
     objective: 11
     condition: 38
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 176
   fields:
@@ -2998,6 +3348,8 @@
     objective: 11
     condition: 39
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 177
   fields:
@@ -3005,13 +3357,17 @@
     objective: 11
     condition: 40
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 178
   fields:
     project: 5
     objective: 5
     condition: 18
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 179
   fields:
@@ -3019,20 +3375,26 @@
     objective: 5
     condition: 19
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 180
   fields:
     project: 5
     objective: 5
     condition: 20
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 181
   fields:
     project: 5
     objective: 3
     condition: 11
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 182
   fields:
@@ -3040,6 +3402,8 @@
     objective: 3
     condition: 12
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 183
   fields:
@@ -3047,6 +3411,8 @@
     objective: 3
     condition: 13
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 184
   fields:
@@ -3054,13 +3420,17 @@
     objective: 3
     condition: 14
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 185
   fields:
     project: 5
     objective: 4
     condition: 15
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 186
   fields:
@@ -3068,6 +3438,8 @@
     objective: 4
     condition: 16
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 187
   fields:
@@ -3075,6 +3447,8 @@
     objective: 4
     condition: 17
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 188
   fields:
@@ -3082,6 +3456,8 @@
     objective: 10
     condition: 34
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 189
   fields:
@@ -3089,13 +3465,17 @@
     objective: 10
     condition: 35
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 190
   fields:
     project: 5
     objective: 10
     condition: 36
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 191
   fields:
@@ -3103,20 +3483,26 @@
     objective: 6
     condition: 21
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 192
   fields:
     project: 5
     objective: 6
     condition: 22
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 193
   fields:
     project: 5
     objective: 6
     condition: 23
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 194
   fields:
@@ -3124,6 +3510,8 @@
     objective: 8
     condition: 28
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 195
   fields:
@@ -3131,6 +3519,8 @@
     objective: 8
     condition: 29
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 196
   fields:
@@ -3138,27 +3528,35 @@
     objective: 8
     condition: 30
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 197
   fields:
     project: 5
     objective: 8
     condition: 27
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 198
   fields:
     project: 5
     objective: 9
     condition: 31
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 199
   fields:
     project: 5
     objective: 9
     condition: 32
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 200
   fields:
@@ -3166,6 +3564,8 @@
     objective: 9
     condition: 33
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 201
   fields:
@@ -3173,6 +3573,8 @@
     objective: 7
     condition: 24
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 202
   fields:
@@ -3180,6 +3582,8 @@
     objective: 7
     condition: 26
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 203
   fields:
@@ -3187,13 +3591,17 @@
     objective: 7
     condition: 25
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 204
   fields:
     project: 6
     objective: 1
     condition: 1
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 205
   fields:
@@ -3201,20 +3609,26 @@
     objective: 1
     condition: 2
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 206
   fields:
     project: 6
     objective: 1
     condition: 3
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 207
   fields:
     project: 6
     objective: 1
     condition: 4
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 208
   fields:
@@ -3222,6 +3636,8 @@
     objective: 1
     condition: 5
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 209
   fields:
@@ -3229,6 +3645,8 @@
     objective: 1
     condition: 6
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 210
   fields:
@@ -3236,20 +3654,26 @@
     objective: 2
     condition: 7
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 211
   fields:
     project: 6
     objective: 2
     condition: 8
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 212
   fields:
     project: 6
     objective: 2
     condition: 9
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 213
   fields:
@@ -3257,13 +3681,17 @@
     objective: 2
     condition: 10
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 214
   fields:
     project: 6
     objective: 11
     condition: 37
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 215
   fields:
@@ -3271,13 +3699,17 @@
     objective: 11
     condition: 38
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 216
   fields:
     project: 6
     objective: 11
     condition: 39
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 217
   fields:
@@ -3285,13 +3717,17 @@
     objective: 11
     condition: 40
     done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 218
   fields:
     project: 6
     objective: 5
     condition: 18
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 219
   fields:
@@ -3299,13 +3735,17 @@
     objective: 5
     condition: 19
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 220
   fields:
     project: 6
     objective: 5
     condition: 20
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 221
   fields:
@@ -3313,6 +3753,8 @@
     objective: 3
     condition: 11
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 222
   fields:
@@ -3320,6 +3762,8 @@
     objective: 3
     condition: 12
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 223
   fields:
@@ -3327,13 +3771,17 @@
     objective: 3
     condition: 13
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 224
   fields:
     project: 6
     objective: 3
     condition: 14
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 225
   fields:
@@ -3341,34 +3789,44 @@
     objective: 4
     condition: 15
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 226
   fields:
     project: 6
     objective: 4
     condition: 16
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 227
   fields:
     project: 6
     objective: 4
     condition: 17
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 228
   fields:
     project: 6
     objective: 10
     condition: 34
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 229
   fields:
     project: 6
     objective: 10
     condition: 35
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 230
   fields:
@@ -3376,13 +3834,17 @@
     objective: 10
     condition: 36
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 231
   fields:
     project: 6
     objective: 6
     condition: 21
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 232
   fields:
@@ -3390,6 +3852,8 @@
     objective: 6
     condition: 22
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 233
   fields:
@@ -3397,6 +3861,8 @@
     objective: 6
     condition: 23
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 234
   fields:
@@ -3404,20 +3870,26 @@
     objective: 8
     condition: 28
     done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 235
   fields:
     project: 6
     objective: 8
     condition: 29
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 236
   fields:
     project: 6
     objective: 8
     condition: 30
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 237
   fields:
@@ -3425,6 +3897,8 @@
     objective: 8
     condition: 27
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 238
   fields:
@@ -3432,6 +3906,8 @@
     objective: 9
     condition: 31
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 239
   fields:
@@ -3439,13 +3915,17 @@
     objective: 9
     condition: 32
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 240
   fields:
     project: 6
     objective: 9
     condition: 33
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 241
   fields:
@@ -3453,6 +3933,8 @@
     objective: 7
     condition: 24
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 242
   fields:
@@ -3460,6 +3942,8 @@
     objective: 7
     condition: 26
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 243
   fields:
@@ -3467,6 +3951,8 @@
     objective: 7
     condition: 25
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 244
   fields:
@@ -3474,6 +3960,8 @@
     objective: 1
     condition: 1
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 245
   fields:
@@ -3481,6 +3969,8 @@
     objective: 1
     condition: 2
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 246
   fields:
@@ -3488,69 +3978,89 @@
     objective: 1
     condition: 3
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 247
   fields:
     project: 7
     objective: 1
     condition: 4
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 248
   fields:
     project: 7
     objective: 1
     condition: 5
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 249
   fields:
     project: 7
     objective: 1
     condition: 6
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 250
   fields:
     project: 7
     objective: 2
     condition: 7
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 251
   fields:
     project: 7
     objective: 2
     condition: 8
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 252
   fields:
     project: 7
     objective: 2
     condition: 9
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 253
   fields:
     project: 7
     objective: 2
     condition: 10
-    done: true
+    done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 254
   fields:
     project: 7
     objective: 11
     condition: 37
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 255
   fields:
     project: 7
     objective: 11
     condition: 38
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 256
   fields:
@@ -3558,6 +4068,8 @@
     objective: 11
     condition: 39
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 257
   fields:
@@ -3565,13 +4077,17 @@
     objective: 11
     condition: 40
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 258
   fields:
     project: 7
     objective: 5
     condition: 18
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 259
   fields:
@@ -3579,13 +4095,17 @@
     objective: 5
     condition: 19
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 260
   fields:
     project: 7
     objective: 5
     condition: 20
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 261
   fields:
@@ -3593,6 +4113,8 @@
     objective: 3
     condition: 11
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 262
   fields:
@@ -3600,13 +4122,17 @@
     objective: 3
     condition: 12
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 263
   fields:
     project: 7
     objective: 3
     condition: 13
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 264
   fields:
@@ -3614,6 +4140,8 @@
     objective: 3
     condition: 14
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 265
   fields:
@@ -3621,6 +4149,8 @@
     objective: 4
     condition: 15
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 266
   fields:
@@ -3628,27 +4158,35 @@
     objective: 4
     condition: 16
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 267
   fields:
     project: 7
     objective: 4
     condition: 17
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 268
   fields:
     project: 7
     objective: 10
     condition: 34
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 269
   fields:
     project: 7
     objective: 10
     condition: 35
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 270
   fields:
@@ -3656,13 +4194,17 @@
     objective: 10
     condition: 36
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 271
   fields:
     project: 7
     objective: 6
     condition: 21
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 272
   fields:
@@ -3670,6 +4212,8 @@
     objective: 6
     condition: 22
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 273
   fields:
@@ -3677,6 +4221,8 @@
     objective: 6
     condition: 23
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 274
   fields:
@@ -3684,34 +4230,44 @@
     objective: 8
     condition: 28
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 275
   fields:
     project: 7
     objective: 8
     condition: 29
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 276
   fields:
     project: 7
     objective: 8
     condition: 30
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 277
   fields:
     project: 7
     objective: 8
     condition: 27
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 278
   fields:
     project: 7
     objective: 9
     condition: 31
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 279
   fields:
@@ -3719,20 +4275,26 @@
     objective: 9
     condition: 32
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 280
   fields:
     project: 7
     objective: 9
     condition: 33
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 281
   fields:
     project: 2
     objective: 7
     condition: 41
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 282
   fields:
@@ -3740,6 +4302,8 @@
     objective: 7
     condition: 41
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 283
   fields:
@@ -3747,13 +4311,17 @@
     objective: 7
     condition: 41
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 284
   fields:
     project: 3
     objective: 7
     condition: 41
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 285
   fields:
@@ -3761,13 +4329,17 @@
     objective: 7
     condition: 41
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 286
   fields:
     project: 5
     objective: 7
     condition: 41
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 287
   fields:
@@ -3775,6 +4347,8 @@
     objective: 7
     condition: 41
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 329
   fields:
@@ -3782,20 +4356,26 @@
     objective: 7
     condition: 24
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 330
   fields:
     project: 9
     objective: 7
     condition: 41
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 331
   fields:
     project: 9
     objective: 7
     condition: 26
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 332
   fields:
@@ -3803,6 +4383,8 @@
     objective: 7
     condition: 25
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 333
   fields:
@@ -3810,6 +4392,8 @@
     objective: 1
     condition: 1
     done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 334
   fields:
@@ -3817,20 +4401,26 @@
     objective: 1
     condition: 2
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 335
   fields:
     project: 9
     objective: 1
     condition: 3
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 336
   fields:
     project: 9
     objective: 1
     condition: 4
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 337
   fields:
@@ -3838,6 +4428,8 @@
     objective: 1
     condition: 5
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 338
   fields:
@@ -3845,6 +4437,8 @@
     objective: 1
     condition: 6
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 339
   fields:
@@ -3852,13 +4446,17 @@
     objective: 2
     condition: 7
     done: false
+    not_applicable: true
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 340
   fields:
     project: 9
     objective: 2
     condition: 8
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 341
   fields:
@@ -3866,6 +4464,8 @@
     objective: 2
     condition: 9
     done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 342
   fields:
@@ -3873,6 +4473,8 @@
     objective: 2
     condition: 10
     done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 343
   fields:
@@ -3880,6 +4482,8 @@
     objective: 11
     condition: 37
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 344
   fields:
@@ -3887,6 +4491,8 @@
     objective: 11
     condition: 38
     done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 345
   fields:
@@ -3894,6 +4500,8 @@
     objective: 11
     condition: 39
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 346
   fields:
@@ -3901,13 +4509,17 @@
     objective: 11
     condition: 40
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 347
   fields:
     project: 9
     objective: 5
     condition: 18
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 348
   fields:
@@ -3915,13 +4527,17 @@
     objective: 5
     condition: 19
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 349
   fields:
     project: 9
     objective: 5
     condition: 20
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 350
   fields:
@@ -3929,6 +4545,8 @@
     objective: 3
     condition: 11
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 351
   fields:
@@ -3936,6 +4554,8 @@
     objective: 3
     condition: 12
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 352
   fields:
@@ -3943,20 +4563,26 @@
     objective: 3
     condition: 13
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 353
   fields:
     project: 9
     objective: 3
     condition: 14
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 354
   fields:
     project: 9
     objective: 4
     condition: 15
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 355
   fields:
@@ -3964,6 +4590,8 @@
     objective: 4
     condition: 16
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 356
   fields:
@@ -3971,13 +4599,17 @@
     objective: 4
     condition: 17
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 357
   fields:
     project: 9
     objective: 10
     condition: 34
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 358
   fields:
@@ -3985,13 +4617,17 @@
     objective: 10
     condition: 35
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 359
   fields:
     project: 9
     objective: 10
     condition: 36
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 360
   fields:
@@ -3999,6 +4635,8 @@
     objective: 6
     condition: 21
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 361
   fields:
@@ -4006,20 +4644,26 @@
     objective: 6
     condition: 22
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 362
   fields:
     project: 9
     objective: 6
     condition: 23
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 363
   fields:
     project: 9
     objective: 8
     condition: 28
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 364
   fields:
@@ -4027,6 +4671,8 @@
     objective: 8
     condition: 29
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 365
   fields:
@@ -4034,6 +4680,8 @@
     objective: 8
     condition: 30
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 366
   fields:
@@ -4041,6 +4689,8 @@
     objective: 8
     condition: 27
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 367
   fields:
@@ -4048,6 +4698,8 @@
     objective: 9
     condition: 31
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 368
   fields:
@@ -4055,6 +4707,8 @@
     objective: 9
     condition: 32
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 369
   fields:
@@ -4062,13 +4716,17 @@
     objective: 9
     condition: 33
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 370
   fields:
     project: 10
     objective: 7
     condition: 24
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 371
   fields:
@@ -4076,6 +4734,8 @@
     objective: 7
     condition: 41
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 372
   fields:
@@ -4083,6 +4743,8 @@
     objective: 7
     condition: 26
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 373
   fields:
@@ -4090,6 +4752,8 @@
     objective: 7
     condition: 25
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 374
   fields:
@@ -4097,6 +4761,8 @@
     objective: 1
     condition: 1
     done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 375
   fields:
@@ -4104,6 +4770,8 @@
     objective: 1
     condition: 2
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 376
   fields:
@@ -4111,13 +4779,17 @@
     objective: 1
     condition: 3
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 377
   fields:
     project: 10
     objective: 1
     condition: 4
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 378
   fields:
@@ -4125,13 +4797,17 @@
     objective: 1
     condition: 5
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 379
   fields:
     project: 10
     objective: 1
     condition: 6
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 380
   fields:
@@ -4139,41 +4815,53 @@
     objective: 2
     condition: 7
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 381
   fields:
     project: 10
     objective: 2
     condition: 8
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 382
   fields:
     project: 10
     objective: 2
     condition: 9
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 383
   fields:
     project: 10
     objective: 2
     condition: 10
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 384
   fields:
     project: 10
     objective: 11
     condition: 37
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 385
   fields:
     project: 10
     objective: 11
     condition: 38
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 386
   fields:
@@ -4181,20 +4869,26 @@
     objective: 11
     condition: 39
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 387
   fields:
     project: 10
     objective: 11
     condition: 40
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 388
   fields:
     project: 10
     objective: 5
     condition: 18
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 389
   fields:
@@ -4202,6 +4896,8 @@
     objective: 5
     condition: 19
     done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 390
   fields:
@@ -4209,6 +4905,8 @@
     objective: 5
     condition: 20
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 391
   fields:
@@ -4216,6 +4914,8 @@
     objective: 3
     condition: 11
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 392
   fields:
@@ -4223,6 +4923,8 @@
     objective: 3
     condition: 12
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 393
   fields:
@@ -4230,6 +4932,8 @@
     objective: 3
     condition: 13
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 394
   fields:
@@ -4237,27 +4941,35 @@
     objective: 3
     condition: 14
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 395
   fields:
     project: 10
     objective: 4
     condition: 15
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 396
   fields:
     project: 10
     objective: 4
     condition: 16
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 397
   fields:
     project: 10
     objective: 4
     condition: 17
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 398
   fields:
@@ -4265,6 +4977,8 @@
     objective: 10
     condition: 34
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 399
   fields:
@@ -4272,20 +4986,26 @@
     objective: 10
     condition: 35
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 400
   fields:
     project: 10
     objective: 10
     condition: 36
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 401
   fields:
     project: 10
     objective: 6
     condition: 21
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 402
   fields:
@@ -4293,6 +5013,8 @@
     objective: 6
     condition: 22
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 403
   fields:
@@ -4300,6 +5022,8 @@
     objective: 6
     condition: 23
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 404
   fields:
@@ -4307,6 +5031,8 @@
     objective: 8
     condition: 28
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 405
   fields:
@@ -4314,13 +5040,17 @@
     objective: 8
     condition: 29
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 406
   fields:
     project: 10
     objective: 8
     condition: 30
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 407
   fields:
@@ -4328,13 +5058,17 @@
     objective: 8
     condition: 27
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 408
   fields:
     project: 10
     objective: 9
     condition: 31
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 409
   fields:
@@ -4342,6 +5076,8 @@
     objective: 9
     condition: 32
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 410
   fields:
@@ -4349,6 +5085,8 @@
     objective: 9
     condition: 33
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 411
   fields:
@@ -4356,6 +5094,8 @@
     objective: 7
     condition: 24
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 412
   fields:
@@ -4363,20 +5103,26 @@
     objective: 7
     condition: 41
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 413
   fields:
     project: 11
     objective: 7
     condition: 26
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 414
   fields:
     project: 11
     objective: 7
     condition: 25
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 415
   fields:
@@ -4384,6 +5130,8 @@
     objective: 1
     condition: 1
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 416
   fields:
@@ -4391,6 +5139,8 @@
     objective: 1
     condition: 2
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 417
   fields:
@@ -4398,6 +5148,8 @@
     objective: 1
     condition: 3
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 418
   fields:
@@ -4405,6 +5157,8 @@
     objective: 1
     condition: 4
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 419
   fields:
@@ -4412,13 +5166,17 @@
     objective: 1
     condition: 5
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 420
   fields:
     project: 11
     objective: 1
     condition: 6
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 421
   fields:
@@ -4426,13 +5184,17 @@
     objective: 2
     condition: 7
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 422
   fields:
     project: 11
     objective: 2
     condition: 8
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 423
   fields:
@@ -4440,20 +5202,26 @@
     objective: 2
     condition: 9
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 424
   fields:
     project: 11
     objective: 2
     condition: 10
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 425
   fields:
     project: 11
     objective: 11
     condition: 37
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 426
   fields:
@@ -4461,20 +5229,26 @@
     objective: 11
     condition: 38
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 427
   fields:
     project: 11
     objective: 11
     condition: 39
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 428
   fields:
     project: 11
     objective: 11
     condition: 40
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 429
   fields:
@@ -4482,6 +5256,8 @@
     objective: 5
     condition: 18
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 430
   fields:
@@ -4489,6 +5265,8 @@
     objective: 5
     condition: 19
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 431
   fields:
@@ -4496,6 +5274,8 @@
     objective: 5
     condition: 20
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 432
   fields:
@@ -4503,6 +5283,8 @@
     objective: 3
     condition: 11
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 433
   fields:
@@ -4510,27 +5292,35 @@
     objective: 3
     condition: 12
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 434
   fields:
     project: 11
     objective: 3
     condition: 13
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 435
   fields:
     project: 11
     objective: 3
     condition: 14
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 436
   fields:
     project: 11
     objective: 4
     condition: 15
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 437
   fields:
@@ -4538,6 +5328,8 @@
     objective: 4
     condition: 16
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 438
   fields:
@@ -4545,6 +5337,8 @@
     objective: 4
     condition: 17
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 439
   fields:
@@ -4552,6 +5346,8 @@
     objective: 10
     condition: 34
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 440
   fields:
@@ -4559,6 +5355,8 @@
     objective: 10
     condition: 35
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 441
   fields:
@@ -4566,13 +5364,17 @@
     objective: 10
     condition: 36
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 442
   fields:
     project: 11
     objective: 6
     condition: 21
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 443
   fields:
@@ -4580,6 +5382,8 @@
     objective: 6
     condition: 22
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 444
   fields:
@@ -4587,6 +5391,8 @@
     objective: 6
     condition: 23
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 445
   fields:
@@ -4594,13 +5400,17 @@
     objective: 8
     condition: 28
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 446
   fields:
     project: 11
     objective: 8
     condition: 29
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 447
   fields:
@@ -4608,6 +5418,8 @@
     objective: 8
     condition: 30
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 448
   fields:
@@ -4615,6 +5427,8 @@
     objective: 8
     condition: 27
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 449
   fields:
@@ -4622,6 +5436,8 @@
     objective: 9
     condition: 31
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 450
   fields:
@@ -4629,6 +5445,8 @@
     objective: 9
     condition: 32
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 451
   fields:
@@ -4636,6 +5454,8 @@
     objective: 9
     condition: 33
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 452
   fields:
@@ -4643,20 +5463,26 @@
     objective: 7
     condition: 24
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 453
   fields:
     project: 12
     objective: 7
     condition: 41
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 454
   fields:
     project: 12
     objective: 7
     condition: 26
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 455
   fields:
@@ -4664,6 +5490,8 @@
     objective: 7
     condition: 25
     done: false
+    not_applicable: true
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 456
   fields:
@@ -4671,27 +5499,35 @@
     objective: 1
     condition: 1
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 457
   fields:
     project: 12
     objective: 1
     condition: 2
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 458
   fields:
     project: 12
     objective: 1
     condition: 3
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 459
   fields:
     project: 12
     objective: 1
     condition: 4
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 460
   fields:
@@ -4699,27 +5535,35 @@
     objective: 1
     condition: 5
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 461
   fields:
     project: 12
     objective: 1
     condition: 6
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 462
   fields:
     project: 12
     objective: 2
     condition: 7
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 463
   fields:
     project: 12
     objective: 2
     condition: 8
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 464
   fields:
@@ -4727,6 +5571,8 @@
     objective: 2
     condition: 9
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 465
   fields:
@@ -4734,13 +5580,17 @@
     objective: 2
     condition: 10
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 466
   fields:
     project: 12
     objective: 11
     condition: 37
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 467
   fields:
@@ -4748,6 +5598,8 @@
     objective: 11
     condition: 38
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 468
   fields:
@@ -4755,13 +5607,17 @@
     objective: 11
     condition: 39
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 469
   fields:
     project: 12
     objective: 11
     condition: 40
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 470
   fields:
@@ -4769,6 +5625,8 @@
     objective: 5
     condition: 18
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 471
   fields:
@@ -4776,20 +5634,26 @@
     objective: 5
     condition: 19
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 472
   fields:
     project: 12
     objective: 5
     condition: 20
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 473
   fields:
     project: 12
     objective: 3
     condition: 11
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 474
   fields:
@@ -4797,13 +5661,17 @@
     objective: 3
     condition: 12
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 475
   fields:
     project: 12
     objective: 3
     condition: 13
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 476
   fields:
@@ -4811,6 +5679,8 @@
     objective: 3
     condition: 14
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 477
   fields:
@@ -4818,13 +5688,17 @@
     objective: 4
     condition: 15
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 478
   fields:
     project: 12
     objective: 4
     condition: 16
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 479
   fields:
@@ -4832,6 +5706,8 @@
     objective: 4
     condition: 17
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 480
   fields:
@@ -4839,6 +5715,8 @@
     objective: 10
     condition: 34
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 481
   fields:
@@ -4846,13 +5724,17 @@
     objective: 10
     condition: 35
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 482
   fields:
     project: 12
     objective: 10
     condition: 36
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 483
   fields:
@@ -4860,13 +5742,17 @@
     objective: 6
     condition: 21
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 484
   fields:
     project: 12
     objective: 6
     condition: 22
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 485
   fields:
@@ -4874,6 +5760,8 @@
     objective: 6
     condition: 23
     done: false
+    not_applicable: true
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 486
   fields:
@@ -4881,6 +5769,8 @@
     objective: 8
     condition: 28
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 487
   fields:
@@ -4888,6 +5778,8 @@
     objective: 8
     condition: 29
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 488
   fields:
@@ -4895,13 +5787,17 @@
     objective: 8
     condition: 30
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 489
   fields:
     project: 12
     objective: 8
     condition: 27
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 490
   fields:
@@ -4909,6 +5805,8 @@
     objective: 9
     condition: 31
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 491
   fields:
@@ -4916,6 +5814,8 @@
     objective: 9
     condition: 32
     done: false
+    not_applicable: true
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 492
   fields:
@@ -4923,6 +5823,8 @@
     objective: 9
     condition: 33
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 493
   fields:
@@ -4930,6 +5832,8 @@
     objective: 7
     condition: 24
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 494
   fields:
@@ -4937,13 +5841,17 @@
     objective: 7
     condition: 41
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 495
   fields:
     project: 13
     objective: 7
     condition: 26
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 496
   fields:
@@ -4951,13 +5859,17 @@
     objective: 7
     condition: 25
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 497
   fields:
     project: 13
     objective: 1
     condition: 1
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 498
   fields:
@@ -4965,27 +5877,35 @@
     objective: 1
     condition: 2
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 499
   fields:
     project: 13
     objective: 1
     condition: 3
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 500
   fields:
     project: 13
     objective: 1
     condition: 4
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 501
   fields:
     project: 13
     objective: 1
     condition: 5
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 502
   fields:
@@ -4993,6 +5913,8 @@
     objective: 1
     condition: 6
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 503
   fields:
@@ -5000,13 +5922,17 @@
     objective: 2
     condition: 7
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 504
   fields:
     project: 13
     objective: 2
     condition: 8
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 505
   fields:
@@ -5014,6 +5940,8 @@
     objective: 2
     condition: 9
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 506
   fields:
@@ -5021,6 +5949,8 @@
     objective: 2
     condition: 10
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 507
   fields:
@@ -5028,13 +5958,17 @@
     objective: 11
     condition: 37
     done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 508
   fields:
     project: 13
     objective: 11
     condition: 38
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 509
   fields:
@@ -5042,13 +5976,17 @@
     objective: 11
     condition: 39
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 510
   fields:
     project: 13
     objective: 11
     condition: 40
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 511
   fields:
@@ -5056,6 +5994,8 @@
     objective: 5
     condition: 18
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 512
   fields:
@@ -5063,6 +6003,8 @@
     objective: 5
     condition: 19
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 513
   fields:
@@ -5070,6 +6012,8 @@
     objective: 5
     condition: 20
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 514
   fields:
@@ -5077,6 +6021,8 @@
     objective: 3
     condition: 11
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 515
   fields:
@@ -5084,6 +6030,8 @@
     objective: 3
     condition: 12
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 516
   fields:
@@ -5091,13 +6039,17 @@
     objective: 3
     condition: 13
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 517
   fields:
     project: 13
     objective: 3
     condition: 14
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 518
   fields:
@@ -5105,13 +6057,17 @@
     objective: 4
     condition: 15
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 519
   fields:
     project: 13
     objective: 4
     condition: 16
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 520
   fields:
@@ -5119,20 +6075,26 @@
     objective: 4
     condition: 17
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 521
   fields:
     project: 13
     objective: 10
     condition: 34
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 522
   fields:
     project: 13
     objective: 10
     condition: 35
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 523
   fields:
@@ -5140,6 +6102,8 @@
     objective: 10
     condition: 36
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 524
   fields:
@@ -5147,13 +6111,17 @@
     objective: 6
     condition: 21
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 525
   fields:
     project: 13
     objective: 6
     condition: 22
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 526
   fields:
@@ -5161,6 +6129,8 @@
     objective: 6
     condition: 23
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 527
   fields:
@@ -5168,6 +6138,8 @@
     objective: 8
     condition: 28
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 528
   fields:
@@ -5175,13 +6147,17 @@
     objective: 8
     condition: 29
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 529
   fields:
     project: 13
     objective: 8
     condition: 30
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 530
   fields:
@@ -5189,13 +6165,17 @@
     objective: 8
     condition: 27
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 531
   fields:
     project: 13
     objective: 9
     condition: 31
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 532
   fields:
@@ -5203,6 +6183,8 @@
     objective: 9
     condition: 32
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 533
   fields:
@@ -5210,13 +6192,17 @@
     objective: 9
     condition: 33
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 534
   fields:
     project: 14
     objective: 7
     condition: 24
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 535
   fields:
@@ -5224,20 +6210,26 @@
     objective: 7
     condition: 41
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 536
   fields:
     project: 14
     objective: 7
     condition: 26
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 537
   fields:
     project: 14
     objective: 7
     condition: 25
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 538
   fields:
@@ -5245,6 +6237,8 @@
     objective: 1
     condition: 1
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 539
   fields:
@@ -5252,13 +6246,17 @@
     objective: 1
     condition: 2
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 540
   fields:
     project: 14
     objective: 1
     condition: 3
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 541
   fields:
@@ -5266,20 +6264,26 @@
     objective: 1
     condition: 4
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 542
   fields:
     project: 14
     objective: 1
     condition: 5
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 543
   fields:
     project: 14
     objective: 1
     condition: 6
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 544
   fields:
@@ -5287,13 +6291,17 @@
     objective: 2
     condition: 7
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 545
   fields:
     project: 14
     objective: 2
     condition: 8
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 546
   fields:
@@ -5301,6 +6309,8 @@
     objective: 2
     condition: 9
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 547
   fields:
@@ -5308,6 +6318,8 @@
     objective: 2
     condition: 10
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 548
   fields:
@@ -5315,13 +6327,17 @@
     objective: 11
     condition: 37
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 549
   fields:
     project: 14
     objective: 11
     condition: 38
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 550
   fields:
@@ -5329,20 +6345,26 @@
     objective: 11
     condition: 39
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 551
   fields:
     project: 14
     objective: 11
     condition: 40
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 552
   fields:
     project: 14
     objective: 5
     condition: 18
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 553
   fields:
@@ -5350,13 +6372,17 @@
     objective: 5
     condition: 19
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 554
   fields:
     project: 14
     objective: 5
     condition: 20
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 555
   fields:
@@ -5364,6 +6390,8 @@
     objective: 3
     condition: 11
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 556
   fields:
@@ -5371,6 +6399,8 @@
     objective: 3
     condition: 12
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 557
   fields:
@@ -5378,13 +6408,17 @@
     objective: 3
     condition: 13
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 558
   fields:
     project: 14
     objective: 3
     condition: 14
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 559
   fields:
@@ -5392,6 +6426,8 @@
     objective: 4
     condition: 15
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 560
   fields:
@@ -5399,6 +6435,8 @@
     objective: 4
     condition: 16
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 561
   fields:
@@ -5406,34 +6444,44 @@
     objective: 4
     condition: 17
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 562
   fields:
     project: 14
     objective: 10
     condition: 34
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 563
   fields:
     project: 14
     objective: 10
     condition: 35
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 564
   fields:
     project: 14
     objective: 10
     condition: 36
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 565
   fields:
     project: 14
     objective: 6
     condition: 21
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 566
   fields:
@@ -5441,55 +6489,71 @@
     objective: 6
     condition: 22
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 567
   fields:
     project: 14
     objective: 6
     condition: 23
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 568
   fields:
     project: 14
     objective: 8
     condition: 28
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 569
   fields:
     project: 14
     objective: 8
     condition: 29
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 570
   fields:
     project: 14
     objective: 8
     condition: 30
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 571
   fields:
     project: 14
     objective: 8
     condition: 27
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 572
   fields:
     project: 14
     objective: 9
     condition: 31
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 573
   fields:
     project: 14
     objective: 9
     condition: 32
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 574
   fields:
@@ -5497,6 +6561,8 @@
     objective: 9
     condition: 33
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 575
   fields:
@@ -5504,6 +6570,8 @@
     objective: 7
     condition: 24
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 576
   fields:
@@ -5511,6 +6579,8 @@
     objective: 7
     condition: 41
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 577
   fields:
@@ -5518,6 +6588,8 @@
     objective: 7
     condition: 26
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 578
   fields:
@@ -5525,13 +6597,17 @@
     objective: 7
     condition: 25
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 579
   fields:
     project: 15
     objective: 1
     condition: 1
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 580
   fields:
@@ -5539,6 +6615,8 @@
     objective: 1
     condition: 2
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 581
   fields:
@@ -5546,6 +6624,8 @@
     objective: 1
     condition: 3
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 582
   fields:
@@ -5553,6 +6633,8 @@
     objective: 1
     condition: 4
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 583
   fields:
@@ -5560,13 +6642,17 @@
     objective: 1
     condition: 5
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 584
   fields:
     project: 15
     objective: 1
     condition: 6
-    done: true
+    done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 585
   fields:
@@ -5574,34 +6660,44 @@
     objective: 2
     condition: 7
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 586
   fields:
     project: 15
     objective: 2
     condition: 8
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 587
   fields:
     project: 15
     objective: 2
     condition: 9
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 588
   fields:
     project: 15
     objective: 2
     condition: 10
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 589
   fields:
     project: 15
     objective: 11
     condition: 37
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 590
   fields:
@@ -5609,6 +6705,8 @@
     objective: 11
     condition: 38
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 591
   fields:
@@ -5616,6 +6714,8 @@
     objective: 11
     condition: 39
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 592
   fields:
@@ -5623,6 +6723,8 @@
     objective: 11
     condition: 40
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 593
   fields:
@@ -5630,6 +6732,8 @@
     objective: 5
     condition: 18
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 594
   fields:
@@ -5637,48 +6741,62 @@
     objective: 5
     condition: 19
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 595
   fields:
     project: 15
     objective: 5
     condition: 20
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 596
   fields:
     project: 15
     objective: 3
     condition: 11
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 597
   fields:
     project: 15
     objective: 3
     condition: 12
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 598
   fields:
     project: 15
     objective: 3
     condition: 13
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 599
   fields:
     project: 15
     objective: 3
     condition: 14
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 600
   fields:
     project: 15
     objective: 4
     condition: 15
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 601
   fields:
@@ -5686,6 +6804,8 @@
     objective: 4
     condition: 16
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 602
   fields:
@@ -5693,13 +6813,17 @@
     objective: 4
     condition: 17
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 603
   fields:
     project: 15
     objective: 10
     condition: 34
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 604
   fields:
@@ -5707,6 +6831,8 @@
     objective: 10
     condition: 35
     done: false
+    not_applicable: true
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 605
   fields:
@@ -5714,6 +6840,8 @@
     objective: 10
     condition: 36
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 606
   fields:
@@ -5721,6 +6849,8 @@
     objective: 6
     condition: 21
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 607
   fields:
@@ -5728,6 +6858,8 @@
     objective: 6
     condition: 22
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 608
   fields:
@@ -5735,6 +6867,8 @@
     objective: 6
     condition: 23
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 609
   fields:
@@ -5742,6 +6876,8 @@
     objective: 8
     condition: 28
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 610
   fields:
@@ -5749,20 +6885,26 @@
     objective: 8
     condition: 29
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 611
   fields:
     project: 15
     objective: 8
     condition: 30
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 612
   fields:
     project: 15
     objective: 8
     condition: 27
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 613
   fields:
@@ -5770,13 +6912,17 @@
     objective: 9
     condition: 31
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 614
   fields:
     project: 15
     objective: 9
     condition: 32
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 615
   fields:
@@ -5784,6 +6930,8 @@
     objective: 9
     condition: 33
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 616
   fields:
@@ -5791,6 +6939,8 @@
     objective: 7
     condition: 24
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 617
   fields:
@@ -5798,6 +6948,8 @@
     objective: 7
     condition: 41
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 618
   fields:
@@ -5805,6 +6957,8 @@
     objective: 7
     condition: 26
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 619
   fields:
@@ -5812,13 +6966,17 @@
     objective: 7
     condition: 25
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 620
   fields:
     project: 16
     objective: 1
     condition: 1
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 621
   fields:
@@ -5826,6 +6984,8 @@
     objective: 1
     condition: 2
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 622
   fields:
@@ -5833,13 +6993,17 @@
     objective: 1
     condition: 3
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 623
   fields:
     project: 16
     objective: 1
     condition: 4
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 624
   fields:
@@ -5847,27 +7011,35 @@
     objective: 1
     condition: 5
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 625
   fields:
     project: 16
     objective: 1
     condition: 6
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 626
   fields:
     project: 16
     objective: 2
     condition: 7
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 627
   fields:
     project: 16
     objective: 2
     condition: 8
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 628
   fields:
@@ -5875,13 +7047,17 @@
     objective: 2
     condition: 9
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 629
   fields:
     project: 16
     objective: 2
     condition: 10
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 630
   fields:
@@ -5889,6 +7065,8 @@
     objective: 11
     condition: 37
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 631
   fields:
@@ -5896,13 +7074,17 @@
     objective: 11
     condition: 38
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 632
   fields:
     project: 16
     objective: 11
     condition: 39
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 633
   fields:
@@ -5910,6 +7092,8 @@
     objective: 11
     condition: 40
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 634
   fields:
@@ -5917,6 +7101,8 @@
     objective: 5
     condition: 18
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 635
   fields:
@@ -5924,6 +7110,8 @@
     objective: 5
     condition: 19
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 636
   fields:
@@ -5931,6 +7119,8 @@
     objective: 5
     condition: 20
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 637
   fields:
@@ -5938,27 +7128,35 @@
     objective: 3
     condition: 11
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 638
   fields:
     project: 16
     objective: 3
     condition: 12
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 639
   fields:
     project: 16
     objective: 3
     condition: 13
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 640
   fields:
     project: 16
     objective: 3
     condition: 14
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 641
   fields:
@@ -5966,6 +7164,8 @@
     objective: 4
     condition: 15
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 642
   fields:
@@ -5973,6 +7173,8 @@
     objective: 4
     condition: 16
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 643
   fields:
@@ -5980,27 +7182,35 @@
     objective: 4
     condition: 17
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 644
   fields:
     project: 16
     objective: 10
     condition: 34
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 645
   fields:
     project: 16
     objective: 10
     condition: 35
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 646
   fields:
     project: 16
     objective: 10
     condition: 36
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 647
   fields:
@@ -6008,6 +7218,8 @@
     objective: 6
     condition: 21
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 648
   fields:
@@ -6015,6 +7227,8 @@
     objective: 6
     condition: 22
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 649
   fields:
@@ -6022,13 +7236,17 @@
     objective: 6
     condition: 23
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 650
   fields:
     project: 16
     objective: 8
     condition: 28
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 651
   fields:
@@ -6036,20 +7254,26 @@
     objective: 8
     condition: 29
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 652
   fields:
     project: 16
     objective: 8
     condition: 30
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 653
   fields:
     project: 16
     objective: 8
     condition: 27
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 654
   fields:
@@ -6057,13 +7281,17 @@
     objective: 9
     condition: 31
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 655
   fields:
     project: 16
     objective: 9
     condition: 32
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 656
   fields:
@@ -6071,6 +7299,8 @@
     objective: 9
     condition: 33
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 657
   fields:
@@ -6078,6 +7308,8 @@
     objective: 7
     condition: 24
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 658
   fields:
@@ -6085,6 +7317,8 @@
     objective: 7
     condition: 41
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 659
   fields:
@@ -6092,13 +7326,17 @@
     objective: 7
     condition: 26
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 660
   fields:
     project: 17
     objective: 7
     condition: 25
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 661
   fields:
@@ -6106,6 +7344,8 @@
     objective: 1
     condition: 1
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 662
   fields:
@@ -6113,27 +7353,35 @@
     objective: 1
     condition: 2
     done: false
+    not_applicable: true
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 663
   fields:
     project: 17
     objective: 1
     condition: 3
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 664
   fields:
     project: 17
     objective: 1
     condition: 4
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 665
   fields:
     project: 17
     objective: 1
     condition: 5
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 666
   fields:
@@ -6141,13 +7389,17 @@
     objective: 1
     condition: 6
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 667
   fields:
     project: 17
     objective: 2
     condition: 7
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 668
   fields:
@@ -6155,6 +7407,8 @@
     objective: 2
     condition: 8
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 669
   fields:
@@ -6162,6 +7416,8 @@
     objective: 2
     condition: 9
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 670
   fields:
@@ -6169,6 +7425,8 @@
     objective: 2
     condition: 10
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 671
   fields:
@@ -6176,6 +7434,8 @@
     objective: 11
     condition: 37
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 672
   fields:
@@ -6183,20 +7443,26 @@
     objective: 11
     condition: 38
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 673
   fields:
     project: 17
     objective: 11
     condition: 39
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 674
   fields:
     project: 17
     objective: 11
     condition: 40
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 675
   fields:
@@ -6204,20 +7470,26 @@
     objective: 5
     condition: 18
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 676
   fields:
     project: 17
     objective: 5
     condition: 19
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 677
   fields:
     project: 17
     objective: 5
     condition: 20
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 678
   fields:
@@ -6225,6 +7497,8 @@
     objective: 3
     condition: 11
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 679
   fields:
@@ -6232,13 +7506,17 @@
     objective: 3
     condition: 12
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 680
   fields:
     project: 17
     objective: 3
     condition: 13
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 681
   fields:
@@ -6246,6 +7524,8 @@
     objective: 3
     condition: 14
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 682
   fields:
@@ -6253,13 +7533,17 @@
     objective: 4
     condition: 15
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 683
   fields:
     project: 17
     objective: 4
     condition: 16
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 684
   fields:
@@ -6267,13 +7551,17 @@
     objective: 4
     condition: 17
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 685
   fields:
     project: 17
     objective: 10
     condition: 34
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 686
   fields:
@@ -6281,20 +7569,26 @@
     objective: 10
     condition: 35
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 687
   fields:
     project: 17
     objective: 10
     condition: 36
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 688
   fields:
     project: 17
     objective: 6
     condition: 21
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 689
   fields:
@@ -6302,27 +7596,35 @@
     objective: 6
     condition: 22
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 690
   fields:
     project: 17
     objective: 6
     condition: 23
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 691
   fields:
     project: 17
     objective: 8
     condition: 28
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 692
   fields:
     project: 17
     objective: 8
     condition: 29
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 693
   fields:
@@ -6330,6 +7632,8 @@
     objective: 8
     condition: 30
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 694
   fields:
@@ -6337,6 +7641,8 @@
     objective: 8
     condition: 27
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 695
   fields:
@@ -6344,6 +7650,8 @@
     objective: 9
     condition: 31
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 696
   fields:
@@ -6351,6 +7659,8 @@
     objective: 9
     condition: 32
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 697
   fields:
@@ -6358,6 +7668,8 @@
     objective: 9
     condition: 33
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 698
   fields:
@@ -6365,20 +7677,26 @@
     objective: 7
     condition: 24
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 699
   fields:
     project: 18
     objective: 7
     condition: 41
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 700
   fields:
     project: 18
     objective: 7
     condition: 26
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 701
   fields:
@@ -6386,6 +7704,8 @@
     objective: 7
     condition: 25
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 702
   fields:
@@ -6393,6 +7713,8 @@
     objective: 1
     condition: 1
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 703
   fields:
@@ -6400,6 +7722,8 @@
     objective: 1
     condition: 2
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 704
   fields:
@@ -6407,13 +7731,17 @@
     objective: 1
     condition: 3
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 705
   fields:
     project: 18
     objective: 1
     condition: 4
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 706
   fields:
@@ -6421,6 +7749,8 @@
     objective: 1
     condition: 5
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 707
   fields:
@@ -6428,6 +7758,8 @@
     objective: 1
     condition: 6
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 708
   fields:
@@ -6435,27 +7767,35 @@
     objective: 2
     condition: 7
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 709
   fields:
     project: 18
     objective: 2
     condition: 8
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 710
   fields:
     project: 18
     objective: 2
     condition: 9
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 711
   fields:
     project: 18
     objective: 2
     condition: 10
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 712
   fields:
@@ -6463,6 +7803,8 @@
     objective: 11
     condition: 37
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 713
   fields:
@@ -6470,6 +7812,8 @@
     objective: 11
     condition: 38
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 714
   fields:
@@ -6477,6 +7821,8 @@
     objective: 11
     condition: 39
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 715
   fields:
@@ -6484,27 +7830,35 @@
     objective: 11
     condition: 40
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 716
   fields:
     project: 18
     objective: 5
     condition: 18
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 717
   fields:
     project: 18
     objective: 5
     condition: 19
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 718
   fields:
     project: 18
     objective: 5
     condition: 20
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 719
   fields:
@@ -6512,6 +7866,8 @@
     objective: 3
     condition: 11
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 720
   fields:
@@ -6519,6 +7875,8 @@
     objective: 3
     condition: 12
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 721
   fields:
@@ -6526,6 +7884,8 @@
     objective: 3
     condition: 13
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 722
   fields:
@@ -6533,13 +7893,17 @@
     objective: 3
     condition: 14
     done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 723
   fields:
     project: 18
     objective: 4
     condition: 15
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 724
   fields:
@@ -6547,13 +7911,17 @@
     objective: 4
     condition: 16
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 725
   fields:
     project: 18
     objective: 4
     condition: 17
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 726
   fields:
@@ -6561,13 +7929,17 @@
     objective: 10
     condition: 34
     done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 727
   fields:
     project: 18
     objective: 10
     condition: 35
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 728
   fields:
@@ -6575,6 +7947,8 @@
     objective: 10
     condition: 36
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 729
   fields:
@@ -6582,6 +7956,8 @@
     objective: 6
     condition: 21
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 730
   fields:
@@ -6589,6 +7965,8 @@
     objective: 6
     condition: 22
     done: false
+    not_applicable: true
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 731
   fields:
@@ -6596,27 +7974,35 @@
     objective: 6
     condition: 23
     done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 732
   fields:
     project: 18
     objective: 8
     condition: 28
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 733
   fields:
     project: 18
     objective: 8
     condition: 29
-    done: true
+    done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 734
   fields:
     project: 18
     objective: 8
     condition: 30
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 735
   fields:
@@ -6624,27 +8010,35 @@
     objective: 8
     condition: 27
     done: false
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 736
   fields:
     project: 18
     objective: 9
     condition: 31
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 737
   fields:
     project: 18
     objective: 9
     condition: 32
-    done: false
+    done: true
+    not_applicable: false
+    candidate: false
 - model: projects.projectobjectivecondition
   pk: 738
   fields:
     project: 18
     objective: 9
     condition: 33
-    done: true
+    done: false
+    not_applicable: false
+    candidate: true
 - model: projects.levelcommitment
   pk: 1
   fields:
@@ -34665,6 +36059,174 @@
     name: Can view agreement status
     content_type: 20
     codename: view_agreementstatus
+- model: auth.permission
+  pk: 81
+  fields:
+    name: Can add agreement status
+    content_type: 14
+    codename: add_agreementstatus
+- model: auth.permission
+  pk: 82
+  fields:
+    name: Can change agreement status
+    content_type: 14
+    codename: change_agreementstatus
+- model: auth.permission
+  pk: 83
+  fields:
+    name: Can delete agreement status
+    content_type: 14
+    codename: delete_agreementstatus
+- model: auth.permission
+  pk: 84
+  fields:
+    name: Can view agreement status
+    content_type: 14
+    codename: view_agreementstatus
+- model: auth.permission
+  pk: 85
+  fields:
+    name: Can add log entry
+    content_type: 15
+    codename: add_logentry
+- model: auth.permission
+  pk: 86
+  fields:
+    name: Can change log entry
+    content_type: 15
+    codename: change_logentry
+- model: auth.permission
+  pk: 87
+  fields:
+    name: Can delete log entry
+    content_type: 15
+    codename: delete_logentry
+- model: auth.permission
+  pk: 88
+  fields:
+    name: Can view log entry
+    content_type: 15
+    codename: view_logentry
+- model: auth.permission
+  pk: 89
+  fields:
+    name: Can add permission
+    content_type: 16
+    codename: add_permission
+- model: auth.permission
+  pk: 90
+  fields:
+    name: Can change permission
+    content_type: 16
+    codename: change_permission
+- model: auth.permission
+  pk: 91
+  fields:
+    name: Can delete permission
+    content_type: 16
+    codename: delete_permission
+- model: auth.permission
+  pk: 92
+  fields:
+    name: Can view permission
+    content_type: 16
+    codename: view_permission
+- model: auth.permission
+  pk: 93
+  fields:
+    name: Can add group
+    content_type: 17
+    codename: add_group
+- model: auth.permission
+  pk: 94
+  fields:
+    name: Can change group
+    content_type: 17
+    codename: change_group
+- model: auth.permission
+  pk: 95
+  fields:
+    name: Can delete group
+    content_type: 17
+    codename: delete_group
+- model: auth.permission
+  pk: 96
+  fields:
+    name: Can view group
+    content_type: 17
+    codename: view_group
+- model: auth.permission
+  pk: 97
+  fields:
+    name: Can add user
+    content_type: 18
+    codename: add_user
+- model: auth.permission
+  pk: 98
+  fields:
+    name: Can change user
+    content_type: 18
+    codename: change_user
+- model: auth.permission
+  pk: 99
+  fields:
+    name: Can delete user
+    content_type: 18
+    codename: delete_user
+- model: auth.permission
+  pk: 100
+  fields:
+    name: Can view user
+    content_type: 18
+    codename: view_user
+- model: auth.permission
+  pk: 101
+  fields:
+    name: Can add content type
+    content_type: 19
+    codename: add_contenttype
+- model: auth.permission
+  pk: 102
+  fields:
+    name: Can change content type
+    content_type: 19
+    codename: change_contenttype
+- model: auth.permission
+  pk: 103
+  fields:
+    name: Can delete content type
+    content_type: 19
+    codename: delete_contenttype
+- model: auth.permission
+  pk: 104
+  fields:
+    name: Can view content type
+    content_type: 19
+    codename: view_contenttype
+- model: auth.permission
+  pk: 105
+  fields:
+    name: Can add session
+    content_type: 20
+    codename: add_session
+- model: auth.permission
+  pk: 106
+  fields:
+    name: Can change session
+    content_type: 20
+    codename: change_session
+- model: auth.permission
+  pk: 107
+  fields:
+    name: Can delete session
+    content_type: 20
+    codename: delete_session
+- model: auth.permission
+  pk: 108
+  fields:
+    name: Can view session
+    content_type: 20
+    codename: view_session
 - model: auth.user
   pk: 1
   fields:
