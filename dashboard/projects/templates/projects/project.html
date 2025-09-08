@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% load project_tags %}
+{% load i18n static %}
+
+{% block extrahead %}
+  <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+  <link rel="stylesheet" href="{% static "admin.css" %}">
+
+
+{% endblock %}
+
+{% block body_attributes %}hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'{% endblock %}
+
+{% block content %}
+
+<div id="container">
+  <div class="main" id="main">
+    <main id="content-start" class="content">
+      <div id="content" class="colM">
+        <div id="content-main">
+
+          <div>{% include "projects/partial_project_basics.html" %}</div>
+
+          <hr>
+
+          <div>{% include "projects/partial_project_commitments.html" %}</div>
+
+          <hr>
+
+          {% include "projects/partial_projectobjectives.html" %}
+
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+{% endblock content %}

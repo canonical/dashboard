@@ -1,6 +1,13 @@
 from django.db import models
 
 
+class AgreementStatus(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+
 class ProjectStatus(models.Model):
     name = models.CharField(max_length=200)
 
@@ -73,7 +80,6 @@ class WorkCycle(models.Model):
         ordering = ["timestamp"]
 
 
-
 class ObjectiveGroup(models.Model):
     name = models.CharField(max_length=100)
 
@@ -120,7 +126,7 @@ class Objective(models.Model):
                     )
 
     class Meta:
-        ordering = ["group", "name"]
+        ordering = ["group"]
 
 
 class Condition(models.Model):

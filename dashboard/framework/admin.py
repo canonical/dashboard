@@ -4,6 +4,7 @@ from .models import (
     Level,
     Reason,
     ProjectStatus,
+    AgreementStatus,
     WorkCycle,
     ObjectiveGroup,
     Objective,
@@ -31,6 +32,7 @@ class WorkCycleAdmin(admin.ModelAdmin):
 admin.site.register(Level)
 admin.site.register(Reason)
 admin.site.register(ProjectStatus)
+admin.site.register(AgreementStatus)
 admin.site.register(WorkCycle, WorkCycleAdmin)
 admin.site.register(ObjectiveGroup)
 # admin.site.register(Condition)

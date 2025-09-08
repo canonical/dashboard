@@ -1,3 +1,15 @@
+- model: framework.agreementstatus
+  pk: 1
+  fields:
+    name: Deferred
+- model: framework.agreementstatus
+  pk: 2
+  fields:
+    name: Planned
+- model: framework.agreementstatus
+  pk: 3
+  fields:
+    name: Agreed
 - model: framework.projectstatus
   pk: 1
   fields:
@@ -58,31 +70,37 @@
   fields:
     name: '24.04'
     timestamp: 2024-04-15
+    is_current: false
 - model: framework.workcycle
   pk: 2
   fields:
     name: '24.10'
     timestamp: 2024-10-15
+    is_current: false
 - model: framework.workcycle
   pk: 3
   fields:
     name: '25.04'
     timestamp: 2025-04-15
+    is_current: false
 - model: framework.workcycle
   pk: 4
   fields:
     name: '23.10'
     timestamp: 2023-10-15
+    is_current: false
 - model: framework.workcycle
   pk: 6
   fields:
     name: '25.10'
     timestamp: 2025-10-15
+    is_current: true
 - model: framework.workcycle
   pk: 7
   fields:
     name: '26.04'
     timestamp: 2026-04-15
+    is_current: false
 - model: framework.objectivegroup
   pk: 1
   fields:
@@ -465,6 +483,7 @@
     driver: A. Technician
     last_review: 2024-12-16
     last_review_status: 1
+    agreement_status: 3
 - model: projects.project
   pk: 2
   fields:
@@ -474,6 +493,7 @@
     driver: null
     last_review: 2025-02-02
     last_review_status: 1
+    agreement_status: 3
 - model: projects.project
   pk: 3
   fields:
@@ -483,6 +503,7 @@
     driver: Some Musician
     last_review: 2023-08-16
     last_review_status: 2
+    agreement_status: 3
 - model: projects.project
   pk: 4
   fields:
@@ -492,6 +513,7 @@
     driver: A. Traveller
     last_review: 2025-02-02
     last_review_status: 4
+    agreement_status: 3
 - model: projects.project
   pk: 5
   fields:
@@ -501,6 +523,7 @@
     driver: Bus Driver
     last_review: null
     last_review_status: 3
+    agreement_status: 3
 - model: projects.project
   pk: 6
   fields:
@@ -510,6 +533,7 @@
     driver: null
     last_review: 2024-12-26
     last_review_status: 5
+    agreement_status: 3
 - model: projects.project
   pk: 7
   fields:
@@ -519,6 +543,7 @@
     driver: Some Packager
     last_review: 2025-02-02
     last_review_status: 1
+    agreement_status: 3
 - model: projects.project
   pk: 9
   fields:
@@ -528,6 +553,7 @@
     driver: null
     last_review: 2025-02-09
     last_review_status: 2
+    agreement_status: 3
 - model: projects.project
   pk: 10
   fields:
@@ -537,6 +563,7 @@
     driver: null
     last_review: 2024-11-20
     last_review_status: 3
+    agreement_status: 3
 - model: projects.project
   pk: 11
   fields:
@@ -546,6 +573,7 @@
     driver: null
     last_review: 2024-03-13
     last_review_status: 1
+    agreement_status: 3
 - model: projects.project
   pk: 12
   fields:
@@ -555,6 +583,7 @@
     driver: null
     last_review: null
     last_review_status: 2
+    agreement_status: 3
 - model: projects.project
   pk: 13
   fields:
@@ -564,6 +593,7 @@
     driver: null
     last_review: 2023-11-14
     last_review_status: 5
+    agreement_status: 3
 - model: projects.project
   pk: 14
   fields:
@@ -573,6 +603,7 @@
     driver: null
     last_review: 2025-02-13
     last_review_status: 2
+    agreement_status: 3
 - model: projects.project
   pk: 15
   fields:
@@ -582,6 +613,7 @@
     driver: null
     last_review: 2025-02-13
     last_review_status: 4
+    agreement_status: 3
 - model: projects.project
   pk: 16
   fields:
@@ -591,6 +623,7 @@
     driver: null
     last_review: 2025-02-13
     last_review_status: 4
+    agreement_status: 3
 - model: projects.project
   pk: 17
   fields:
@@ -600,6 +633,7 @@
     driver: null
     last_review: 2024-11-18
     last_review_status: 3
+    agreement_status: 3
 - model: projects.project
   pk: 18
   fields:
@@ -609,6 +643,7 @@
     driver: null
     last_review: 2024-11-21
     last_review_status: 1
+    agreement_status: 3
 - model: projects.projectobjective
   pk: 1
   fields:
@@ -6641,7 +6676,7 @@
     project: 2
     objective: 11
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 5
   fields:
@@ -6649,7 +6684,7 @@
     project: 2
     objective: 5
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 6
   fields:
@@ -6665,7 +6700,7 @@
     project: 2
     objective: 4
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 8
   fields:
@@ -6673,7 +6708,7 @@
     project: 2
     objective: 10
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 9
   fields:
@@ -6681,7 +6716,7 @@
     project: 2
     objective: 6
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 10
   fields:
@@ -6729,7 +6764,7 @@
     project: 1
     objective: 11
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 16
   fields:
@@ -6745,7 +6780,7 @@
     project: 1
     objective: 3
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 18
   fields:
@@ -6809,7 +6844,7 @@
     project: 6
     objective: 2
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 26
   fields:
@@ -6817,7 +6852,7 @@
     project: 6
     objective: 11
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 27
   fields:
@@ -6833,7 +6868,7 @@
     project: 6
     objective: 3
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 29
   fields:
@@ -6897,7 +6932,7 @@
     project: 3
     objective: 2
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 37
   fields:
@@ -6921,7 +6956,7 @@
     project: 3
     objective: 3
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 40
   fields:
@@ -6929,7 +6964,7 @@
     project: 3
     objective: 4
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 41
   fields:
@@ -6937,7 +6972,7 @@
     project: 3
     objective: 10
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 42
   fields:
@@ -6953,7 +6988,7 @@
     project: 3
     objective: 8
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 44
   fields:
@@ -6961,7 +6996,7 @@
     project: 3
     objective: 9
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 45
   fields:
@@ -6985,7 +7020,7 @@
     project: 7
     objective: 2
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 48
   fields:
@@ -7001,7 +7036,7 @@
     project: 7
     objective: 5
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 50
   fields:
@@ -7025,7 +7060,7 @@
     project: 7
     objective: 10
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 53
   fields:
@@ -7033,7 +7068,7 @@
     project: 7
     objective: 6
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 54
   fields:
@@ -7081,7 +7116,7 @@
     project: 5
     objective: 11
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 60
   fields:
@@ -7089,7 +7124,7 @@
     project: 5
     objective: 5
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 61
   fields:
@@ -7121,7 +7156,7 @@
     project: 5
     objective: 6
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 65
   fields:
@@ -7185,7 +7220,7 @@
     project: 4
     objective: 3
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 73
   fields:
@@ -7201,7 +7236,7 @@
     project: 4
     objective: 10
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 75
   fields:
@@ -7249,7 +7284,7 @@
     project: 2
     objective: 2
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 81
   fields:
@@ -7265,7 +7300,7 @@
     project: 2
     objective: 5
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 83
   fields:
@@ -7345,7 +7380,7 @@
     project: 1
     objective: 11
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 93
   fields:
@@ -7353,7 +7388,7 @@
     project: 1
     objective: 5
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 94
   fields:
@@ -7361,7 +7396,7 @@
     project: 1
     objective: 3
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 95
   fields:
@@ -7377,7 +7412,7 @@
     project: 1
     objective: 10
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 97
   fields:
@@ -7401,7 +7436,7 @@
     project: 1
     objective: 9
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 100
   fields:
@@ -7449,7 +7484,7 @@
     project: 6
     objective: 3
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 106
   fields:
@@ -7473,7 +7508,7 @@
     project: 6
     objective: 6
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 109
   fields:
@@ -7481,7 +7516,7 @@
     project: 6
     objective: 8
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 110
   fields:
@@ -7489,7 +7524,7 @@
     project: 6
     objective: 9
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 111
   fields:
@@ -7537,7 +7572,7 @@
     project: 3
     objective: 3
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 117
   fields:
@@ -7553,7 +7588,7 @@
     project: 3
     objective: 10
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 119
   fields:
@@ -7561,7 +7596,7 @@
     project: 3
     objective: 6
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 120
   fields:
@@ -7609,7 +7644,7 @@
     project: 7
     objective: 11
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 126
   fields:
@@ -7625,7 +7660,7 @@
     project: 7
     objective: 3
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 128
   fields:
@@ -7633,7 +7668,7 @@
     project: 7
     objective: 4
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 129
   fields:
@@ -7641,7 +7676,7 @@
     project: 7
     objective: 10
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 130
   fields:
@@ -7673,7 +7708,7 @@
     project: 5
     objective: 7
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 134
   fields:
@@ -7697,7 +7732,7 @@
     project: 5
     objective: 11
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 137
   fields:
@@ -7713,7 +7748,7 @@
     project: 5
     objective: 3
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 139
   fields:
@@ -7761,7 +7796,7 @@
     project: 4
     objective: 7
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 145
   fields:
@@ -7785,7 +7820,7 @@
     project: 4
     objective: 11
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 148
   fields:
@@ -7817,7 +7852,7 @@
     project: 4
     objective: 10
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 152
   fields:
@@ -7897,7 +7932,7 @@
     project: 2
     objective: 4
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 162
   fields:
@@ -7905,7 +7940,7 @@
     project: 2
     objective: 10
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 163
   fields:
@@ -7937,7 +7972,7 @@
     project: 1
     objective: 7
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 167
   fields:
@@ -7953,7 +7988,7 @@
     project: 1
     objective: 2
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 169
   fields:
@@ -7969,7 +8004,7 @@
     project: 1
     objective: 5
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 171
   fields:
@@ -7993,7 +8028,7 @@
     project: 1
     objective: 10
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 174
   fields:
@@ -8009,7 +8044,7 @@
     project: 1
     objective: 8
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 176
   fields:
@@ -8041,7 +8076,7 @@
     project: 6
     objective: 2
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 180
   fields:
@@ -8049,7 +8084,7 @@
     project: 6
     objective: 11
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 181
   fields:
@@ -8065,7 +8100,7 @@
     project: 6
     objective: 3
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 183
   fields:
@@ -8089,7 +8124,7 @@
     project: 6
     objective: 6
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 186
   fields:
@@ -8105,7 +8140,7 @@
     project: 6
     objective: 9
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 188
   fields:
@@ -8145,7 +8180,7 @@
     project: 3
     objective: 5
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 193
   fields:
@@ -8153,7 +8188,7 @@
     project: 3
     objective: 3
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 194
   fields:
@@ -8177,7 +8212,7 @@
     project: 3
     objective: 6
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 197
   fields:
@@ -8185,7 +8220,7 @@
     project: 3
     objective: 8
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 198
   fields:
@@ -8209,7 +8244,7 @@
     project: 7
     objective: 1
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 201
   fields:
@@ -8217,7 +8252,7 @@
     project: 7
     objective: 2
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 202
   fields:
@@ -8225,7 +8260,7 @@
     project: 7
     objective: 11
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 203
   fields:
@@ -8265,7 +8300,7 @@
     project: 7
     objective: 6
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 208
   fields:
@@ -8281,7 +8316,7 @@
     project: 7
     objective: 9
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 210
   fields:
@@ -8345,7 +8380,7 @@
     project: 5
     objective: 10
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 218
   fields:
@@ -8369,7 +8404,7 @@
     project: 5
     objective: 9
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 221
   fields:
@@ -8393,7 +8428,7 @@
     project: 4
     objective: 2
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 224
   fields:
@@ -8417,7 +8452,7 @@
     project: 4
     objective: 3
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 227
   fields:
@@ -8425,7 +8460,7 @@
     project: 4
     objective: 4
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 228
   fields:
@@ -8441,7 +8476,7 @@
     project: 4
     objective: 6
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 230
   fields:
@@ -8457,7 +8492,7 @@
     project: 4
     objective: 9
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 232
   fields:
@@ -8465,7 +8500,7 @@
     project: 2
     objective: 7
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 233
   fields:
@@ -8497,7 +8532,7 @@
     project: 2
     objective: 5
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 237
   fields:
@@ -8521,7 +8556,7 @@
     project: 2
     objective: 10
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 240
   fields:
@@ -8553,7 +8588,7 @@
     project: 1
     objective: 7
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 244
   fields:
@@ -8561,7 +8596,7 @@
     project: 1
     objective: 1
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 245
   fields:
@@ -8585,7 +8620,7 @@
     project: 1
     objective: 5
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 248
   fields:
@@ -8601,7 +8636,7 @@
     project: 1
     objective: 4
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 250
   fields:
@@ -8617,7 +8652,7 @@
     project: 1
     objective: 6
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 252
   fields:
@@ -8657,7 +8692,7 @@
     project: 6
     objective: 2
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 257
   fields:
@@ -8665,7 +8700,7 @@
     project: 6
     objective: 11
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 258
   fields:
@@ -8713,7 +8748,7 @@
     project: 6
     objective: 8
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 264
   fields:
@@ -8745,7 +8780,7 @@
     project: 3
     objective: 2
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 268
   fields:
@@ -8761,7 +8796,7 @@
     project: 3
     objective: 5
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 270
   fields:
@@ -8769,7 +8804,7 @@
     project: 3
     objective: 3
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 271
   fields:
@@ -8777,7 +8812,7 @@
     project: 3
     objective: 4
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 272
   fields:
@@ -8785,7 +8820,7 @@
     project: 3
     objective: 10
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 273
   fields:
@@ -8857,7 +8892,7 @@
     project: 7
     objective: 3
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 282
   fields:
@@ -8873,7 +8908,7 @@
     project: 7
     objective: 10
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 284
   fields:
@@ -8905,7 +8940,7 @@
     project: 5
     objective: 7
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 288
   fields:
@@ -8921,7 +8956,7 @@
     project: 5
     objective: 2
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 290
   fields:
@@ -8929,7 +8964,7 @@
     project: 5
     objective: 11
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 291
   fields:
@@ -8953,7 +8988,7 @@
     project: 5
     objective: 4
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 294
   fields:
@@ -9009,7 +9044,7 @@
     project: 4
     objective: 2
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 301
   fields:
@@ -9033,7 +9068,7 @@
     project: 4
     objective: 3
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 304
   fields:
@@ -9041,7 +9076,7 @@
     project: 4
     objective: 4
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 305
   fields:
@@ -9049,7 +9084,7 @@
     project: 4
     objective: 10
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 306
   fields:
@@ -9065,7 +9100,7 @@
     project: 4
     objective: 8
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 308
   fields:
@@ -9073,7 +9108,7 @@
     project: 4
     objective: 9
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 309
   fields:
@@ -9081,7 +9116,7 @@
     project: 2
     objective: 7
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 310
   fields:
@@ -9105,7 +9140,7 @@
     project: 2
     objective: 11
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 313
   fields:
@@ -9113,7 +9148,7 @@
     project: 2
     objective: 5
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 314
   fields:
@@ -9121,7 +9156,7 @@
     project: 2
     objective: 3
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 315
   fields:
@@ -9153,7 +9188,7 @@
     project: 2
     objective: 8
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 319
   fields:
@@ -9161,7 +9196,7 @@
     project: 2
     objective: 9
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 320
   fields:
@@ -9177,7 +9212,7 @@
     project: 1
     objective: 1
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 322
   fields:
@@ -9185,7 +9220,7 @@
     project: 1
     objective: 2
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 323
   fields:
@@ -9209,7 +9244,7 @@
     project: 1
     objective: 3
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 326
   fields:
@@ -9217,7 +9252,7 @@
     project: 1
     objective: 4
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 327
   fields:
@@ -9225,7 +9260,7 @@
     project: 1
     objective: 10
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 328
   fields:
@@ -9265,7 +9300,7 @@
     project: 6
     objective: 1
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 333
   fields:
@@ -9273,7 +9308,7 @@
     project: 6
     objective: 2
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 334
   fields:
@@ -9305,7 +9340,7 @@
     project: 6
     objective: 4
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 338
   fields:
@@ -9321,7 +9356,7 @@
     project: 6
     objective: 6
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 340
   fields:
@@ -9329,7 +9364,7 @@
     project: 6
     objective: 8
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 341
   fields:
@@ -9345,7 +9380,7 @@
     project: 3
     objective: 7
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 343
   fields:
@@ -9353,7 +9388,7 @@
     project: 3
     objective: 1
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 344
   fields:
@@ -9361,7 +9396,7 @@
     project: 3
     objective: 2
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 345
   fields:
@@ -9369,7 +9404,7 @@
     project: 3
     objective: 11
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 346
   fields:
@@ -9393,7 +9428,7 @@
     project: 3
     objective: 4
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 349
   fields:
@@ -9401,7 +9436,7 @@
     project: 3
     objective: 10
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 350
   fields:
@@ -9409,7 +9444,7 @@
     project: 3
     objective: 6
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 351
   fields:
@@ -9417,7 +9452,7 @@
     project: 3
     objective: 8
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 352
   fields:
@@ -9433,7 +9468,7 @@
     project: 7
     objective: 7
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 354
   fields:
@@ -9441,7 +9476,7 @@
     project: 7
     objective: 1
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 355
   fields:
@@ -9465,7 +9500,7 @@
     project: 7
     objective: 5
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 358
   fields:
@@ -9505,7 +9540,7 @@
     project: 7
     objective: 8
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 363
   fields:
@@ -9537,7 +9572,7 @@
     project: 5
     objective: 2
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 367
   fields:
@@ -9545,7 +9580,7 @@
     project: 5
     objective: 11
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 368
   fields:
@@ -9553,7 +9588,7 @@
     project: 5
     objective: 5
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 369
   fields:
@@ -9577,7 +9612,7 @@
     project: 5
     objective: 10
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 372
   fields:
@@ -9625,7 +9660,7 @@
     project: 4
     objective: 2
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 378
   fields:
@@ -9633,7 +9668,7 @@
     project: 4
     objective: 11
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 379
   fields:
@@ -9641,7 +9676,7 @@
     project: 4
     objective: 5
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 380
   fields:
@@ -9657,7 +9692,7 @@
     project: 4
     objective: 4
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 382
   fields:
@@ -9665,7 +9700,7 @@
     project: 4
     objective: 10
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 383
   fields:
@@ -9681,7 +9716,7 @@
     project: 4
     objective: 8
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 385
   fields:
@@ -9769,7 +9804,7 @@
     project: 2
     objective: 8
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 396
   fields:
@@ -9785,7 +9820,7 @@
     project: 1
     objective: 7
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 398
   fields:
@@ -9801,7 +9836,7 @@
     project: 1
     objective: 2
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 400
   fields:
@@ -9809,7 +9844,7 @@
     project: 1
     objective: 11
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 401
   fields:
@@ -9857,7 +9892,7 @@
     project: 1
     objective: 8
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 407
   fields:
@@ -9865,7 +9900,7 @@
     project: 1
     objective: 9
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 408
   fields:
@@ -9985,7 +10020,7 @@
     project: 3
     objective: 11
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 423
   fields:
@@ -10025,7 +10060,7 @@
     project: 3
     objective: 6
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 428
   fields:
@@ -10041,7 +10076,7 @@
     project: 3
     objective: 9
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 430
   fields:
@@ -10081,7 +10116,7 @@
     project: 7
     objective: 5
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 435
   fields:
@@ -10129,7 +10164,7 @@
     project: 7
     objective: 9
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 441
   fields:
@@ -10145,7 +10180,7 @@
     project: 5
     objective: 1
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 443
   fields:
@@ -10161,7 +10196,7 @@
     project: 5
     objective: 11
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 445
   fields:
@@ -10193,7 +10228,7 @@
     project: 5
     objective: 10
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 449
   fields:
@@ -10209,7 +10244,7 @@
     project: 5
     objective: 8
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 451
   fields:
@@ -10233,7 +10268,7 @@
     project: 4
     objective: 1
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 454
   fields:
@@ -10249,7 +10284,7 @@
     project: 4
     objective: 11
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 456
   fields:
@@ -10257,7 +10292,7 @@
     project: 4
     objective: 5
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 457
   fields:
@@ -10289,7 +10324,7 @@
     project: 4
     objective: 6
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 461
   fields:
@@ -10297,7 +10332,7 @@
     project: 4
     objective: 8
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 462
   fields:
@@ -10305,7 +10340,7 @@
     project: 4
     objective: 9
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 463
   fields:
@@ -10313,7 +10348,7 @@
     project: 2
     objective: 7
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 464
   fields:
@@ -10369,7 +10404,7 @@
     project: 2
     objective: 10
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 471
   fields:
@@ -10393,7 +10428,7 @@
     project: 2
     objective: 9
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 474
   fields:
@@ -10425,7 +10460,7 @@
     project: 1
     objective: 11
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 478
   fields:
@@ -10473,7 +10508,7 @@
     project: 1
     objective: 8
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 484
   fields:
@@ -10489,7 +10524,7 @@
     project: 6
     objective: 7
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 486
   fields:
@@ -10497,7 +10532,7 @@
     project: 6
     objective: 1
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 487
   fields:
@@ -10537,7 +10572,7 @@
     project: 6
     objective: 4
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 492
   fields:
@@ -10545,7 +10580,7 @@
     project: 6
     objective: 10
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 493
   fields:
@@ -10585,7 +10620,7 @@
     project: 3
     objective: 1
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 498
   fields:
@@ -10609,7 +10644,7 @@
     project: 3
     objective: 5
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 501
   fields:
@@ -10633,7 +10668,7 @@
     project: 3
     objective: 10
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 504
   fields:
@@ -10673,7 +10708,7 @@
     project: 7
     objective: 1
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 509
   fields:
@@ -10713,7 +10748,7 @@
     project: 7
     objective: 4
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 514
   fields:
@@ -10753,7 +10788,7 @@
     project: 5
     objective: 7
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 519
   fields:
@@ -10785,7 +10820,7 @@
     project: 5
     objective: 5
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 523
   fields:
@@ -10801,7 +10836,7 @@
     project: 5
     objective: 4
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 525
   fields:
@@ -10809,7 +10844,7 @@
     project: 5
     objective: 10
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 526
   fields:
@@ -10897,7 +10932,7 @@
     project: 4
     objective: 10
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 537
   fields:
@@ -10905,7 +10940,7 @@
     project: 4
     objective: 6
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 538
   fields:
@@ -10953,7 +10988,7 @@
     project: 2
     objective: 11
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 544
   fields:
@@ -10961,7 +10996,7 @@
     project: 2
     objective: 5
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 545
   fields:
@@ -10969,7 +11004,7 @@
     project: 2
     objective: 3
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 546
   fields:
@@ -10985,7 +11020,7 @@
     project: 2
     objective: 10
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 548
   fields:
@@ -11009,7 +11044,7 @@
     project: 2
     objective: 9
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 551
   fields:
@@ -11033,7 +11068,7 @@
     project: 1
     objective: 2
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 554
   fields:
@@ -11065,7 +11100,7 @@
     project: 1
     objective: 4
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 558
   fields:
@@ -11121,7 +11156,7 @@
     project: 6
     objective: 2
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 565
   fields:
@@ -11137,7 +11172,7 @@
     project: 6
     objective: 5
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 567
   fields:
@@ -11145,7 +11180,7 @@
     project: 6
     objective: 3
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 568
   fields:
@@ -11153,7 +11188,7 @@
     project: 6
     objective: 4
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 569
   fields:
@@ -11169,7 +11204,7 @@
     project: 6
     objective: 6
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 571
   fields:
@@ -11177,7 +11212,7 @@
     project: 6
     objective: 8
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 572
   fields:
@@ -11209,7 +11244,7 @@
     project: 3
     objective: 2
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 576
   fields:
@@ -11217,7 +11252,7 @@
     project: 3
     objective: 11
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 577
   fields:
@@ -11225,7 +11260,7 @@
     project: 3
     objective: 5
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 578
   fields:
@@ -11273,7 +11308,7 @@
     project: 3
     objective: 9
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 584
   fields:
@@ -11289,7 +11324,7 @@
     project: 7
     objective: 1
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 586
   fields:
@@ -11313,7 +11348,7 @@
     project: 7
     objective: 5
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 589
   fields:
@@ -11321,7 +11356,7 @@
     project: 7
     objective: 3
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 590
   fields:
@@ -11353,7 +11388,7 @@
     project: 7
     objective: 8
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 594
   fields:
@@ -11385,7 +11420,7 @@
     project: 5
     objective: 2
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 598
   fields:
@@ -11417,7 +11452,7 @@
     project: 5
     objective: 4
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 602
   fields:
@@ -11433,7 +11468,7 @@
     project: 5
     objective: 6
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 604
   fields:
@@ -11457,7 +11492,7 @@
     project: 4
     objective: 7
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 607
   fields:
@@ -11481,7 +11516,7 @@
     project: 4
     objective: 11
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 610
   fields:
@@ -11497,7 +11532,7 @@
     project: 4
     objective: 3
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 612
   fields:
@@ -11521,7 +11556,7 @@
     project: 4
     objective: 6
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 615
   fields:
@@ -11601,7 +11636,7 @@
     project: 2
     objective: 10
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 625
   fields:
@@ -11617,7 +11652,7 @@
     project: 2
     objective: 8
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 627
   fields:
@@ -11625,7 +11660,7 @@
     project: 2
     objective: 9
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 628
   fields:
@@ -11641,7 +11676,7 @@
     project: 1
     objective: 1
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 630
   fields:
@@ -11689,7 +11724,7 @@
     project: 1
     objective: 10
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 636
   fields:
@@ -11697,7 +11732,7 @@
     project: 1
     objective: 6
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 637
   fields:
@@ -11705,7 +11740,7 @@
     project: 1
     objective: 8
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 638
   fields:
@@ -11737,7 +11772,7 @@
     project: 6
     objective: 2
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 642
   fields:
@@ -11753,7 +11788,7 @@
     project: 6
     objective: 5
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 644
   fields:
@@ -11801,7 +11836,7 @@
     project: 6
     objective: 9
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 650
   fields:
@@ -11817,7 +11852,7 @@
     project: 3
     objective: 1
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 652
   fields:
@@ -11849,7 +11884,7 @@
     project: 3
     objective: 3
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 656
   fields:
@@ -11889,7 +11924,7 @@
     project: 3
     objective: 9
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 661
   fields:
@@ -11897,7 +11932,7 @@
     project: 7
     objective: 7
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 662
   fields:
@@ -11913,7 +11948,7 @@
     project: 7
     objective: 2
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 664
   fields:
@@ -11937,7 +11972,7 @@
     project: 7
     objective: 3
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 667
   fields:
@@ -11961,7 +11996,7 @@
     project: 7
     objective: 6
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 670
   fields:
@@ -12001,7 +12036,7 @@
     project: 5
     objective: 2
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 675
   fields:
@@ -12017,7 +12052,7 @@
     project: 5
     objective: 5
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 677
   fields:
@@ -12049,7 +12084,7 @@
     project: 5
     objective: 6
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 681
   fields:
@@ -12073,7 +12108,7 @@
     project: 4
     objective: 7
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 684
   fields:
@@ -12081,7 +12116,7 @@
     project: 4
     objective: 1
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 685
   fields:
@@ -12089,7 +12124,7 @@
     project: 4
     objective: 2
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 686
   fields:
@@ -12129,7 +12164,7 @@
     project: 4
     objective: 10
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 691
   fields:
@@ -12145,7 +12180,7 @@
     project: 4
     objective: 8
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 693
   fields:
@@ -12169,7 +12204,7 @@
     project: 2
     objective: 1
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 696
   fields:
@@ -12177,7 +12212,7 @@
     project: 2
     objective: 2
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 697
   fields:
@@ -12201,7 +12236,7 @@
     project: 2
     objective: 3
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 700
   fields:
@@ -12209,7 +12244,7 @@
     project: 2
     objective: 4
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 701
   fields:
@@ -12233,7 +12268,7 @@
     project: 2
     objective: 8
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 704
   fields:
@@ -12241,7 +12276,7 @@
     project: 2
     objective: 9
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 705
   fields:
@@ -12257,7 +12292,7 @@
     project: 1
     objective: 1
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 707
   fields:
@@ -12273,7 +12308,7 @@
     project: 1
     objective: 11
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 709
   fields:
@@ -12297,7 +12332,7 @@
     project: 1
     objective: 4
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 712
   fields:
@@ -12305,7 +12340,7 @@
     project: 1
     objective: 10
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 713
   fields:
@@ -12321,7 +12356,7 @@
     project: 1
     objective: 8
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 715
   fields:
@@ -12337,7 +12372,7 @@
     project: 6
     objective: 7
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 717
   fields:
@@ -12353,7 +12388,7 @@
     project: 6
     objective: 2
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 719
   fields:
@@ -12401,7 +12436,7 @@
     project: 6
     objective: 6
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 725
   fields:
@@ -12409,7 +12444,7 @@
     project: 6
     objective: 8
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 726
   fields:
@@ -12417,7 +12452,7 @@
     project: 6
     objective: 9
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 727
   fields:
@@ -12425,7 +12460,7 @@
     project: 3
     objective: 7
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 728
   fields:
@@ -12441,7 +12476,7 @@
     project: 3
     objective: 2
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 730
   fields:
@@ -12449,7 +12484,7 @@
     project: 3
     objective: 11
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 731
   fields:
@@ -12457,7 +12492,7 @@
     project: 3
     objective: 5
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 732
   fields:
@@ -12473,7 +12508,7 @@
     project: 3
     objective: 4
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 734
   fields:
@@ -12577,7 +12612,7 @@
     project: 7
     objective: 6
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 747
   fields:
@@ -12585,7 +12620,7 @@
     project: 7
     objective: 8
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 748
   fields:
@@ -12593,7 +12628,7 @@
     project: 7
     objective: 9
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 749
   fields:
@@ -12657,7 +12692,7 @@
     project: 5
     objective: 10
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 757
   fields:
@@ -12665,7 +12700,7 @@
     project: 5
     objective: 6
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 758
   fields:
@@ -12689,7 +12724,7 @@
     project: 4
     objective: 7
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 761
   fields:
@@ -12705,7 +12740,7 @@
     project: 4
     objective: 2
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 763
   fields:
@@ -12713,7 +12748,7 @@
     project: 4
     objective: 11
     level: 1
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 764
   fields:
@@ -12729,7 +12764,7 @@
     project: 4
     objective: 3
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 766
   fields:
@@ -12745,7 +12780,7 @@
     project: 4
     objective: 10
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 768
   fields:
@@ -12809,7 +12844,7 @@
     project: 2
     objective: 5
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 776
   fields:
@@ -12841,7 +12876,7 @@
     project: 2
     objective: 6
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 780
   fields:
@@ -12849,7 +12884,7 @@
     project: 2
     objective: 8
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 781
   fields:
@@ -12865,7 +12900,7 @@
     project: 1
     objective: 7
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 783
   fields:
@@ -12873,7 +12908,7 @@
     project: 1
     objective: 1
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 784
   fields:
@@ -12889,7 +12924,7 @@
     project: 1
     objective: 11
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 786
   fields:
@@ -12905,7 +12940,7 @@
     project: 1
     objective: 3
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 788
   fields:
@@ -12945,7 +12980,7 @@
     project: 1
     objective: 9
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 793
   fields:
@@ -12977,7 +13012,7 @@
     project: 6
     objective: 11
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 797
   fields:
@@ -13049,7 +13084,7 @@
     project: 3
     objective: 1
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 806
   fields:
@@ -13097,7 +13132,7 @@
     project: 3
     objective: 10
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 812
   fields:
@@ -13113,7 +13148,7 @@
     project: 3
     objective: 8
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 814
   fields:
@@ -13121,7 +13156,7 @@
     project: 3
     objective: 9
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 815
   fields:
@@ -13145,7 +13180,7 @@
     project: 7
     objective: 2
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 818
   fields:
@@ -13153,7 +13188,7 @@
     project: 7
     objective: 11
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 819
   fields:
@@ -13193,7 +13228,7 @@
     project: 7
     objective: 6
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 824
   fields:
@@ -13241,7 +13276,7 @@
     project: 5
     objective: 11
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 830
   fields:
@@ -13273,7 +13308,7 @@
     project: 5
     objective: 10
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 834
   fields:
@@ -13289,7 +13324,7 @@
     project: 5
     objective: 8
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 836
   fields:
@@ -13329,7 +13364,7 @@
     project: 4
     objective: 11
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 841
   fields:
@@ -13337,7 +13372,7 @@
     project: 4
     objective: 5
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 842
   fields:
@@ -13345,7 +13380,7 @@
     project: 4
     objective: 3
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 843
   fields:
@@ -13353,7 +13388,7 @@
     project: 4
     objective: 4
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 844
   fields:
@@ -13361,7 +13396,7 @@
     project: 4
     objective: 10
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 845
   fields:
@@ -13377,7 +13412,7 @@
     project: 4
     objective: 8
     level: 2
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 847
   fields:
@@ -13401,7 +13436,7 @@
     project: 2
     objective: 1
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 850
   fields:
@@ -13441,7 +13476,7 @@
     project: 2
     objective: 4
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 855
   fields:
@@ -13457,7 +13492,7 @@
     project: 2
     objective: 6
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 857
   fields:
@@ -13505,7 +13540,7 @@
     project: 1
     objective: 11
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 863
   fields:
@@ -13521,7 +13556,7 @@
     project: 1
     objective: 3
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 865
   fields:
@@ -13529,7 +13564,7 @@
     project: 1
     objective: 4
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 866
   fields:
@@ -13537,7 +13572,7 @@
     project: 1
     objective: 10
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 867
   fields:
@@ -13577,7 +13612,7 @@
     project: 6
     objective: 1
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 872
   fields:
@@ -13633,7 +13668,7 @@
     project: 6
     objective: 6
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 879
   fields:
@@ -13657,7 +13692,7 @@
     project: 3
     objective: 7
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 882
   fields:
@@ -13697,7 +13732,7 @@
     project: 3
     objective: 3
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 887
   fields:
@@ -13713,7 +13748,7 @@
     project: 3
     objective: 10
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 889
   fields:
@@ -13745,7 +13780,7 @@
     project: 7
     objective: 7
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 893
   fields:
@@ -13753,7 +13788,7 @@
     project: 7
     objective: 1
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 894
   fields:
@@ -13793,7 +13828,7 @@
     project: 7
     objective: 4
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 899
   fields:
@@ -13801,7 +13836,7 @@
     project: 7
     objective: 10
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 900
   fields:
@@ -13817,7 +13852,7 @@
     project: 7
     objective: 8
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 902
   fields:
@@ -13833,7 +13868,7 @@
     project: 5
     objective: 7
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 904
   fields:
@@ -13865,7 +13900,7 @@
     project: 5
     objective: 5
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 908
   fields:
@@ -13889,7 +13924,7 @@
     project: 5
     objective: 10
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 911
   fields:
@@ -13929,7 +13964,7 @@
     project: 4
     objective: 1
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 916
   fields:
@@ -13937,7 +13972,7 @@
     project: 4
     objective: 2
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 917
   fields:
@@ -14017,7 +14052,7 @@
     project: 9
     objective: 7
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1356
   fields:
@@ -14073,7 +14108,7 @@
     project: 9
     objective: 2
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1363
   fields:
@@ -14097,7 +14132,7 @@
     project: 9
     objective: 11
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1366
   fields:
@@ -14105,7 +14140,7 @@
     project: 9
     objective: 5
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1367
   fields:
@@ -14137,7 +14172,7 @@
     project: 9
     objective: 3
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1371
   fields:
@@ -14185,7 +14220,7 @@
     project: 9
     objective: 10
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1377
   fields:
@@ -14201,7 +14236,7 @@
     project: 9
     objective: 6
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1379
   fields:
@@ -14225,7 +14260,7 @@
     project: 9
     objective: 8
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1382
   fields:
@@ -14433,7 +14468,7 @@
     project: 9
     objective: 4
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1408
   fields:
@@ -14513,7 +14548,7 @@
     project: 9
     objective: 9
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1418
   fields:
@@ -14521,7 +14556,7 @@
     project: 9
     objective: 9
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1419
   fields:
@@ -14657,7 +14692,7 @@
     project: 9
     objective: 3
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1436
   fields:
@@ -14801,7 +14836,7 @@
     project: 9
     objective: 7
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1454
   fields:
@@ -14873,7 +14908,7 @@
     project: 9
     objective: 11
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1463
   fields:
@@ -14881,7 +14916,7 @@
     project: 9
     objective: 11
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1464
   fields:
@@ -14937,7 +14972,7 @@
     project: 9
     objective: 3
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1471
   fields:
@@ -14953,7 +14988,7 @@
     project: 9
     objective: 4
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1473
   fields:
@@ -14977,7 +15012,7 @@
     project: 9
     objective: 10
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1476
   fields:
@@ -15001,7 +15036,7 @@
     project: 9
     objective: 6
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1479
   fields:
@@ -15017,7 +15052,7 @@
     project: 9
     objective: 8
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1481
   fields:
@@ -15065,7 +15100,7 @@
     project: 10
     objective: 7
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1520
   fields:
@@ -15073,7 +15108,7 @@
     project: 10
     objective: 7
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1521
   fields:
@@ -15169,7 +15204,7 @@
     project: 10
     objective: 5
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1533
   fields:
@@ -15281,7 +15316,7 @@
     project: 10
     objective: 8
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1547
   fields:
@@ -15369,7 +15404,7 @@
     project: 10
     objective: 1
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1558
   fields:
@@ -15473,7 +15508,7 @@
     project: 10
     objective: 4
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1571
   fields:
@@ -15593,7 +15628,7 @@
     project: 10
     objective: 7
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1586
   fields:
@@ -15601,7 +15636,7 @@
     project: 10
     objective: 7
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1587
   fields:
@@ -15609,7 +15644,7 @@
     project: 10
     objective: 7
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1588
   fields:
@@ -15617,7 +15652,7 @@
     project: 10
     objective: 1
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1589
   fields:
@@ -15657,7 +15692,7 @@
     project: 10
     objective: 2
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1594
   fields:
@@ -15665,7 +15700,7 @@
     project: 10
     objective: 11
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1595
   fields:
@@ -15689,7 +15724,7 @@
     project: 10
     objective: 5
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1598
   fields:
@@ -15833,7 +15868,7 @@
     project: 10
     objective: 9
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1616
   fields:
@@ -16041,7 +16076,7 @@
     project: 10
     objective: 10
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1642
   fields:
@@ -16289,7 +16324,7 @@
     project: 11
     objective: 10
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1706
   fields:
@@ -16593,7 +16628,7 @@
     project: 11
     objective: 6
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1744
   fields:
@@ -16617,7 +16652,7 @@
     project: 11
     objective: 8
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1747
   fields:
@@ -16713,7 +16748,7 @@
     project: 11
     objective: 2
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1759
   fields:
@@ -16761,7 +16796,7 @@
     project: 11
     objective: 5
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1765
   fields:
@@ -16833,7 +16868,7 @@
     project: 11
     objective: 10
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1774
   fields:
@@ -16849,7 +16884,7 @@
     project: 11
     objective: 6
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1776
   fields:
@@ -16881,7 +16916,7 @@
     project: 11
     objective: 8
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1780
   fields:
@@ -16985,7 +17020,7 @@
     project: 11
     objective: 11
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1793
   fields:
@@ -16993,7 +17028,7 @@
     project: 11
     objective: 11
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1794
   fields:
@@ -17001,7 +17036,7 @@
     project: 11
     objective: 11
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1795
   fields:
@@ -17017,7 +17052,7 @@
     project: 11
     objective: 5
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1797
   fields:
@@ -17121,7 +17156,7 @@
     project: 11
     objective: 6
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1810
   fields:
@@ -17169,7 +17204,7 @@
     project: 11
     objective: 9
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1849
   fields:
@@ -17265,7 +17300,7 @@
     project: 12
     objective: 11
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1861
   fields:
@@ -17297,7 +17332,7 @@
     project: 12
     objective: 3
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1865
   fields:
@@ -17457,7 +17492,7 @@
     project: 12
     objective: 7
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1885
   fields:
@@ -17521,7 +17556,7 @@
     project: 12
     objective: 11
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1893
   fields:
@@ -17585,7 +17620,7 @@
     project: 12
     objective: 4
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1901
   fields:
@@ -17625,7 +17660,7 @@
     project: 12
     objective: 10
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1906
   fields:
@@ -17649,7 +17684,7 @@
     project: 12
     objective: 6
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1909
   fields:
@@ -17705,7 +17740,7 @@
     project: 12
     objective: 7
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1916
   fields:
@@ -17777,7 +17812,7 @@
     project: 12
     objective: 11
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1925
   fields:
@@ -17905,7 +17940,7 @@
     project: 12
     objective: 6
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1941
   fields:
@@ -17937,7 +17972,7 @@
     project: 12
     objective: 8
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1945
   fields:
@@ -18105,7 +18140,7 @@
     project: 12
     objective: 3
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1966
   fields:
@@ -18129,7 +18164,7 @@
     project: 12
     objective: 4
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1969
   fields:
@@ -18145,7 +18180,7 @@
     project: 12
     objective: 10
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1971
   fields:
@@ -18209,7 +18244,7 @@
     project: 12
     objective: 9
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 1979
   fields:
@@ -18297,7 +18332,7 @@
     project: 13
     objective: 2
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2023
   fields:
@@ -18505,7 +18540,7 @@
     project: 13
     objective: 7
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2049
   fields:
@@ -18569,7 +18604,7 @@
     project: 13
     objective: 11
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2057
   fields:
@@ -18649,7 +18684,7 @@
     project: 13
     objective: 4
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2067
   fields:
@@ -18713,7 +18748,7 @@
     project: 13
     objective: 8
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2075
   fields:
@@ -18753,7 +18788,7 @@
     project: 13
     objective: 9
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2080
   fields:
@@ -18793,7 +18828,7 @@
     project: 13
     objective: 1
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2085
   fields:
@@ -18801,7 +18836,7 @@
     project: 13
     objective: 1
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2086
   fields:
@@ -18985,7 +19020,7 @@
     project: 13
     objective: 8
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2109
   fields:
@@ -19049,7 +19084,7 @@
     project: 13
     objective: 1
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2117
   fields:
@@ -19137,7 +19172,7 @@
     project: 13
     objective: 5
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2128
   fields:
@@ -19161,7 +19196,7 @@
     project: 13
     objective: 3
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2131
   fields:
@@ -19185,7 +19220,7 @@
     project: 13
     objective: 4
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2134
   fields:
@@ -19433,7 +19468,7 @@
     project: 14
     objective: 4
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2198
   fields:
@@ -19513,7 +19548,7 @@
     project: 14
     objective: 8
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2208
   fields:
@@ -19785,7 +19820,7 @@
     project: 14
     objective: 8
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2242
   fields:
@@ -19849,7 +19884,7 @@
     project: 14
     objective: 1
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2250
   fields:
@@ -19913,7 +19948,7 @@
     project: 14
     objective: 5
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2258
   fields:
@@ -20009,7 +20044,7 @@
     project: 14
     objective: 6
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2270
   fields:
@@ -20025,7 +20060,7 @@
     project: 14
     objective: 6
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2272
   fields:
@@ -20041,7 +20076,7 @@
     project: 14
     objective: 8
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2274
   fields:
@@ -20049,7 +20084,7 @@
     project: 14
     objective: 8
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2275
   fields:
@@ -20177,7 +20212,7 @@
     project: 14
     objective: 5
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2291
   fields:
@@ -20369,7 +20404,7 @@
     project: 15
     objective: 1
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2348
   fields:
@@ -20433,7 +20468,7 @@
     project: 15
     objective: 11
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2356
   fields:
@@ -20457,7 +20492,7 @@
     project: 15
     objective: 5
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2359
   fields:
@@ -20489,7 +20524,7 @@
     project: 15
     objective: 4
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2363
   fields:
@@ -20673,7 +20708,7 @@
     project: 15
     objective: 2
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2386
   fields:
@@ -20897,7 +20932,7 @@
     project: 15
     objective: 1
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2414
   fields:
@@ -20921,7 +20956,7 @@
     project: 15
     objective: 2
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2417
   fields:
@@ -20985,7 +21020,7 @@
     project: 15
     objective: 5
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2425
   fields:
@@ -21073,7 +21108,7 @@
     project: 15
     objective: 6
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2436
   fields:
@@ -21177,7 +21212,7 @@
     project: 15
     objective: 1
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2449
   fields:
@@ -21193,7 +21228,7 @@
     project: 15
     objective: 2
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2451
   fields:
@@ -21209,7 +21244,7 @@
     project: 15
     objective: 11
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2453
   fields:
@@ -21313,7 +21348,7 @@
     project: 15
     objective: 10
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2466
   fields:
@@ -21745,7 +21780,7 @@
     project: 16
     objective: 11
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2553
   fields:
@@ -21793,7 +21828,7 @@
     project: 16
     objective: 3
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2559
   fields:
@@ -21801,7 +21836,7 @@
     project: 16
     objective: 3
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2560
   fields:
@@ -22009,7 +22044,7 @@
     project: 16
     objective: 11
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2586
   fields:
@@ -22129,7 +22164,7 @@
     project: 16
     objective: 6
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2601
   fields:
@@ -22241,7 +22276,7 @@
     project: 16
     objective: 2
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2615
   fields:
@@ -22473,7 +22508,7 @@
     project: 17
     objective: 7
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2677
   fields:
@@ -22481,7 +22516,7 @@
     project: 17
     objective: 1
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2678
   fields:
@@ -22513,7 +22548,7 @@
     project: 17
     objective: 2
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2682
   fields:
@@ -22521,7 +22556,7 @@
     project: 17
     objective: 2
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2683
   fields:
@@ -22553,7 +22588,7 @@
     project: 17
     objective: 5
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2687
   fields:
@@ -22769,7 +22804,7 @@
     project: 17
     objective: 2
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2714
   fields:
@@ -22929,7 +22964,7 @@
     project: 17
     objective: 6
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2734
   fields:
@@ -23177,7 +23212,7 @@
     project: 17
     objective: 6
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2765
   fields:
@@ -23193,7 +23228,7 @@
     project: 17
     objective: 6
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2767
   fields:
@@ -23241,7 +23276,7 @@
     project: 17
     objective: 9
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2773
   fields:
@@ -23265,7 +23300,7 @@
     project: 17
     objective: 7
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2776
   fields:
@@ -23329,7 +23364,7 @@
     project: 17
     objective: 11
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2784
   fields:
@@ -23369,7 +23404,7 @@
     project: 17
     objective: 3
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2789
   fields:
@@ -23449,7 +23484,7 @@
     project: 17
     objective: 6
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2799
   fields:
@@ -23545,7 +23580,7 @@
     project: 18
     objective: 1
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2844
   fields:
@@ -23681,7 +23716,7 @@
     project: 18
     objective: 10
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2861
   fields:
@@ -23881,7 +23916,7 @@
     project: 18
     objective: 5
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2886
   fields:
@@ -23889,7 +23924,7 @@
     project: 18
     objective: 5
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2887
   fields:
@@ -24001,7 +24036,7 @@
     project: 18
     objective: 8
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2901
   fields:
@@ -24017,7 +24052,7 @@
     project: 18
     objective: 9
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2903
   fields:
@@ -24081,7 +24116,7 @@
     project: 18
     objective: 1
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2911
   fields:
@@ -24257,7 +24292,7 @@
     project: 18
     objective: 8
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2933
   fields:
@@ -24385,7 +24420,7 @@
     project: 18
     objective: 11
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2949
   fields:
@@ -24577,7 +24612,7 @@
     project: 2
     objective: 1
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2973
   fields:
@@ -24657,7 +24692,7 @@
     project: 1
     objective: 7
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2983
   fields:
@@ -24681,7 +24716,7 @@
     project: 1
     objective: 11
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2986
   fields:
@@ -24753,7 +24788,7 @@
     project: 6
     objective: 1
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 2995
   fields:
@@ -24945,7 +24980,7 @@
     project: 7
     objective: 11
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3019
   fields:
@@ -25017,7 +25052,7 @@
     project: 9
     objective: 1
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3028
   fields:
@@ -25025,7 +25060,7 @@
     project: 9
     objective: 2
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3029
   fields:
@@ -25065,7 +25100,7 @@
     project: 9
     objective: 10
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3034
   fields:
@@ -25209,7 +25244,7 @@
     project: 4
     objective: 11
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3052
   fields:
@@ -25241,7 +25276,7 @@
     project: 4
     objective: 10
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3056
   fields:
@@ -25249,7 +25284,7 @@
     project: 4
     objective: 6
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3057
   fields:
@@ -25289,7 +25324,7 @@
     project: 12
     objective: 2
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3062
   fields:
@@ -25401,7 +25436,7 @@
     project: 11
     objective: 3
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3076
   fields:
@@ -25441,7 +25476,7 @@
     project: 11
     objective: 9
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3081
   fields:
@@ -25481,7 +25516,7 @@
     project: 10
     objective: 5
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3086
   fields:
@@ -25561,7 +25596,7 @@
     project: 14
     objective: 11
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3096
   fields:
@@ -25593,7 +25628,7 @@
     project: 14
     objective: 10
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3100
   fields:
@@ -25601,7 +25636,7 @@
     project: 14
     objective: 6
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3101
   fields:
@@ -25665,7 +25700,7 @@
     project: 15
     objective: 3
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3109
   fields:
@@ -25673,7 +25708,7 @@
     project: 15
     objective: 4
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3110
   fields:
@@ -25785,7 +25820,7 @@
     project: 13
     objective: 8
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3124
   fields:
@@ -25905,7 +25940,7 @@
     project: 16
     objective: 2
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3139
   fields:
@@ -26105,7 +26140,7 @@
     project: 2
     objective: 3
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3164
   fields:
@@ -26121,7 +26156,7 @@
     project: 2
     objective: 10
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3166
   fields:
@@ -26257,7 +26292,7 @@
     project: 6
     objective: 2
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3183
   fields:
@@ -26425,7 +26460,7 @@
     project: 7
     objective: 1
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3204
   fields:
@@ -26449,7 +26484,7 @@
     project: 7
     objective: 5
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3207
   fields:
@@ -26521,7 +26556,7 @@
     project: 9
     objective: 2
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3216
   fields:
@@ -26609,7 +26644,7 @@
     project: 5
     objective: 2
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3227
   fields:
@@ -26617,7 +26652,7 @@
     project: 5
     objective: 11
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3228
   fields:
@@ -26849,7 +26884,7 @@
     project: 12
     objective: 9
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3257
   fields:
@@ -26993,7 +27028,7 @@
     project: 10
     objective: 4
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3275
   fields:
@@ -27033,7 +27068,7 @@
     project: 14
     objective: 7
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3280
   fields:
@@ -27201,7 +27236,7 @@
     project: 15
     objective: 9
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3301
   fields:
@@ -27289,7 +27324,7 @@
     project: 13
     objective: 9
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3312
   fields:
@@ -27313,7 +27348,7 @@
     project: 18
     objective: 2
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3315
   fields:
@@ -27345,7 +27380,7 @@
     project: 18
     objective: 4
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3319
   fields:
@@ -27577,7 +27612,7 @@
     project: 2
     objective: 2
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3348
   fields:
@@ -27617,7 +27652,7 @@
     project: 2
     objective: 10
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3353
   fields:
@@ -27633,7 +27668,7 @@
     project: 2
     objective: 8
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3355
   fields:
@@ -27825,7 +27860,7 @@
     project: 3
     objective: 7
     level: 3
-    committed: true
+    committed: false
 - model: projects.levelcommitment
   pk: 3379
   fields:
@@ -27913,7 +27948,7 @@
     project: 7
     objective: 7
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3390
   fields:
@@ -27977,7 +28012,7 @@
     project: 7
     objective: 6
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3398
   fields:
@@ -28113,7 +28148,7 @@
     project: 5
     objective: 11
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3415
   fields:
@@ -28137,7 +28172,7 @@
     project: 5
     objective: 4
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3418
   fields:
@@ -28233,7 +28268,7 @@
     project: 4
     objective: 10
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3430
   fields:
@@ -28241,7 +28276,7 @@
     project: 4
     objective: 6
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3431
   fields:
@@ -28257,7 +28292,7 @@
     project: 4
     objective: 9
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3433
   fields:
@@ -28297,7 +28332,7 @@
     project: 12
     objective: 5
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3438
   fields:
@@ -28313,7 +28348,7 @@
     project: 12
     objective: 4
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3440
   fields:
@@ -28417,7 +28452,7 @@
     project: 11
     objective: 6
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3453
   fields:
@@ -28433,7 +28468,7 @@
     project: 11
     objective: 9
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3455
   fields:
@@ -28625,7 +28660,7 @@
     project: 15
     objective: 1
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3479
   fields:
@@ -28649,7 +28684,7 @@
     project: 15
     objective: 5
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3482
   fields:
@@ -28657,7 +28692,7 @@
     project: 15
     objective: 3
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3483
   fields:
@@ -28665,7 +28700,7 @@
     project: 15
     objective: 4
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3484
   fields:
@@ -28673,7 +28708,7 @@
     project: 15
     objective: 10
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3485
   fields:
@@ -28689,7 +28724,7 @@
     project: 15
     objective: 8
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3487
   fields:
@@ -28713,7 +28748,7 @@
     project: 13
     objective: 1
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3490
   fields:
@@ -28721,7 +28756,7 @@
     project: 13
     objective: 2
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3491
   fields:
@@ -28777,7 +28812,7 @@
     project: 13
     objective: 8
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3498
   fields:
@@ -28793,7 +28828,7 @@
     project: 18
     objective: 7
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3500
   fields:
@@ -28857,7 +28892,7 @@
     project: 18
     objective: 6
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3508
   fields:
@@ -28889,7 +28924,7 @@
     project: 16
     objective: 1
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3512
   fields:
@@ -29001,7 +29036,7 @@
     project: 17
     objective: 5
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3526
   fields:
@@ -29081,7 +29116,7 @@
     project: 2
     objective: 11
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3536
   fields:
@@ -29089,7 +29124,7 @@
     project: 2
     objective: 5
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3537
   fields:
@@ -29161,7 +29196,7 @@
     project: 1
     objective: 2
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3546
   fields:
@@ -29225,7 +29260,7 @@
     project: 1
     objective: 9
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3554
   fields:
@@ -29417,7 +29452,7 @@
     project: 7
     objective: 1
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3578
   fields:
@@ -29529,7 +29564,7 @@
     project: 9
     objective: 5
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3592
   fields:
@@ -29577,7 +29612,7 @@
     project: 9
     objective: 9
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3598
   fields:
@@ -29585,7 +29620,7 @@
     project: 5
     objective: 7
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3599
   fields:
@@ -29609,7 +29644,7 @@
     project: 5
     objective: 11
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3602
   fields:
@@ -29777,7 +29812,7 @@
     project: 12
     objective: 2
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3623
   fields:
@@ -29801,7 +29836,7 @@
     project: 12
     objective: 3
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3626
   fields:
@@ -29825,7 +29860,7 @@
     project: 12
     objective: 6
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3629
   fields:
@@ -29833,7 +29868,7 @@
     project: 12
     objective: 8
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3630
   fields:
@@ -29849,7 +29884,7 @@
     project: 11
     objective: 7
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3632
   fields:
@@ -29921,7 +29956,7 @@
     project: 11
     objective: 8
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3641
   fields:
@@ -30049,7 +30084,7 @@
     project: 14
     objective: 11
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3657
   fields:
@@ -30065,7 +30100,7 @@
     project: 14
     objective: 3
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3659
   fields:
@@ -30097,7 +30132,7 @@
     project: 14
     objective: 8
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3663
   fields:
@@ -30441,7 +30476,7 @@
     project: 16
     objective: 6
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3706
   fields:
@@ -30473,7 +30508,7 @@
     project: 17
     objective: 1
     level: 1
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3710
   fields:
@@ -30689,7 +30724,7 @@
     project: 1
     objective: 4
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3737
   fields:
@@ -30785,7 +30820,7 @@
     project: 6
     objective: 10
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3749
   fields:
@@ -30833,7 +30868,7 @@
     project: 3
     objective: 2
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3755
   fields:
@@ -30849,7 +30884,7 @@
     project: 3
     objective: 5
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3757
   fields:
@@ -30985,7 +31020,7 @@
     project: 7
     objective: 9
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3774
   fields:
@@ -31033,7 +31068,7 @@
     project: 9
     objective: 3
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3780
   fields:
@@ -31233,7 +31268,7 @@
     project: 4
     objective: 6
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3805
   fields:
@@ -31265,7 +31300,7 @@
     project: 12
     objective: 1
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3809
   fields:
@@ -31289,7 +31324,7 @@
     project: 12
     objective: 5
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3812
   fields:
@@ -31297,7 +31332,7 @@
     project: 12
     objective: 3
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3813
   fields:
@@ -31329,7 +31364,7 @@
     project: 12
     objective: 8
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3817
   fields:
@@ -31345,7 +31380,7 @@
     project: 11
     objective: 7
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3819
   fields:
@@ -31369,7 +31404,7 @@
     project: 11
     objective: 11
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3822
   fields:
@@ -31697,7 +31732,7 @@
     project: 13
     objective: 7
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3863
   fields:
@@ -31833,7 +31868,7 @@
     project: 18
     objective: 4
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3880
   fields:
@@ -31849,7 +31884,7 @@
     project: 18
     objective: 6
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3882
   fields:
@@ -31897,7 +31932,7 @@
     project: 16
     objective: 11
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3888
   fields:
@@ -31905,7 +31940,7 @@
     project: 16
     objective: 5
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3889
   fields:
@@ -31913,7 +31948,7 @@
     project: 16
     objective: 3
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3890
   fields:
@@ -31945,7 +31980,7 @@
     project: 16
     objective: 8
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3894
   fields:
@@ -32041,7 +32076,7 @@
     project: 17
     objective: 9
     level: 2
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3906
   fields:
@@ -32073,7 +32108,7 @@
     project: 2
     objective: 11
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3910
   fields:
@@ -32193,7 +32228,7 @@
     project: 1
     objective: 10
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3925
   fields:
@@ -32241,7 +32276,7 @@
     project: 6
     objective: 2
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3931
   fields:
@@ -32265,7 +32300,7 @@
     project: 6
     objective: 3
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3934
   fields:
@@ -32297,7 +32332,7 @@
     project: 6
     objective: 8
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3938
   fields:
@@ -32313,7 +32348,7 @@
     project: 3
     objective: 7
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3940
   fields:
@@ -32369,7 +32404,7 @@
     project: 3
     objective: 10
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3947
   fields:
@@ -32385,7 +32420,7 @@
     project: 3
     objective: 8
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3949
   fields:
@@ -32449,7 +32484,7 @@
     project: 7
     objective: 4
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3957
   fields:
@@ -32481,7 +32516,7 @@
     project: 7
     objective: 9
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3961
   fields:
@@ -32497,7 +32532,7 @@
     project: 9
     objective: 1
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 3963
   fields:
@@ -32905,7 +32940,7 @@
     project: 11
     objective: 6
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 4014
   fields:
@@ -33081,7 +33116,7 @@
     project: 14
     objective: 6
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 4036
   fields:
@@ -33097,7 +33132,7 @@
     project: 14
     objective: 9
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 4038
   fields:
@@ -33113,7 +33148,7 @@
     project: 15
     objective: 1
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 4040
   fields:
@@ -33145,7 +33180,7 @@
     project: 15
     objective: 3
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 4044
   fields:
@@ -33257,7 +33292,7 @@
     project: 13
     objective: 6
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 4058
   fields:
@@ -33281,7 +33316,7 @@
     project: 18
     objective: 7
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 4061
   fields:
@@ -33305,7 +33340,7 @@
     project: 18
     objective: 11
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 4064
   fields:
@@ -33361,7 +33396,7 @@
     project: 18
     objective: 9
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 4071
   fields:
@@ -33505,7 +33540,7 @@
     project: 17
     objective: 4
     level: 3
-    committed: false
+    committed: true
 - model: projects.levelcommitment
   pk: 4089
   fields:
@@ -34150,11 +34185,491 @@
     project: 17
     workcycle: 7
     value: 0
+- model: auth.permission
+  pk: 1
+  fields:
+    name: Can add project group
+    content_type: 1
+    codename: add_projectgroup
+- model: auth.permission
+  pk: 2
+  fields:
+    name: Can change project group
+    content_type: 1
+    codename: change_projectgroup
+- model: auth.permission
+  pk: 3
+  fields:
+    name: Can delete project group
+    content_type: 1
+    codename: delete_projectgroup
+- model: auth.permission
+  pk: 4
+  fields:
+    name: Can view project group
+    content_type: 1
+    codename: view_projectgroup
+- model: auth.permission
+  pk: 5
+  fields:
+    name: Can add project
+    content_type: 2
+    codename: add_project
+- model: auth.permission
+  pk: 6
+  fields:
+    name: Can change project
+    content_type: 2
+    codename: change_project
+- model: auth.permission
+  pk: 7
+  fields:
+    name: Can delete project
+    content_type: 2
+    codename: delete_project
+- model: auth.permission
+  pk: 8
+  fields:
+    name: Can view project
+    content_type: 2
+    codename: view_project
+- model: auth.permission
+  pk: 9
+  fields:
+    name: Can add project objective
+    content_type: 3
+    codename: add_projectobjective
+- model: auth.permission
+  pk: 10
+  fields:
+    name: Can change project objective
+    content_type: 3
+    codename: change_projectobjective
+- model: auth.permission
+  pk: 11
+  fields:
+    name: Can delete project objective
+    content_type: 3
+    codename: delete_projectobjective
+- model: auth.permission
+  pk: 12
+  fields:
+    name: Can view project objective
+    content_type: 3
+    codename: view_projectobjective
+- model: auth.permission
+  pk: 13
+  fields:
+    name: Can add project objective condition
+    content_type: 4
+    codename: add_projectobjectivecondition
+- model: auth.permission
+  pk: 14
+  fields:
+    name: Can change project objective condition
+    content_type: 4
+    codename: change_projectobjectivecondition
+- model: auth.permission
+  pk: 15
+  fields:
+    name: Can delete project objective condition
+    content_type: 4
+    codename: delete_projectobjectivecondition
+- model: auth.permission
+  pk: 16
+  fields:
+    name: Can view project objective condition
+    content_type: 4
+    codename: view_projectobjectivecondition
+- model: auth.permission
+  pk: 17
+  fields:
+    name: Can add qi
+    content_type: 5
+    codename: add_qi
+- model: auth.permission
+  pk: 18
+  fields:
+    name: Can change qi
+    content_type: 5
+    codename: change_qi
+- model: auth.permission
+  pk: 19
+  fields:
+    name: Can delete qi
+    content_type: 5
+    codename: delete_qi
+- model: auth.permission
+  pk: 20
+  fields:
+    name: Can view qi
+    content_type: 5
+    codename: view_qi
+- model: auth.permission
+  pk: 21
+  fields:
+    name: Can add level commitment
+    content_type: 6
+    codename: add_levelcommitment
+- model: auth.permission
+  pk: 22
+  fields:
+    name: Can change level commitment
+    content_type: 6
+    codename: change_levelcommitment
+- model: auth.permission
+  pk: 23
+  fields:
+    name: Can delete level commitment
+    content_type: 6
+    codename: delete_levelcommitment
+- model: auth.permission
+  pk: 24
+  fields:
+    name: Can view level commitment
+    content_type: 6
+    codename: view_levelcommitment
+- model: auth.permission
+  pk: 25
+  fields:
+    name: Can add level
+    content_type: 7
+    codename: add_level
+- model: auth.permission
+  pk: 26
+  fields:
+    name: Can change level
+    content_type: 7
+    codename: change_level
+- model: auth.permission
+  pk: 27
+  fields:
+    name: Can delete level
+    content_type: 7
+    codename: delete_level
+- model: auth.permission
+  pk: 28
+  fields:
+    name: Can view level
+    content_type: 7
+    codename: view_level
+- model: auth.permission
+  pk: 29
+  fields:
+    name: Can add objective
+    content_type: 8
+    codename: add_objective
+- model: auth.permission
+  pk: 30
+  fields:
+    name: Can change objective
+    content_type: 8
+    codename: change_objective
+- model: auth.permission
+  pk: 31
+  fields:
+    name: Can delete objective
+    content_type: 8
+    codename: delete_objective
+- model: auth.permission
+  pk: 32
+  fields:
+    name: Can view objective
+    content_type: 8
+    codename: view_objective
+- model: auth.permission
+  pk: 33
+  fields:
+    name: Can add objective group
+    content_type: 9
+    codename: add_objectivegroup
+- model: auth.permission
+  pk: 34
+  fields:
+    name: Can change objective group
+    content_type: 9
+    codename: change_objectivegroup
+- model: auth.permission
+  pk: 35
+  fields:
+    name: Can delete objective group
+    content_type: 9
+    codename: delete_objectivegroup
+- model: auth.permission
+  pk: 36
+  fields:
+    name: Can view objective group
+    content_type: 9
+    codename: view_objectivegroup
+- model: auth.permission
+  pk: 37
+  fields:
+    name: Can add project status
+    content_type: 10
+    codename: add_projectstatus
+- model: auth.permission
+  pk: 38
+  fields:
+    name: Can change project status
+    content_type: 10
+    codename: change_projectstatus
+- model: auth.permission
+  pk: 39
+  fields:
+    name: Can delete project status
+    content_type: 10
+    codename: delete_projectstatus
+- model: auth.permission
+  pk: 40
+  fields:
+    name: Can view project status
+    content_type: 10
+    codename: view_projectstatus
+- model: auth.permission
+  pk: 41
+  fields:
+    name: Can add work cycle
+    content_type: 11
+    codename: add_workcycle
+- model: auth.permission
+  pk: 42
+  fields:
+    name: Can change work cycle
+    content_type: 11
+    codename: change_workcycle
+- model: auth.permission
+  pk: 43
+  fields:
+    name: Can delete work cycle
+    content_type: 11
+    codename: delete_workcycle
+- model: auth.permission
+  pk: 44
+  fields:
+    name: Can view work cycle
+    content_type: 11
+    codename: view_workcycle
+- model: auth.permission
+  pk: 45
+  fields:
+    name: Can add condition
+    content_type: 12
+    codename: add_condition
+- model: auth.permission
+  pk: 46
+  fields:
+    name: Can change condition
+    content_type: 12
+    codename: change_condition
+- model: auth.permission
+  pk: 47
+  fields:
+    name: Can delete condition
+    content_type: 12
+    codename: delete_condition
+- model: auth.permission
+  pk: 48
+  fields:
+    name: Can view condition
+    content_type: 12
+    codename: view_condition
+- model: auth.permission
+  pk: 49
+  fields:
+    name: Can add reason
+    content_type: 13
+    codename: add_reason
+- model: auth.permission
+  pk: 50
+  fields:
+    name: Can change reason
+    content_type: 13
+    codename: change_reason
+- model: auth.permission
+  pk: 51
+  fields:
+    name: Can delete reason
+    content_type: 13
+    codename: delete_reason
+- model: auth.permission
+  pk: 52
+  fields:
+    name: Can view reason
+    content_type: 13
+    codename: view_reason
+- model: auth.permission
+  pk: 53
+  fields:
+    name: Can add log entry
+    content_type: 14
+    codename: add_logentry
+- model: auth.permission
+  pk: 54
+  fields:
+    name: Can change log entry
+    content_type: 14
+    codename: change_logentry
+- model: auth.permission
+  pk: 55
+  fields:
+    name: Can delete log entry
+    content_type: 14
+    codename: delete_logentry
+- model: auth.permission
+  pk: 56
+  fields:
+    name: Can view log entry
+    content_type: 14
+    codename: view_logentry
+- model: auth.permission
+  pk: 57
+  fields:
+    name: Can add permission
+    content_type: 15
+    codename: add_permission
+- model: auth.permission
+  pk: 58
+  fields:
+    name: Can change permission
+    content_type: 15
+    codename: change_permission
+- model: auth.permission
+  pk: 59
+  fields:
+    name: Can delete permission
+    content_type: 15
+    codename: delete_permission
+- model: auth.permission
+  pk: 60
+  fields:
+    name: Can view permission
+    content_type: 15
+    codename: view_permission
+- model: auth.permission
+  pk: 61
+  fields:
+    name: Can add group
+    content_type: 16
+    codename: add_group
+- model: auth.permission
+  pk: 62
+  fields:
+    name: Can change group
+    content_type: 16
+    codename: change_group
+- model: auth.permission
+  pk: 63
+  fields:
+    name: Can delete group
+    content_type: 16
+    codename: delete_group
+- model: auth.permission
+  pk: 64
+  fields:
+    name: Can view group
+    content_type: 16
+    codename: view_group
+- model: auth.permission
+  pk: 65
+  fields:
+    name: Can add user
+    content_type: 17
+    codename: add_user
+- model: auth.permission
+  pk: 66
+  fields:
+    name: Can change user
+    content_type: 17
+    codename: change_user
+- model: auth.permission
+  pk: 67
+  fields:
+    name: Can delete user
+    content_type: 17
+    codename: delete_user
+- model: auth.permission
+  pk: 68
+  fields:
+    name: Can view user
+    content_type: 17
+    codename: view_user
+- model: auth.permission
+  pk: 69
+  fields:
+    name: Can add content type
+    content_type: 18
+    codename: add_contenttype
+- model: auth.permission
+  pk: 70
+  fields:
+    name: Can change content type
+    content_type: 18
+    codename: change_contenttype
+- model: auth.permission
+  pk: 71
+  fields:
+    name: Can delete content type
+    content_type: 18
+    codename: delete_contenttype
+- model: auth.permission
+  pk: 72
+  fields:
+    name: Can view content type
+    content_type: 18
+    codename: view_contenttype
+- model: auth.permission
+  pk: 73
+  fields:
+    name: Can add session
+    content_type: 19
+    codename: add_session
+- model: auth.permission
+  pk: 74
+  fields:
+    name: Can change session
+    content_type: 19
+    codename: change_session
+- model: auth.permission
+  pk: 75
+  fields:
+    name: Can delete session
+    content_type: 19
+    codename: delete_session
+- model: auth.permission
+  pk: 76
+  fields:
+    name: Can view session
+    content_type: 19
+    codename: view_session
+- model: auth.permission
+  pk: 77
+  fields:
+    name: Can add agreement status
+    content_type: 20
+    codename: add_agreementstatus
+- model: auth.permission
+  pk: 78
+  fields:
+    name: Can change agreement status
+    content_type: 20
+    codename: change_agreementstatus
+- model: auth.permission
+  pk: 79
+  fields:
+    name: Can delete agreement status
+    content_type: 20
+    codename: delete_agreementstatus
+- model: auth.permission
+  pk: 80
+  fields:
+    name: Can view agreement status
+    content_type: 20
+    codename: view_agreementstatus
 - model: auth.user
   pk: 1
   fields:
     password: pbkdf2_sha256$870000$wrLgDLm6LnfRMMx70aSref$+/mKdBWGs7a62LOYowsqKLv+QpJ71gCk/+cd3vPEuNY=
-    last_login: 2025-09-02 21:07:04.118507+00:00
+    last_login: 2025-09-04 19:50:49.016048+00:00
     is_superuser: true
     username: test
     first_name: ''
