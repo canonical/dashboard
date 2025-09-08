@@ -6,6 +6,12 @@
       hx-put="{% url 'projects:action_toggle_condition' condition.id %}"
       />
   </td>
-  <td class="">{{ condition.name }}</td>
+  <td class="">
+    {{ condition.name }}
+    <div class="attributes">
+      <span class="condition na">na</span>
+      <span class="condition candidate true">candidate</span>
+  </div>
+  </td>
   <td class="commitment-blank" colspan="{{ work_cycles|length }}"></td>
 </tr>

@@ -169,6 +169,8 @@ class ProjectObjectiveCondition(models.Model):
     objective = models.ForeignKey(Objective, on_delete=models.CASCADE)
     condition = models.ForeignKey(Condition, on_delete=models.CASCADE)
     done = models.BooleanField(default=False)
+    not_applicable = models.BooleanField(default=False)
+    candidate = models.BooleanField(default=False)
 
     def projectobjective(self):
         return ProjectObjective.objects.get(

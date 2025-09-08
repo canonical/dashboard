@@ -35,3 +35,8 @@ td.blocked, td.inactive {color: black; background: #EAD1DC}
 td.started {color: black; background: #B6D7A8}
 td.first-results {color: black; background: #6AA84F}
 td.mature-results, td.done, td.all-ok {color: white; background: #38761D}
+
+/* condition items */
+
+.attributes {float: right; color: gray; padding-left: 1em;}
+.attributes .condition.true {color: black;}
