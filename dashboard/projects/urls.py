@@ -10,7 +10,7 @@ from .views import (
     status_projects_commitment,
     status_projectobjective,
     action_condition_toggle_candidate,
-    action_condition_toggle_not_applicable
+    action_condition_toggle_not_applicable,
 )
 
 app_name = "projects"

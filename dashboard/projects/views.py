@@ -73,7 +73,8 @@ def project(request, id):
     )
 
 
-# action methods
+# status methods
+
 
 @require_http_methods(["GET"])
 def status_projects_commitment(request, project_id):
@@ -86,7 +87,10 @@ def status_projects_commitment(request, project_id):
     return render(
         request,
         "projects/partial_project_commitments.html",
-        {"project": project, "current_commitments": current_commitments},
+        {
+            "project": project,
+            "current_commitments": current_commitments,
+        },
     )
 
     return render(
@@ -103,11 +107,15 @@ def status_projectobjective(request, projectobjective_id):
     return render(
         request,
         "projects/partial_objectivestatus.html",
-        {"projectobjective": projectobjective},
+        {
+            "projectobjective": projectobjective,
+            "unstarted_reasons": Reason.objects.all(),
+        },
     )
 
 
 # action methods
+
 
 @require_http_methods(["PUT"])
 def action_toggle_commitment(request, commitment_id):
@@ -173,6 +181,7 @@ def action_select_reason(request, projectobjective_id):
     projectobjective = ProjectObjective.objects.get(id=projectobjective_id)
 
     value = QueryDict(request.body)["ifnotstarted"]
+    print("value", value)
     if value:
         projectobjective.unstarted_reason = Reason.objects.get(id=int(value))
     else:
@@ -184,6 +193,7 @@ def action_select_reason(request, projectobjective_id):
 
 # form methods
 
+
 @require_http_methods(["POST"])
 def project_basic_form_save(request, project_id):
     instance = Project.objects.get(id=project_id)
@@ -194,5 +204,3 @@ def project_basic_form_save(request, project_id):
         "projects/partial_project_basics.html",
         {"basics_form": form, "project": instance},
     )
-
-
