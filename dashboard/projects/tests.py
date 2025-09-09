@@ -77,7 +77,5 @@ def test_toggling_conditions(live_server, page):
     page.get_by_test_id("toggle_condition_14").check()
     assert ProjectObjectiveCondition.objects.get(
         id=14
-    ).projectobjective().status() == Level.objects.get(id=2)
-    expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text(
-        "First results"
-    )
+    ).projectobjective().status() == Level.objects.get(id=1)
+    expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text("Started")

@@ -129,7 +129,10 @@ class ProjectObjective(models.Model):
                 objective=self.objective,
                 condition__level=level,
             )
-            if results.exists() and not results.filter(done=False, not_applicable=False).exists():
+            if (
+                results.exists()
+                and not results.filter(done=False, not_applicable=False).exists()
+            ):
                 return level
 
     def status(self):

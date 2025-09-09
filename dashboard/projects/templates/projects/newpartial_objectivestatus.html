@@ -1,0 +1,12 @@
+<td
+  id="projectobjective_status_{{ projectobjective.instance.id }}"
+  class="{{ projectobjective.instance.status|lower|slugify }}"
+  data-testid="projectobjective_status_{{ projectobjective.instance.id }}"
+  hx-trigger="
+    change from:select delay:.5s,
+    change from:input[type='checkbox'] delay:.5s,
+    click from:div.attributes delay:.5s"
+  hx-get="{% url 'projects:status_projectobjective' projectobjective.instance.id %}"
+  hx-swap-oob="true">
+  {{ projectobjective.instance.status|default:"No activity" }}
+</td>

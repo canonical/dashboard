@@ -1817,7 +1817,7 @@
     project: 1
     objective: 1
     condition: 2
-    done: false
+    done: true
     not_applicable: false
     candidate: false
 - model: projects.projectobjectivecondition
@@ -2609,7 +2609,7 @@
     project: 1
     objective: 7
     condition: 24
-    done: false
+    done: true
     not_applicable: false
     candidate: false
 - model: projects.projectobjectivecondition
@@ -2681,7 +2681,7 @@
     project: 1
     objective: 7
     condition: 26
-    done: true
+    done: false
     not_applicable: false
     candidate: false
 - model: projects.projectobjectivecondition

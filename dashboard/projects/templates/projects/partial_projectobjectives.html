@@ -35,14 +35,10 @@
               <tr class="">
                 {% include "projects/partial_objectivestatus.html" %}
                 <td></td>
-                <td colspan="{{ workcycle_count }}" class="commitment-blank"></td>
-              </tr>
-
-              <tr class="">
-                {% include "projects/partial_objectiveunstarted.html" %}
                 {% for work_cycle in work_cycles %}
                   <td class="workcycle {% if work_cycle.is_current %}current{% endif %}">{{ work_cycle }}</td>
                 {% endfor %}
+
               </tr>
 
               {% regroup projectobjective.projectobjectiveconditions by level as levels %}
