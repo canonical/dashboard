@@ -107,7 +107,6 @@ def status_projects_commitment(request, project_id):
         {"project": project, "current_commitments": current_commitments},
     )
 
-
 @require_http_methods("GET")
 def status_projectobjective(request, projectobjective_id):
 
