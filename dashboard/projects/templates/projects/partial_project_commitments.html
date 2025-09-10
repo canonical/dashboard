@@ -6,10 +6,12 @@
     change from:select.unstarted-reason,
     click from:div.attributes delay:.5s"
   hx-get="{% url 'projects:status_projects_commitment' project.id %}">
+
+  <h2>Current commitments</h2>
   <tbody>
-    <tr><th colspan="2">Commitment</th><th>Achieved</th></tr>
+    <tr><th>Objective</th><th>Level</th><th colspan="2">Status</th></tr>
     {% for commitment in current_commitments %}
-      <tr>
+      <tr class="condition">
         <td><a href="#projectobjective-{{ commitment.projectobjective.id }}">{{ commitment.objective }}</a></td>
         <td>{{ commitment.level }}</td>
         <td>
@@ -19,7 +21,7 @@
             {% if commitment.met %} checked {% endif %}
             />
           </td>
-          <td>{% if not commitment.met %}{{ commitment.projectobjective.unstarted_reason|default:"" }}{% endif %}</td>
+          <td>{% if not commitment.met and not commitment.level %}{{ commitment.projectobjective.unstarted_reason|default:"" }}{% endif %}</td>
         </td>
       </tr>
     {% endfor %}
