@@ -4,6 +4,8 @@ from django.views.generic import ListView
 from django.views.decorators.http import require_http_methods
 from django.forms import inlineformset_factory
 from django.http import QueryDict
+from django.contrib.auth.decorators import permission_required
+
 
 from .models import (
     Project,
@@ -39,7 +41,13 @@ def project(request, id):
 
     project = Project.objects.get(id=id)
 
+    basics_form = forms.ProjectDetailForm(instance=project)
+    if not request.user.has_perm('projects.change_project'):
+        for fieldname in basics_form.fields:
+            basics_form.fields[fieldname].disabled = True
+
     commitments = Commitment.objects.filter(project=project)
+
 
     ProjectObjectiveInlineFormSet = inlineformset_factory(
         Project,
@@ -65,7 +73,7 @@ def project(request, id):
                 work_cycle__is_current=True, committed=True
             ),
             "unstarted_reasons": Reason.objects.all(),
-            "basics_form": forms.ProjectDetailForm(instance=project),
+            "basics_form": basics_form,
             "projectobjectives_formset": ProjectObjectiveInlineFormSet(
                 instance=project
             ),
@@ -99,7 +107,6 @@ def status_projects_commitment(request, project_id):
         {"project": project, "current_commitments": current_commitments},
     )
 
-
 @require_http_methods("GET")
 def status_projectobjective(request, projectobjective_id):
 
@@ -117,7 +124,7 @@ def status_projectobjective(request, projectobjective_id):
 
 # action methods
 
-
+@permission_required("projects.change_commitment")
 @require_http_methods(["PUT"])
 def action_toggle_commitment(request, commitment_id):
     commitment = Commitment.objects.get(id=commitment_id)
@@ -127,6 +134,7 @@ def action_toggle_commitment(request, commitment_id):
     return HttpResponse("")
 
 
+@permission_required("projects.change_condition")
 @require_http_methods(["PUT"])
 def action_toggle_condition(request, condition_id):
     condition = ProjectObjectiveCondition.objects.get(id=condition_id)
@@ -143,6 +151,7 @@ def action_toggle_condition(request, condition_id):
     )
 
 
+@permission_required("projects.change_condition")
 @require_http_methods(["PUT"])
 def action_condition_toggle_candidate(request, condition_id):
     condition = ProjectObjectiveCondition.objects.get(id=condition_id)
@@ -157,9 +166,9 @@ def action_condition_toggle_candidate(request, condition_id):
         "projects/partial_condition.html",
         {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
     )
-    return HttpResponse("")
 
 
+@permission_required("projects.change_condition")
 @require_http_methods(["PUT"])
 def action_condition_toggle_not_applicable(request, condition_id):
     condition = ProjectObjectiveCondition.objects.get(id=condition_id)
@@ -177,6 +186,7 @@ def action_condition_toggle_not_applicable(request, condition_id):
     return HttpResponse("")
 
 
+@permission_required("projects.change_projectobjective")
 @require_http_methods(["PUT"])
 def action_select_reason(request, projectobjective_id):
     projectobjective = ProjectObjective.objects.get(id=projectobjective_id)
@@ -192,7 +202,6 @@ def action_select_reason(request, projectobjective_id):
 
 
 # form methods
-
 
 @require_http_methods(["POST"])
 def project_basic_form_save(request, project_id):

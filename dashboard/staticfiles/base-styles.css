@@ -51,7 +51,7 @@ tr.condition.not-applicable span.condition.not-applicable {color: orange;}
 
 tr.condition.not-applicable .condition.name {color: #bbb; text-decoration: line-through;}
 
-tr.condition span.condition:hover {
+tr.condition span.condition.has-perms:hover {
     cursor: default;
     border-radius: 999em; outline: 1px solid orange;
 }

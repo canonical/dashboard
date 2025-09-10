@@ -7,6 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="{% static 'base-styles.css' %}">
       {% block extrahead %}{% endblock %}
+      <title>{% block title %}Dashboard{% endblock %}</title>
   </head>
 
   <body {% block body_attributes %}{% endblock %}>
