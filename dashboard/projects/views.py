@@ -116,7 +116,6 @@ def status_projectobjective(request, projectobjective_id):
 
 # action methods
 
-
 @require_http_methods(["PUT"])
 def action_toggle_commitment(request, commitment_id):
     commitment = Commitment.objects.get(id=commitment_id)
@@ -181,7 +180,6 @@ def action_select_reason(request, projectobjective_id):
     projectobjective = ProjectObjective.objects.get(id=projectobjective_id)
 
     value = QueryDict(request.body)["ifnotstarted"]
-    print("value", value)
     if value:
         projectobjective.unstarted_reason = Reason.objects.get(id=int(value))
     else:
