@@ -123,17 +123,19 @@ class ProjectObjective(models.Model):
         return " > ".join((self.project.name, self.objective.name))
 
     def achieved_level(self):
-        for level in reversed(Level.objects.all()):
-            results = ProjectObjectiveCondition.objects.filter(
+        level_achieved = None
+        for level in Level.objects.all():
+            if not ProjectObjectiveCondition.objects.filter(
                 project=self.project,
                 objective=self.objective,
                 condition__level=level,
-            )
-            if (
-                results.exists()
-                and not results.filter(done=False, not_applicable=False).exists()
-            ):
-                return level
+                done=False
+                ).exists():
+                level_achieved = level
+            else:
+                return level_achieved
+        return level_achieved
+
 
     def status(self):
         return self.achieved_level() or self.unstarted_reason
@@ -158,7 +160,7 @@ class ProjectObjective(models.Model):
         )
 
     class Meta:
-        ordering = ["project", "objective"]
+        ordering = ["objective"]
         constraints = [
             models.UniqueConstraint(
                 fields=["project", "objective"], name="unique_project_objective"
