@@ -8,9 +8,13 @@
   <script src="{% static 'htmx.min.js' %}"></script>
 {% endblock %}
 
+{% block title %}{{ project}}{% endblock %}
+
 {% block body_attributes %}hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'{% endblock %}
 
 {% block content %}
+
+<h1>{{ project }}</h1>
 
 <div id="container">
   <div class="main" id="main">

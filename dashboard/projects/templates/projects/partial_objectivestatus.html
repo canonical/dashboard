@@ -13,6 +13,7 @@
 
   {% else %}
     <select
+      {% if not perms.projects.change_condition %}disabled{% endif %}
       name="ifnotstarted"
       id="projectobjective_ifnotstarted_{{ projectobjective.id }}"
       data-testid="projectobjective_ifnotstarted_{{ projectobjective.id }}"

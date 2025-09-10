@@ -1,39 +1,46 @@
 <tr
   class="
     condition
-    {% if condition.not_applicable %} not-applicable {% endif %}
-    {% if condition.candidate %} candidate {% endif %}
+    {% if condition.not_applicable %}not-applicable{% endif %}
+    {% if condition.candidate %}candidate{% endif %}
   "
 >
   <td>
     <input type="checkbox"
-      data-testid="toggle_condition_{{ condition.id }}"
       {% if condition.done %} checked {% endif %}
-      hx-put="{% url 'projects:action_toggle_condition' condition.id %}"
-      hx-target="closest tr"
-      hx-swap="outerHTML"
+      {% if not perms.projects.change_commitment %}
+        disabled
+      {% else %}
+        data-testid="toggle_condition_{{ condition.id }}"
+        hx-put="{% url 'projects:action_toggle_condition' condition.id %}"
+        hx-target="closest tr"
+        hx-swap="outerHTML"
+      {% endif %}
       />
   </td>
   <td class="condition name">
     {{ condition.name }}
     <div class="attributes">
       <span
-        class="condition not-applicable"
-        hx-put="{% url 'projects:action_condition_toggle_not_applicable' condition.id %}"
-        hx-trigger="click"
-        hx-target="closest tr"
-        hx-swap="outerHTML">
-        na
-      </span>
+        {% if not perms.projects.change_condition %}
+          class="condition not-applicable"
+        {% else %}
+          class="condition candidate not-applicable"
+          hx-put="{% url 'projects:action_condition_toggle_not_applicable' condition.id %}"
+          hx-trigger="click"
+          hx-target="closest tr"
+          hx-swap="outerHTML"
+        {% endif %}>na</span>
       <span
-        class="condition candidate"
-        hx-put="{% url 'projects:action_condition_toggle_candidate' condition.id %}"
-        hx-trigger="click"
-        hx-target="closest tr"
-        hx-swap="outerHTML"
-        >
-        candidate
-      </span>
+        {% if not perms.projects.change_condition %}
+          class="condition candidate"
+        {% else %}
+          class="condition candidate has-perms"
+          hx-put="{% url 'projects:action_condition_toggle_candidate' condition.id %}"
+          hx-trigger="click"
+          hx-target="closest tr"
+          hx-swap="outerHTML"
+      {% endif %}>candidate</span>
   </div>
   </td>
   <td class="commitment-blank" colspan="{{ workcycle_count }}"></td>

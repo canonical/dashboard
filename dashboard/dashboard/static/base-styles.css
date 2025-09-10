@@ -11,6 +11,11 @@ table.objectives.detail {
 table.objectives tr {background: var(--body-bg)}
 table.objectives td {border-bottom: none;}
 
+table.objectives td, th {padding: 4px 8px 4px;}
+
+
+tr.condition td, th {padding: 2px 8px 2px;}
+
 
 th.projectobjectivegroup {
     background: #D9EAD3;
@@ -39,11 +44,14 @@ td.mature-results, td.done, td.all-ok {color: white; background: #38761D}
 /* condition items */
 
 .attributes {float: right; color: #bbb; padding-left: 1em;}
-.attributes span {padding-left: 1em;}
+.attributes span {margin-left: 1em; padding: 0px 4px;}
 
-tr.condition.candidate span.condition.candidate {color: black;}
-tr.condition.not-applicable span.condition.not-applicable {color: black;}
+tr.condition.candidate span.condition.candidate {color: orange;}
+tr.condition.not-applicable span.condition.not-applicable {color: orange;}
 
 tr.condition.not-applicable .condition.name {color: #bbb; text-decoration: line-through;}
 
-tr.condition .attributes span.condition:hover {cursor: default; color: orange;}
+tr.condition span.condition.has-perms:hover {
+    cursor: default;
+    border-radius: 999em; outline: 1px solid orange;
+}

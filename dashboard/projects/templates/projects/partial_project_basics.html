@@ -4,7 +4,15 @@
     hx-target="#basic_form"
     hx-swap="outerHTML"
     >
-    {{ basics_form }}
-    <input type="submit" value="Save" />
+    <table>
+      {% for field in basics_form %}
+        <tr><td>{{ field.label_tag }}</td><td>{{ field }}</td></tr>
+      {% endfor %}
+    </table>
+
+    {% if perms.projects.change_condition %}
+      <input type="submit" value="Save" />
+    {% endif %}
+
   </form>
 </div>

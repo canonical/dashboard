@@ -1,8 +1,6 @@
 table.objectives tr.objective td.name {background-color: #205067; color: white; font-weight: bold;}
 table.objectives tr.level {background-color: #f0f0f0; font-weight: bold;}
 
-table.objectives td, th {padding: 4px 8px 4px;}
-table.objectives tr.condition td, th {padding: 2px 8px 2px;}
 
 table.objectives td p, th p {margin: .2rem 0}
 
