@@ -49,7 +49,7 @@ class WorkCycle(models.Model):
 
         from projects.models import (
             ProjectObjective,
-            LevelCommitment,
+            Commitment,
             Project,
             QI,
         )  # avoids circular import
@@ -64,8 +64,8 @@ class WorkCycle(models.Model):
             for project_objective in projectobjectives.filter(
                 objective__condition__level=level
             ):
-                # make sure there is a corresponding LevelCommitment
-                l = LevelCommitment.objects.get_or_create(
+                # make sure there is a corresponding Commitment
+                l = Commitment.objects.get_or_create(
                     work_cycle=self,
                     project=project_objective.project,
                     objective=project_objective.objective,
@@ -104,7 +104,7 @@ class Objective(models.Model):
         from projects.models import (
             ProjectObjective,
             Project,
-            LevelCommitment,
+            Commitment,
         )  # avoids circular import
 
         super().save(**kwargs)
@@ -118,7 +118,7 @@ class Objective(models.Model):
         for level in Level.objects.all():
             for project in Project.objects.all():
                 for work_cycle in WorkCycle.objects.all():
-                    l = LevelCommitment.objects.get_or_create(
+                    l = Commitment.objects.get_or_create(
                         work_cycle=work_cycle,
                         project=project,
                         objective=self,

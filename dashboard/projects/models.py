@@ -64,10 +64,10 @@ class Project(models.Model):
         for work_cycle in WorkCycle.objects.all():
             QI.objects.get_or_create(workcycle=work_cycle, project=self)
 
-            # make sure there is a LevelCommitment for each WorkCycle/Level/Objective for the Project
+            # make sure there is a Commitment for each WorkCycle/Level/Objective for the Project
             for objective in Objective.objects.filter(project=self):
                 for level in Level.objects.all():
-                    l = LevelCommitment.objects.get_or_create(
+                    l = Commitment.objects.get_or_create(
                         work_cycle=work_cycle,
                         project=self,
                         objective=objective,
@@ -152,8 +152,8 @@ class ProjectObjective(models.Model):
             project=self.project, objective=self.objective
         )
 
-    def levelcommitments(self):
-        return LevelCommitment.objects.filter(
+    def commitments(self):
+        return Commitment.objects.filter(
             project=self.project, objective=self.objective
         )
 
@@ -180,8 +180,8 @@ class ProjectObjectiveCondition(models.Model):
             project=self.project, objective=self.objective
         )
 
-    def levelcommitments(self):
-        return LevelCommitment.objects.filter(
+    def commitments(self):
+        return Commitment.objects.filter(
             project=self.project, objective=self.objective, level=self.level()
         )
 
@@ -204,7 +204,7 @@ class ProjectObjectiveCondition(models.Model):
         ]
 
 
-class LevelCommitment(models.Model):
+class Commitment(models.Model):
     # records a commitment, to a level of an objective of a project, for a particular work cycle
 
     work_cycle = models.ForeignKey(WorkCycle, on_delete=models.CASCADE)
