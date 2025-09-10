@@ -31,17 +31,9 @@ th.project-name {font-weight: normal; text-align: left;}
 
 table a, table a:visited {color: inherit; text-decoration: none}
 
-td.na {color: black; background: #CCCCCC}
-td.paused {color: black; background: #FCE5CD}
-td.planned {color: black; background: #FFF2CC}
-td.deferred {color: black; background: #FCE5CD}
-td.blocked, td.inactive {color: black; background: #EAD1DC}
 td.needs-work {color: black; background: #E66439}
 td.needs-review {color: black; background: #E69138}
 td.mostly-met {color: black; background: #E69138}
-td.started {color: black; background: #B6D7A8}
-td.first-results {color: black; background: #6AA84F}
-td.mature-results, td.done, td.all-ok {color: white; background: #38761D}
 
 td.new {color: white; background: #38761D}
 td.acceptable {color: white; background: #B5D7A8}

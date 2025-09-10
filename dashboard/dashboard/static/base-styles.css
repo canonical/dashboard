@@ -41,6 +41,9 @@ td.mature-results, td.done, td.all-ok {color: white; background: #38761D}
 .attributes {float: right; color: #bbb; padding-left: 1em;}
 .attributes span {padding-left: 1em;}
 
-tr.condition.candidate .attributes .condition.candidate {color: black;}
-tr.condition.not-applicable .condition.not-applicable {color: black;}
+tr.condition.candidate span.condition.candidate {color: black;}
+tr.condition.not-applicable span.condition.not-applicable {color: black;}
+
 tr.condition.not-applicable .condition.name {color: #bbb; text-decoration: line-through;}
+
+tr.condition .attributes span.condition:hover {cursor: default; color: orange;}

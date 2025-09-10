@@ -13,9 +13,13 @@
 
           {% for projectobjectivegroup, projectobjectives in projectobjectivegroups %}
 
-            <tr><th class="projectobjectivegroup" colspan="{{ workcycle_count|add:'2' }}">
-              {{ projectobjectivegroup }}
-            </th></tr>
+            {% if projectobjectivegroup %}
+              <tr>
+                <th class="projectobjectivegroup" colspan="{{ workcycle_count|add:'2' }}">
+                  {{ projectobjectivegroup }}
+                </th>
+              </tr>
+            {% endif %}
 
             {% for projectobjective in projectobjectives %}
 
@@ -42,7 +46,7 @@
               </tr>
 
               {% regroup projectobjective.projectobjectiveconditions by level as levels %}
-              {% regroup projectobjective.levelcommitments by level as commitments %}
+              {% regroup projectobjective.commitments by level as commitments %}
               {% pack levels commitments as level_collections %}
 
               {% for condition, commitment in level_collections %}
@@ -51,7 +55,7 @@
                   <td colspan="2" class="">{{ condition.grouper }}</td>
 
                   {% for commitment in commitment.list %}
-                    {% include "projects/partial_levelcommitment.html" %}
+                    {% include "projects/partial_commitment.html" %}
                   {% endfor %}
 
                 </tr>

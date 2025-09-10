@@ -6,7 +6,7 @@ from .models import (
     Project,
     ProjectObjective,
     ProjectObjectiveCondition,
-    LevelCommitment,
+    Commitment,
     QI,
 )
 
@@ -26,8 +26,8 @@ class ProjectObjectiveConditionInline(admin.TabularInline):
         return False
 
 
-class LevelCommitmentInline(admin.TabularInline):
-    model = LevelCommitment
+class CommitmentInline(admin.TabularInline):
+    model = Commitment
     max_num = 0
     can_delete = False
     fields = ["committed"]
@@ -123,8 +123,8 @@ class ProjectAdmin(admin.ModelAdmin):
     )
 
 
-@admin.register(LevelCommitment)
-class LevelCommitmentAdmin(admin.ModelAdmin):
+@admin.register(Commitment)
+class CommitmentAdmin(admin.ModelAdmin):
     list_filter = ["work_cycle", "project", "objective", "level", "committed"]
 
 

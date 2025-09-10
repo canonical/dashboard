@@ -7,7 +7,7 @@ from django.http import QueryDict
 
 from .models import (
     Project,
-    LevelCommitment,
+    Commitment,
     ProjectObjectiveCondition,
     ProjectObjective,
 )
@@ -39,7 +39,7 @@ def project(request, id):
 
     project = Project.objects.get(id=id)
 
-    commitments = LevelCommitment.objects.filter(project=project)
+    commitments = Commitment.objects.filter(project=project)
 
     ProjectObjectiveInlineFormSet = inlineformset_factory(
         Project,
@@ -80,7 +80,7 @@ def project(request, id):
 def status_projects_commitment(request, project_id):
 
     project = Project.objects.get(id=project_id)
-    current_commitments = LevelCommitment.objects.filter(
+    current_commitments = Commitment.objects.filter(
         project=project, work_cycle__is_current=True, committed=True
     )
 
@@ -119,7 +119,7 @@ def status_projectobjective(request, projectobjective_id):
 
 @require_http_methods(["PUT"])
 def action_toggle_commitment(request, commitment_id):
-    commitment = LevelCommitment.objects.get(id=commitment_id)
+    commitment = Commitment.objects.get(id=commitment_id)
     commitment.committed = not commitment.committed
     commitment.save()
 

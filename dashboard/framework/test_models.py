@@ -8,7 +8,7 @@ from projects.models import (
     Project,
     ProjectObjective,
     ProjectObjectiveCondition,
-    LevelCommitment,
+    Commitment,
 )
 
 
@@ -112,7 +112,7 @@ def test_new_project_acquires_projectiveconditions(
 
 
 @pytest.mark.django_db
-def test_new_project_acquires_levelcommitments(
+def test_new_project_acquires_commitments(
     objective, objective_group, condition, work_cycle
 ):
 
@@ -120,36 +120,36 @@ def test_new_project_acquires_levelcommitments(
         name="test_project", owner="test_owner", driver="test_driver"
     )
     assert project.pk == 1
-    assert project.levelcommitment_set.count() == 1
-    assert project.levelcommitment_set.all()[0].objective == objective
+    assert project.commitment_set.count() == 1
+    assert project.commitment_set.all()[0].objective == objective
 
 
 @pytest.mark.django_db
-def test_workcycle_is_propagated_to_levelcommitments(
+def test_workcycle_is_propagated_to_commitments(
     work_cycle, condition, project_objective
 ):
 
-    assert work_cycle.levelcommitment_set.count() == 1
+    assert work_cycle.commitment_set.count() == 1
     work_cycle = WorkCycle.objects.create(
         name="test_work_cycle_2", timestamp=datetime.date.today()
     )
 
-    # there should be a new LevelCommitment
-    assert work_cycle.levelcommitment_set.count() == 1
-    assert LevelCommitment.objects.count() == 2
-    assert work_cycle.levelcommitment_set.filter(work_cycle=work_cycle).exists()
+    # there should be a new Commitment
+    assert work_cycle.commitment_set.count() == 1
+    assert Commitment.objects.count() == 2
+    assert work_cycle.commitment_set.filter(work_cycle=work_cycle).exists()
 
 
 @pytest.mark.django_db
-def test_new_objective_means_new_levelcommitments(
+def test_new_objective_means_new_commitments(
     project, project_objective, objective_group, condition, work_cycle
 ):
-    assert project.levelcommitment_set.count() == 1
-    assert work_cycle.levelcommitment_set.count() == 1
+    assert project.commitment_set.count() == 1
+    assert work_cycle.commitment_set.count() == 1
 
     objective = Objective.objects.create(
         name="test_objective_2", group=objective_group, weight=1
     )
 
-    assert project.levelcommitment_set.count() == 2
-    assert work_cycle.levelcommitment_set.count() == 2
+    assert project.commitment_set.count() == 2
+    assert work_cycle.commitment_set.count() == 2
