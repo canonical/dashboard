@@ -22,18 +22,14 @@
         hx-put="{% url 'projects:action_condition_toggle_not_applicable' condition.id %}"
         hx-trigger="click"
         hx-target="closest tr"
-        hx-swap="outerHTML">
-        na
-      </span>
+        hx-swap="outerHTML">na</span>
       <span
         class="condition candidate"
         hx-put="{% url 'projects:action_condition_toggle_candidate' condition.id %}"
         hx-trigger="click"
         hx-target="closest tr"
         hx-swap="outerHTML"
-        >
-        candidate
-      </span>
+        >candidate</span>
   </div>
   </td>
   <td class="commitment-blank" colspan="{{ workcycle_count }}"></td>
