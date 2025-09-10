@@ -38,11 +38,13 @@
         {% endfor %}
       </tr>
 
-      {% regroup object_list by group as projects %}
+      {% regroup object_list by group as project_groups %}
 
-      {% for group in projects %}
-        <tr class="row-group"><td colspan="{{ column_count }}">{{ group.grouper }}</td></tr>
-        {% for project in group.list %}
+      {% for group, projects in project_groups %}
+        {% if group %}
+          <tr class="row-group"><td colspan="{{ column_count }}">{{ group }}</td></tr>
+        {% endif %}
+        {% for project in projects %}
 
           <tr>
             <th class="sticky project-name" scope="row">
@@ -51,18 +53,18 @@
             <td><a href="{% url 'projects:project' project.id %}">{{ project.owner }}</a></td>
             <td><a href="{% url 'projects:project' project.id %}">{{ project.driver|default:"" }}</a></td>
             <td class="{{ project.review_freshness }}">
-              <a href="{% url 'projects:project' project.id %}">{{ project.last_review|default:"never" }}</a>
+              <a href="{% url 'projects:project' project.id %}">{{ project.last_review|default:"" }}</a>
             </td>
 
             {% for qi in project.quality_history %}<td>{{ qi.value }}</td>{% endfor %}
 
             <td><a href="{% url 'projects:project' project.id %}">{{ project.quality_indicator }}</a></td>
-            <td class="{{ project.last_review_status|slugify }}"><a href="{% url 'projects:project' project.id %}">{{ project.last_review_status }}</a></td>
+            <td class="{{ project.last_review_status|slugify }}"><a href="{% url 'projects:project' project.id %}">{{ project.last_review_status|default:"Unreviewed" }}</a></td>
 
             {% for objective in project.projectobjective_set.all %}
               <td class="{{ objective.status|slugify }}">
                 <a href="{% url 'projects:project' project.id %}">
-                  {{ objective.status }}
+                  {{ objective.status|default:"" }}
                 </a>
               </td>
             {% endfor %}

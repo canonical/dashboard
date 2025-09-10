@@ -92,7 +92,7 @@ class Objective(models.Model):
 
     name = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
-    group = models.ForeignKey("ObjectiveGroup", on_delete=models.CASCADE)
+    group = models.ForeignKey("ObjectiveGroup", null=True, blank=True, on_delete=models.SET_NULL)
     weight = models.SmallIntegerField()
 
     def __str__(self):

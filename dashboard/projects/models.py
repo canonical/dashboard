@@ -25,7 +25,7 @@ class ProjectGroup(models.Model):
 class Project(models.Model):
 
     name = models.CharField(max_length=200)
-    group = models.ForeignKey(ProjectGroup, null=True, on_delete=models.SET_NULL)
+    group = models.ForeignKey(ProjectGroup, null=True, blank=True, on_delete=models.SET_NULL)
     owner = models.CharField(
         help_text="Usually the engineering manager or director",
         max_length=200,
@@ -38,10 +38,10 @@ class Project(models.Model):
     objectives = models.ManyToManyField(Objective, through="ProjectObjective")
     last_review = models.DateField(null=True, blank=True)
     last_review_status = models.ForeignKey(
-        ProjectStatus, null=True, on_delete=models.SET_NULL
+        ProjectStatus, null=True, blank=True, on_delete=models.SET_NULL
     )
     agreement_status = models.ForeignKey(
-        AgreementStatus, null=True, on_delete=models.SET_NULL
+        AgreementStatus, null=True, blank=True, on_delete=models.SET_NULL
     )
 
     def __str__(self):
@@ -75,7 +75,7 @@ class Project(models.Model):
                     )
 
     def get_absolute_url(self):
-        return reverse("projects:project", kwargs={"pk": self.pk})
+        return reverse("projects:project", kwargs={"id": self.id})
 
     def quality_indicator(self):
         x = 0

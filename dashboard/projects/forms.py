@@ -11,6 +11,7 @@ class ProjectDetailForm(ModelForm):
             "group",
             "owner",
             "driver",
+            "agreement_status",
             "last_review",
             "last_review_status",
         ]

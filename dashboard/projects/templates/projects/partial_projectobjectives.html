@@ -13,9 +13,13 @@
 
           {% for projectobjectivegroup, projectobjectives in projectobjectivegroups %}
 
-            <tr><th class="projectobjectivegroup" colspan="{{ workcycle_count|add:'2' }}">
-              {{ projectobjectivegroup }}
-            </th></tr>
+            {% if projectobjectivegroup %}
+              <tr>
+                <th class="projectobjectivegroup" colspan="{{ workcycle_count|add:'2' }}">
+                  {{ projectobjectivegroup }}
+                </th>
+              </tr>
+            {% endif %}
 
             {% for projectobjective in projectobjectives %}
 
