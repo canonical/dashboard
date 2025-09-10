@@ -25,7 +25,9 @@ class ProjectGroup(models.Model):
 class Project(models.Model):
 
     name = models.CharField(max_length=200)
-    group = models.ForeignKey(ProjectGroup, null=True, blank=True, on_delete=models.SET_NULL)
+    group = models.ForeignKey(
+        ProjectGroup, null=True, blank=True, on_delete=models.SET_NULL
+    )
     owner = models.CharField(
         help_text="Usually the engineering manager or director",
         max_length=200,
@@ -129,13 +131,12 @@ class ProjectObjective(models.Model):
                 project=self.project,
                 objective=self.objective,
                 condition__level=level,
-                done=False
-                ).exists():
+                done=False,
+            ).exists():
                 level_achieved = level
             else:
                 return level_achieved
         return level_achieved
-
 
     def status(self):
         return self.achieved_level() or self.unstarted_reason
@@ -155,9 +156,7 @@ class ProjectObjective(models.Model):
         )
 
     def commitments(self):
-        return Commitment.objects.filter(
-            project=self.project, objective=self.objective
-        )
+        return Commitment.objects.filter(project=self.project, objective=self.objective)
 
     class Meta:
         ordering = ["objective"]

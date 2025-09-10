@@ -99,6 +99,7 @@ def status_projects_commitment(request, project_id):
         {"project": project, "current_commitments": current_commitments},
     )
 
+
 @require_http_methods("GET")
 def status_projectobjective(request, projectobjective_id):
 
@@ -115,6 +116,7 @@ def status_projectobjective(request, projectobjective_id):
 
 
 # action methods
+
 
 @require_http_methods(["PUT"])
 def action_toggle_commitment(request, commitment_id):
