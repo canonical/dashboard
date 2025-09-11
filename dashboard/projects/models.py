@@ -132,6 +132,7 @@ class ProjectObjective(models.Model):
                 objective=self.objective,
                 condition__level=level,
                 done=False,
+                not_applicable=False
             ).exists():
                 level_achieved = level
             else:
