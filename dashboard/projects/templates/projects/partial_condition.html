@@ -27,7 +27,7 @@
         {% else %}
           class="condition not-applicable has-perms"
           hx-put="{% url 'projects:action_condition_toggle_not_applicable' condition.id %}"
-          hx-trigger="click"
+          hx-trigger="click delay:.5s"
           hx-target="closest tr"
           hx-swap="outerHTML"
         {% endif %}>na</span>
@@ -37,7 +37,7 @@
         {% else %}
           class="condition candidate has-perms"
           hx-put="{% url 'projects:action_condition_toggle_candidate' condition.id %}"
-          hx-trigger="click"
+          hx-trigger="click delay:.5s"
           hx-target="closest tr"
           hx-swap="outerHTML"
       {% endif %}>candidate</span>

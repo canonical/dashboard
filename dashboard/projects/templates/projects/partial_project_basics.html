@@ -1,16 +1,19 @@
+<div class="auth"><a href="{% url 'admin:index' %}">Log in to edit</a></div>
+
 <div id="basic_form" class="submit-row">
   <form
     hx-post="{% url 'projects:project_basic_form_save' project.id %}"
     hx-target="#basic_form"
     hx-swap="outerHTML"
     >
+
     <table>
       {% for field in basics_form %}
         <tr><td>{{ field.label_tag }}</td><td>{{ field }}</td></tr>
       {% endfor %}
     </table>
 
-    {% if perms.projects.change_condition %}
+    {% if perms.projects.change_projectobjectivecondition %}
       <input type="submit" value="Save" />
     {% endif %}
 
