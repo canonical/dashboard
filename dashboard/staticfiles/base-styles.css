@@ -1,5 +1,18 @@
 body {font-family: Helvetica, sans-serif; font-size: 12px;}
 
+div.auth a {
+    border-radius: 999em;
+    background: orange;
+    padding: 10px;
+    border: 1px solid black;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    display: inline-block;
+}
+
+div.auth {margin-bottom: 1em;}
+
 /* general table styles */
 
 th {text-align: left;}
