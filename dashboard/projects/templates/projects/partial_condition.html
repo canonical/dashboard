@@ -22,17 +22,17 @@
     {{ condition.name }}
     <div class="attributes">
       <span
-        {% if not perms.projects.change_condition %}
+        {% if not perms.projects.change_projectobjectivecondition %}
           class="condition not-applicable"
         {% else %}
-          class="condition candidate not-applicable"
+          class="condition not-applicable has-perms"
           hx-put="{% url 'projects:action_condition_toggle_not_applicable' condition.id %}"
           hx-trigger="click"
           hx-target="closest tr"
           hx-swap="outerHTML"
         {% endif %}>na</span>
       <span
-        {% if not perms.projects.change_condition %}
+        {% if not perms.projects.change_projectobjectivecondition %}
           class="condition candidate"
         {% else %}
           class="condition candidate has-perms"

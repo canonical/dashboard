@@ -134,7 +134,7 @@ def action_toggle_commitment(request, commitment_id):
     return HttpResponse("")
 
 
-@permission_required("projects.change_condition")
+@permission_required("projects.change_projectobjectivecondition")
 @require_http_methods(["PUT"])
 def action_toggle_condition(request, condition_id):
     condition = ProjectObjectiveCondition.objects.get(id=condition_id)
@@ -151,7 +151,7 @@ def action_toggle_condition(request, condition_id):
     )
 
 
-@permission_required("projects.change_condition")
+@permission_required("projects.change_projectobjectivecondition")
 @require_http_methods(["PUT"])
 def action_condition_toggle_candidate(request, condition_id):
     condition = ProjectObjectiveCondition.objects.get(id=condition_id)
@@ -168,7 +168,7 @@ def action_condition_toggle_candidate(request, condition_id):
     )
 
 
-@permission_required("projects.change_condition")
+@permission_required("projects.change_projectobjectivecondition")
 @require_http_methods(["PUT"])
 def action_condition_toggle_not_applicable(request, condition_id):
     condition = ProjectObjectiveCondition.objects.get(id=condition_id)
