@@ -478,6 +478,7 @@
   pk: 1
   fields:
     name: Nuclear
+    url: ''
     group: 1
     owner: A. Scientist
     driver: A. Technician
@@ -488,16 +489,18 @@
   pk: 2
   fields:
     name: Chemistry
+    url: https://nuclear.nut
     group: 1
     owner: A. Chemist
     driver: null
-    last_review: 2025-02-02
+    last_review: null
     last_review_status: 1
     agreement_status: 3
 - model: projects.project
   pk: 3
   fields:
     name: Early modern
+    url: ''
     group: 2
     owner: A. Researcher
     driver: Some Musician
@@ -508,6 +511,7 @@
   pk: 4
   fields:
     name: Deserts and oceans
+    url: ''
     group: 4
     owner: A.N. Explorer
     driver: A. Traveller
@@ -518,6 +522,7 @@
   pk: 5
   fields:
     name: Buses
+    url: ''
     group: 4
     owner: Some Company
     driver: Bus Driver
@@ -528,6 +533,7 @@
   pk: 6
   fields:
     name: Sea creatures
+    url: ''
     group: 1
     owner: A.N. Ocean
     driver: null
@@ -538,6 +544,7 @@
   pk: 7
   fields:
     name: Food packaging
+    url: ''
     group: 3
     owner: A. Chemist
     driver: Some Packager
@@ -548,6 +555,7 @@
   pk: 9
   fields:
     name: Aeroplanes
+    url: ''
     group: 4
     owner: An Aviator
     driver: null
@@ -558,6 +566,7 @@
   pk: 10
   fields:
     name: Restaurants
+    url: ''
     group: 5
     owner: A. Gourmand
     driver: null
@@ -568,6 +577,7 @@
   pk: 11
   fields:
     name: Kinds of pasta
+    url: ''
     group: 5
     owner: A. Gourmand
     driver: null
@@ -578,6 +588,7 @@
   pk: 12
   fields:
     name: Cafés
+    url: ''
     group: 5
     owner: A. Director
     driver: null
@@ -588,6 +599,7 @@
   pk: 13
   fields:
     name: Switches
+    url: ''
     group: 6
     owner: A.N. Electrician
     driver: null
@@ -598,6 +610,7 @@
   pk: 14
   fields:
     name: Plugs
+    url: ''
     group: 6
     owner: A.N. Electrician
     driver: null
@@ -608,6 +621,7 @@
   pk: 15
   fields:
     name: Sockets
+    url: ''
     group: 6
     owner: A.N. Electrician
     driver: null
@@ -618,6 +632,7 @@
   pk: 16
   fields:
     name: Photography
+    url: ''
     group: 7
     owner: A. Lens
     driver: null
@@ -628,6 +643,7 @@
   pk: 17
   fields:
     name: Sculpture
+    url: ''
     group: 7
     owner: null
     driver: null
@@ -638,6 +654,7 @@
   pk: 18
   fields:
     name: Collage
+    url: ''
     group: 7
     owner: A.N. Artist
     driver: null
@@ -35579,666 +35596,3 @@
     project: 17
     workcycle: 7
     value: 0
-- model: auth.permission
-  pk: 1
-  fields:
-    name: Can add project group
-    content_type: 1
-    codename: add_projectgroup
-- model: auth.permission
-  pk: 2
-  fields:
-    name: Can change project group
-    content_type: 1
-    codename: change_projectgroup
-- model: auth.permission
-  pk: 3
-  fields:
-    name: Can delete project group
-    content_type: 1
-    codename: delete_projectgroup
-- model: auth.permission
-  pk: 4
-  fields:
-    name: Can view project group
-    content_type: 1
-    codename: view_projectgroup
-- model: auth.permission
-  pk: 5
-  fields:
-    name: Can add project
-    content_type: 2
-    codename: add_project
-- model: auth.permission
-  pk: 6
-  fields:
-    name: Can change project
-    content_type: 2
-    codename: change_project
-- model: auth.permission
-  pk: 7
-  fields:
-    name: Can delete project
-    content_type: 2
-    codename: delete_project
-- model: auth.permission
-  pk: 8
-  fields:
-    name: Can view project
-    content_type: 2
-    codename: view_project
-- model: auth.permission
-  pk: 9
-  fields:
-    name: Can add project objective
-    content_type: 3
-    codename: add_projectobjective
-- model: auth.permission
-  pk: 10
-  fields:
-    name: Can change project objective
-    content_type: 3
-    codename: change_projectobjective
-- model: auth.permission
-  pk: 11
-  fields:
-    name: Can delete project objective
-    content_type: 3
-    codename: delete_projectobjective
-- model: auth.permission
-  pk: 12
-  fields:
-    name: Can view project objective
-    content_type: 3
-    codename: view_projectobjective
-- model: auth.permission
-  pk: 13
-  fields:
-    name: Can add project objective condition
-    content_type: 4
-    codename: add_projectobjectivecondition
-- model: auth.permission
-  pk: 14
-  fields:
-    name: Can change project objective condition
-    content_type: 4
-    codename: change_projectobjectivecondition
-- model: auth.permission
-  pk: 15
-  fields:
-    name: Can delete project objective condition
-    content_type: 4
-    codename: delete_projectobjectivecondition
-- model: auth.permission
-  pk: 16
-  fields:
-    name: Can view project objective condition
-    content_type: 4
-    codename: view_projectobjectivecondition
-- model: auth.permission
-  pk: 17
-  fields:
-    name: Can add qi
-    content_type: 5
-    codename: add_qi
-- model: auth.permission
-  pk: 18
-  fields:
-    name: Can change qi
-    content_type: 5
-    codename: change_qi
-- model: auth.permission
-  pk: 19
-  fields:
-    name: Can delete qi
-    content_type: 5
-    codename: delete_qi
-- model: auth.permission
-  pk: 20
-  fields:
-    name: Can view qi
-    content_type: 5
-    codename: view_qi
-- model: auth.permission
-  pk: 21
-  fields:
-    name: Can add level commitment
-    content_type: 6
-    codename: add_commitment
-- model: auth.permission
-  pk: 22
-  fields:
-    name: Can change level commitment
-    content_type: 6
-    codename: change_commitment
-- model: auth.permission
-  pk: 23
-  fields:
-    name: Can delete level commitment
-    content_type: 6
-    codename: delete_commitment
-- model: auth.permission
-  pk: 24
-  fields:
-    name: Can view level commitment
-    content_type: 6
-    codename: view_commitment
-- model: auth.permission
-  pk: 25
-  fields:
-    name: Can add level
-    content_type: 7
-    codename: add_level
-- model: auth.permission
-  pk: 26
-  fields:
-    name: Can change level
-    content_type: 7
-    codename: change_level
-- model: auth.permission
-  pk: 27
-  fields:
-    name: Can delete level
-    content_type: 7
-    codename: delete_level
-- model: auth.permission
-  pk: 28
-  fields:
-    name: Can view level
-    content_type: 7
-    codename: view_level
-- model: auth.permission
-  pk: 29
-  fields:
-    name: Can add objective
-    content_type: 8
-    codename: add_objective
-- model: auth.permission
-  pk: 30
-  fields:
-    name: Can change objective
-    content_type: 8
-    codename: change_objective
-- model: auth.permission
-  pk: 31
-  fields:
-    name: Can delete objective
-    content_type: 8
-    codename: delete_objective
-- model: auth.permission
-  pk: 32
-  fields:
-    name: Can view objective
-    content_type: 8
-    codename: view_objective
-- model: auth.permission
-  pk: 33
-  fields:
-    name: Can add objective group
-    content_type: 9
-    codename: add_objectivegroup
-- model: auth.permission
-  pk: 34
-  fields:
-    name: Can change objective group
-    content_type: 9
-    codename: change_objectivegroup
-- model: auth.permission
-  pk: 35
-  fields:
-    name: Can delete objective group
-    content_type: 9
-    codename: delete_objectivegroup
-- model: auth.permission
-  pk: 36
-  fields:
-    name: Can view objective group
-    content_type: 9
-    codename: view_objectivegroup
-- model: auth.permission
-  pk: 37
-  fields:
-    name: Can add project status
-    content_type: 10
-    codename: add_projectstatus
-- model: auth.permission
-  pk: 38
-  fields:
-    name: Can change project status
-    content_type: 10
-    codename: change_projectstatus
-- model: auth.permission
-  pk: 39
-  fields:
-    name: Can delete project status
-    content_type: 10
-    codename: delete_projectstatus
-- model: auth.permission
-  pk: 40
-  fields:
-    name: Can view project status
-    content_type: 10
-    codename: view_projectstatus
-- model: auth.permission
-  pk: 41
-  fields:
-    name: Can add work cycle
-    content_type: 11
-    codename: add_workcycle
-- model: auth.permission
-  pk: 42
-  fields:
-    name: Can change work cycle
-    content_type: 11
-    codename: change_workcycle
-- model: auth.permission
-  pk: 43
-  fields:
-    name: Can delete work cycle
-    content_type: 11
-    codename: delete_workcycle
-- model: auth.permission
-  pk: 44
-  fields:
-    name: Can view work cycle
-    content_type: 11
-    codename: view_workcycle
-- model: auth.permission
-  pk: 45
-  fields:
-    name: Can add condition
-    content_type: 12
-    codename: add_condition
-- model: auth.permission
-  pk: 46
-  fields:
-    name: Can change condition
-    content_type: 12
-    codename: change_condition
-- model: auth.permission
-  pk: 47
-  fields:
-    name: Can delete condition
-    content_type: 12
-    codename: delete_condition
-- model: auth.permission
-  pk: 48
-  fields:
-    name: Can view condition
-    content_type: 12
-    codename: view_condition
-- model: auth.permission
-  pk: 49
-  fields:
-    name: Can add reason
-    content_type: 13
-    codename: add_reason
-- model: auth.permission
-  pk: 50
-  fields:
-    name: Can change reason
-    content_type: 13
-    codename: change_reason
-- model: auth.permission
-  pk: 51
-  fields:
-    name: Can delete reason
-    content_type: 13
-    codename: delete_reason
-- model: auth.permission
-  pk: 52
-  fields:
-    name: Can view reason
-    content_type: 13
-    codename: view_reason
-- model: auth.permission
-  pk: 53
-  fields:
-    name: Can add log entry
-    content_type: 14
-    codename: add_logentry
-- model: auth.permission
-  pk: 54
-  fields:
-    name: Can change log entry
-    content_type: 14
-    codename: change_logentry
-- model: auth.permission
-  pk: 55
-  fields:
-    name: Can delete log entry
-    content_type: 14
-    codename: delete_logentry
-- model: auth.permission
-  pk: 56
-  fields:
-    name: Can view log entry
-    content_type: 14
-    codename: view_logentry
-- model: auth.permission
-  pk: 57
-  fields:
-    name: Can add permission
-    content_type: 15
-    codename: add_permission
-- model: auth.permission
-  pk: 58
-  fields:
-    name: Can change permission
-    content_type: 15
-    codename: change_permission
-- model: auth.permission
-  pk: 59
-  fields:
-    name: Can delete permission
-    content_type: 15
-    codename: delete_permission
-- model: auth.permission
-  pk: 60
-  fields:
-    name: Can view permission
-    content_type: 15
-    codename: view_permission
-- model: auth.permission
-  pk: 61
-  fields:
-    name: Can add group
-    content_type: 16
-    codename: add_group
-- model: auth.permission
-  pk: 62
-  fields:
-    name: Can change group
-    content_type: 16
-    codename: change_group
-- model: auth.permission
-  pk: 63
-  fields:
-    name: Can delete group
-    content_type: 16
-    codename: delete_group
-- model: auth.permission
-  pk: 64
-  fields:
-    name: Can view group
-    content_type: 16
-    codename: view_group
-- model: auth.permission
-  pk: 65
-  fields:
-    name: Can add user
-    content_type: 17
-    codename: add_user
-- model: auth.permission
-  pk: 66
-  fields:
-    name: Can change user
-    content_type: 17
-    codename: change_user
-- model: auth.permission
-  pk: 67
-  fields:
-    name: Can delete user
-    content_type: 17
-    codename: delete_user
-- model: auth.permission
-  pk: 68
-  fields:
-    name: Can view user
-    content_type: 17
-    codename: view_user
-- model: auth.permission
-  pk: 69
-  fields:
-    name: Can add content type
-    content_type: 18
-    codename: add_contenttype
-- model: auth.permission
-  pk: 70
-  fields:
-    name: Can change content type
-    content_type: 18
-    codename: change_contenttype
-- model: auth.permission
-  pk: 71
-  fields:
-    name: Can delete content type
-    content_type: 18
-    codename: delete_contenttype
-- model: auth.permission
-  pk: 72
-  fields:
-    name: Can view content type
-    content_type: 18
-    codename: view_contenttype
-- model: auth.permission
-  pk: 73
-  fields:
-    name: Can add session
-    content_type: 19
-    codename: add_session
-- model: auth.permission
-  pk: 74
-  fields:
-    name: Can change session
-    content_type: 19
-    codename: change_session
-- model: auth.permission
-  pk: 75
-  fields:
-    name: Can delete session
-    content_type: 19
-    codename: delete_session
-- model: auth.permission
-  pk: 76
-  fields:
-    name: Can view session
-    content_type: 19
-    codename: view_session
-- model: auth.permission
-  pk: 77
-  fields:
-    name: Can add agreement status
-    content_type: 20
-    codename: add_agreementstatus
-- model: auth.permission
-  pk: 78
-  fields:
-    name: Can change agreement status
-    content_type: 20
-    codename: change_agreementstatus
-- model: auth.permission
-  pk: 79
-  fields:
-    name: Can delete agreement status
-    content_type: 20
-    codename: delete_agreementstatus
-- model: auth.permission
-  pk: 80
-  fields:
-    name: Can view agreement status
-    content_type: 20
-    codename: view_agreementstatus
-- model: auth.permission
-  pk: 81
-  fields:
-    name: Can add agreement status
-    content_type: 14
-    codename: add_agreementstatus
-- model: auth.permission
-  pk: 82
-  fields:
-    name: Can change agreement status
-    content_type: 14
-    codename: change_agreementstatus
-- model: auth.permission
-  pk: 83
-  fields:
-    name: Can delete agreement status
-    content_type: 14
-    codename: delete_agreementstatus
-- model: auth.permission
-  pk: 84
-  fields:
-    name: Can view agreement status
-    content_type: 14
-    codename: view_agreementstatus
-- model: auth.permission
-  pk: 85
-  fields:
-    name: Can add log entry
-    content_type: 15
-    codename: add_logentry
-- model: auth.permission
-  pk: 86
-  fields:
-    name: Can change log entry
-    content_type: 15
-    codename: change_logentry
-- model: auth.permission
-  pk: 87
-  fields:
-    name: Can delete log entry
-    content_type: 15
-    codename: delete_logentry
-- model: auth.permission
-  pk: 88
-  fields:
-    name: Can view log entry
-    content_type: 15
-    codename: view_logentry
-- model: auth.permission
-  pk: 89
-  fields:
-    name: Can add permission
-    content_type: 16
-    codename: add_permission
-- model: auth.permission
-  pk: 90
-  fields:
-    name: Can change permission
-    content_type: 16
-    codename: change_permission
-- model: auth.permission
-  pk: 91
-  fields:
-    name: Can delete permission
-    content_type: 16
-    codename: delete_permission
-- model: auth.permission
-  pk: 92
-  fields:
-    name: Can view permission
-    content_type: 16
-    codename: view_permission
-- model: auth.permission
-  pk: 93
-  fields:
-    name: Can add group
-    content_type: 17
-    codename: add_group
-- model: auth.permission
-  pk: 94
-  fields:
-    name: Can change group
-    content_type: 17
-    codename: change_group
-- model: auth.permission
-  pk: 95
-  fields:
-    name: Can delete group
-    content_type: 17
-    codename: delete_group
-- model: auth.permission
-  pk: 96
-  fields:
-    name: Can view group
-    content_type: 17
-    codename: view_group
-- model: auth.permission
-  pk: 97
-  fields:
-    name: Can add user
-    content_type: 18
-    codename: add_user
-- model: auth.permission
-  pk: 98
-  fields:
-    name: Can change user
-    content_type: 18
-    codename: change_user
-- model: auth.permission
-  pk: 99
-  fields:
-    name: Can delete user
-    content_type: 18
-    codename: delete_user
-- model: auth.permission
-  pk: 100
-  fields:
-    name: Can view user
-    content_type: 18
-    codename: view_user
-- model: auth.permission
-  pk: 101
-  fields:
-    name: Can add content type
-    content_type: 19
-    codename: add_contenttype
-- model: auth.permission
-  pk: 102
-  fields:
-    name: Can change content type
-    content_type: 19
-    codename: change_contenttype
-- model: auth.permission
-  pk: 103
-  fields:
-    name: Can delete content type
-    content_type: 19
-    codename: delete_contenttype
-- model: auth.permission
-  pk: 104
-  fields:
-    name: Can view content type
-    content_type: 19
-    codename: view_contenttype
-- model: auth.permission
-  pk: 105
-  fields:
-    name: Can add session
-    content_type: 20
-    codename: add_session
-- model: auth.permission
-  pk: 106
-  fields:
-    name: Can change session
-    content_type: 20
-    codename: change_session
-- model: auth.permission
-  pk: 107
-  fields:
-    name: Can delete session
-    content_type: 20
-    codename: delete_session
-- model: auth.permission
-  pk: 108
-  fields:
-    name: Can view session
-    content_type: 20
-    codename: view_session
-- model: auth.user
-  pk: 1
-  fields:
-    password: pbkdf2_sha256$870000$wrLgDLm6LnfRMMx70aSref$+/mKdBWGs7a62LOYowsqKLv+QpJ71gCk/+cd3vPEuNY=
-    last_login: 2025-09-04 19:50:49.016048+00:00
-    is_superuser: true
-    username: test
-    first_name: ''
-    last_name: ''
-    email: ''
-    is_staff: true
-    is_active: true
-    date_joined: 2025-02-02 00:10:09.583882+00:00
-    groups: []
-    user_permissions: []

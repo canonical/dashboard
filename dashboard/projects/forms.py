@@ -11,6 +11,7 @@ class ProjectDetailForm(forms.ModelForm):
         model = models.Project
         fields = [
             "name",
+            "url",
             "group",
             "owner",
             "driver",

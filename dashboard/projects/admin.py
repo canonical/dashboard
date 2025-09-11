@@ -113,7 +113,7 @@ class ProjectAdmin(admin.ModelAdmin):
             None,
             {
                 "fields": (
-                    ("name", "group"),
+                    ("name", "url", "group"),
                     ("owner", "driver"),
                     ("agreement_status"),
                     ("last_review", "last_review_status"),

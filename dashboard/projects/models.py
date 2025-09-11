@@ -25,6 +25,7 @@ class ProjectGroup(models.Model):
 class Project(models.Model):
 
     name = models.CharField(max_length=200)
+    url = models.URLField(blank=True, default="")
     group = models.ForeignKey(
         ProjectGroup, null=True, blank=True, on_delete=models.SET_NULL
     )
