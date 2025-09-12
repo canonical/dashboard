@@ -1,0 +1,25 @@
+name: Build the rock on PRs
+
+on:
+  pull_request:
+
+jobs:
+  build-rock:
+    name: Build the rock
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        arch: [amd64, arm64]
+    runs-on: [self-hosted, linux, "${{ matrix.arch }}"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: setup lxd
+        uses: canonical/setup-lxd@v0.1.2
+      - name: build rock
+        run: |
+          set -x
+          sudo snap install --channel latest/stable --classic rockcraft
+          rockcraft pack --verbosity trace
+          docker run -d -p 5000:5000 --name registry registry:latest
+          rockcraft.skopeo --insecure-policy copy --dest-tls-verify=false oci-archive:$(ls *.rock) docker://localhost:5000/dashboard:latest
