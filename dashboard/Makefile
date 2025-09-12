@@ -34,6 +34,7 @@ run: init
 
 test: install
 	$(PIP) install -r requirements-dev.txt
+	$(VENV)/bin/python -m playwright install
 	$(PYTEST)
 
 clean:
