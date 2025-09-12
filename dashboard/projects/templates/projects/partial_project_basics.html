@@ -1,9 +1,4 @@
 <div id="basic_information">
-
-  {% if not user.is_authenticated %}
-    <div class="auth"><a href="{% url 'admin:index' %}">Log in to edit</a></div>
-  {% endif %}
-
   <div id="basic_form" class="submit-row">
     <form
       hx-post="{% url 'projects:project_basic_form_save' project.id %}"
