@@ -478,7 +478,7 @@
   pk: 1
   fields:
     name: Nuclear
-    url: ''
+    url: https://nuclear.org
     group: 1
     owner: A. Scientist
     driver: A. Technician
@@ -489,7 +489,7 @@
   pk: 2
   fields:
     name: Chemistry
-    url: https://nuclear.nut
+    url: https://chemistry.org
     group: 1
     owner: A. Chemist
     driver: null
