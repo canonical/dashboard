@@ -1,3 +1,5 @@
+import time
+
 import pytest
 
 from playwright.sync_api import Page, expect
@@ -56,6 +58,7 @@ def test_toggling_conditions(live_server, page):
     # after toggling, the new conditions should be saved in the database
     page.get_by_test_id("toggle_condition_94").uncheck()
     page.get_by_test_id("toggle_condition_102").check()
+    time.sleep(0.5)  # Temporary workaround. Find a better solution.
 
     assert ProjectObjectiveCondition.objects.get(id=94).done == False
     assert ProjectObjectiveCondition.objects.get(id=102).done == True
@@ -67,6 +70,7 @@ def test_toggling_conditions(live_server, page):
 
     page.get_by_test_id("toggle_commitment_705").check()
     page.get_by_test_id("toggle_commitment_474").uncheck()
+    time.sleep(0.5)  # Temporary workaround. Find a better solution.
 
     assert Commitment.objects.get(id=705).committed == True
     assert Commitment.objects.get(id=474).committed == False
