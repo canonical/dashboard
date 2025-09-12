@@ -50,21 +50,6 @@ class CommitmentInline(admin.TabularInline):
         return False
 
 
-class ProjectObjectiveInline(admin.TabularInline):
-    model = ProjectObjective
-    max_num = 0
-    can_delete = False
-    fields = ("name", "unstarted_reason")
-    readonly_fields = ["name"]
-    exclude = ["objective", "description", "status"]
-
-    def has_add_permission(self, request, obj):
-        return False
-
-    def has_delete_permission(self, request, obj):
-        return False
-
-
 @admin.register(ProjectObjective)
 class ProjectObjectiveAdmin(admin.ModelAdmin):
     readonly_fields = ["project", "objective", "status"]
@@ -95,9 +80,7 @@ class ProjectObjectiveAdmin(admin.ModelAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    inlines = [
-        ProjectObjectiveInline,
-    ]
+
     list_display = [
         "name",
         "owner",
