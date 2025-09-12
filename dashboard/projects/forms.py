@@ -1,13 +1,17 @@
 from . import models
-from django.forms import ModelForm
-from django.forms import inlineformset_factory
+from django import forms
+
+class DatePickerInput(forms.DateInput):
+    input_type = 'date'
 
 
-class ProjectDetailForm(ModelForm):
+class ProjectDetailForm(forms.ModelForm):
+
     class Meta:
         model = models.Project
         fields = [
             "name",
+            "url",
             "group",
             "owner",
             "driver",
@@ -15,9 +19,14 @@ class ProjectDetailForm(ModelForm):
             "last_review",
             "last_review_status",
         ]
+        widgets = {
+            'last_review' : DatePickerInput(),
+        }
+
+    # last_review = forms.DateField(widget=forms.DateInput)
 
 
-class ProjectObjectiveForm(ModelForm):
+class ProjectObjectiveForm(forms.ModelForm):
     class Meta:
         model = models.ProjectObjective
         fields = ["unstarted_reason"]
@@ -25,13 +34,13 @@ class ProjectObjectiveForm(ModelForm):
         help_texts = {"unstarted_reason": ""}
 
 
-class ProjectObjectiveConditionForm(ModelForm):
+class ProjectObjectiveConditionForm(forms.ModelForm):
     class Meta:
         model = models.ProjectObjectiveCondition
         fields = ["done"]
 
 
-class CommitmentForm(ModelForm):
+class CommitmentForm(forms.ModelForm):
     class Meta:
         model = models.Commitment
         fields = ["committed"]
