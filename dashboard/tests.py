@@ -22,10 +22,6 @@ def django_db_setup(django_db_setup, django_db_blocker):
     with django_db_blocker.unblock():
         call_command("loaddata", "initial_data.yaml")
 
-@pytest.fixture
-def superuser(db):
-    return User.objects.create_superuser(username="test", password="test")
-
 def reverse_url(
     live_server, viewname, urlconf=None, args=None, kwargs=None, current_app=None
 ):
@@ -33,10 +29,10 @@ def reverse_url(
     return f"{live_server.url}{end}"
 
 @pytest.fixture
-def page(page, live_server, superuser):
+def page(page, live_server):
 
     c = Client()
-    c.login(username="test", password="test")
+    c.login(username="superuser", password="superuser")
     session_cookie = c.cookies[settings.SESSION_COOKIE_NAME]
     page.context.add_cookies([{
         "name": settings.SESSION_COOKIE_NAME,
@@ -80,6 +76,7 @@ def test_toggling_conditions(live_server, page):
     assert ProjectObjectiveCondition.objects.get(id=1).done == True
     assert ProjectObjectiveCondition.objects.get(id=6).done == True
     assert ProjectObjectiveCondition.objects.get(id=10).done == False
+    assert ProjectObjectiveCondition.objects.get(id=10).not_applicable == False
     assert (
         ProjectObjectiveCondition.objects.get(id=10).projectobjective().status() == None
     )

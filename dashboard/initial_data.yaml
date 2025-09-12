@@ -678,7 +678,7 @@
   fields:
     project: 3
     objective: 1
-    unstarted_reason: null
+    unstarted_reason: 2
 - model: projects.projectobjective
   pk: 4
   fields:
@@ -1790,7 +1790,7 @@
     objective: 1
     condition: 1
     done: true
-    not_applicable: false
+    not_applicable: true
     candidate: false
 - model: projects.projectobjectivecondition
   pk: 2
@@ -1798,8 +1798,8 @@
     project: 2
     objective: 1
     condition: 1
-    done: true
-    not_applicable: false
+    done: false
+    not_applicable: true
     candidate: false
 - model: projects.projectobjectivecondition
   pk: 3
@@ -1807,7 +1807,7 @@
     project: 3
     objective: 1
     condition: 1
-    done: true
+    done: false
     not_applicable: false
     candidate: false
 - model: projects.projectobjectivecondition
@@ -1825,9 +1825,9 @@
     project: 2
     objective: 1
     condition: 2
-    done: true
+    done: false
     not_applicable: false
-    candidate: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 6
   fields:
@@ -1836,7 +1836,7 @@
     condition: 2
     done: true
     not_applicable: false
-    candidate: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 7
   fields:
@@ -1987,9 +1987,9 @@
     project: 3
     objective: 1
     condition: 6
-    done: true
+    done: false
     not_applicable: false
-    candidate: false
+    candidate: true
 - model: projects.projectobjectivecondition
   pk: 24
   fields:
@@ -26111,7 +26111,7 @@
     project: 1
     objective: 1
     level: 1
-    committed: false
+    committed: true
 - model: projects.commitment
   pk: 2984
   fields:
@@ -26287,7 +26287,7 @@
     project: 3
     objective: 1
     level: 1
-    committed: false
+    committed: true
 - model: projects.commitment
   pk: 3006
   fields:
@@ -35596,3 +35596,35 @@
     project: 17
     workcycle: 7
     value: 0
+- model: auth.user
+  pk: 1
+  fields:
+    password: pbkdf2_sha256$870000$hT8SyrMNY9MlEyhUPlumxb$VfCsnVHt11Gxk2ERdWf0dbrzv3CwsxFt2HOS/pZzCNk=
+    last_login: 2025-09-12 06:21:50.612823+00:00
+    is_superuser: true
+    username: superuser
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: true
+    is_active: true
+    date_joined: 2025-09-12 06:19:30.852188+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 2
+  fields:
+    password: pbkdf2_sha256$870000$bj2XMSwNv6RSmyDjdE9I8C$6VPMgYpLnHI4QoBjbIyDkmDa5BuihSG1vQAZ3casJVg=
+    last_login: 2025-09-12 06:20:53+00:00
+    is_superuser: false
+    username: driver
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: true
+    is_active: true
+    date_joined: 2025-09-12 06:19:47+00:00
+    groups: []
+    user_permissions:
+    - 22
+    - 14
