@@ -88,7 +88,7 @@ def test_toggling_conditions(live_server, page):
 
     # check the remaining box to get to Started
     page.get_by_test_id("toggle_condition_10").check()
-    time.sleep(1)  # Temporary workaround. Find a better solution.
+    time.sleep(10)  # Temporary workaround. Find a better solution.
     assert ProjectObjectiveCondition.objects.get(
         id=10
     ).projectobjective().status() == Level.objects.get(id=1)
@@ -96,7 +96,7 @@ def test_toggling_conditions(live_server, page):
 
     # check one more to get to First results
     page.get_by_test_id("toggle_condition_14").check()
-    time.sleep(1)  # Temporary workaround. Find a better solution.
+    time.sleep(10)  # Temporary workaround. Find a better solution.
     assert ProjectObjectiveCondition.objects.get(
         id=14
     ).projectobjective().status() == Level.objects.get(id=1)
