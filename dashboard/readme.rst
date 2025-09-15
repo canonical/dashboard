@@ -47,7 +47,7 @@ Launch the site
     make run
 
 Explore the dashboard at http://localhost:8000/ or 
-login to the admin http://localhost:8000/admin (if you loaded the provided initial data, use admin user ``test``, password ``test``). 
+login to the admin http://localhost:8000/admin (if you loaded the provided initial data, use admin user ``superuser``, password ``superuser`` or user ``driver`, password ``driver``). 
 
 Nearly every cell in the dashboard is a link to the relevant admin view. The most interesting admin view is for *Projects*, for example http://localhost:8000/admin/projects/project/2/change/.
 
