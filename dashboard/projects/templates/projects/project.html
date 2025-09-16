@@ -14,27 +14,47 @@
 
 {% block content %}
 
-<h1>{{ project }}</h1>
+  <div id="container">
 
-<div id="container">
-  <div class="main" id="main">
-    <main id="content-start" class="content">
-      <div id="content" class="colM">
-        <div id="content-main">
+    <nav class="navigation">
+      <ul>
+        <li><a href="/">Dashboard</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'admin:index' %}">Admin</a></li>
+          <li>Logged in as {{ user.username }}</li>
+          <li>
+            <form action="{% url 'logout' %}?next={{ request.path }}" method="post">
+              {% csrf_token %}
+              <button type="submit">Log out</button>
+            </form>
+          </li>
+        {% else %}
+          <li><a href="{% url 'login' %}?next={{ request.path }}">Log in</a></li>
+        {% endif %}
+      </ul>
+    </nav>
 
-          <div>{% include "projects/partial_project_basics.html" %}</div>
+    <h1>{{ project }}</h1>
 
-          <hr>
+    <div class="main" id="main">
+      <main id="content-start" class="content">
+        <div id="content" class="colM">
+          <div id="content-main">
 
-          <div>{% include "projects/partial_project_commitments.html" %}</div>
+            <div>{% include "projects/partial_project_basics.html" %}</div>
 
-          <hr>
+            <hr>
 
-          {% include "projects/partial_projectobjectives.html" %}
+            <div>{% include "projects/partial_project_commitments.html" %}</div>
 
+            <hr>
+
+            {% include "projects/partial_projectobjectives.html" %}
+
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   </div>
-</div>
+
 {% endblock content %}
