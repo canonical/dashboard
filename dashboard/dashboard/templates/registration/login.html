@@ -5,8 +5,19 @@
   <h2>Log in</h2>
   <form method="post">
     {% csrf_token %}
-    {{ form }}
-    <button type="submit">Log In</button>
+
+      <table>
+
+        {% for field in form %}
+          <tr><td>{{ field.label_tag }}</td><td>{{ field }}</td></tr>
+        {% endfor %}
+
+      </table>
+
+    <p>
+      <button type="submit">Log In</button>
+    </p>
+
   </form>
 
 {% endblock %}
