@@ -9,12 +9,13 @@ MANAGE := $(VENV)/bin/python ./manage.py
 
 help:
 	@echo "Available targets:"
-	@echo "  install    - Create virtualenv and install dependencies"
-	@echo "  migrate    - Setup database tables"
-	@echo "  init       - Load initial test data"
-	@echo "  run        - Start development server"
-	@echo "  test       - Run automated tests"
-	@echo "  clean      - Remove virtualenv and cache files"
+	@echo "  install        - Create virtualenv and install dependencies"
+	@echo "  migrate        - Setup database tables"
+	@echo "  init           - Load initial test data"
+	@echo "  run            - Start development server"
+	@echo "  test           - Run automated tests"
+	@echo "  collectstatic  - Copy static files to staticfiles directory"
+	@echo "  clean          - Remove virtualenv and cache files"
 
 venv:
 	$(PYTHON) -m venv $(VENV)
