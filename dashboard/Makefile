@@ -5,7 +5,7 @@ PIP := $(VENV)/bin/pip
 PYTEST := $(VENV)/bin/pytest
 MANAGE := $(VENV)/bin/python ./manage.py
 
-.PHONY: all help clean venv install migrate init test run
+.PHONY: all help clean venv install migrate init test run collectstatic lint
 
 help:
 	@echo "Available targets:"
@@ -31,6 +31,15 @@ init: migrate
 
 run: init
 	$(MANAGE) runserver
+
+collectstatic: install
+	$(MANAGE) collectstatic --no-input
+
+lint: collectstatic
+	@if ! git diff --exit-code --quiet staticfiles/; then \
+		echo "Modified static files detected. Please run 'make collectstatic' and commit the changes."; \
+		exit 1; \
+	fi
 
 test: install
 	$(PIP) install -r requirements-dev.txt
