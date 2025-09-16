@@ -36,7 +36,8 @@ run: init
 collectstatic: install
 	$(MANAGE) collectstatic --no-input
 
-lint: collectstatic
+# For use in CI
+collectstatic-check: collectstatic
 	@if ! git diff --exit-code --quiet staticfiles/; then \
 		echo "Modified static files detected. Please run 'make collectstatic' and commit the changes."; \
 		exit 1; \

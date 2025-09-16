@@ -18,4 +18,4 @@ jobs:
       - name: Check static files
         run: |
           cd dashboard
-          make lint
+          make collectstatic-check
