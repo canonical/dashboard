@@ -65,7 +65,7 @@ Some automated tests are included and can be executed by running::
 Modify static files
 ===================
 
-If you're contributing to the application and need to modify static files, for example the CSS files, make sure to modify the files in ``dashboard/static``.
+If you're contributing to the application and need to modify static files, for example the CSS files, modify the files in ``dashboard/static``.
 
 Before you commit your changes, run::
 
@@ -73,4 +73,4 @@ Before you commit your changes, run::
 
 This copies the static files to the ``staticfiles`` directory.
 
-During local development, the files in ``dashboard/staticfiles`` aren't used, because ``DEBUG = True`` in ``dashboard/settings.py``. However, in production we have ``DEBUG = False``, which means that the files in ``dashboard/staticfiles`` are used. See the `Django docs <https://docs.djangoproject.com/en/4.2/howto/static-files/>`__.
+During local development, the files in ``staticfiles`` aren't used, because ``DEBUG = True`` in ``dashboard/settings.py``. However, in production we have ``DEBUG = False``, which means that the files in ``staticfiles`` are used. See the `Django docs <https://docs.djangoproject.com/en/4.2/howto/static-files/>`__.
