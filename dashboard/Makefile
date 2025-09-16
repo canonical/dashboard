@@ -5,7 +5,7 @@ PIP := $(VENV)/bin/pip
 PYTEST := $(VENV)/bin/pytest
 MANAGE := $(VENV)/bin/python ./manage.py
 
-.PHONY: all help clean venv install migrate init test run collectstatic lint
+.PHONY: all help clean venv install migrate init test run collectstatic collectstatic-check
 
 help:
 	@echo "Available targets:"
