@@ -23,7 +23,7 @@
           <li><a href="{% url 'admin:index' %}">Admin</a></li>
           <li>Logged in as {{ user.username }}</li>
           <li>
-            <form action="{% url 'logout' %}" method="post">
+            <form action="{% url 'logout' %}?next={{ request.path }}" method="post">
               {% csrf_token %}
               <button type="submit">Log out</button>
             </form>
