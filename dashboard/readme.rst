@@ -69,7 +69,7 @@ If you're contributing to the application and need to modify static files, for e
 
 Before you commit your changes, run::
 
-    make collecstatic
+    make collectstatic
 
 This copies the static files to the ``staticfiles`` directory.
 
