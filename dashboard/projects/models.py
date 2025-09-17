@@ -3,6 +3,7 @@ from datetime import date, timedelta
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+
 from framework.models import (
     Reason,
     Condition,
@@ -80,6 +81,10 @@ class Project(models.Model):
     def get_absolute_url(self):
         return reverse("projects:project", kwargs={"id": self.id})
 
+    # packages up the statuses of all the objectives for quicker unpacking in a template
+    def objective_statuses(self):
+        return [po.achieved_level or po.unstarted_reason for po in self.projectobjective_set.all()]
+
     def quality_indicator(self):
         x = 0
         for po in self.projectobjective_set.all():
@@ -109,6 +114,8 @@ class Project(models.Model):
     class Meta:
         ordering = ["group", "name"]
 
+from django.db.models import Q
+
 
 class ProjectObjective(models.Model):
 
@@ -125,26 +132,41 @@ class ProjectObjective(models.Model):
     def __str__(self):
         return " > ".join((self.project.name, self.objective.name))
 
+    @property
     def achieved_level(self):
-        level_achieved = None
-        for level in Level.objects.all():
-            if not ProjectObjectiveCondition.objects.filter(
+
+        # quick check to avoid looping - if there is not a single item
+        # that is nether done nor not_applicable, give up right right awau
+        if not ProjectObjectiveCondition.objects.filter(
+                Q(done=True) | Q(not_applicable=True),
                 project=self.project,
                 objective=self.objective,
-                condition__level=level,
-                done=False,
-                not_applicable=False
             ).exists():
-                level_achieved = level
-            else:
+
+            return
+
+        # we found some done/not_applicable, so need to check level by level
+        # to see if there is a complete level
+        level_achieved = None
+
+        for level in Level.objects.all():
+
+            # nothing in this level? return
+            if ProjectObjectiveCondition.objects.filter(
+                done=False,
+                not_applicable=False,
+                project=self.project,
+                objective=self.objective,
+                condition__level=level
+            ).exists():
                 return level_achieved
+
+            level_achieved = level
+
         return level_achieved
 
     def status(self):
-        return self.achieved_level() or self.unstarted_reason
-
-    # def status_slug(self):
-    #     return slugify(self.status())
+        return self.achieved_level or self.unstarted_reason
 
     def name(self):
         return self.objective.name
@@ -232,8 +254,8 @@ class Commitment(models.Model):
         )
 
     def met(self):
-        if self.projectobjective().achieved_level():
-            return self.projectobjective().achieved_level().value >= self.level.value
+        if self.projectobjective().achieved_level:
+            return self.projectobjective().achieved_level.value >= self.level.value
 
     class Meta:
         ordering = [
