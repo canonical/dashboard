@@ -5,16 +5,17 @@ PIP := $(VENV)/bin/pip
 PYTEST := $(VENV)/bin/pytest
 MANAGE := $(VENV)/bin/python ./manage.py
 
-.PHONY: all help clean venv install migrate init test run
+.PHONY: all help clean venv install migrate init test run collectstatic collectstatic-check
 
 help:
 	@echo "Available targets:"
-	@echo "  install    - Create virtualenv and install dependencies"
-	@echo "  migrate    - Setup database tables"
-	@echo "  init       - Load initial test data"
-	@echo "  run        - Start development server"
-	@echo "  test       - Run automated tests"
-	@echo "  clean      - Remove virtualenv and cache files"
+	@echo "  install        - Create virtualenv and install dependencies"
+	@echo "  migrate        - Setup database tables"
+	@echo "  init           - Load initial test data"
+	@echo "  run            - Start development server"
+	@echo "  test           - Run automated tests"
+	@echo "  collectstatic  - Copy static files to staticfiles directory"
+	@echo "  clean          - Remove virtualenv and cache files"
 
 venv:
 	$(PYTHON) -m venv $(VENV)
@@ -31,6 +32,16 @@ init: migrate
 
 run: init
 	$(MANAGE) runserver
+
+collectstatic: install
+	$(MANAGE) collectstatic --no-input
+
+# For use in CI
+collectstatic-check: collectstatic
+	@if ! git diff --exit-code --quiet staticfiles/; then \
+		echo "Modified static files detected. Please run 'make collectstatic' and commit the changes."; \
+		exit 1; \
+	fi
 
 test: install
 	$(PIP) install -r requirements-dev.txt

@@ -1,4 +1,4 @@
-name: Tests
+name: Checks
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  app-tests:
+  app-checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -15,3 +15,7 @@ jobs:
         run: |
           cd dashboard
           make test
+      - name: Check static files
+        run: |
+          cd dashboard
+          make collectstatic-check

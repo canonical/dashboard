@@ -54,9 +54,23 @@ Explore the dashboard at http://localhost:8000/ or log in to the admin interface
 Nearly every cell in the dashboard is a link to the relevant admin view. The most interesting admin view is for *Projects*, for example http://localhost:8000/admin/projects/project/2/change/.
 
 
-Automated tests
-===============
+Test the application
+====================
 
 Some automated tests are included and can be executed by running::
     
     make test
+
+
+Modify static files
+===================
+
+If you're contributing to the application and need to modify static files, for example the CSS files, modify the files in ``dashboard/static``.
+
+Before you commit your changes, run::
+
+    make collecstatic
+
+This copies the static files to the ``staticfiles`` directory.
+
+During local development, the files in ``staticfiles`` aren't used, because ``DEBUG = True`` in ``dashboard/settings.py``. However, in production we have ``DEBUG = False``, which means that the files in ``staticfiles`` are used. See the `Django docs <https://docs.djangoproject.com/en/4.2/howto/static-files/>`__.
