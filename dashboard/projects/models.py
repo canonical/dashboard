@@ -136,7 +136,7 @@ class ProjectObjective(models.Model):
     def achieved_level(self):
 
         # quick check to avoid looping - if there is not a single item
-        # that is nether done nor not_applicable, give up right right awau
+        # that is nether done nor not_applicable, give up right right away
         if not ProjectObjectiveCondition.objects.filter(
                 Q(done=True) | Q(not_applicable=True),
                 project=self.project,
