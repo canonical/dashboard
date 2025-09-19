@@ -57,6 +57,7 @@ def page(django_db_serialized_rollback, browser, live_server, client):
 
 
 def test_toggling_conditions(page):
+    """Check that conditions can be toggled and saved in the database."""
     # check ProjectObjectiveCondition
     # check that the expected conditions are represented on the page
     assert ProjectObjectiveCondition.objects.count() == 697
@@ -71,6 +72,9 @@ def test_toggling_conditions(page):
     assert ProjectObjectiveCondition.objects.get(id=94).done == False
     assert ProjectObjectiveCondition.objects.get(id=102).done == True
 
+
+def test_toggling_commitments(page):
+    """Check that commitments can be toggled and saved in the database."""
     # check Commitment
     # check that the expected commitments are represented on the page
     assert Commitment.objects.get(id=705).committed == False
@@ -83,6 +87,9 @@ def test_toggling_conditions(page):
     assert Commitment.objects.get(id=705).committed == True
     assert Commitment.objects.get(id=474).committed == False
 
+
+def test_status(page):
+    """Check that objective status is correctly updated based on conditions."""
     # check Status
     # check that the expected conditions and status are represented on the page
     assert ProjectObjectiveCondition.objects.get(id=1).done == True
