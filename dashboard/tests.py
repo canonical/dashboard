@@ -20,38 +20,43 @@ from projects.models import (
 from framework.models import Level
 
 
-@pytest.fixture(scope="session")
-def django_db_setup(django_db_setup, django_db_blocker):
-    with django_db_blocker.unblock():
-        call_command("loaddata", "initial_data.yaml")
-
-
-def reverse_url(
-    live_server, viewname, urlconf=None, args=None, kwargs=None, current_app=None
-):
-    end = reverse(viewname, urlconf, args, kwargs, current_app)
-    return f"{live_server.url}{end}"
-
-
 @pytest.fixture
-def page(page, live_server):
-    c = Client()
-    c.login(username="superuser", password="superuser")
-    session_cookie = c.cookies[settings.SESSION_COOKIE_NAME]
+def page(django_db_serialized_rollback, browser, live_server, client):
+    """Provides a Playwright `Page` that is logged in to a project page in Django's live server."""
+    # Need django_db_serialized_rollback because live server and tests run in different threads.
+    # See https://pytest-django.readthedocs.io/en/stable/helpers.html#live-server
+    # For each test to happen within the scope of a database rollback, our `page` fixture can't
+    # depend on Playwright's `page` fixture. It needs to depend on Playwright's `browser` fixture,
+    # which is a session fixture.
+
+    # Load sample data and users into the database.
+    call_command("loaddata", "initial_data.yaml")
+
+    # Use Django's mock client to simulate a login and capture the session cookie.
+    client.login(username="superuser", password="superuser")
+    cookie = client.cookies[settings.SESSION_COOKIE_NAME]
+
+    # Create a page in the browser and inject the session cookie.
+    browser_context = browser.new_context()
+    page = browser_context.new_page()
     page.context.add_cookies([
         {
             "name": settings.SESSION_COOKIE_NAME,
-            "value": session_cookie.value,
+            "value": cookie.value,
             "url": live_server.url,
         }
     ])
-    return page
+
+    # Navigate the page to the Nuclear project in the live server.
+    project_id = 1
+    url_end = reverse("projects:project", None, [project_id])
+    page.goto(f"{live_server.url}{url_end}")
+
+    yield page
+    browser_context.close()
 
 
-def test_toggling_conditions(live_server, page):
-    url = reverse_url(live_server, viewname="projects:project", args=[1])
-    page.goto(url)
-
+def test_toggling_conditions(page):
     # check ProjectObjectiveCondition
     # check that the expected conditions are represented on the page
     assert ProjectObjectiveCondition.objects.count() == 697
