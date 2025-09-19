@@ -19,10 +19,12 @@ from projects.models import (
 
 from framework.models import Level
 
+
 @pytest.fixture(scope="session")
 def django_db_setup(django_db_setup, django_db_blocker):
     with django_db_blocker.unblock():
         call_command("loaddata", "initial_data.yaml")
+
 
 def reverse_url(
     live_server, viewname, urlconf=None, args=None, kwargs=None, current_app=None
@@ -30,22 +32,23 @@ def reverse_url(
     end = reverse(viewname, urlconf, args, kwargs, current_app)
     return f"{live_server.url}{end}"
 
+
 @pytest.fixture
 def page(page, live_server):
-
     c = Client()
     c.login(username="superuser", password="superuser")
     session_cookie = c.cookies[settings.SESSION_COOKIE_NAME]
-    page.context.add_cookies([{
-        "name": settings.SESSION_COOKIE_NAME,
-        "value": session_cookie.value,
-        "url": live_server.url,
-    }])
+    page.context.add_cookies([
+        {
+            "name": settings.SESSION_COOKIE_NAME,
+            "value": session_cookie.value,
+            "url": live_server.url,
+        }
+    ])
     return page
 
 
 def test_toggling_conditions(live_server, page):
-
     url = reverse_url(live_server, viewname="projects:project", args=[1])
     page.goto(url)
 
