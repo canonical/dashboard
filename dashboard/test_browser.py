@@ -1,5 +1,3 @@
-import time
-
 import pytest
 
 from playwright.sync_api import Page, expect
@@ -58,40 +56,37 @@ def page(django_db_serialized_rollback, browser, live_server, client):
 
 def test_toggling_conditions(page):
     """Check that conditions can be toggled and saved in the database."""
-    # check ProjectObjectiveCondition
-    # check that the expected conditions are represented on the page
     assert ProjectObjectiveCondition.objects.count() == 697
+
     assert ProjectObjectiveCondition.objects.get(id=94).done == True
-    assert ProjectObjectiveCondition.objects.get(id=102).done == False
-
-    # after toggling, the new conditions should be saved in the database
-    page.get_by_test_id("toggle_condition_94").uncheck()
-    page.get_by_test_id("toggle_condition_102").check()
-    time.sleep(5)  # Temporary workaround. Find a better solution.
-
+    with page.expect_response("**/action_toggle_condition/94"):
+        page.get_by_test_id("toggle_condition_94").uncheck()
     assert ProjectObjectiveCondition.objects.get(id=94).done == False
+
+    assert ProjectObjectiveCondition.objects.get(id=102).done == False
+    with page.expect_response("**/action_toggle_condition/102"):
+        page.get_by_test_id("toggle_condition_102").check()
     assert ProjectObjectiveCondition.objects.get(id=102).done == True
 
 
 def test_toggling_commitments(page):
     """Check that commitments can be toggled and saved in the database."""
-    # check Commitment
-    # check that the expected commitments are represented on the page
+
     assert Commitment.objects.get(id=705).committed == False
-    assert Commitment.objects.get(id=474).committed == True
-
-    page.get_by_test_id("toggle_commitment_705").check()
-    page.get_by_test_id("toggle_commitment_474").uncheck()
-    time.sleep(5)  # Temporary workaround. Find a better solution.
-
+    with page.expect_response("**/action_toggle_commitment/705"):
+        page.get_by_test_id("toggle_commitment_705").check()
     assert Commitment.objects.get(id=705).committed == True
+
+    assert Commitment.objects.get(id=474).committed == True
+    with page.expect_response("**/action_toggle_commitment/474"):
+        page.get_by_test_id("toggle_commitment_474").uncheck()
     assert Commitment.objects.get(id=474).committed == False
 
 
 def test_status(page):
     """Check that objective status is correctly updated based on conditions."""
-    # check Status
-    # check that the expected conditions and status are represented on the page
+
+    # Check that the expected conditions and status are represented on the page.
     assert ProjectObjectiveCondition.objects.get(id=1).done == True
     assert ProjectObjectiveCondition.objects.get(id=6).done == True
     assert ProjectObjectiveCondition.objects.get(id=10).done == False
@@ -101,18 +96,22 @@ def test_status(page):
     )
     expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text("")
 
-    # check the remaining box to get to Started
-    page.get_by_test_id("toggle_condition_10").check()
-    time.sleep(5)  # Temporary workaround. Find a better solution.
+    # Check the remaining box to get to Started.
+    with page.expect_response("**/status_projectobjective/1"):
+        page.get_by_test_id("toggle_condition_10").check()
     assert ProjectObjectiveCondition.objects.get(
         id=10
     ).projectobjective().status() == Level.objects.get(id=1)
     expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text("Started")
 
-    # check one more to get to First results
-    page.get_by_test_id("toggle_condition_14").check()
-    time.sleep(5)  # Temporary workaround. Find a better solution.
+    # Check two more boxes to get to First results.
+    with page.expect_response("**/status_projectobjective/1"):
+        page.get_by_test_id("toggle_condition_14").check()
+    with page.expect_response("**/status_projectobjective/1"):
+        page.get_by_test_id("toggle_condition_18").check()
     assert ProjectObjectiveCondition.objects.get(
-        id=14
-    ).projectobjective().status() == Level.objects.get(id=1)
-    expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text("Started")
+        id=18
+    ).projectobjective().status() == Level.objects.get(id=2)
+    expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text(
+        "First results"
+    )
