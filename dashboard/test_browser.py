@@ -1,16 +1,12 @@
 import pytest
 
-from playwright.sync_api import Page, expect
+from playwright.sync_api import expect
 
 from django.core.management import call_command
 from django.urls import reverse
-from django.contrib.auth.models import User
-from django.test.client import Client
 from django.conf import settings
 
 from projects.models import (
-    Project,
-    ProjectObjective,
     ProjectObjectiveCondition,
     Commitment,
 )
