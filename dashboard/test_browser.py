@@ -54,11 +54,15 @@ def test_toggling_conditions(page):
     """Check that conditions can be toggled and saved in the database."""
     assert ProjectObjectiveCondition.objects.count() == 697
 
+    # Toggle project objective condition:
+    # Nuclear > Agreeableness > Started > Speaks pleasantly
     assert ProjectObjectiveCondition.objects.get(id=94).done == True
     with page.expect_response("**/action_toggle_condition/94"):
         page.get_by_test_id("toggle_condition_94").uncheck()
     assert ProjectObjectiveCondition.objects.get(id=94).done == False
 
+    # Toggle project objective condition:
+    # Nuclear > Agreeableness > First results > Accepts praise and thanks with grace
     assert ProjectObjectiveCondition.objects.get(id=102).done == False
     with page.expect_response("**/action_toggle_condition/102"):
         page.get_by_test_id("toggle_condition_102").check()
@@ -68,11 +72,15 @@ def test_toggling_conditions(page):
 def test_toggling_commitments(page):
     """Check that commitments can be toggled and saved in the database."""
 
+    # Toggle commitment:
+    # Nuclear > Agreeableness > Started > 23.10
     assert Commitment.objects.get(id=705).committed == False
     with page.expect_response("**/action_toggle_commitment/705"):
         page.get_by_test_id("toggle_commitment_705").check()
     assert Commitment.objects.get(id=705).committed == True
 
+    # Toggle commitment:
+    # Nuclear > Agreeableness > Started > 25.04
     assert Commitment.objects.get(id=474).committed == True
     with page.expect_response("**/action_toggle_commitment/474"):
         page.get_by_test_id("toggle_commitment_474").uncheck()
@@ -83,6 +91,15 @@ def test_status(page):
     """Check that objective status is correctly updated based on conditions."""
 
     # Check that the expected conditions and status are represented on the page.
+    # The project objective conditions are under Nuclear > Colourfulness:
+    # ------ Started ------
+    # 1   Has blue
+    # 6   Has green
+    # 10  Has red
+    # --- First results ---
+    # 14  Is striated
+    # 18  Is dappled
+    # ---------------------
     assert ProjectObjectiveCondition.objects.get(id=1).done == True
     assert ProjectObjectiveCondition.objects.get(id=6).done == True
     assert ProjectObjectiveCondition.objects.get(id=10).done == False
@@ -92,7 +109,7 @@ def test_status(page):
     )
     expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text("")
 
-    # Check the remaining box to get to Started.
+    # Toggle the remaining condition (Has red) to get to Started.
     with page.expect_response("**/status_projectobjective/1"):
         page.get_by_test_id("toggle_condition_10").check()
     assert ProjectObjectiveCondition.objects.get(
@@ -100,7 +117,7 @@ def test_status(page):
     ).projectobjective().status() == Level.objects.get(id=1)
     expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text("Started")
 
-    # Check two more boxes to get to First results.
+    # Toggle two more conditions (Is striated, Is dappled) to get to First results.
     with page.expect_response("**/status_projectobjective/1"):
         page.get_by_test_id("toggle_condition_14").check()
     with page.expect_response("**/status_projectobjective/1"):
