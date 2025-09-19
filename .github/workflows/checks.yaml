@@ -11,10 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Run tests
+      - name: Run framework tests
         run: |
           cd dashboard
-          make test
+          make test-framework
+      - name: Run browser tests
+        run: |
+          cd dashboard
+          make test-browser
       - name: Check static files
         run: |
           cd dashboard
