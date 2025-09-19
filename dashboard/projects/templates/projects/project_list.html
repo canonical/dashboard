@@ -61,10 +61,10 @@
             <td><a href="{% url 'projects:project' project.id %}">{{ project.quality_indicator }}</a></td>
             <td class="{{ project.last_review_status|slugify }}"><a href="{% url 'projects:project' project.id %}">{{ project.last_review_status|default:"Unreviewed" }}</a></td>
 
-            {% for objective in project.projectobjective_set.all %}
-              <td class="{{ objective.status|slugify }}">
+            {% for po in project.objective_statuses %}
+              <td class="{{ po|slugify }}">
                 <a href="{% url 'projects:project' project.id %}">
-                  {{ objective.status|default:"" }}
+                  {{ po|default:"" }}
                 </a>
               </td>
             {% endfor %}
