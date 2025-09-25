@@ -5,7 +5,7 @@ PIP := $(VENV)/bin/pip
 PYTEST := $(VENV)/bin/pytest
 MANAGE := $(VENV)/bin/python ./manage.py
 
-.PHONY: all help clean venv install migrate init test run collectstatic collectstatic-check
+.PHONY: all help clean venv install install-dev migrate init test test-framework test-browser run collectstatic collectstatic-check
 
 help:
 	@echo "Available targets:"
@@ -23,6 +23,9 @@ venv:
 install: venv
 	$(PIP) install --upgrade pip
 	$(PIP) install -r requirements.txt
+
+install-dev: install
+	$(PIP) install -r requirements-dev.txt
 
 migrate: install
 	$(MANAGE) migrate
@@ -43,10 +46,16 @@ collectstatic-check: collectstatic
 		exit 1; \
 	fi
 
-test: install
-	$(PIP) install -r requirements-dev.txt
+test: test-framework test-browser
+
+# For use in CI
+test-framework: install-dev
+	$(PYTEST) framework
+
+# For use in CI
+test-browser: install-dev
 	$(VENV)/bin/python -m playwright install
-	$(PYTEST)
+	$(PYTEST) test_browser.py
 
 clean:
 	rm -rf $(VENV)
