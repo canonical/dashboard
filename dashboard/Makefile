@@ -46,11 +46,15 @@ collectstatic-check: collectstatic
 		exit 1; \
 	fi
 
-test: test-framework test-browser
+test: test-framework test-projects test-browser
 
 # For use in CI
 test-framework: install-dev
 	$(PYTEST) framework
+
+# For use in CI
+test-projects: install-dev
+	$(PYTEST) projects
 
 # For use in CI
 test-browser: install-dev
