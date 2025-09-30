@@ -129,5 +129,6 @@ def test_status(page):
         "First results"
     )
 
+
 def test_last_review(page):
     expect(page.get_by_role("textbox", name="Last review:")).to_have_value("2024-12-16")
