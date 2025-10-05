@@ -270,3 +270,14 @@ class QI(models.Model):
     project = models.ForeignKey("Project", on_delete=models.CASCADE)
     workcycle = models.ForeignKey(WorkCycle, on_delete=models.CASCADE)
     value = models.SmallIntegerField(default=0)
+
+    def __str__(self):
+        return " > ".join(
+            (
+                self.project.name,
+                self.workcycle.name,
+            )
+        )
+
+    class Meta:
+        verbose_name = "Quality indicator"
