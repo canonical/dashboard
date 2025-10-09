@@ -150,9 +150,11 @@ class ProjectObjective(models.Model):
 
         # we found some done/not_applicable, so need to check level by level
         # to see if there is a complete level
-        level_achieved = None
 
-        for level in Level.objects.all():
+        level_achieved = None
+        for level in Level.objects.filter(
+            condition__in=Condition.objects.filter(objective=self.objective)
+        ):
 
             # nothing in this level? return
             if ProjectObjectiveCondition.objects.filter(
