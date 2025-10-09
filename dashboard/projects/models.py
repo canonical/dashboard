@@ -86,7 +86,10 @@ class Project(models.Model):
 
     # packages up the statuses of all the objectives for quicker unpacking in a template
     def objective_statuses(self):
-        return [po.achieved_level or po.unstarted_reason for po in self.projectobjective_set.all()]
+        return [
+            po.achieved_level or po.unstarted_reason
+            for po in self.projectobjective_set.all()
+        ]
 
     def quality_indicator(self):
         x = 0
@@ -117,8 +120,6 @@ class Project(models.Model):
     class Meta:
         ordering = ["group", "name"]
 
-from django.db.models import Q
-
 
 class ProjectObjective(models.Model):
 
@@ -138,32 +139,20 @@ class ProjectObjective(models.Model):
     @property
     def achieved_level(self):
 
-        # quick check to avoid looping - if there is not a single item
-        # that is nether done nor not_applicable, give up right right away
-        if not ProjectObjectiveCondition.objects.filter(
-                Q(done=True) | Q(not_applicable=True),
-                project=self.project,
-                objective=self.objective,
-            ).exists():
-
-            return
-
-        # we found some done/not_applicable, so need to check level by level
-        # to see if there is a complete level
+        undone = ProjectObjectiveCondition.objects.filter(
+            done=False,
+            not_applicable=False,
+            project=self.project,
+            objective=self.objective,
+        ).values_list("condition__level__value", flat=True).distinct()
 
         level_achieved = None
+
         for level in Level.objects.filter(
-            condition__in=Condition.objects.filter(objective=self.objective)
+            condition__objective=self.objective
         ):
 
-            # nothing in this level? return
-            if ProjectObjectiveCondition.objects.filter(
-                done=False,
-                not_applicable=False,
-                project=self.project,
-                objective=self.objective,
-                condition__level=level
-            ).exists():
+            if level.value in undone:
                 return level_achieved
 
             level_achieved = level
