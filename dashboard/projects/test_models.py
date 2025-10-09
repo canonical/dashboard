@@ -1,9 +1,5 @@
-import datetime
-from pytest_django.asserts import assertQuerySetEqual
-
 import pytest
 
-from framework.models import *
 from projects.models import *
 
 
