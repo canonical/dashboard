@@ -1,0 +1,38 @@
+name: Integration Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  integration:
+    name: Run integration tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install charmcraft and pytest-operator deps
+        run: |
+          sudo snap install charmcraft --classic
+          sudo snap install juju --classic
+          pip install tox pytest pytest-operator
+
+      - name: Bootstrap Juju with MicroK8s
+        run: |
+          sudo snap install microk8s --classic
+          sudo microk8s status --wait-ready
+          microk8s.enable storage dns
+          juju bootstrap microk8s micro
+          juju add-model test-model
+
+      - name: Run integration tests
+        run: tox -e integration
