@@ -1,9 +1,6 @@
 from . import models
 from django import forms
 
-class DatePickerInput(forms.DateInput):
-    input_type = 'date'
-
 
 class ProjectDetailForm(forms.ModelForm):
 
@@ -20,10 +17,11 @@ class ProjectDetailForm(forms.ModelForm):
             "last_review_status",
         ]
         widgets = {
-            'last_review' : DatePickerInput(),
+            'last_review': forms.DateInput(
+                attrs={'type': 'date'},
+                format='%Y-%m-%d',
+            )
         }
-
-    # last_review = forms.DateField(widget=forms.DateInput)
 
 
 class ProjectObjectiveForm(forms.ModelForm):

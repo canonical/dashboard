@@ -15,6 +15,10 @@ jobs:
         run: |
           cd dashboard
           make test-framework
+      - name: Run projects tests
+        run: |
+          cd dashboard
+          make test-projects
       - name: Run browser tests
         run: |
           cd dashboard

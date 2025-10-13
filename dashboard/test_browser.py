@@ -128,3 +128,7 @@ def test_status(page):
     expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text(
         "First results"
     )
+
+
+def test_last_review(page):
+    expect(page.get_by_role("textbox", name="Last review:")).to_have_value("2024-12-16")
