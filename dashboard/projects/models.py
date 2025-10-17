@@ -281,3 +281,4 @@ class QI(models.Model):
 
     class Meta:
         verbose_name = "Quality indicator"
+        ordering = ["project__name", "workcycle"]
