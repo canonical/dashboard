@@ -7,12 +7,19 @@ class AgreementStatus(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = "Project agreement statuses"
+
 
 class ProjectStatus(models.Model):
     name = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "Project review status"
+        verbose_name_plural = "Project review statuses"
 
 
 class Level(models.Model):
@@ -24,6 +31,7 @@ class Level(models.Model):
 
     class Meta:
         ordering = ["value"]
+        verbose_name = "Maturity level"
 
 
 class Reason(models.Model):
@@ -34,13 +42,14 @@ class Reason(models.Model):
         return self.name
 
     class Meta:
+        verbose_name = "Objective unstarted reason"
         ordering = ["value"]
 
 
 class WorkCycle(models.Model):
     name = models.CharField(max_length=200)
-    timestamp = models.DateField()
-    is_current = models.BooleanField(default=False)
+    timestamp = models.DateField("Ends")
+    is_current = models.BooleanField("Is the current cycle", default=False)
 
     def __str__(self):
         return self.name
@@ -77,6 +86,7 @@ class WorkCycle(models.Model):
             QI.objects.get_or_create(workcycle=self, project=project)
 
     class Meta:
+        verbose_name = "Cycle"
         ordering = ["timestamp"]
 
 
@@ -161,4 +171,4 @@ class Condition(models.Model):
             )
 
     class Meta:
-        ordering = ["level"]
+        ordering = ["objective__name", "level__value"]
