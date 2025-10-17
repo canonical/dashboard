@@ -12,6 +12,10 @@ from .models import (
 )
 
 
+class ConditionAdmin(admin.ModelAdmin):
+    list_display = ["name", "objective", "level"]
+    list_editable = ["objective", "level"]
+
 class ConditionInline(admin.TabularInline):
     model = Condition
     extra = 1
@@ -24,7 +28,6 @@ class ObjectiveAdmin(admin.ModelAdmin):
 
 
 class WorkCycleAdmin(admin.ModelAdmin):
-    model = WorkCycle
     list_display = ["name", "timestamp", "is_current"]
     list_editable = ["timestamp", "is_current"]
 
@@ -35,5 +38,5 @@ admin.site.register(ProjectStatus)
 admin.site.register(AgreementStatus)
 admin.site.register(WorkCycle, WorkCycleAdmin)
 admin.site.register(ObjectiveGroup)
-admin.site.register(Condition)
+admin.site.register(Condition, ConditionAdmin)
 admin.site.register(Objective, ObjectiveAdmin)
