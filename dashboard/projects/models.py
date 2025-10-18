@@ -194,6 +194,19 @@ class ProjectObjectiveCondition(models.Model):
     not_applicable = models.BooleanField(default=False)
     candidate = models.BooleanField(default=False)
 
+    STATUS_CHOICES = {
+        "NA": "not applicable",
+        "CA": "candidate",
+        "DO": "done",
+        "": "none"
+    }
+
+    status = models.CharField(
+        max_length=2,
+        choices=STATUS_CHOICES,
+        default="",
+        )
+
     def projectobjective(self):
         return ProjectObjective.objects.get(
             project=self.project, objective=self.objective
