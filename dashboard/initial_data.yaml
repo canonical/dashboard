@@ -1792,7 +1792,7 @@
     done: true
     not_applicable: true
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 2
   fields:
@@ -1802,7 +1802,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 3
   fields:
@@ -1822,7 +1822,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 5
   fields:
@@ -1832,7 +1832,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 6
   fields:
@@ -1842,7 +1842,7 @@
     done: true
     not_applicable: false
     candidate: true
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 7
   fields:
@@ -1872,7 +1872,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 10
   fields:
@@ -1942,7 +1942,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 17
   fields:
@@ -1982,7 +1982,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 21
   fields:
@@ -2012,7 +2012,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 24
   fields:
@@ -2022,7 +2022,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 25
   fields:
@@ -2032,7 +2032,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 26
   fields:
@@ -2042,7 +2042,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 27
   fields:
@@ -2052,7 +2052,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 28
   fields:
@@ -2062,7 +2062,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 29
   fields:
@@ -2072,7 +2072,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 30
   fields:
@@ -2082,7 +2082,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 31
   fields:
@@ -2092,7 +2092,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 32
   fields:
@@ -2112,7 +2112,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 34
   fields:
@@ -2122,7 +2122,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 35
   fields:
@@ -2142,7 +2142,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 37
   fields:
@@ -2152,7 +2152,7 @@
     done: false
     not_applicable: true
     candidate: true
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 38
   fields:
@@ -2182,7 +2182,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 41
   fields:
@@ -2202,7 +2202,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 43
   fields:
@@ -2212,7 +2212,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 44
   fields:
@@ -2222,7 +2222,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 45
   fields:
@@ -2242,7 +2242,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 47
   fields:
@@ -2252,7 +2252,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 48
   fields:
@@ -2262,7 +2262,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 49
   fields:
@@ -2302,7 +2302,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 53
   fields:
@@ -2332,7 +2332,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 56
   fields:
@@ -2342,7 +2342,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 57
   fields:
@@ -2362,7 +2362,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 59
   fields:
@@ -2382,7 +2382,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 61
   fields:
@@ -2392,7 +2392,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 62
   fields:
@@ -2402,7 +2402,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 63
   fields:
@@ -2412,7 +2412,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 64
   fields:
@@ -2432,7 +2432,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 66
   fields:
@@ -2452,7 +2452,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 68
   fields:
@@ -2462,7 +2462,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 69
   fields:
@@ -2472,7 +2472,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 70
   fields:
@@ -2482,7 +2482,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 71
   fields:
@@ -2492,7 +2492,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 72
   fields:
@@ -2512,7 +2512,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 74
   fields:
@@ -2522,7 +2522,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 75
   fields:
@@ -2532,7 +2532,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 76
   fields:
@@ -2552,7 +2552,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 78
   fields:
@@ -2572,7 +2572,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 80
   fields:
@@ -2612,7 +2612,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 84
   fields:
@@ -2622,7 +2622,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 85
   fields:
@@ -2632,7 +2632,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 86
   fields:
@@ -2642,7 +2642,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 87
   fields:
@@ -2652,7 +2652,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 88
   fields:
@@ -2662,7 +2662,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 89
   fields:
@@ -2672,7 +2672,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 90
   fields:
@@ -2702,7 +2702,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 93
   fields:
@@ -2722,7 +2722,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 95
   fields:
@@ -2762,7 +2762,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 99
   fields:
@@ -2792,7 +2792,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 102
   fields:
@@ -2832,7 +2832,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 106
   fields:
@@ -2842,7 +2842,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 107
   fields:
@@ -2852,7 +2852,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 108
   fields:
@@ -2862,7 +2862,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 109
   fields:
@@ -2872,7 +2872,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 110
   fields:
@@ -2922,7 +2922,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 115
   fields:
@@ -2952,7 +2952,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 118
   fields:
@@ -2962,7 +2962,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 119
   fields:
@@ -2992,7 +2992,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 122
   fields:
@@ -3002,7 +3002,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 123
   fields:
@@ -3022,7 +3022,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 125
   fields:
@@ -3042,7 +3042,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 127
   fields:
@@ -3072,7 +3072,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 130
   fields:
@@ -3082,7 +3082,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 131
   fields:
@@ -3102,7 +3102,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 133
   fields:
@@ -3112,7 +3112,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 134
   fields:
@@ -3122,7 +3122,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 135
   fields:
@@ -3142,7 +3142,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 137
   fields:
@@ -3182,7 +3182,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 141
   fields:
@@ -3192,7 +3192,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 142
   fields:
@@ -3202,7 +3202,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 143
   fields:
@@ -3212,7 +3212,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 144
   fields:
@@ -3222,7 +3222,7 @@
     done: false
     not_applicable: true
     candidate: true
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 145
   fields:
@@ -3232,7 +3232,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 146
   fields:
@@ -3242,7 +3242,7 @@
     done: false
     not_applicable: true
     candidate: true
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 147
   fields:
@@ -3262,7 +3262,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 149
   fields:
@@ -3272,7 +3272,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 150
   fields:
@@ -3282,7 +3282,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 151
   fields:
@@ -3302,7 +3302,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 153
   fields:
@@ -3342,7 +3342,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 157
   fields:
@@ -3352,7 +3352,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 158
   fields:
@@ -3362,7 +3362,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 159
   fields:
@@ -3372,7 +3372,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 160
   fields:
@@ -3392,7 +3392,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 162
   fields:
@@ -3422,7 +3422,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 165
   fields:
@@ -3432,7 +3432,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 166
   fields:
@@ -3442,7 +3442,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 167
   fields:
@@ -3462,7 +3462,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 169
   fields:
@@ -3492,7 +3492,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 172
   fields:
@@ -3502,7 +3502,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 173
   fields:
@@ -3512,7 +3512,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 174
   fields:
@@ -3522,7 +3522,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 175
   fields:
@@ -3562,7 +3562,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 179
   fields:
@@ -3582,7 +3582,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 181
   fields:
@@ -3592,7 +3592,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 182
   fields:
@@ -3602,7 +3602,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 183
   fields:
@@ -3632,7 +3632,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 186
   fields:
@@ -3652,7 +3652,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 188
   fields:
@@ -3672,7 +3672,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 190
   fields:
@@ -3682,7 +3682,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 191
   fields:
@@ -3702,7 +3702,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 193
   fields:
@@ -3712,7 +3712,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 194
   fields:
@@ -3722,7 +3722,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 195
   fields:
@@ -3752,7 +3752,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 198
   fields:
@@ -3762,7 +3762,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 199
   fields:
@@ -3782,7 +3782,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 201
   fields:
@@ -3802,7 +3802,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 203
   fields:
@@ -3822,7 +3822,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 205
   fields:
@@ -3832,7 +3832,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 206
   fields:
@@ -3842,7 +3842,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 207
   fields:
@@ -3852,7 +3852,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 208
   fields:
@@ -3862,7 +3862,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 209
   fields:
@@ -3882,7 +3882,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 211
   fields:
@@ -3892,7 +3892,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 212
   fields:
@@ -3902,7 +3902,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 213
   fields:
@@ -3912,7 +3912,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 214
   fields:
@@ -3952,7 +3952,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 218
   fields:
@@ -3962,7 +3962,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 219
   fields:
@@ -3972,7 +3972,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 220
   fields:
@@ -3982,7 +3982,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 221
   fields:
@@ -4012,7 +4012,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 224
   fields:
@@ -4042,7 +4042,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 227
   fields:
@@ -4062,7 +4062,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 229
   fields:
@@ -4072,7 +4072,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 230
   fields:
@@ -4082,7 +4082,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 231
   fields:
@@ -4092,7 +4092,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 232
   fields:
@@ -4122,7 +4122,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 235
   fields:
@@ -4142,7 +4142,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 237
   fields:
@@ -4152,7 +4152,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 238
   fields:
@@ -4192,7 +4192,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 242
   fields:
@@ -4202,7 +4202,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 243
   fields:
@@ -4212,7 +4212,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 244
   fields:
@@ -4242,7 +4242,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 247
   fields:
@@ -4252,7 +4252,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 248
   fields:
@@ -4262,7 +4262,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 249
   fields:
@@ -4272,7 +4272,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 250
   fields:
@@ -4282,7 +4282,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 251
   fields:
@@ -4292,7 +4292,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 252
   fields:
@@ -4302,7 +4302,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 253
   fields:
@@ -4312,7 +4312,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 254
   fields:
@@ -4322,7 +4322,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 255
   fields:
@@ -4332,7 +4332,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 256
   fields:
@@ -4362,7 +4362,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 259
   fields:
@@ -4372,7 +4372,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 260
   fields:
@@ -4382,7 +4382,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 261
   fields:
@@ -4412,7 +4412,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 264
   fields:
@@ -4432,7 +4432,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 266
   fields:
@@ -4442,7 +4442,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 267
   fields:
@@ -4452,7 +4452,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 268
   fields:
@@ -4462,7 +4462,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 269
   fields:
@@ -4472,7 +4472,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 270
   fields:
@@ -4502,7 +4502,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 273
   fields:
@@ -4512,7 +4512,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 274
   fields:
@@ -4552,7 +4552,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 278
   fields:
@@ -4572,7 +4572,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 280
   fields:
@@ -4582,7 +4582,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 281
   fields:
@@ -4602,7 +4602,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 283
   fields:
@@ -4632,7 +4632,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 286
   fields:
@@ -4642,7 +4642,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 287
   fields:
@@ -4672,7 +4672,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 331
   fields:
@@ -4682,7 +4682,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 332
   fields:
@@ -4702,7 +4702,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 334
   fields:
@@ -4712,7 +4712,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 335
   fields:
@@ -4722,7 +4722,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 336
   fields:
@@ -4732,7 +4732,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 337
   fields:
@@ -4752,7 +4752,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 339
   fields:
@@ -4762,7 +4762,7 @@
     done: false
     not_applicable: true
     candidate: true
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 340
   fields:
@@ -4772,7 +4772,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 341
   fields:
@@ -4782,7 +4782,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 342
   fields:
@@ -4792,7 +4792,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 343
   fields:
@@ -4802,7 +4802,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 344
   fields:
@@ -4812,7 +4812,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 345
   fields:
@@ -4832,7 +4832,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 347
   fields:
@@ -4842,7 +4842,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 348
   fields:
@@ -4862,7 +4862,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 350
   fields:
@@ -4882,7 +4882,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 352
   fields:
@@ -4892,7 +4892,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 353
   fields:
@@ -4922,7 +4922,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 356
   fields:
@@ -4932,7 +4932,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 357
   fields:
@@ -4942,7 +4942,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 358
   fields:
@@ -4962,7 +4962,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 360
   fields:
@@ -4972,7 +4972,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 361
   fields:
@@ -4982,7 +4982,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 362
   fields:
@@ -4992,7 +4992,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 363
   fields:
@@ -5002,7 +5002,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 364
   fields:
@@ -5042,7 +5042,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 368
   fields:
@@ -5072,7 +5072,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 371
   fields:
@@ -5112,7 +5112,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 375
   fields:
@@ -5122,7 +5122,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 376
   fields:
@@ -5132,7 +5132,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 377
   fields:
@@ -5162,7 +5162,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 380
   fields:
@@ -5172,7 +5172,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 381
   fields:
@@ -5182,7 +5182,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 382
   fields:
@@ -5192,7 +5192,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 383
   fields:
@@ -5232,7 +5232,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 387
   fields:
@@ -5252,7 +5252,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 389
   fields:
@@ -5262,7 +5262,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 390
   fields:
@@ -5322,7 +5322,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 396
   fields:
@@ -5332,7 +5332,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 397
   fields:
@@ -5342,7 +5342,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 398
   fields:
@@ -5372,7 +5372,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 401
   fields:
@@ -5382,7 +5382,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 402
   fields:
@@ -5392,7 +5392,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 403
   fields:
@@ -5412,7 +5412,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 405
   fields:
@@ -5442,7 +5442,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 408
   fields:
@@ -5452,7 +5452,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 409
   fields:
@@ -5462,7 +5462,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 410
   fields:
@@ -5472,7 +5472,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 411
   fields:
@@ -5492,7 +5492,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 413
   fields:
@@ -5502,7 +5502,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 414
   fields:
@@ -5532,7 +5532,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 417
   fields:
@@ -5572,7 +5572,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 421
   fields:
@@ -5612,7 +5612,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 425
   fields:
@@ -5622,7 +5622,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 426
   fields:
@@ -5632,7 +5632,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 427
   fields:
@@ -5642,7 +5642,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 428
   fields:
@@ -5652,7 +5652,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 429
   fields:
@@ -5672,7 +5672,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 431
   fields:
@@ -5692,7 +5692,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 433
   fields:
@@ -5712,7 +5712,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 435
   fields:
@@ -5722,7 +5722,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 436
   fields:
@@ -5732,7 +5732,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 437
   fields:
@@ -5782,7 +5782,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 442
   fields:
@@ -5792,7 +5792,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 443
   fields:
@@ -5802,7 +5802,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 444
   fields:
@@ -5812,7 +5812,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 445
   fields:
@@ -5832,7 +5832,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 447
   fields:
@@ -5852,7 +5852,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 449
   fields:
@@ -5862,7 +5862,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 450
   fields:
@@ -5882,7 +5882,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 452
   fields:
@@ -5902,7 +5902,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 454
   fields:
@@ -5922,7 +5922,7 @@
     done: false
     not_applicable: true
     candidate: true
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 456
   fields:
@@ -5962,7 +5962,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 460
   fields:
@@ -5972,7 +5972,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 461
   fields:
@@ -5992,7 +5992,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 463
   fields:
@@ -6032,7 +6032,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 467
   fields:
@@ -6052,7 +6052,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 469
   fields:
@@ -6062,7 +6062,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 470
   fields:
@@ -6082,7 +6082,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 472
   fields:
@@ -6092,7 +6092,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 473
   fields:
@@ -6102,7 +6102,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 474
   fields:
@@ -6142,7 +6142,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 478
   fields:
@@ -6162,7 +6162,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 480
   fields:
@@ -6172,7 +6172,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 481
   fields:
@@ -6192,7 +6192,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 483
   fields:
@@ -6202,7 +6202,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 484
   fields:
@@ -6212,7 +6212,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 485
   fields:
@@ -6222,7 +6222,7 @@
     done: false
     not_applicable: true
     candidate: true
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 486
   fields:
@@ -6242,7 +6242,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 488
   fields:
@@ -6252,7 +6252,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 489
   fields:
@@ -6272,7 +6272,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 491
   fields:
@@ -6282,7 +6282,7 @@
     done: false
     not_applicable: true
     candidate: true
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 492
   fields:
@@ -6322,7 +6322,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 496
   fields:
@@ -6352,7 +6352,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 499
   fields:
@@ -6362,7 +6362,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 500
   fields:
@@ -6372,7 +6372,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 501
   fields:
@@ -6382,7 +6382,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 502
   fields:
@@ -6412,7 +6412,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 505
   fields:
@@ -6442,7 +6442,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 508
   fields:
@@ -6452,7 +6452,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 509
   fields:
@@ -6492,7 +6492,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 513
   fields:
@@ -6502,7 +6502,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 514
   fields:
@@ -6552,7 +6552,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 519
   fields:
@@ -6562,7 +6562,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 520
   fields:
@@ -6572,7 +6572,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 521
   fields:
@@ -6592,7 +6592,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 523
   fields:
@@ -6632,7 +6632,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 527
   fields:
@@ -6642,7 +6642,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 528
   fields:
@@ -6652,7 +6652,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 529
   fields:
@@ -6672,7 +6672,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 531
   fields:
@@ -6692,7 +6692,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 533
   fields:
@@ -6702,7 +6702,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 534
   fields:
@@ -6712,7 +6712,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 535
   fields:
@@ -6742,7 +6742,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 538
   fields:
@@ -6752,7 +6752,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 539
   fields:
@@ -6772,7 +6772,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 541
   fields:
@@ -6792,7 +6792,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 543
   fields:
@@ -6802,7 +6802,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 544
   fields:
@@ -6822,7 +6822,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 546
   fields:
@@ -6832,7 +6832,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 547
   fields:
@@ -6862,7 +6862,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 550
   fields:
@@ -6892,7 +6892,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 553
   fields:
@@ -6912,7 +6912,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 555
   fields:
@@ -6922,7 +6922,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 556
   fields:
@@ -6932,7 +6932,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 557
   fields:
@@ -6942,7 +6942,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 558
   fields:
@@ -6962,7 +6962,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 560
   fields:
@@ -6982,7 +6982,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 562
   fields:
@@ -6992,7 +6992,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 563
   fields:
@@ -7002,7 +7002,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 564
   fields:
@@ -7042,7 +7042,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 568
   fields:
@@ -7062,7 +7062,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 570
   fields:
@@ -7072,7 +7072,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 571
   fields:
@@ -7082,7 +7082,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 572
   fields:
@@ -7092,7 +7092,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 573
   fields:
@@ -7112,7 +7112,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 575
   fields:
@@ -7162,7 +7162,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 580
   fields:
@@ -7172,7 +7172,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 581
   fields:
@@ -7212,7 +7212,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 585
   fields:
@@ -7232,7 +7232,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 587
   fields:
@@ -7242,7 +7242,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 588
   fields:
@@ -7252,7 +7252,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 589
   fields:
@@ -7262,7 +7262,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 590
   fields:
@@ -7272,7 +7272,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 591
   fields:
@@ -7292,7 +7292,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 593
   fields:
@@ -7312,7 +7312,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 595
   fields:
@@ -7322,7 +7322,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 596
   fields:
@@ -7332,7 +7332,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 597
   fields:
@@ -7342,7 +7342,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 598
   fields:
@@ -7372,7 +7372,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 601
   fields:
@@ -7392,7 +7392,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 603
   fields:
@@ -7412,7 +7412,7 @@
     done: false
     not_applicable: true
     candidate: true
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 605
   fields:
@@ -7422,7 +7422,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 606
   fields:
@@ -7442,7 +7442,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 608
   fields:
@@ -7492,7 +7492,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 613
   fields:
@@ -7512,7 +7512,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 615
   fields:
@@ -7622,7 +7622,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 626
   fields:
@@ -7632,7 +7632,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 627
   fields:
@@ -7642,7 +7642,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 628
   fields:
@@ -7662,7 +7662,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 630
   fields:
@@ -7692,7 +7692,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 633
   fields:
@@ -7722,7 +7722,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 636
   fields:
@@ -7762,7 +7762,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 640
   fields:
@@ -7772,7 +7772,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 641
   fields:
@@ -7822,7 +7822,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 646
   fields:
@@ -7852,7 +7852,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 649
   fields:
@@ -7872,7 +7872,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 651
   fields:
@@ -7882,7 +7882,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 652
   fields:
@@ -7892,7 +7892,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 653
   fields:
@@ -7922,7 +7922,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 656
   fields:
@@ -7932,7 +7932,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 657
   fields:
@@ -7972,7 +7972,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 661
   fields:
@@ -7992,7 +7992,7 @@
     done: false
     not_applicable: true
     candidate: true
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 663
   fields:
@@ -8002,7 +8002,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 664
   fields:
@@ -8012,7 +8012,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 665
   fields:
@@ -8022,7 +8022,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 666
   fields:
@@ -8052,7 +8052,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 669
   fields:
@@ -8062,7 +8062,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 670
   fields:
@@ -8082,7 +8082,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 672
   fields:
@@ -8102,7 +8102,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 674
   fields:
@@ -8112,7 +8112,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 675
   fields:
@@ -8122,7 +8122,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 676
   fields:
@@ -8142,7 +8142,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 678
   fields:
@@ -8152,7 +8152,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 679
   fields:
@@ -8222,7 +8222,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 686
   fields:
@@ -8242,7 +8242,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 688
   fields:
@@ -8252,7 +8252,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 689
   fields:
@@ -8262,7 +8262,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 690
   fields:
@@ -8282,7 +8282,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 692
   fields:
@@ -8352,7 +8352,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 699
   fields:
@@ -8422,7 +8422,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 706
   fields:
@@ -8432,7 +8432,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 707
   fields:
@@ -8442,7 +8442,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 708
   fields:
@@ -8452,7 +8452,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 709
   fields:
@@ -8472,7 +8472,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 711
   fields:
@@ -8502,7 +8502,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 714
   fields:
@@ -8512,7 +8512,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 715
   fields:
@@ -8532,7 +8532,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 717
   fields:
@@ -8542,7 +8542,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 718
   fields:
@@ -8552,7 +8552,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 719
   fields:
@@ -8592,7 +8592,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 723
   fields:
@@ -8612,7 +8612,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 725
   fields:
@@ -8622,7 +8622,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 726
   fields:
@@ -8632,7 +8632,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 727
   fields:
@@ -8642,7 +8642,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 728
   fields:
@@ -8672,7 +8672,7 @@
     done: false
     not_applicable: true
     candidate: false
-    status: ''
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 731
   fields:
@@ -8682,7 +8682,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 732
   fields:
@@ -8692,7 +8692,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 733
   fields:
@@ -8712,7 +8712,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 735
   fields:
@@ -8732,7 +8732,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 737
   fields:
@@ -8742,7 +8742,7 @@
     done: true
     not_applicable: false
     candidate: false
-    status: ''
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 738
   fields:
@@ -8752,7 +8752,7 @@
     done: false
     not_applicable: false
     candidate: true
-    status: ''
+    status: CA
 - model: projects.commitment
   pk: 1
   fields:
