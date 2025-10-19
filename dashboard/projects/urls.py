@@ -9,8 +9,6 @@ from .views import (
     project_basic_form_save,
     status_projects_commitment,
     status_projectobjective,
-    action_condition_toggle_candidate,
-    action_condition_toggle_not_applicable,
 )
 
 app_name = "projects"
@@ -33,16 +31,6 @@ urlpatterns = [
         "action_toggle_condition/<int:condition_id>",
         action_toggle_condition,
         name="action_toggle_condition",
-    ),
-    path(
-        "action_condition_toggle_candidate/<int:condition_id>",
-        action_condition_toggle_candidate,
-        name="action_condition_toggle_candidate",
-    ),
-    path(
-        "action_condition_toggle_not_applicable/<int:condition_id>",
-        action_condition_toggle_not_applicable,
-        name="action_condition_toggle_not_applicable",
     ),
     path(
         "action_select_reason/<str:projectobjective_id>",

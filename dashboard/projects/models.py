@@ -140,8 +140,7 @@ class ProjectObjective(models.Model):
     def achieved_level(self):
 
         undone = ProjectObjectiveCondition.objects.filter(
-            done=False,
-            not_applicable=False,
+            status__in=["", "CA"],
             project=self.project,
             objective=self.objective,
         ).values_list("condition__level__value", flat=True).distinct()
@@ -190,12 +189,9 @@ class ProjectObjectiveCondition(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     objective = models.ForeignKey(Objective, on_delete=models.CASCADE)
     condition = models.ForeignKey(Condition, on_delete=models.CASCADE)
-    done = models.BooleanField(default=False)
-    not_applicable = models.BooleanField(default=False)
-    candidate = models.BooleanField(default=False)
 
     STATUS_CHOICES = {
-        "NA": "not applicable",
+        "NA": "not-applicable",
         "CA": "candidate",
         "DO": "done",
         "": "none"

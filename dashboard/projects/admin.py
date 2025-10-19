@@ -113,7 +113,7 @@ class CommitmentAdmin(admin.ModelAdmin):
 
 @admin.register(ProjectObjectiveCondition)
 class ProjectObjectiveConditionAdmin(admin.ModelAdmin):
-    list_filter = ["project", "objective", "condition", "done"]
+    list_filter = ["project", "objective", "condition", "status"]
 
 
 admin.site.register(ProjectGroup)

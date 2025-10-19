@@ -22,7 +22,7 @@ def test_expectations_are_confirmed():
         project=project,
         objective=objective1,
         condition=condition1,
-    ).update(done=True)
+    ).update(status="DO")
     assert (
         ProjectObjective.objects.get(project=project, objective=objective1).status()
         == level1
@@ -33,7 +33,7 @@ def test_expectations_are_confirmed():
         project=project,
         objective=objective1,
         condition=condition2,
-    ).update(done=True)
+    ).update(status="DO")
     assert (
         ProjectObjective.objects.get(project=project, objective=objective1).status()
         == level3
