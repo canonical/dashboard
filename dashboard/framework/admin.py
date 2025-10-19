@@ -1,4 +1,7 @@
 from django.contrib import admin
+from django.db import models
+
+from tinymce.widgets import TinyMCE
 
 from .models import (
     Level,
@@ -20,11 +23,19 @@ class ConditionInline(admin.TabularInline):
     model = Condition
     extra = 1
 
+    formfield_overrides = {
+        models.TextField: {"widget": TinyMCE},
+    }
+
 
 class ObjectiveAdmin(admin.ModelAdmin):
     inlines = [ConditionInline]
     list_display = ["name", "group", "weight"]
     list_editable = ["group", "weight"]
+
+    formfield_overrides = {
+        models.TextField: {"widget": TinyMCE},
+    }
 
 
 class WorkCycleAdmin(admin.ModelAdmin):

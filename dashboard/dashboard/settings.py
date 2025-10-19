@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "django_browser_reload",
+    "tinymce",
     "projects",
     "framework",
     "dashboard",
@@ -134,3 +135,17 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = "projects:project_list"
 LOGOUT_REDIRECT_URL = "projects:project_list"
+
+
+TINYMCE_DEFAULT_CONFIG = {
+    "theme": "silver",
+    "width": 600,
+    "height": 75,
+    "menubar": False,
+    "plugins": "autolink,lists,link,paste"
+    "help",
+    "toolbar": False,
+    "statusbar": False,
+    "valid_elements": 'a[href|target=_blank],strong,em,p,ul,ol,li',
+}
+

@@ -19,7 +19,7 @@
       />
   </td>
   <td class="condition name">
-    {{ condition.name }}
+    {{ condition.name|safe }}
     <div class="attributes">
       <span
         {% if not perms.projects.change_projectobjectivecondition %}
