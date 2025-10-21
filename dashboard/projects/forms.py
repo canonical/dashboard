@@ -35,7 +35,7 @@ class ProjectObjectiveForm(forms.ModelForm):
 class ProjectObjectiveConditionForm(forms.ModelForm):
     class Meta:
         model = models.ProjectObjectiveCondition
-        fields = ["done"]
+        fields = ["status"]
 
 
 class CommitmentForm(forms.ModelForm):

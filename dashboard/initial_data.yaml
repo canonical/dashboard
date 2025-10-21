@@ -1789,6273 +1789,4879 @@
     project: 1
     objective: 1
     condition: 1
-    done: true
-    not_applicable: true
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 2
   fields:
     project: 2
     objective: 1
     condition: 1
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 3
   fields:
     project: 3
     objective: 1
     condition: 1
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 4
   fields:
     project: 4
     objective: 1
     condition: 1
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 5
   fields:
     project: 2
     objective: 1
     condition: 2
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 6
   fields:
     project: 1
     objective: 1
     condition: 2
-    done: true
-    not_applicable: false
-    candidate: true
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 7
   fields:
     project: 3
     objective: 1
     condition: 2
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 8
   fields:
     project: 4
     objective: 1
     condition: 2
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 9
   fields:
     project: 2
     objective: 1
     condition: 3
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 10
   fields:
     project: 1
     objective: 1
     condition: 3
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 11
   fields:
     project: 3
     objective: 1
     condition: 3
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 12
   fields:
     project: 4
     objective: 1
     condition: 3
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 13
   fields:
     project: 2
     objective: 1
     condition: 4
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 14
   fields:
     project: 1
     objective: 1
     condition: 4
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 15
   fields:
     project: 3
     objective: 1
     condition: 4
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 16
   fields:
     project: 4
     objective: 1
     condition: 4
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 17
   fields:
     project: 2
     objective: 1
     condition: 5
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 18
   fields:
     project: 1
     objective: 1
     condition: 5
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 19
   fields:
     project: 3
     objective: 1
     condition: 5
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 20
   fields:
     project: 4
     objective: 1
     condition: 5
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 21
   fields:
     project: 2
     objective: 1
     condition: 6
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 22
   fields:
     project: 1
     objective: 1
     condition: 6
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 23
   fields:
     project: 3
     objective: 1
     condition: 6
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 24
   fields:
     project: 4
     objective: 1
     condition: 6
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 25
   fields:
     project: 2
     objective: 2
     condition: 7
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 26
   fields:
     project: 1
     objective: 2
     condition: 7
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 27
   fields:
     project: 3
     objective: 2
     condition: 7
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 28
   fields:
     project: 4
     objective: 2
     condition: 7
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 29
   fields:
     project: 2
     objective: 2
     condition: 8
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 30
   fields:
     project: 1
     objective: 2
     condition: 8
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 31
   fields:
     project: 3
     objective: 2
     condition: 8
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 32
   fields:
     project: 4
     objective: 2
     condition: 8
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 33
   fields:
     project: 2
     objective: 2
     condition: 9
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 34
   fields:
     project: 1
     objective: 2
     condition: 9
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 35
   fields:
     project: 3
     objective: 2
     condition: 9
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 36
   fields:
     project: 4
     objective: 2
     condition: 9
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 37
   fields:
     project: 2
     objective: 2
     condition: 10
-    done: false
-    not_applicable: true
-    candidate: true
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 38
   fields:
     project: 1
     objective: 2
     condition: 10
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 39
   fields:
     project: 3
     objective: 2
     condition: 10
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 40
   fields:
     project: 4
     objective: 2
     condition: 10
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 41
   fields:
     project: 2
     objective: 3
     condition: 11
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 42
   fields:
     project: 1
     objective: 3
     condition: 11
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 43
   fields:
     project: 3
     objective: 3
     condition: 11
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 44
   fields:
     project: 4
     objective: 3
     condition: 11
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 45
   fields:
     project: 2
     objective: 3
     condition: 12
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 46
   fields:
     project: 1
     objective: 3
     condition: 12
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 47
   fields:
     project: 3
     objective: 3
     condition: 12
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 48
   fields:
     project: 4
     objective: 3
     condition: 12
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 49
   fields:
     project: 2
     objective: 3
     condition: 13
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 50
   fields:
     project: 1
     objective: 3
     condition: 13
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 51
   fields:
     project: 3
     objective: 3
     condition: 13
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 52
   fields:
     project: 4
     objective: 3
     condition: 13
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 53
   fields:
     project: 2
     objective: 3
     condition: 14
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 54
   fields:
     project: 1
     objective: 3
     condition: 14
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 55
   fields:
     project: 3
     objective: 3
     condition: 14
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 56
   fields:
     project: 4
     objective: 3
     condition: 14
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 57
   fields:
     project: 2
     objective: 4
     condition: 15
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 58
   fields:
     project: 1
     objective: 4
     condition: 15
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 59
   fields:
     project: 3
     objective: 4
     condition: 15
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 60
   fields:
     project: 4
     objective: 4
     condition: 15
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 61
   fields:
     project: 2
     objective: 4
     condition: 16
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 62
   fields:
     project: 1
     objective: 4
     condition: 16
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 63
   fields:
     project: 3
     objective: 4
     condition: 16
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 64
   fields:
     project: 4
     objective: 4
     condition: 16
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 65
   fields:
     project: 2
     objective: 4
     condition: 17
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 66
   fields:
     project: 1
     objective: 4
     condition: 17
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 67
   fields:
     project: 3
     objective: 4
     condition: 17
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 68
   fields:
     project: 4
     objective: 4
     condition: 17
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 69
   fields:
     project: 2
     objective: 5
     condition: 18
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 70
   fields:
     project: 1
     objective: 5
     condition: 18
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 71
   fields:
     project: 3
     objective: 5
     condition: 18
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 72
   fields:
     project: 4
     objective: 5
     condition: 18
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 73
   fields:
     project: 2
     objective: 5
     condition: 19
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 74
   fields:
     project: 1
     objective: 5
     condition: 19
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 75
   fields:
     project: 3
     objective: 5
     condition: 19
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 76
   fields:
     project: 4
     objective: 5
     condition: 19
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 77
   fields:
     project: 2
     objective: 5
     condition: 20
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 78
   fields:
     project: 1
     objective: 5
     condition: 20
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 79
   fields:
     project: 3
     objective: 5
     condition: 20
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 80
   fields:
     project: 4
     objective: 5
     condition: 20
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 81
   fields:
     project: 2
     objective: 6
     condition: 21
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 82
   fields:
     project: 1
     objective: 6
     condition: 21
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 83
   fields:
     project: 3
     objective: 6
     condition: 21
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 84
   fields:
     project: 4
     objective: 6
     condition: 21
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 85
   fields:
     project: 2
     objective: 6
     condition: 22
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 86
   fields:
     project: 1
     objective: 6
     condition: 22
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 87
   fields:
     project: 3
     objective: 6
     condition: 22
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 88
   fields:
     project: 4
     objective: 6
     condition: 22
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 89
   fields:
     project: 2
     objective: 6
     condition: 23
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 90
   fields:
     project: 1
     objective: 6
     condition: 23
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 91
   fields:
     project: 3
     objective: 6
     condition: 23
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 92
   fields:
     project: 4
     objective: 6
     condition: 23
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 93
   fields:
     project: 2
     objective: 7
     condition: 24
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 94
   fields:
     project: 1
     objective: 7
     condition: 24
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 95
   fields:
     project: 3
     objective: 7
     condition: 24
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 96
   fields:
     project: 4
     objective: 7
     condition: 24
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 97
   fields:
     project: 2
     objective: 7
     condition: 25
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 98
   fields:
     project: 1
     objective: 7
     condition: 25
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 99
   fields:
     project: 3
     objective: 7
     condition: 25
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 100
   fields:
     project: 4
     objective: 7
     condition: 25
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 101
   fields:
     project: 2
     objective: 7
     condition: 26
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 102
   fields:
     project: 1
     objective: 7
     condition: 26
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 103
   fields:
     project: 3
     objective: 7
     condition: 26
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 104
   fields:
     project: 4
     objective: 7
     condition: 26
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 105
   fields:
     project: 2
     objective: 8
     condition: 27
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 106
   fields:
     project: 1
     objective: 8
     condition: 27
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 107
   fields:
     project: 3
     objective: 8
     condition: 27
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 108
   fields:
     project: 4
     objective: 8
     condition: 27
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 109
   fields:
     project: 2
     objective: 8
     condition: 28
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 110
   fields:
     project: 1
     objective: 8
     condition: 28
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 111
   fields:
     project: 3
     objective: 8
     condition: 28
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 112
   fields:
     project: 4
     objective: 8
     condition: 28
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 113
   fields:
     project: 2
     objective: 8
     condition: 29
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 114
   fields:
     project: 1
     objective: 8
     condition: 29
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 115
   fields:
     project: 3
     objective: 8
     condition: 29
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 116
   fields:
     project: 4
     objective: 8
     condition: 29
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 117
   fields:
     project: 2
     objective: 8
     condition: 30
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 118
   fields:
     project: 1
     objective: 8
     condition: 30
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 119
   fields:
     project: 3
     objective: 8
     condition: 30
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 120
   fields:
     project: 4
     objective: 8
     condition: 30
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 121
   fields:
     project: 2
     objective: 9
     condition: 31
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 122
   fields:
     project: 1
     objective: 9
     condition: 31
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 123
   fields:
     project: 3
     objective: 9
     condition: 31
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 124
   fields:
     project: 4
     objective: 9
     condition: 31
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 125
   fields:
     project: 2
     objective: 9
     condition: 32
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 126
   fields:
     project: 1
     objective: 9
     condition: 32
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 127
   fields:
     project: 3
     objective: 9
     condition: 32
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 128
   fields:
     project: 4
     objective: 9
     condition: 32
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 129
   fields:
     project: 2
     objective: 9
     condition: 33
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 130
   fields:
     project: 1
     objective: 9
     condition: 33
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 131
   fields:
     project: 3
     objective: 9
     condition: 33
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 132
   fields:
     project: 4
     objective: 9
     condition: 33
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 133
   fields:
     project: 2
     objective: 10
     condition: 34
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 134
   fields:
     project: 1
     objective: 10
     condition: 34
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 135
   fields:
     project: 3
     objective: 10
     condition: 34
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 136
   fields:
     project: 4
     objective: 10
     condition: 34
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 137
   fields:
     project: 2
     objective: 10
     condition: 35
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 138
   fields:
     project: 1
     objective: 10
     condition: 35
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 139
   fields:
     project: 3
     objective: 10
     condition: 35
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 140
   fields:
     project: 4
     objective: 10
     condition: 35
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 141
   fields:
     project: 2
     objective: 10
     condition: 36
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 142
   fields:
     project: 1
     objective: 10
     condition: 36
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 143
   fields:
     project: 3
     objective: 10
     condition: 36
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 144
   fields:
     project: 4
     objective: 10
     condition: 36
-    done: false
-    not_applicable: true
-    candidate: true
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 145
   fields:
     project: 2
     objective: 11
     condition: 37
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 146
   fields:
     project: 1
     objective: 11
     condition: 37
-    done: false
-    not_applicable: true
-    candidate: true
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 147
   fields:
     project: 3
     objective: 11
     condition: 37
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 148
   fields:
     project: 4
     objective: 11
     condition: 37
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 149
   fields:
     project: 2
     objective: 11
     condition: 38
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 150
   fields:
     project: 1
     objective: 11
     condition: 38
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 151
   fields:
     project: 3
     objective: 11
     condition: 38
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 152
   fields:
     project: 4
     objective: 11
     condition: 38
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 153
   fields:
     project: 2
     objective: 11
     condition: 39
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 154
   fields:
     project: 1
     objective: 11
     condition: 39
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 155
   fields:
     project: 3
     objective: 11
     condition: 39
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 156
   fields:
     project: 4
     objective: 11
     condition: 39
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 157
   fields:
     project: 2
     objective: 11
     condition: 40
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 158
   fields:
     project: 1
     objective: 11
     condition: 40
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 159
   fields:
     project: 3
     objective: 11
     condition: 40
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 160
   fields:
     project: 4
     objective: 11
     condition: 40
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 161
   fields:
     project: 5
     objective: 7
     condition: 24
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 162
   fields:
     project: 5
     objective: 7
     condition: 26
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 163
   fields:
     project: 5
     objective: 7
     condition: 25
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 164
   fields:
     project: 5
     objective: 1
     condition: 1
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 165
   fields:
     project: 5
     objective: 1
     condition: 2
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 166
   fields:
     project: 5
     objective: 1
     condition: 3
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 167
   fields:
     project: 5
     objective: 1
     condition: 4
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 168
   fields:
     project: 5
     objective: 1
     condition: 5
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 169
   fields:
     project: 5
     objective: 1
     condition: 6
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 170
   fields:
     project: 5
     objective: 2
     condition: 7
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 171
   fields:
     project: 5
     objective: 2
     condition: 8
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 172
   fields:
     project: 5
     objective: 2
     condition: 9
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 173
   fields:
     project: 5
     objective: 2
     condition: 10
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 174
   fields:
     project: 5
     objective: 11
     condition: 37
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 175
   fields:
     project: 5
     objective: 11
     condition: 38
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 176
   fields:
     project: 5
     objective: 11
     condition: 39
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 177
   fields:
     project: 5
     objective: 11
     condition: 40
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 178
   fields:
     project: 5
     objective: 5
     condition: 18
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 179
   fields:
     project: 5
     objective: 5
     condition: 19
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 180
   fields:
     project: 5
     objective: 5
     condition: 20
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 181
   fields:
     project: 5
     objective: 3
     condition: 11
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 182
   fields:
     project: 5
     objective: 3
     condition: 12
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 183
   fields:
     project: 5
     objective: 3
     condition: 13
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 184
   fields:
     project: 5
     objective: 3
     condition: 14
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 185
   fields:
     project: 5
     objective: 4
     condition: 15
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 186
   fields:
     project: 5
     objective: 4
     condition: 16
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 187
   fields:
     project: 5
     objective: 4
     condition: 17
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 188
   fields:
     project: 5
     objective: 10
     condition: 34
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 189
   fields:
     project: 5
     objective: 10
     condition: 35
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 190
   fields:
     project: 5
     objective: 10
     condition: 36
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 191
   fields:
     project: 5
     objective: 6
     condition: 21
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 192
   fields:
     project: 5
     objective: 6
     condition: 22
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 193
   fields:
     project: 5
     objective: 6
     condition: 23
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 194
   fields:
     project: 5
     objective: 8
     condition: 28
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 195
   fields:
     project: 5
     objective: 8
     condition: 29
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 196
   fields:
     project: 5
     objective: 8
     condition: 30
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 197
   fields:
     project: 5
     objective: 8
     condition: 27
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 198
   fields:
     project: 5
     objective: 9
     condition: 31
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 199
   fields:
     project: 5
     objective: 9
     condition: 32
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 200
   fields:
     project: 5
     objective: 9
     condition: 33
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 201
   fields:
     project: 6
     objective: 7
     condition: 24
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 202
   fields:
     project: 6
     objective: 7
     condition: 26
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 203
   fields:
     project: 6
     objective: 7
     condition: 25
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 204
   fields:
     project: 6
     objective: 1
     condition: 1
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 205
   fields:
     project: 6
     objective: 1
     condition: 2
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 206
   fields:
     project: 6
     objective: 1
     condition: 3
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 207
   fields:
     project: 6
     objective: 1
     condition: 4
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 208
   fields:
     project: 6
     objective: 1
     condition: 5
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 209
   fields:
     project: 6
     objective: 1
     condition: 6
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 210
   fields:
     project: 6
     objective: 2
     condition: 7
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 211
   fields:
     project: 6
     objective: 2
     condition: 8
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 212
   fields:
     project: 6
     objective: 2
     condition: 9
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 213
   fields:
     project: 6
     objective: 2
     condition: 10
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 214
   fields:
     project: 6
     objective: 11
     condition: 37
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 215
   fields:
     project: 6
     objective: 11
     condition: 38
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 216
   fields:
     project: 6
     objective: 11
     condition: 39
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 217
   fields:
     project: 6
     objective: 11
     condition: 40
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 218
   fields:
     project: 6
     objective: 5
     condition: 18
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 219
   fields:
     project: 6
     objective: 5
     condition: 19
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 220
   fields:
     project: 6
     objective: 5
     condition: 20
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 221
   fields:
     project: 6
     objective: 3
     condition: 11
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 222
   fields:
     project: 6
     objective: 3
     condition: 12
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 223
   fields:
     project: 6
     objective: 3
     condition: 13
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 224
   fields:
     project: 6
     objective: 3
     condition: 14
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 225
   fields:
     project: 6
     objective: 4
     condition: 15
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 226
   fields:
     project: 6
     objective: 4
     condition: 16
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 227
   fields:
     project: 6
     objective: 4
     condition: 17
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 228
   fields:
     project: 6
     objective: 10
     condition: 34
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 229
   fields:
     project: 6
     objective: 10
     condition: 35
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 230
   fields:
     project: 6
     objective: 10
     condition: 36
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 231
   fields:
     project: 6
     objective: 6
     condition: 21
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 232
   fields:
     project: 6
     objective: 6
     condition: 22
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 233
   fields:
     project: 6
     objective: 6
     condition: 23
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 234
   fields:
     project: 6
     objective: 8
     condition: 28
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 235
   fields:
     project: 6
     objective: 8
     condition: 29
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 236
   fields:
     project: 6
     objective: 8
     condition: 30
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 237
   fields:
     project: 6
     objective: 8
     condition: 27
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 238
   fields:
     project: 6
     objective: 9
     condition: 31
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 239
   fields:
     project: 6
     objective: 9
     condition: 32
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 240
   fields:
     project: 6
     objective: 9
     condition: 33
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 241
   fields:
     project: 7
     objective: 7
     condition: 24
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 242
   fields:
     project: 7
     objective: 7
     condition: 26
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 243
   fields:
     project: 7
     objective: 7
     condition: 25
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 244
   fields:
     project: 7
     objective: 1
     condition: 1
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 245
   fields:
     project: 7
     objective: 1
     condition: 2
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 246
   fields:
     project: 7
     objective: 1
     condition: 3
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 247
   fields:
     project: 7
     objective: 1
     condition: 4
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 248
   fields:
     project: 7
     objective: 1
     condition: 5
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 249
   fields:
     project: 7
     objective: 1
     condition: 6
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 250
   fields:
     project: 7
     objective: 2
     condition: 7
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 251
   fields:
     project: 7
     objective: 2
     condition: 8
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 252
   fields:
     project: 7
     objective: 2
     condition: 9
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 253
   fields:
     project: 7
     objective: 2
     condition: 10
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 254
   fields:
     project: 7
     objective: 11
     condition: 37
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 255
   fields:
     project: 7
     objective: 11
     condition: 38
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 256
   fields:
     project: 7
     objective: 11
     condition: 39
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 257
   fields:
     project: 7
     objective: 11
     condition: 40
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 258
   fields:
     project: 7
     objective: 5
     condition: 18
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 259
   fields:
     project: 7
     objective: 5
     condition: 19
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 260
   fields:
     project: 7
     objective: 5
     condition: 20
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 261
   fields:
     project: 7
     objective: 3
     condition: 11
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 262
   fields:
     project: 7
     objective: 3
     condition: 12
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 263
   fields:
     project: 7
     objective: 3
     condition: 13
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 264
   fields:
     project: 7
     objective: 3
     condition: 14
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 265
   fields:
     project: 7
     objective: 4
     condition: 15
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 266
   fields:
     project: 7
     objective: 4
     condition: 16
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 267
   fields:
     project: 7
     objective: 4
     condition: 17
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 268
   fields:
     project: 7
     objective: 10
     condition: 34
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 269
   fields:
     project: 7
     objective: 10
     condition: 35
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 270
   fields:
     project: 7
     objective: 10
     condition: 36
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 271
   fields:
     project: 7
     objective: 6
     condition: 21
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 272
   fields:
     project: 7
     objective: 6
     condition: 22
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 273
   fields:
     project: 7
     objective: 6
     condition: 23
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 274
   fields:
     project: 7
     objective: 8
     condition: 28
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 275
   fields:
     project: 7
     objective: 8
     condition: 29
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 276
   fields:
     project: 7
     objective: 8
     condition: 30
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 277
   fields:
     project: 7
     objective: 8
     condition: 27
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 278
   fields:
     project: 7
     objective: 9
     condition: 31
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 279
   fields:
     project: 7
     objective: 9
     condition: 32
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 280
   fields:
     project: 7
     objective: 9
     condition: 33
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 281
   fields:
     project: 2
     objective: 7
     condition: 41
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 282
   fields:
     project: 1
     objective: 7
     condition: 41
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 283
   fields:
     project: 6
     objective: 7
     condition: 41
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 284
   fields:
     project: 3
     objective: 7
     condition: 41
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 285
   fields:
     project: 7
     objective: 7
     condition: 41
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 286
   fields:
     project: 5
     objective: 7
     condition: 41
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 287
   fields:
     project: 4
     objective: 7
     condition: 41
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 329
   fields:
     project: 9
     objective: 7
     condition: 24
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 330
   fields:
     project: 9
     objective: 7
     condition: 41
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 331
   fields:
     project: 9
     objective: 7
     condition: 26
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 332
   fields:
     project: 9
     objective: 7
     condition: 25
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 333
   fields:
     project: 9
     objective: 1
     condition: 1
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 334
   fields:
     project: 9
     objective: 1
     condition: 2
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 335
   fields:
     project: 9
     objective: 1
     condition: 3
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 336
   fields:
     project: 9
     objective: 1
     condition: 4
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 337
   fields:
     project: 9
     objective: 1
     condition: 5
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 338
   fields:
     project: 9
     objective: 1
     condition: 6
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 339
   fields:
     project: 9
     objective: 2
     condition: 7
-    done: false
-    not_applicable: true
-    candidate: true
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 340
   fields:
     project: 9
     objective: 2
     condition: 8
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 341
   fields:
     project: 9
     objective: 2
     condition: 9
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 342
   fields:
     project: 9
     objective: 2
     condition: 10
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 343
   fields:
     project: 9
     objective: 11
     condition: 37
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 344
   fields:
     project: 9
     objective: 11
     condition: 38
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 345
   fields:
     project: 9
     objective: 11
     condition: 39
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 346
   fields:
     project: 9
     objective: 11
     condition: 40
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 347
   fields:
     project: 9
     objective: 5
     condition: 18
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 348
   fields:
     project: 9
     objective: 5
     condition: 19
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 349
   fields:
     project: 9
     objective: 5
     condition: 20
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 350
   fields:
     project: 9
     objective: 3
     condition: 11
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 351
   fields:
     project: 9
     objective: 3
     condition: 12
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 352
   fields:
     project: 9
     objective: 3
     condition: 13
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 353
   fields:
     project: 9
     objective: 3
     condition: 14
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 354
   fields:
     project: 9
     objective: 4
     condition: 15
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 355
   fields:
     project: 9
     objective: 4
     condition: 16
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 356
   fields:
     project: 9
     objective: 4
     condition: 17
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 357
   fields:
     project: 9
     objective: 10
     condition: 34
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 358
   fields:
     project: 9
     objective: 10
     condition: 35
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 359
   fields:
     project: 9
     objective: 10
     condition: 36
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 360
   fields:
     project: 9
     objective: 6
     condition: 21
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 361
   fields:
     project: 9
     objective: 6
     condition: 22
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 362
   fields:
     project: 9
     objective: 6
     condition: 23
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 363
   fields:
     project: 9
     objective: 8
     condition: 28
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 364
   fields:
     project: 9
     objective: 8
     condition: 29
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 365
   fields:
     project: 9
     objective: 8
     condition: 30
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 366
   fields:
     project: 9
     objective: 8
     condition: 27
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 367
   fields:
     project: 9
     objective: 9
     condition: 31
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 368
   fields:
     project: 9
     objective: 9
     condition: 32
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 369
   fields:
     project: 9
     objective: 9
     condition: 33
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 370
   fields:
     project: 10
     objective: 7
     condition: 24
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 371
   fields:
     project: 10
     objective: 7
     condition: 41
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 372
   fields:
     project: 10
     objective: 7
     condition: 26
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 373
   fields:
     project: 10
     objective: 7
     condition: 25
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 374
   fields:
     project: 10
     objective: 1
     condition: 1
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 375
   fields:
     project: 10
     objective: 1
     condition: 2
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 376
   fields:
     project: 10
     objective: 1
     condition: 3
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 377
   fields:
     project: 10
     objective: 1
     condition: 4
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 378
   fields:
     project: 10
     objective: 1
     condition: 5
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 379
   fields:
     project: 10
     objective: 1
     condition: 6
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 380
   fields:
     project: 10
     objective: 2
     condition: 7
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 381
   fields:
     project: 10
     objective: 2
     condition: 8
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 382
   fields:
     project: 10
     objective: 2
     condition: 9
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 383
   fields:
     project: 10
     objective: 2
     condition: 10
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 384
   fields:
     project: 10
     objective: 11
     condition: 37
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 385
   fields:
     project: 10
     objective: 11
     condition: 38
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 386
   fields:
     project: 10
     objective: 11
     condition: 39
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 387
   fields:
     project: 10
     objective: 11
     condition: 40
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 388
   fields:
     project: 10
     objective: 5
     condition: 18
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 389
   fields:
     project: 10
     objective: 5
     condition: 19
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 390
   fields:
     project: 10
     objective: 5
     condition: 20
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 391
   fields:
     project: 10
     objective: 3
     condition: 11
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 392
   fields:
     project: 10
     objective: 3
     condition: 12
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 393
   fields:
     project: 10
     objective: 3
     condition: 13
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 394
   fields:
     project: 10
     objective: 3
     condition: 14
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 395
   fields:
     project: 10
     objective: 4
     condition: 15
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 396
   fields:
     project: 10
     objective: 4
     condition: 16
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 397
   fields:
     project: 10
     objective: 4
     condition: 17
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 398
   fields:
     project: 10
     objective: 10
     condition: 34
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 399
   fields:
     project: 10
     objective: 10
     condition: 35
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 400
   fields:
     project: 10
     objective: 10
     condition: 36
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 401
   fields:
     project: 10
     objective: 6
     condition: 21
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 402
   fields:
     project: 10
     objective: 6
     condition: 22
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 403
   fields:
     project: 10
     objective: 6
     condition: 23
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 404
   fields:
     project: 10
     objective: 8
     condition: 28
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 405
   fields:
     project: 10
     objective: 8
     condition: 29
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 406
   fields:
     project: 10
     objective: 8
     condition: 30
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 407
   fields:
     project: 10
     objective: 8
     condition: 27
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 408
   fields:
     project: 10
     objective: 9
     condition: 31
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 409
   fields:
     project: 10
     objective: 9
     condition: 32
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 410
   fields:
     project: 10
     objective: 9
     condition: 33
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 411
   fields:
     project: 11
     objective: 7
     condition: 24
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 412
   fields:
     project: 11
     objective: 7
     condition: 41
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 413
   fields:
     project: 11
     objective: 7
     condition: 26
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 414
   fields:
     project: 11
     objective: 7
     condition: 25
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 415
   fields:
     project: 11
     objective: 1
     condition: 1
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 416
   fields:
     project: 11
     objective: 1
     condition: 2
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 417
   fields:
     project: 11
     objective: 1
     condition: 3
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 418
   fields:
     project: 11
     objective: 1
     condition: 4
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 419
   fields:
     project: 11
     objective: 1
     condition: 5
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 420
   fields:
     project: 11
     objective: 1
     condition: 6
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 421
   fields:
     project: 11
     objective: 2
     condition: 7
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 422
   fields:
     project: 11
     objective: 2
     condition: 8
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 423
   fields:
     project: 11
     objective: 2
     condition: 9
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 424
   fields:
     project: 11
     objective: 2
     condition: 10
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 425
   fields:
     project: 11
     objective: 11
     condition: 37
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 426
   fields:
     project: 11
     objective: 11
     condition: 38
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 427
   fields:
     project: 11
     objective: 11
     condition: 39
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 428
   fields:
     project: 11
     objective: 11
     condition: 40
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 429
   fields:
     project: 11
     objective: 5
     condition: 18
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 430
   fields:
     project: 11
     objective: 5
     condition: 19
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 431
   fields:
     project: 11
     objective: 5
     condition: 20
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 432
   fields:
     project: 11
     objective: 3
     condition: 11
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 433
   fields:
     project: 11
     objective: 3
     condition: 12
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 434
   fields:
     project: 11
     objective: 3
     condition: 13
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 435
   fields:
     project: 11
     objective: 3
     condition: 14
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 436
   fields:
     project: 11
     objective: 4
     condition: 15
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 437
   fields:
     project: 11
     objective: 4
     condition: 16
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 438
   fields:
     project: 11
     objective: 4
     condition: 17
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 439
   fields:
     project: 11
     objective: 10
     condition: 34
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 440
   fields:
     project: 11
     objective: 10
     condition: 35
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 441
   fields:
     project: 11
     objective: 10
     condition: 36
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 442
   fields:
     project: 11
     objective: 6
     condition: 21
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 443
   fields:
     project: 11
     objective: 6
     condition: 22
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 444
   fields:
     project: 11
     objective: 6
     condition: 23
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 445
   fields:
     project: 11
     objective: 8
     condition: 28
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 446
   fields:
     project: 11
     objective: 8
     condition: 29
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 447
   fields:
     project: 11
     objective: 8
     condition: 30
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 448
   fields:
     project: 11
     objective: 8
     condition: 27
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 449
   fields:
     project: 11
     objective: 9
     condition: 31
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 450
   fields:
     project: 11
     objective: 9
     condition: 32
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 451
   fields:
     project: 11
     objective: 9
     condition: 33
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 452
   fields:
     project: 12
     objective: 7
     condition: 24
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 453
   fields:
     project: 12
     objective: 7
     condition: 41
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 454
   fields:
     project: 12
     objective: 7
     condition: 26
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 455
   fields:
     project: 12
     objective: 7
     condition: 25
-    done: false
-    not_applicable: true
-    candidate: true
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 456
   fields:
     project: 12
     objective: 1
     condition: 1
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 457
   fields:
     project: 12
     objective: 1
     condition: 2
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 458
   fields:
     project: 12
     objective: 1
     condition: 3
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 459
   fields:
     project: 12
     objective: 1
     condition: 4
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 460
   fields:
     project: 12
     objective: 1
     condition: 5
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 461
   fields:
     project: 12
     objective: 1
     condition: 6
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 462
   fields:
     project: 12
     objective: 2
     condition: 7
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 463
   fields:
     project: 12
     objective: 2
     condition: 8
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 464
   fields:
     project: 12
     objective: 2
     condition: 9
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 465
   fields:
     project: 12
     objective: 2
     condition: 10
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 466
   fields:
     project: 12
     objective: 11
     condition: 37
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 467
   fields:
     project: 12
     objective: 11
     condition: 38
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 468
   fields:
     project: 12
     objective: 11
     condition: 39
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 469
   fields:
     project: 12
     objective: 11
     condition: 40
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 470
   fields:
     project: 12
     objective: 5
     condition: 18
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 471
   fields:
     project: 12
     objective: 5
     condition: 19
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 472
   fields:
     project: 12
     objective: 5
     condition: 20
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 473
   fields:
     project: 12
     objective: 3
     condition: 11
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 474
   fields:
     project: 12
     objective: 3
     condition: 12
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 475
   fields:
     project: 12
     objective: 3
     condition: 13
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 476
   fields:
     project: 12
     objective: 3
     condition: 14
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 477
   fields:
     project: 12
     objective: 4
     condition: 15
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 478
   fields:
     project: 12
     objective: 4
     condition: 16
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 479
   fields:
     project: 12
     objective: 4
     condition: 17
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 480
   fields:
     project: 12
     objective: 10
     condition: 34
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 481
   fields:
     project: 12
     objective: 10
     condition: 35
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 482
   fields:
     project: 12
     objective: 10
     condition: 36
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 483
   fields:
     project: 12
     objective: 6
     condition: 21
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 484
   fields:
     project: 12
     objective: 6
     condition: 22
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 485
   fields:
     project: 12
     objective: 6
     condition: 23
-    done: false
-    not_applicable: true
-    candidate: true
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 486
   fields:
     project: 12
     objective: 8
     condition: 28
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 487
   fields:
     project: 12
     objective: 8
     condition: 29
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 488
   fields:
     project: 12
     objective: 8
     condition: 30
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 489
   fields:
     project: 12
     objective: 8
     condition: 27
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 490
   fields:
     project: 12
     objective: 9
     condition: 31
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 491
   fields:
     project: 12
     objective: 9
     condition: 32
-    done: false
-    not_applicable: true
-    candidate: true
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 492
   fields:
     project: 12
     objective: 9
     condition: 33
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 493
   fields:
     project: 13
     objective: 7
     condition: 24
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 494
   fields:
     project: 13
     objective: 7
     condition: 41
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 495
   fields:
     project: 13
     objective: 7
     condition: 26
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 496
   fields:
     project: 13
     objective: 7
     condition: 25
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 497
   fields:
     project: 13
     objective: 1
     condition: 1
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 498
   fields:
     project: 13
     objective: 1
     condition: 2
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 499
   fields:
     project: 13
     objective: 1
     condition: 3
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 500
   fields:
     project: 13
     objective: 1
     condition: 4
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 501
   fields:
     project: 13
     objective: 1
     condition: 5
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 502
   fields:
     project: 13
     objective: 1
     condition: 6
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 503
   fields:
     project: 13
     objective: 2
     condition: 7
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 504
   fields:
     project: 13
     objective: 2
     condition: 8
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 505
   fields:
     project: 13
     objective: 2
     condition: 9
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 506
   fields:
     project: 13
     objective: 2
     condition: 10
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 507
   fields:
     project: 13
     objective: 11
     condition: 37
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 508
   fields:
     project: 13
     objective: 11
     condition: 38
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 509
   fields:
     project: 13
     objective: 11
     condition: 39
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 510
   fields:
     project: 13
     objective: 11
     condition: 40
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 511
   fields:
     project: 13
     objective: 5
     condition: 18
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 512
   fields:
     project: 13
     objective: 5
     condition: 19
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 513
   fields:
     project: 13
     objective: 5
     condition: 20
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 514
   fields:
     project: 13
     objective: 3
     condition: 11
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 515
   fields:
     project: 13
     objective: 3
     condition: 12
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 516
   fields:
     project: 13
     objective: 3
     condition: 13
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 517
   fields:
     project: 13
     objective: 3
     condition: 14
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 518
   fields:
     project: 13
     objective: 4
     condition: 15
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 519
   fields:
     project: 13
     objective: 4
     condition: 16
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 520
   fields:
     project: 13
     objective: 4
     condition: 17
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 521
   fields:
     project: 13
     objective: 10
     condition: 34
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 522
   fields:
     project: 13
     objective: 10
     condition: 35
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 523
   fields:
     project: 13
     objective: 10
     condition: 36
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 524
   fields:
     project: 13
     objective: 6
     condition: 21
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 525
   fields:
     project: 13
     objective: 6
     condition: 22
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 526
   fields:
     project: 13
     objective: 6
     condition: 23
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 527
   fields:
     project: 13
     objective: 8
     condition: 28
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 528
   fields:
     project: 13
     objective: 8
     condition: 29
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 529
   fields:
     project: 13
     objective: 8
     condition: 30
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 530
   fields:
     project: 13
     objective: 8
     condition: 27
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 531
   fields:
     project: 13
     objective: 9
     condition: 31
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 532
   fields:
     project: 13
     objective: 9
     condition: 32
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 533
   fields:
     project: 13
     objective: 9
     condition: 33
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 534
   fields:
     project: 14
     objective: 7
     condition: 24
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 535
   fields:
     project: 14
     objective: 7
     condition: 41
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 536
   fields:
     project: 14
     objective: 7
     condition: 26
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 537
   fields:
     project: 14
     objective: 7
     condition: 25
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 538
   fields:
     project: 14
     objective: 1
     condition: 1
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 539
   fields:
     project: 14
     objective: 1
     condition: 2
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 540
   fields:
     project: 14
     objective: 1
     condition: 3
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 541
   fields:
     project: 14
     objective: 1
     condition: 4
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 542
   fields:
     project: 14
     objective: 1
     condition: 5
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 543
   fields:
     project: 14
     objective: 1
     condition: 6
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 544
   fields:
     project: 14
     objective: 2
     condition: 7
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 545
   fields:
     project: 14
     objective: 2
     condition: 8
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 546
   fields:
     project: 14
     objective: 2
     condition: 9
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 547
   fields:
     project: 14
     objective: 2
     condition: 10
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 548
   fields:
     project: 14
     objective: 11
     condition: 37
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 549
   fields:
     project: 14
     objective: 11
     condition: 38
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 550
   fields:
     project: 14
     objective: 11
     condition: 39
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 551
   fields:
     project: 14
     objective: 11
     condition: 40
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 552
   fields:
     project: 14
     objective: 5
     condition: 18
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 553
   fields:
     project: 14
     objective: 5
     condition: 19
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 554
   fields:
     project: 14
     objective: 5
     condition: 20
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 555
   fields:
     project: 14
     objective: 3
     condition: 11
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 556
   fields:
     project: 14
     objective: 3
     condition: 12
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 557
   fields:
     project: 14
     objective: 3
     condition: 13
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 558
   fields:
     project: 14
     objective: 3
     condition: 14
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 559
   fields:
     project: 14
     objective: 4
     condition: 15
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 560
   fields:
     project: 14
     objective: 4
     condition: 16
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 561
   fields:
     project: 14
     objective: 4
     condition: 17
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 562
   fields:
     project: 14
     objective: 10
     condition: 34
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 563
   fields:
     project: 14
     objective: 10
     condition: 35
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 564
   fields:
     project: 14
     objective: 10
     condition: 36
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 565
   fields:
     project: 14
     objective: 6
     condition: 21
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 566
   fields:
     project: 14
     objective: 6
     condition: 22
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 567
   fields:
     project: 14
     objective: 6
     condition: 23
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 568
   fields:
     project: 14
     objective: 8
     condition: 28
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 569
   fields:
     project: 14
     objective: 8
     condition: 29
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 570
   fields:
     project: 14
     objective: 8
     condition: 30
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 571
   fields:
     project: 14
     objective: 8
     condition: 27
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 572
   fields:
     project: 14
     objective: 9
     condition: 31
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 573
   fields:
     project: 14
     objective: 9
     condition: 32
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 574
   fields:
     project: 14
     objective: 9
     condition: 33
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 575
   fields:
     project: 15
     objective: 7
     condition: 24
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 576
   fields:
     project: 15
     objective: 7
     condition: 41
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 577
   fields:
     project: 15
     objective: 7
     condition: 26
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 578
   fields:
     project: 15
     objective: 7
     condition: 25
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 579
   fields:
     project: 15
     objective: 1
     condition: 1
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 580
   fields:
     project: 15
     objective: 1
     condition: 2
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 581
   fields:
     project: 15
     objective: 1
     condition: 3
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 582
   fields:
     project: 15
     objective: 1
     condition: 4
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 583
   fields:
     project: 15
     objective: 1
     condition: 5
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 584
   fields:
     project: 15
     objective: 1
     condition: 6
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 585
   fields:
     project: 15
     objective: 2
     condition: 7
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 586
   fields:
     project: 15
     objective: 2
     condition: 8
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 587
   fields:
     project: 15
     objective: 2
     condition: 9
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 588
   fields:
     project: 15
     objective: 2
     condition: 10
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 589
   fields:
     project: 15
     objective: 11
     condition: 37
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 590
   fields:
     project: 15
     objective: 11
     condition: 38
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 591
   fields:
     project: 15
     objective: 11
     condition: 39
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 592
   fields:
     project: 15
     objective: 11
     condition: 40
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 593
   fields:
     project: 15
     objective: 5
     condition: 18
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 594
   fields:
     project: 15
     objective: 5
     condition: 19
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 595
   fields:
     project: 15
     objective: 5
     condition: 20
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 596
   fields:
     project: 15
     objective: 3
     condition: 11
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 597
   fields:
     project: 15
     objective: 3
     condition: 12
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 598
   fields:
     project: 15
     objective: 3
     condition: 13
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 599
   fields:
     project: 15
     objective: 3
     condition: 14
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 600
   fields:
     project: 15
     objective: 4
     condition: 15
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 601
   fields:
     project: 15
     objective: 4
     condition: 16
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 602
   fields:
     project: 15
     objective: 4
     condition: 17
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 603
   fields:
     project: 15
     objective: 10
     condition: 34
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 604
   fields:
     project: 15
     objective: 10
     condition: 35
-    done: false
-    not_applicable: true
-    candidate: true
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 605
   fields:
     project: 15
     objective: 10
     condition: 36
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 606
   fields:
     project: 15
     objective: 6
     condition: 21
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 607
   fields:
     project: 15
     objective: 6
     condition: 22
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 608
   fields:
     project: 15
     objective: 6
     condition: 23
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 609
   fields:
     project: 15
     objective: 8
     condition: 28
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 610
   fields:
     project: 15
     objective: 8
     condition: 29
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 611
   fields:
     project: 15
     objective: 8
     condition: 30
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 612
   fields:
     project: 15
     objective: 8
     condition: 27
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 613
   fields:
     project: 15
     objective: 9
     condition: 31
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 614
   fields:
     project: 15
     objective: 9
     condition: 32
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 615
   fields:
     project: 15
     objective: 9
     condition: 33
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 616
   fields:
     project: 16
     objective: 7
     condition: 24
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 617
   fields:
     project: 16
     objective: 7
     condition: 41
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 618
   fields:
     project: 16
     objective: 7
     condition: 26
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 619
   fields:
     project: 16
     objective: 7
     condition: 25
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 620
   fields:
     project: 16
     objective: 1
     condition: 1
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 621
   fields:
     project: 16
     objective: 1
     condition: 2
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 622
   fields:
     project: 16
     objective: 1
     condition: 3
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 623
   fields:
     project: 16
     objective: 1
     condition: 4
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 624
   fields:
     project: 16
     objective: 1
     condition: 5
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 625
   fields:
     project: 16
     objective: 1
     condition: 6
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 626
   fields:
     project: 16
     objective: 2
     condition: 7
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 627
   fields:
     project: 16
     objective: 2
     condition: 8
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 628
   fields:
     project: 16
     objective: 2
     condition: 9
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 629
   fields:
     project: 16
     objective: 2
     condition: 10
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 630
   fields:
     project: 16
     objective: 11
     condition: 37
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 631
   fields:
     project: 16
     objective: 11
     condition: 38
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 632
   fields:
     project: 16
     objective: 11
     condition: 39
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 633
   fields:
     project: 16
     objective: 11
     condition: 40
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 634
   fields:
     project: 16
     objective: 5
     condition: 18
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 635
   fields:
     project: 16
     objective: 5
     condition: 19
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 636
   fields:
     project: 16
     objective: 5
     condition: 20
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 637
   fields:
     project: 16
     objective: 3
     condition: 11
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 638
   fields:
     project: 16
     objective: 3
     condition: 12
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 639
   fields:
     project: 16
     objective: 3
     condition: 13
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 640
   fields:
     project: 16
     objective: 3
     condition: 14
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 641
   fields:
     project: 16
     objective: 4
     condition: 15
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 642
   fields:
     project: 16
     objective: 4
     condition: 16
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 643
   fields:
     project: 16
     objective: 4
     condition: 17
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 644
   fields:
     project: 16
     objective: 10
     condition: 34
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 645
   fields:
     project: 16
     objective: 10
     condition: 35
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 646
   fields:
     project: 16
     objective: 10
     condition: 36
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 647
   fields:
     project: 16
     objective: 6
     condition: 21
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 648
   fields:
     project: 16
     objective: 6
     condition: 22
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 649
   fields:
     project: 16
     objective: 6
     condition: 23
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 650
   fields:
     project: 16
     objective: 8
     condition: 28
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 651
   fields:
     project: 16
     objective: 8
     condition: 29
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 652
   fields:
     project: 16
     objective: 8
     condition: 30
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 653
   fields:
     project: 16
     objective: 8
     condition: 27
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 654
   fields:
     project: 16
     objective: 9
     condition: 31
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 655
   fields:
     project: 16
     objective: 9
     condition: 32
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 656
   fields:
     project: 16
     objective: 9
     condition: 33
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 657
   fields:
     project: 17
     objective: 7
     condition: 24
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 658
   fields:
     project: 17
     objective: 7
     condition: 41
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 659
   fields:
     project: 17
     objective: 7
     condition: 26
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 660
   fields:
     project: 17
     objective: 7
     condition: 25
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 661
   fields:
     project: 17
     objective: 1
     condition: 1
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 662
   fields:
     project: 17
     objective: 1
     condition: 2
-    done: false
-    not_applicable: true
-    candidate: true
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 663
   fields:
     project: 17
     objective: 1
     condition: 3
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 664
   fields:
     project: 17
     objective: 1
     condition: 4
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 665
   fields:
     project: 17
     objective: 1
     condition: 5
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 666
   fields:
     project: 17
     objective: 1
     condition: 6
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 667
   fields:
     project: 17
     objective: 2
     condition: 7
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 668
   fields:
     project: 17
     objective: 2
     condition: 8
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 669
   fields:
     project: 17
     objective: 2
     condition: 9
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 670
   fields:
     project: 17
     objective: 2
     condition: 10
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 671
   fields:
     project: 17
     objective: 11
     condition: 37
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 672
   fields:
     project: 17
     objective: 11
     condition: 38
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 673
   fields:
     project: 17
     objective: 11
     condition: 39
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 674
   fields:
     project: 17
     objective: 11
     condition: 40
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 675
   fields:
     project: 17
     objective: 5
     condition: 18
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 676
   fields:
     project: 17
     objective: 5
     condition: 19
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 677
   fields:
     project: 17
     objective: 5
     condition: 20
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 678
   fields:
     project: 17
     objective: 3
     condition: 11
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 679
   fields:
     project: 17
     objective: 3
     condition: 12
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 680
   fields:
     project: 17
     objective: 3
     condition: 13
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 681
   fields:
     project: 17
     objective: 3
     condition: 14
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 682
   fields:
     project: 17
     objective: 4
     condition: 15
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 683
   fields:
     project: 17
     objective: 4
     condition: 16
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 684
   fields:
     project: 17
     objective: 4
     condition: 17
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 685
   fields:
     project: 17
     objective: 10
     condition: 34
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 686
   fields:
     project: 17
     objective: 10
     condition: 35
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 687
   fields:
     project: 17
     objective: 10
     condition: 36
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 688
   fields:
     project: 17
     objective: 6
     condition: 21
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 689
   fields:
     project: 17
     objective: 6
     condition: 22
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 690
   fields:
     project: 17
     objective: 6
     condition: 23
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 691
   fields:
     project: 17
     objective: 8
     condition: 28
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 692
   fields:
     project: 17
     objective: 8
     condition: 29
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 693
   fields:
     project: 17
     objective: 8
     condition: 30
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 694
   fields:
     project: 17
     objective: 8
     condition: 27
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 695
   fields:
     project: 17
     objective: 9
     condition: 31
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 696
   fields:
     project: 17
     objective: 9
     condition: 32
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 697
   fields:
     project: 17
     objective: 9
     condition: 33
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 698
   fields:
     project: 18
     objective: 7
     condition: 24
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 699
   fields:
     project: 18
     objective: 7
     condition: 41
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 700
   fields:
     project: 18
     objective: 7
     condition: 26
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 701
   fields:
     project: 18
     objective: 7
     condition: 25
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 702
   fields:
     project: 18
     objective: 1
     condition: 1
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 703
   fields:
     project: 18
     objective: 1
     condition: 2
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 704
   fields:
     project: 18
     objective: 1
     condition: 3
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 705
   fields:
     project: 18
     objective: 1
     condition: 4
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 706
   fields:
     project: 18
     objective: 1
     condition: 5
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 707
   fields:
     project: 18
     objective: 1
     condition: 6
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 708
   fields:
     project: 18
     objective: 2
     condition: 7
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 709
   fields:
     project: 18
     objective: 2
     condition: 8
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 710
   fields:
     project: 18
     objective: 2
     condition: 9
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 711
   fields:
     project: 18
     objective: 2
     condition: 10
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 712
   fields:
     project: 18
     objective: 11
     condition: 37
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 713
   fields:
     project: 18
     objective: 11
     condition: 38
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 714
   fields:
     project: 18
     objective: 11
     condition: 39
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 715
   fields:
     project: 18
     objective: 11
     condition: 40
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 716
   fields:
     project: 18
     objective: 5
     condition: 18
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 717
   fields:
     project: 18
     objective: 5
     condition: 19
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 718
   fields:
     project: 18
     objective: 5
     condition: 20
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 719
   fields:
     project: 18
     objective: 3
     condition: 11
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 720
   fields:
     project: 18
     objective: 3
     condition: 12
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 721
   fields:
     project: 18
     objective: 3
     condition: 13
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 722
   fields:
     project: 18
     objective: 3
     condition: 14
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 723
   fields:
     project: 18
     objective: 4
     condition: 15
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 724
   fields:
     project: 18
     objective: 4
     condition: 16
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 725
   fields:
     project: 18
     objective: 4
     condition: 17
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 726
   fields:
     project: 18
     objective: 10
     condition: 34
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 727
   fields:
     project: 18
     objective: 10
     condition: 35
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 728
   fields:
     project: 18
     objective: 10
     condition: 36
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 729
   fields:
     project: 18
     objective: 6
     condition: 21
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 730
   fields:
     project: 18
     objective: 6
     condition: 22
-    done: false
-    not_applicable: true
-    candidate: false
+    status: NA
 - model: projects.projectobjectivecondition
   pk: 731
   fields:
     project: 18
     objective: 6
     condition: 23
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 732
   fields:
     project: 18
     objective: 8
     condition: 28
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 733
   fields:
     project: 18
     objective: 8
     condition: 29
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 734
   fields:
     project: 18
     objective: 8
     condition: 30
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 735
   fields:
     project: 18
     objective: 8
     condition: 27
-    done: false
-    not_applicable: false
-    candidate: false
+    status: ''
 - model: projects.projectobjectivecondition
   pk: 736
   fields:
     project: 18
     objective: 9
     condition: 31
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.projectobjectivecondition
   pk: 737
   fields:
     project: 18
     objective: 9
     condition: 32
-    done: true
-    not_applicable: false
-    candidate: false
+    status: DO
 - model: projects.projectobjectivecondition
   pk: 738
   fields:
     project: 18
     objective: 9
     condition: 33
-    done: false
-    not_applicable: false
-    candidate: true
+    status: CA
 - model: projects.commitment
   pk: 1
   fields:
@@ -35599,8 +34205,8 @@
 - model: auth.user
   pk: 1
   fields:
-    password: pbkdf2_sha256$870000$hT8SyrMNY9MlEyhUPlumxb$VfCsnVHt11Gxk2ERdWf0dbrzv3CwsxFt2HOS/pZzCNk=
-    last_login: 2025-09-12 06:21:50.612823+00:00
+    password: pbkdf2_sha256$1000000$p5SHjBngt1A80tDi8XUm56$50oAilBrx5tiiL9E81+AKtRXwabL5TQeVOK0lQYPXtQ=
+    last_login: 2025-10-19 15:06:34.387599+00:00
     is_superuser: true
     username: superuser
     first_name: ''
@@ -35611,20 +34217,3 @@
     date_joined: 2025-09-12 06:19:30.852188+00:00
     groups: []
     user_permissions: []
-- model: auth.user
-  pk: 2
-  fields:
-    password: pbkdf2_sha256$870000$bj2XMSwNv6RSmyDjdE9I8C$6VPMgYpLnHI4QoBjbIyDkmDa5BuihSG1vQAZ3casJVg=
-    last_login: 2025-09-12 06:20:53+00:00
-    is_superuser: false
-    username: driver
-    first_name: ''
-    last_name: ''
-    email: ''
-    is_staff: true
-    is_active: true
-    date_joined: 2025-09-12 06:19:47+00:00
-    groups: []
-    user_permissions:
-    - 22
-    - 14
