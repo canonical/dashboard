@@ -1,23 +1,23 @@
 <tr
   class="
     condition
-    {% if condition.not_applicable %}not-applicable{% endif %}
-    {% if condition.candidate %}candidate{% endif %}
+    {{ condition.get_status_display }}
   "
 >
   <td>
     <input type="checkbox"
-      {% if condition.done %} checked {% endif %}
+      {% if condition.status == 'DO' %} checked {% endif %}
       {% if not perms.projects.change_commitment %}
         disabled
       {% else %}
         data-testid="toggle_condition_{{ condition.id }}"
-        hx-put="{% url 'projects:action_toggle_condition' condition.id %}"
+        hx-put="{% url 'projects:action_toggle_condition' condition.id %}{% querystring status=condition.status target='done' %}"
         hx-target="closest tr"
         hx-swap="outerHTML"
       {% endif %}
       />
   </td>
+
   <td class="condition name">
     {{ condition.name|safe }}
     <div class="attributes">
@@ -26,8 +26,7 @@
           class="condition not-applicable"
         {% else %}
           class="condition not-applicable has-perms"
-          hx-put="{% url 'projects:action_condition_toggle_not_applicable' condition.id %}"
-          hx-trigger="click delay:.5s"
+        hx-put="{% url 'projects:action_toggle_condition' condition.id %}{% querystring status=condition.status target='not-applicable' %}"
           hx-target="closest tr"
           hx-swap="outerHTML"
         {% endif %}>na</span>
@@ -36,12 +35,12 @@
           class="condition candidate"
         {% else %}
           class="condition candidate has-perms"
-          hx-put="{% url 'projects:action_condition_toggle_candidate' condition.id %}"
-          hx-trigger="click delay:.5s"
+        hx-put="{% url 'projects:action_toggle_condition' condition.id %}{% querystring status=condition.status target='candidate' %}"
           hx-target="closest tr"
           hx-swap="outerHTML"
       {% endif %}>candidate</span>
   </div>
   </td>
+
   <td class="commitment-blank" colspan="{{ workcycle_count }}"></td>
 </tr>

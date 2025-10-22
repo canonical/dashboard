@@ -138,10 +138,26 @@ def action_toggle_commitment(request, commitment_id):
 @require_http_methods(["PUT"])
 def action_toggle_condition(request, condition_id):
     condition = ProjectObjectiveCondition.objects.get(id=condition_id)
-    condition.done = not condition.done
-    if condition.done:
-        condition.not_applicable = False
-        condition.candidate = False
+    target = request.GET["target"]
+    status = request.GET["status"]
+
+    match target:
+        case "done":
+            if status == "DO":
+                condition.status = ""
+            else:
+                condition.status = "DO"
+        case "candidate":
+            if status == "CA":
+                condition.status = ""
+            else:
+                condition.status = "CA"
+        case "not-applicable":
+            if status == "NA":
+                condition.status = ""
+            else:
+                condition.status = "NA"
+
     condition.save()
 
     return render(
@@ -149,41 +165,6 @@ def action_toggle_condition(request, condition_id):
         "projects/partial_condition.html",
         {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
     )
-
-
-@permission_required("projects.change_projectobjectivecondition")
-@require_http_methods(["PUT"])
-def action_condition_toggle_candidate(request, condition_id):
-    condition = ProjectObjectiveCondition.objects.get(id=condition_id)
-    condition.candidate = not condition.candidate
-    if condition.candidate:
-        condition.not_applicable = False
-        condition.done = False
-    condition.save()
-
-    return render(
-        request,
-        "projects/partial_condition.html",
-        {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
-    )
-
-
-@permission_required("projects.change_projectobjectivecondition")
-@require_http_methods(["PUT"])
-def action_condition_toggle_not_applicable(request, condition_id):
-    condition = ProjectObjectiveCondition.objects.get(id=condition_id)
-    condition.not_applicable = not condition.not_applicable
-    if condition.not_applicable:
-        condition.candidate = False
-        condition.done = False
-    condition.save()
-
-    return render(
-        request,
-        "projects/partial_condition.html",
-        {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
-    )
-    return HttpResponse("")
 
 
 @permission_required("projects.change_projectobjective")

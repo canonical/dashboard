@@ -1,4 +1,4 @@
-Django==5.1.13
+Django==5.2
 PyYAML==6.0.2
 docutils==0.21.2
 whitenoise==6.9.0

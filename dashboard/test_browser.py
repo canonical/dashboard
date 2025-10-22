@@ -56,17 +56,17 @@ def test_toggling_conditions(page):
 
     # Toggle project objective condition:
     # Nuclear > Agreeableness > Started > Speaks pleasantly
-    assert ProjectObjectiveCondition.objects.get(id=94).done == True
-    with page.expect_response("**/action_toggle_condition/94"):
+    assert ProjectObjectiveCondition.objects.get(id=94).status == "DO"
+    with page.expect_response("**/action_toggle_condition/94?status=DO&target=done"):
         page.get_by_test_id("toggle_condition_94").uncheck()
-    assert ProjectObjectiveCondition.objects.get(id=94).done == False
+    assert ProjectObjectiveCondition.objects.get(id=94).status == ""
 
     # Toggle project objective condition:
     # Nuclear > Agreeableness > First results > Accepts praise and thanks with grace
-    assert ProjectObjectiveCondition.objects.get(id=102).done == False
-    with page.expect_response("**/action_toggle_condition/102"):
+    assert ProjectObjectiveCondition.objects.get(id=102).status == ""
+    with page.expect_response("**/action_toggle_condition/102?status=&target=done"):
         page.get_by_test_id("toggle_condition_102").check()
-    assert ProjectObjectiveCondition.objects.get(id=102).done == True
+    assert ProjectObjectiveCondition.objects.get(id=102).status == "DO"
 
 
 def test_toggling_commitments(page):
@@ -100,10 +100,9 @@ def test_status(page):
     # 14  Is striated
     # 18  Is dappled
     # ---------------------
-    assert ProjectObjectiveCondition.objects.get(id=1).done == True
-    assert ProjectObjectiveCondition.objects.get(id=6).done == True
-    assert ProjectObjectiveCondition.objects.get(id=10).done == False
-    assert ProjectObjectiveCondition.objects.get(id=10).not_applicable == False
+    assert ProjectObjectiveCondition.objects.get(id=1).status == "DO"
+    assert ProjectObjectiveCondition.objects.get(id=6).status == "DO"
+    assert ProjectObjectiveCondition.objects.get(id=10).status == ""
     assert (
         ProjectObjectiveCondition.objects.get(id=10).projectobjective().status() == None
     )
