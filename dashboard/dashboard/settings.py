@@ -142,10 +142,8 @@ TINYMCE_DEFAULT_CONFIG = {
     "width": 600,
     "height": 75,
     "menubar": False,
-    "plugins": "autolink,lists,link,paste"
-    "help",
+    "plugins": "autolink,lists,link,pastehelp",
     "toolbar": False,
     "statusbar": False,
-    "valid_elements": 'a[href|target=_blank],strong,em,p,ul,ol,li',
+    "valid_elements": "a[href|target=_blank],strong,em,p,ul,ol,li",
 }
-
