@@ -28,7 +28,7 @@
 
             <tr class="">
               <td colspan="2" class="objective description">
-                {{ projectobjective.objective.description|default:"" }}
+                {{ projectobjective.objective.description|safe|default:"" }}
               </td>
               <td colspan="{{ workcycle_count }}" class="commitment-blank"></td>
             </tr>
