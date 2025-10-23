@@ -5,17 +5,18 @@ PIP := $(VENV)/bin/pip
 PYTEST := $(VENV)/bin/pytest
 MANAGE := $(VENV)/bin/python ./manage.py
 
-.PHONY: all help clean venv install install-dev migrate init test test-framework test-browser run collectstatic collectstatic-check
+.PHONY: all help clean venv install install-dev migrate init test test-framework test-browser run collectstatic collectstatic-check makemigrations makemigrations-check
 
 help:
 	@echo "Available targets:"
-	@echo "  install        - Create virtualenv and install dependencies"
-	@echo "  migrate        - Setup database tables"
-	@echo "  init           - Load initial test data"
-	@echo "  run            - Start development server"
-	@echo "  test           - Run automated tests"
-	@echo "  collectstatic  - Copy static files to staticfiles directory"
-	@echo "  clean          - Remove virtualenv and cache files"
+	@echo "  install         - Create virtualenv and install dependencies"
+	@echo "  migrate         - Setup database tables"
+	@echo "  init            - Load initial test data"
+	@echo "  run             - Start development server"
+	@echo "  collectstatic   - Copy static files to staticfiles directory"
+	@echo "  makemigrations  - Create new migrations based on model changes"
+	@echo "  test            - Run automated tests"
+	@echo "  clean           - Remove virtualenv and cache files"
 
 venv:
 	$(PYTHON) -m venv $(VENV)
@@ -41,8 +42,20 @@ collectstatic: install
 
 # For use in CI
 collectstatic-check: collectstatic
-	@if ! git diff --exit-code --quiet staticfiles/; then \
-		echo "Modified static files detected. Please run 'make collectstatic' and commit the changes."; \
+	@changes=$$(git status --porcelain staticfiles | wc -l); \
+	if [ $$changes -gt 0 ]; then \
+		echo "Detected changes to static files. Run 'make collectstatic' and commit the changes."; \
+		exit 1; \
+	fi
+
+makemigrations: install
+	$(MANAGE) makemigrations --no-input
+
+# For use in CI
+makemigrations-check: makemigrations
+	@changes=$$(git status --porcelain */migrations | wc -l); \
+	if [ $$changes -gt 0 ]; then \
+		echo "Detected changes to migrations. Run 'make makemigrations' and commit the changes."; \
 		exit 1; \
 	fi
 
