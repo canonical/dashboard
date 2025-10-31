@@ -176,7 +176,7 @@ class ProjectObjective(models.Model):
         return Commitment.objects.filter(project=self.project, objective=self.objective)
 
     class Meta:
-        ordering = ["project__name", "objective"]
+        ordering = ["project", "objective"]
         constraints = [
             models.UniqueConstraint(
                 fields=["project", "objective"], name="unique_project_objective"
