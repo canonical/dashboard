@@ -104,7 +104,7 @@ def test_status(page):
     assert ProjectObjectiveCondition.objects.get(id=6).status == "DO"
     assert ProjectObjectiveCondition.objects.get(id=10).status == ""
     assert (
-        ProjectObjectiveCondition.objects.get(id=10).projectobjective().status() == None
+        ProjectObjectiveCondition.objects.get(id=10).projectobjective().status == None
     )
     expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text("")
 
@@ -113,7 +113,7 @@ def test_status(page):
         page.get_by_test_id("toggle_condition_10").check()
     assert ProjectObjectiveCondition.objects.get(
         id=10
-    ).projectobjective().status() == Level.objects.get(id=1)
+    ).projectobjective().status == Level.objects.get(id=1)
     expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text("Started")
 
     # Toggle two more conditions (Is striated, Is dappled) to get to First results.
@@ -123,7 +123,7 @@ def test_status(page):
         page.get_by_test_id("toggle_condition_18").check()
     assert ProjectObjectiveCondition.objects.get(
         id=18
-    ).projectobjective().status() == Level.objects.get(id=2)
+    ).projectobjective().status == Level.objects.get(id=2)
     expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text(
         "First results"
     )

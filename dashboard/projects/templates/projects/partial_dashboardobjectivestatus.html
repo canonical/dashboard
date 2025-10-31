@@ -1,0 +1,5 @@
+<td class="{{ projectobjective.status|slugify }}">
+  <a href="{% url 'projects:project' projectobjective.project.id %}">
+    {{ projectobjective.status|default:"" }}
+  </a>
+</td>

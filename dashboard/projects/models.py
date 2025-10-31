@@ -3,6 +3,8 @@ from datetime import date, timedelta
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+from django.db.models import Q
+from django.utils.functional import cached_property
 
 from framework.models import (
     Reason,
@@ -84,12 +86,11 @@ class Project(models.Model):
     def get_absolute_url(self):
         return reverse("projects:project", kwargs={"id": self.id})
 
-    # packages up the statuses of all the objectives for quicker unpacking in a template
-    def objective_statuses(self):
-        return [
-            po.achieved_level or po.unstarted_reason
-            for po in self.projectobjective_set.all()
-        ]
+    def expectations_review_status(self):
+        if self.review_freshness() == "overdue" or "unacceptable":
+            return "Unreviewed"
+        else:
+            return self.last_review_status
 
     def quality_indicator(self):
         x = 0
@@ -136,21 +137,23 @@ class ProjectObjective(models.Model):
     def __str__(self):
         return " > ".join((self.project.name, self.objective.name))
 
-    @property
+    @cached_property
     def achieved_level(self):
 
+        level_achieved = None
+
+        # get a list of levels for which there are any undone POCs
         undone = ProjectObjectiveCondition.objects.filter(
             status__in=["", "CA"],
             project=self.project,
             objective=self.objective,
         ).values_list("condition__level__value", flat=True).distinct()
 
-        level_achieved = None
-
         for level in Level.objects.filter(
             condition__objective=self.objective
         ):
 
+            # is this level in that list?
             if level.value in undone:
                 return level_achieved
 
@@ -158,6 +161,8 @@ class ProjectObjective(models.Model):
 
         return level_achieved
 
+
+    @cached_property
     def status(self):
         return self.achieved_level or self.unstarted_reason
 
@@ -176,7 +181,7 @@ class ProjectObjective(models.Model):
         return Commitment.objects.filter(project=self.project, objective=self.objective)
 
     class Meta:
-        ordering = ["objective"]
+        ordering = ["project", "objective"]
         constraints = [
             models.UniqueConstraint(
                 fields=["project", "objective"], name="unique_project_objective"

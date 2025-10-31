@@ -96,6 +96,9 @@ class ObjectiveGroup(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ["id"]
+
 
 class Objective(models.Model):
     # a dimension in which quality can be measured
@@ -138,7 +141,7 @@ class Objective(models.Model):
                     )
 
     class Meta:
-        ordering = ["group"]
+        ordering = ["group", "name"]
 
 
 class Condition(models.Model):
