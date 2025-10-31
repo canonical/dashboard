@@ -9,6 +9,7 @@ from .views import (
     project_basic_form_save,
     status_projects_commitment,
     status_projectobjective,
+    status_dashboardprojectobjective
 )
 
 app_name = "projects"
@@ -47,5 +48,10 @@ urlpatterns = [
         "status_projectobjective/<int:projectobjective_id>",
         status_projectobjective,
         name="status_projectobjective",
+    ),
+    path(
+        "status_dashboardprojectobjective/<int:projectobjective_id>",
+        status_dashboardprojectobjective,
+        name="status_dashboardprojectobjective",
     ),
 ]

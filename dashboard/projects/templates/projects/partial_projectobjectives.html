@@ -6,19 +6,20 @@
     {% regroup project.projectobjective_set.all by objective.group as projectobjectivegroups %}
 
     <table class="objectives detail">
-      <tbody>
 
-        {% for projectobjectivegroup, projectobjectives in projectobjectivegroups %}
+      {% for projectobjectivegroup, projectobjectives in projectobjectivegroups %}
 
-          {% if projectobjectivegroup %}
-            <tr>
-              <th class="projectobjectivegroup" colspan="{{ workcycle_count|add:'2' }}">
-                {{ projectobjectivegroup }}
-              </th>
-            </tr>
-          {% endif %}
+        {% if projectobjectivegroup %}
+          <tr>
+            <th class="projectobjectivegroup" colspan="{{ workcycle_count|add:'2' }}">
+              {{ projectobjectivegroup }}
+            </th>
+          </tr>
+        {% endif %}
 
-          {% for projectobjective in projectobjectives %}
+        {% for projectobjective in projectobjectives %}
+
+          <tbody id="projectobjective-{{ projectobjective.id }}">
 
             <tr id="projectobjective-{{ projectobjective.id }}" class="objective">
               <td colspan="{{ workcycle_count|add:'2' }}" class="objective name">
@@ -62,9 +63,10 @@
               {% endfor %}
 
             {% endfor %}
-          {% endfor %}
+          </tbody>
+
         {% endfor %}
-      </tbody>
+      {% endfor %}
     </table>
 
   </div>

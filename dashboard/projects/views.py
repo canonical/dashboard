@@ -83,7 +83,6 @@ def project(request, id):
 
 # status methods
 
-
 @require_http_methods(["GET"])
 def status_projects_commitment(request, project_id):
 
@@ -107,6 +106,7 @@ def status_projects_commitment(request, project_id):
         {"project": project, "current_commitments": current_commitments},
     )
 
+# status of a ProjectObjective in detail view
 @require_http_methods("GET")
 def status_projectobjective(request, projectobjective_id):
 
@@ -118,6 +118,19 @@ def status_projectobjective(request, projectobjective_id):
         {
             "projectobjective": projectobjective,
             "unstarted_reasons": Reason.objects.all(),
+        },
+    )
+
+# status of a ProjectObjective in list view
+@require_http_methods("GET")
+def status_dashboardprojectobjective(request, projectobjective_id):
+    projectobjective = ProjectObjective.objects.get(id=projectobjective_id)
+
+    return render(
+        request,
+        "projects/partial_dashboardobjectivestatus.html",
+        {
+            "projectobjective": projectobjective,
         },
     )
 
