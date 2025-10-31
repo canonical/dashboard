@@ -87,7 +87,7 @@ class Project(models.Model):
         return reverse("projects:project", kwargs={"id": self.id})
 
     def expectations_review_status(self):
-        if self.review_freshness() == "overdue" or "unacceptable":
+        if self.review_freshness() in ("overdue", "unacceptable"):
             return "Unreviewed"
         else:
             return self.last_review_status
