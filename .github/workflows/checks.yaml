@@ -27,3 +27,7 @@ jobs:
         run: |
           cd dashboard
           make collectstatic-check
+      - name: Check migrations
+        run: |
+          cd dashboard
+          make makemigrations-check
