@@ -32,7 +32,7 @@ class ProjectListView(ListView):
         context["column_count"] = (
             Objective.objects.count() + WorkCycle.objects.count() + 6
         )
-        context["quality_cols_count"] = 3 + WorkCycle.objects.count()
+        context["quality_cols_count"] = 4 + WorkCycle.objects.count()
 
         return context
 
@@ -93,7 +93,7 @@ def status_projects_commitment(request, project_id):
 
     return render(
         request,
-        "projects/partial_project_commitments.html",
+        "projects/partial_project_detail_commitments.html",
         {
             "project": project,
             "current_commitments": current_commitments,
@@ -102,7 +102,7 @@ def status_projects_commitment(request, project_id):
 
     return render(
         request,
-        "projects/partial_project_commitments.html",
+        "projects/partial_project_detail_commitments.html",
         {"project": project, "current_commitments": current_commitments},
     )
 
@@ -114,7 +114,7 @@ def status_projectobjective(request, projectobjective_id):
 
     return render(
         request,
-        "projects/partial_objectivestatus.html",
+        "projects/partial_project_detail_objectivestatus.html",
         {
             "projectobjective": projectobjective,
             "unstarted_reasons": Reason.objects.all(),
@@ -128,7 +128,7 @@ def status_dashboardprojectobjective(request, projectobjective_id):
 
     return render(
         request,
-        "projects/partial_dashboardobjectivestatus.html",
+        "projects/partial_project_list_objectivestatus.html",
         {
             "projectobjective": projectobjective,
         },
@@ -175,7 +175,7 @@ def action_toggle_condition(request, condition_id):
 
     return render(
         request,
-        "projects/partial_condition.html",
+        "projects/partial_project_detail_condition.html",
         {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
     )
 
@@ -204,6 +204,6 @@ def project_basic_form_save(request, project_id):
     form.save()
     return render(
         request,
-        "projects/partial_project_basics.html",
+        "projects/partial_project_detail_basics.html",
         {"basics_form": form, "project": instance},
     )
