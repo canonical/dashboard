@@ -52,6 +52,8 @@ class Project(models.Model):
     agreement_status = models.ForeignKey(
         AgreementStatus, null=True, blank=True, on_delete=models.SET_NULL
     )
+    current_qi = models.PositiveSmallIntegerField(default=0)
+
 
     def __str__(self):
         return self.name
@@ -133,6 +135,7 @@ class ProjectObjective(models.Model):
         null=True,
         blank=True,
     )
+    level_achieved = models.ForeignKey(Level, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return " > ".join((self.project.name, self.objective.name))

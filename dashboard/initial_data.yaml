@@ -724,6 +724,7 @@
     last_review: 2024-12-16
     last_review_status: 1
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 2
   fields:
@@ -735,6 +736,7 @@
     last_review: null
     last_review_status: 1
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 3
   fields:
@@ -746,6 +748,7 @@
     last_review: 2023-08-16
     last_review_status: 2
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 4
   fields:
@@ -757,6 +760,7 @@
     last_review: 2025-02-02
     last_review_status: 4
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 5
   fields:
@@ -768,6 +772,7 @@
     last_review: null
     last_review_status: 3
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 6
   fields:
@@ -779,6 +784,7 @@
     last_review: 2024-12-26
     last_review_status: 5
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 7
   fields:
@@ -790,6 +796,7 @@
     last_review: 2025-02-02
     last_review_status: 1
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 9
   fields:
@@ -801,6 +808,7 @@
     last_review: 2025-02-09
     last_review_status: 2
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 10
   fields:
@@ -812,6 +820,7 @@
     last_review: 2024-11-20
     last_review_status: 3
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 11
   fields:
@@ -823,6 +832,7 @@
     last_review: 2024-03-13
     last_review_status: 1
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 12
   fields:
@@ -834,6 +844,7 @@
     last_review: null
     last_review_status: 2
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 13
   fields:
@@ -845,6 +856,7 @@
     last_review: 2023-11-14
     last_review_status: 5
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 14
   fields:
@@ -856,6 +868,7 @@
     last_review: 2025-02-13
     last_review_status: 2
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 15
   fields:
@@ -867,6 +880,7 @@
     last_review: 2025-02-13
     last_review_status: 4
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 16
   fields:
@@ -878,6 +892,7 @@
     last_review: 2025-02-13
     last_review_status: 4
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 17
   fields:
@@ -889,6 +904,7 @@
     last_review: 2024-11-18
     last_review_status: 3
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 18
   fields:
@@ -900,6 +916,7 @@
     last_review: 2024-11-21
     last_review_status: 1
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 19
   fields:
@@ -911,6 +928,7 @@
     last_review: 2025-11-01
     last_review_status: null
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 20
   fields:
@@ -922,6 +940,7 @@
     last_review: null
     last_review_status: null
     agreement_status: 3
+    current_qi: 0
 - model: projects.project
   pk: 21
   fields:
@@ -933,6 +952,7 @@
     last_review: null
     last_review_status: null
     agreement_status: 2
+    current_qi: 0
 - model: projects.project
   pk: 22
   fields:
@@ -944,6 +964,7 @@
     last_review: null
     last_review_status: null
     agreement_status: null
+    current_qi: 0
 - model: projects.project
   pk: 23
   fields:
@@ -955,6 +976,7 @@
     last_review: null
     last_review_status: null
     agreement_status: null
+    current_qi: 0
 - model: projects.project
   pk: 24
   fields:
@@ -966,6 +988,7 @@
     last_review: null
     last_review_status: null
     agreement_status: null
+    current_qi: 0
 - model: projects.project
   pk: 25
   fields:
@@ -977,2310 +1000,2695 @@
     last_review: null
     last_review_status: null
     agreement_status: null
+    current_qi: 0
 - model: projects.projectobjective
   pk: 1
   fields:
     project: 1
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 2
   fields:
     project: 2
     objective: 1
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 3
   fields:
     project: 3
     objective: 1
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 4
   fields:
     project: 4
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 5
   fields:
     project: 2
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 6
   fields:
     project: 1
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 7
   fields:
     project: 3
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 8
   fields:
     project: 4
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 9
   fields:
     project: 2
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 10
   fields:
     project: 1
     objective: 3
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 11
   fields:
     project: 3
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 12
   fields:
     project: 4
     objective: 3
     unstarted_reason: 4
+    level_achieved: null
 - model: projects.projectobjective
   pk: 13
   fields:
     project: 2
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 14
   fields:
     project: 1
     objective: 4
     unstarted_reason: 4
+    level_achieved: null
 - model: projects.projectobjective
   pk: 15
   fields:
     project: 3
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 16
   fields:
     project: 4
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 17
   fields:
     project: 2
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 18
   fields:
     project: 1
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 19
   fields:
     project: 3
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 20
   fields:
     project: 4
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 21
   fields:
     project: 2
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 22
   fields:
     project: 1
     objective: 6
     unstarted_reason: 4
+    level_achieved: null
 - model: projects.projectobjective
   pk: 23
   fields:
     project: 3
     objective: 6
     unstarted_reason: 1
+    level_achieved: null
 - model: projects.projectobjective
   pk: 24
   fields:
     project: 4
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 25
   fields:
     project: 2
     objective: 7
     unstarted_reason: 4
+    level_achieved: null
 - model: projects.projectobjective
   pk: 26
   fields:
     project: 1
     objective: 7
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 27
   fields:
     project: 3
     objective: 7
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 28
   fields:
     project: 4
     objective: 7
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 29
   fields:
     project: 2
     objective: 8
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 30
   fields:
     project: 1
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 31
   fields:
     project: 3
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 32
   fields:
     project: 4
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 33
   fields:
     project: 2
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 34
   fields:
     project: 1
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 35
   fields:
     project: 3
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 36
   fields:
     project: 4
     objective: 9
     unstarted_reason: 1
+    level_achieved: null
 - model: projects.projectobjective
   pk: 37
   fields:
     project: 2
     objective: 10
     unstarted_reason: 4
+    level_achieved: null
 - model: projects.projectobjective
   pk: 38
   fields:
     project: 1
     objective: 10
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 39
   fields:
     project: 3
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 40
   fields:
     project: 4
     objective: 10
     unstarted_reason: 4
+    level_achieved: null
 - model: projects.projectobjective
   pk: 41
   fields:
     project: 2
     objective: 11
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 42
   fields:
     project: 1
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 43
   fields:
     project: 3
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 44
   fields:
     project: 4
     objective: 11
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 45
   fields:
     project: 5
     objective: 7
     unstarted_reason: 4
+    level_achieved: null
 - model: projects.projectobjective
   pk: 46
   fields:
     project: 5
     objective: 1
     unstarted_reason: 4
+    level_achieved: null
 - model: projects.projectobjective
   pk: 47
   fields:
     project: 5
     objective: 2
     unstarted_reason: 1
+    level_achieved: null
 - model: projects.projectobjective
   pk: 48
   fields:
     project: 5
     objective: 11
     unstarted_reason: 1
+    level_achieved: null
 - model: projects.projectobjective
   pk: 49
   fields:
     project: 5
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 50
   fields:
     project: 5
     objective: 3
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 51
   fields:
     project: 5
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 52
   fields:
     project: 5
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 53
   fields:
     project: 5
     objective: 6
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 54
   fields:
     project: 5
     objective: 8
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 55
   fields:
     project: 5
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 56
   fields:
     project: 6
     objective: 7
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 57
   fields:
     project: 6
     objective: 1
     unstarted_reason: 1
+    level_achieved: null
 - model: projects.projectobjective
   pk: 58
   fields:
     project: 6
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 59
   fields:
     project: 6
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 60
   fields:
     project: 6
     objective: 5
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 61
   fields:
     project: 6
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 62
   fields:
     project: 6
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 63
   fields:
     project: 6
     objective: 10
     unstarted_reason: 1
+    level_achieved: null
 - model: projects.projectobjective
   pk: 64
   fields:
     project: 6
     objective: 6
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 65
   fields:
     project: 6
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 66
   fields:
     project: 6
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 67
   fields:
     project: 7
     objective: 7
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 68
   fields:
     project: 7
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 69
   fields:
     project: 7
     objective: 2
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 70
   fields:
     project: 7
     objective: 11
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 71
   fields:
     project: 7
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 72
   fields:
     project: 7
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 73
   fields:
     project: 7
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 74
   fields:
     project: 7
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 75
   fields:
     project: 7
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 76
   fields:
     project: 7
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 77
   fields:
     project: 7
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 89
   fields:
     project: 9
     objective: 7
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 90
   fields:
     project: 9
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 91
   fields:
     project: 9
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 92
   fields:
     project: 9
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 93
   fields:
     project: 9
     objective: 5
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 94
   fields:
     project: 9
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 95
   fields:
     project: 9
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 96
   fields:
     project: 9
     objective: 10
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 97
   fields:
     project: 9
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 98
   fields:
     project: 9
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 99
   fields:
     project: 9
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 100
   fields:
     project: 10
     objective: 7
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 101
   fields:
     project: 10
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 102
   fields:
     project: 10
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 103
   fields:
     project: 10
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 104
   fields:
     project: 10
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 105
   fields:
     project: 10
     objective: 3
     unstarted_reason: 4
+    level_achieved: null
 - model: projects.projectobjective
   pk: 106
   fields:
     project: 10
     objective: 4
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 107
   fields:
     project: 10
     objective: 10
     unstarted_reason: 1
+    level_achieved: null
 - model: projects.projectobjective
   pk: 108
   fields:
     project: 10
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 109
   fields:
     project: 10
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 110
   fields:
     project: 10
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 111
   fields:
     project: 11
     objective: 7
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 112
   fields:
     project: 11
     objective: 1
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 113
   fields:
     project: 11
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 114
   fields:
     project: 11
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 115
   fields:
     project: 11
     objective: 5
     unstarted_reason: 4
+    level_achieved: null
 - model: projects.projectobjective
   pk: 116
   fields:
     project: 11
     objective: 3
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 117
   fields:
     project: 11
     objective: 4
     unstarted_reason: 1
+    level_achieved: null
 - model: projects.projectobjective
   pk: 118
   fields:
     project: 11
     objective: 10
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 119
   fields:
     project: 11
     objective: 6
     unstarted_reason: 1
+    level_achieved: null
 - model: projects.projectobjective
   pk: 120
   fields:
     project: 11
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 121
   fields:
     project: 11
     objective: 9
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 122
   fields:
     project: 12
     objective: 7
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 123
   fields:
     project: 12
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 124
   fields:
     project: 12
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 125
   fields:
     project: 12
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 126
   fields:
     project: 12
     objective: 5
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 127
   fields:
     project: 12
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 128
   fields:
     project: 12
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 129
   fields:
     project: 12
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 130
   fields:
     project: 12
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 131
   fields:
     project: 12
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 132
   fields:
     project: 12
     objective: 9
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 133
   fields:
     project: 13
     objective: 7
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 134
   fields:
     project: 13
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 135
   fields:
     project: 13
     objective: 2
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 136
   fields:
     project: 13
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 137
   fields:
     project: 13
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 138
   fields:
     project: 13
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 139
   fields:
     project: 13
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 140
   fields:
     project: 13
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 141
   fields:
     project: 13
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 142
   fields:
     project: 13
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 143
   fields:
     project: 13
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 144
   fields:
     project: 14
     objective: 7
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 145
   fields:
     project: 14
     objective: 1
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 146
   fields:
     project: 14
     objective: 2
     unstarted_reason: 4
+    level_achieved: null
 - model: projects.projectobjective
   pk: 147
   fields:
     project: 14
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 148
   fields:
     project: 14
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 149
   fields:
     project: 14
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 150
   fields:
     project: 14
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 151
   fields:
     project: 14
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 152
   fields:
     project: 14
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 153
   fields:
     project: 14
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 154
   fields:
     project: 14
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 155
   fields:
     project: 15
     objective: 7
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 156
   fields:
     project: 15
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 157
   fields:
     project: 15
     objective: 2
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 158
   fields:
     project: 15
     objective: 11
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 159
   fields:
     project: 15
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 160
   fields:
     project: 15
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 161
   fields:
     project: 15
     objective: 4
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 162
   fields:
     project: 15
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 163
   fields:
     project: 15
     objective: 6
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 164
   fields:
     project: 15
     objective: 8
     unstarted_reason: 1
+    level_achieved: null
 - model: projects.projectobjective
   pk: 165
   fields:
     project: 15
     objective: 9
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 166
   fields:
     project: 16
     objective: 7
     unstarted_reason: 1
+    level_achieved: null
 - model: projects.projectobjective
   pk: 167
   fields:
     project: 16
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 168
   fields:
     project: 16
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 169
   fields:
     project: 16
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 170
   fields:
     project: 16
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 171
   fields:
     project: 16
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 172
   fields:
     project: 16
     objective: 4
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 173
   fields:
     project: 16
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 174
   fields:
     project: 16
     objective: 6
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 175
   fields:
     project: 16
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 176
   fields:
     project: 16
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 177
   fields:
     project: 17
     objective: 7
     unstarted_reason: 1
+    level_achieved: null
 - model: projects.projectobjective
   pk: 178
   fields:
     project: 17
     objective: 1
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 179
   fields:
     project: 17
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 180
   fields:
     project: 17
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 181
   fields:
     project: 17
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 182
   fields:
     project: 17
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 183
   fields:
     project: 17
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 184
   fields:
     project: 17
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 185
   fields:
     project: 17
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 186
   fields:
     project: 17
     objective: 8
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 187
   fields:
     project: 17
     objective: 9
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 188
   fields:
     project: 18
     objective: 7
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 189
   fields:
     project: 18
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 190
   fields:
     project: 18
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 191
   fields:
     project: 18
     objective: 11
     unstarted_reason: 1
+    level_achieved: null
 - model: projects.projectobjective
   pk: 192
   fields:
     project: 18
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 193
   fields:
     project: 18
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 194
   fields:
     project: 18
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 195
   fields:
     project: 18
     objective: 10
     unstarted_reason: 3
+    level_achieved: null
 - model: projects.projectobjective
   pk: 196
   fields:
     project: 18
     objective: 6
     unstarted_reason: 2
+    level_achieved: null
 - model: projects.projectobjective
   pk: 197
   fields:
     project: 18
     objective: 8
     unstarted_reason: 4
+    level_achieved: null
 - model: projects.projectobjective
   pk: 198
   fields:
     project: 18
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 199
   fields:
     project: 14
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 200
   fields:
     project: 15
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 201
   fields:
     project: 13
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 202
   fields:
     project: 12
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 203
   fields:
     project: 11
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 204
   fields:
     project: 10
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 205
   fields:
     project: 3
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 206
   fields:
     project: 2
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 207
   fields:
     project: 1
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 208
   fields:
     project: 6
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 209
   fields:
     project: 7
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 210
   fields:
     project: 9
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 211
   fields:
     project: 5
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 212
   fields:
     project: 4
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 213
   fields:
     project: 18
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 214
   fields:
     project: 16
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 215
   fields:
     project: 17
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 216
   fields:
     project: 14
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 217
   fields:
     project: 15
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 218
   fields:
     project: 13
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 219
   fields:
     project: 12
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 220
   fields:
     project: 11
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 221
   fields:
     project: 10
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 222
   fields:
     project: 3
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 223
   fields:
     project: 2
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 224
   fields:
     project: 1
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 225
   fields:
     project: 6
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 226
   fields:
     project: 7
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 227
   fields:
     project: 9
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 228
   fields:
     project: 5
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 229
   fields:
     project: 4
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 230
   fields:
     project: 18
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 231
   fields:
     project: 16
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 232
   fields:
     project: 17
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 233
   fields:
     project: 19
     objective: 7
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 234
   fields:
     project: 19
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 235
   fields:
     project: 19
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 236
   fields:
     project: 19
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 237
   fields:
     project: 19
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 238
   fields:
     project: 19
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 239
   fields:
     project: 19
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 240
   fields:
     project: 19
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 241
   fields:
     project: 19
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 242
   fields:
     project: 19
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 243
   fields:
     project: 19
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 244
   fields:
     project: 19
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 245
   fields:
     project: 19
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 246
   fields:
     project: 20
     objective: 7
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 247
   fields:
     project: 20
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 248
   fields:
     project: 20
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 249
   fields:
     project: 20
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 250
   fields:
     project: 20
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 251
   fields:
     project: 20
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 252
   fields:
     project: 20
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 253
   fields:
     project: 20
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 254
   fields:
     project: 20
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 255
   fields:
     project: 20
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 256
   fields:
     project: 20
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 257
   fields:
     project: 20
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 258
   fields:
     project: 20
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 259
   fields:
     project: 21
     objective: 7
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 260
   fields:
     project: 21
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 261
   fields:
     project: 21
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 262
   fields:
     project: 21
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 263
   fields:
     project: 21
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 264
   fields:
     project: 21
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 265
   fields:
     project: 21
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 266
   fields:
     project: 21
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 267
   fields:
     project: 21
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 268
   fields:
     project: 21
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 269
   fields:
     project: 21
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 270
   fields:
     project: 21
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 271
   fields:
     project: 21
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 272
   fields:
     project: 22
     objective: 7
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 273
   fields:
     project: 22
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 274
   fields:
     project: 22
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 275
   fields:
     project: 22
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 276
   fields:
     project: 22
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 277
   fields:
     project: 22
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 278
   fields:
     project: 22
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 279
   fields:
     project: 22
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 280
   fields:
     project: 22
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 281
   fields:
     project: 22
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 282
   fields:
     project: 22
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 283
   fields:
     project: 22
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 284
   fields:
     project: 22
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 285
   fields:
     project: 23
     objective: 7
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 286
   fields:
     project: 23
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 287
   fields:
     project: 23
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 288
   fields:
     project: 23
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 289
   fields:
     project: 23
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 290
   fields:
     project: 23
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 291
   fields:
     project: 23
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 292
   fields:
     project: 23
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 293
   fields:
     project: 23
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 294
   fields:
     project: 23
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 295
   fields:
     project: 23
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 296
   fields:
     project: 23
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 297
   fields:
     project: 23
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 298
   fields:
     project: 24
     objective: 7
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 299
   fields:
     project: 24
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 300
   fields:
     project: 24
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 301
   fields:
     project: 24
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 302
   fields:
     project: 24
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 303
   fields:
     project: 24
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 304
   fields:
     project: 24
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 305
   fields:
     project: 24
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 306
   fields:
     project: 24
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 307
   fields:
     project: 24
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 308
   fields:
     project: 24
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 309
   fields:
     project: 24
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 310
   fields:
     project: 24
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 311
   fields:
     project: 25
     objective: 7
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 312
   fields:
     project: 25
     objective: 1
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 313
   fields:
     project: 25
     objective: 2
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 314
   fields:
     project: 25
     objective: 11
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 315
   fields:
     project: 25
     objective: 5
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 316
   fields:
     project: 25
     objective: 3
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 317
   fields:
     project: 25
     objective: 4
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 318
   fields:
     project: 25
     objective: 13
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 319
   fields:
     project: 25
     objective: 12
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 320
   fields:
     project: 25
     objective: 10
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 321
   fields:
     project: 25
     objective: 6
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 322
   fields:
     project: 25
     objective: 8
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 323
   fields:
     project: 25
     objective: 9
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 324
   fields:
     project: 23
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 325
   fields:
     project: 22
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 326
   fields:
     project: 21
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 327
   fields:
     project: 24
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 328
   fields:
     project: 25
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 329
   fields:
     project: 14
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 330
   fields:
     project: 15
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 331
   fields:
     project: 13
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 332
   fields:
     project: 12
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 333
   fields:
     project: 11
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 334
   fields:
     project: 10
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 335
   fields:
     project: 20
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 336
   fields:
     project: 3
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 337
   fields:
     project: 19
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 338
   fields:
     project: 2
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 339
   fields:
     project: 1
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 340
   fields:
     project: 6
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 341
   fields:
     project: 7
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 342
   fields:
     project: 9
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 343
   fields:
     project: 5
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 344
   fields:
     project: 4
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 345
   fields:
     project: 18
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 346
   fields:
     project: 16
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 347
   fields:
     project: 17
     objective: 14
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 348
   fields:
     project: 23
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 349
   fields:
     project: 22
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 350
   fields:
     project: 21
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 351
   fields:
     project: 24
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 352
   fields:
     project: 25
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 353
   fields:
     project: 14
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 354
   fields:
     project: 15
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 355
   fields:
     project: 13
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 356
   fields:
     project: 12
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 357
   fields:
     project: 11
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 358
   fields:
     project: 10
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 359
   fields:
     project: 20
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 360
   fields:
     project: 3
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 361
   fields:
     project: 19
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 362
   fields:
     project: 2
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 363
   fields:
     project: 1
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 364
   fields:
     project: 6
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 365
   fields:
     project: 7
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 366
   fields:
     project: 9
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 367
   fields:
     project: 5
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 368
   fields:
     project: 4
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 369
   fields:
     project: 18
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 370
   fields:
     project: 16
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 371
   fields:
     project: 17
     objective: 15
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 372
   fields:
     project: 23
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 373
   fields:
     project: 22
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 374
   fields:
     project: 21
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 375
   fields:
     project: 24
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 376
   fields:
     project: 25
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 377
   fields:
     project: 14
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 378
   fields:
     project: 15
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 379
   fields:
     project: 13
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 380
   fields:
     project: 12
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 381
   fields:
     project: 11
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 382
   fields:
     project: 10
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 383
   fields:
     project: 20
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 384
   fields:
     project: 3
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 385
   fields:
     project: 19
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 386
   fields:
     project: 2
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 387
   fields:
     project: 1
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 388
   fields:
     project: 6
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 389
   fields:
     project: 7
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 390
   fields:
     project: 9
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 391
   fields:
     project: 5
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 392
   fields:
     project: 4
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 393
   fields:
     project: 18
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 394
   fields:
     project: 16
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjective
   pk: 395
   fields:
     project: 17
     objective: 16
     unstarted_reason: null
+    level_achieved: null
 - model: projects.projectobjectivecondition
   pk: 1
   fields:
