@@ -133,36 +133,12 @@ class ProjectObjective(models.Model):
         null=True,
         blank=True,
     )
-    # level = models.ForeignKey(Level, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return " > ".join((self.project.name, self.objective.name))
 
     @cached_property
     def achieved_level(self):
-
-        levels = (
-            Level.objects
-            .filter(condition__objective=self.objective)
-            .distinct()
-            .annotate(
-                undone_count=Count(
-                    "condition__projectobjectivecondition",
-                    filter=Q(
-                        condition__projectobjectivecondition__project=self.project,
-                        condition__projectobjectivecondition__status__in=["", "CA"],
-                    ),
-                )
-            )
-            .order_by("value")  # ascending
-        )
-
-        achieved = None
-        for lvl in levels:
-            if lvl.undone_count:  # first level with any undone condition stops progress
-                return achieved
-            achieved = lvl
-        return achieved
 
         level_achieved = None
 
@@ -231,11 +207,6 @@ class ProjectObjectiveCondition(models.Model):
         choices=STATUS_CHOICES,
         default="",
         )
-
-    # def save(self, **kwargs):
-    #     super().save(**kwargs)
-    #     self.projectobjective.level = self.projectobjective.achieved_level
-    #     self.projectobjective.save()
 
     def projectobjective(self):
         return ProjectObjective.objects.get(
