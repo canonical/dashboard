@@ -3,7 +3,7 @@ from datetime import date, timedelta
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
-from django.db.models import Q, Count
+from django.db.models import Q
 from django.utils.functional import cached_property
 
 from framework.models import (
