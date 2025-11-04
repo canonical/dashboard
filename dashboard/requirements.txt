@@ -5,4 +5,5 @@ whitenoise==6.9.0
 psycopg2-binary==2.9.10
 tzdata==2025.1
 django-browser-reload==1.18.0
+django-watchfiles==1.4.0
 django-tinymce==4.1.0
