@@ -3,7 +3,7 @@ from datetime import date, timedelta
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.utils.functional import cached_property
 
 from framework.models import (
@@ -140,27 +140,27 @@ class ProjectObjective(models.Model):
     @cached_property
     def achieved_level(self):
 
+        levels = (
+            Level.objects
+            .filter(condition__objective=self.objective)
+            .distinct()
+            .annotate(
+                undone_count=Count(
+                    "condition__projectobjectivecondition",
+                    filter=Q(
+                        condition__projectobjectivecondition__project=self.project,
+                        condition__projectobjectivecondition__status__in=["", "CA"],
+                    ),
+                )
+            )
+        )
+
         level_achieved = None
-
-        # get a list of levels for which there are any undone POCs
-        undone = ProjectObjectiveCondition.objects.filter(
-            status__in=["", "CA"],
-            project=self.project,
-            objective=self.objective,
-        ).values_list("condition__level__value", flat=True).distinct()
-
-        for level in Level.objects.filter(
-            condition__objective=self.objective
-        ):
-
-            # is this level in that list?
-            if level.value in undone:
+        for level in levels:
+            if level.undone_count:  # first level with any undone condition stops progress
                 return level_achieved
-
             level_achieved = level
-
         return level_achieved
-
 
     @cached_property
     def status(self):
