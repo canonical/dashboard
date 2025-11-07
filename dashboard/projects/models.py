@@ -140,6 +140,10 @@ class ProjectObjective(models.Model):
     def __str__(self):
         return " > ".join((self.project.name, self.objective.name))
 
+    def save(self):
+        self.level_achieved = self.achieved_level
+        super().save()
+
     @cached_property
     def achieved_level(self):
 
@@ -167,7 +171,7 @@ class ProjectObjective(models.Model):
 
     @cached_property
     def status(self):
-        return self.achieved_level or self.unstarted_reason
+        return self.level_achieved or self.unstarted_reason
 
     def name(self):
         return self.objective.name
@@ -210,6 +214,10 @@ class ProjectObjectiveCondition(models.Model):
         choices=STATUS_CHOICES,
         default="",
         )
+
+    def save(self):
+        super().save()
+        self.projectobjective().save()
 
     def projectobjective(self):
         return ProjectObjective.objects.get(
