@@ -8,7 +8,7 @@ from projects.models import Project, QI
 
 
 def admin_apply_qis(request, workcycle_id):
-    qis = QI.objects.filter(workcycle_id=workcycle_id)
+    qis = QI.objects.filter(workcycle_id=workcycle_id).select_related("project")
     for qi in qis:
         qi.value = qi.project.quality_indicator
     QI.objects.bulk_update(qis, ["value"])
