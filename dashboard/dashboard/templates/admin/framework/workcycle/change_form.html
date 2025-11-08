@@ -1,0 +1,11 @@
+{% extends "admin/change_form.html" %}
+{% block submit_buttons_bottom %}
+    {{ block.super }}
+    {% if original %} {# Only show if changing #}
+        <div class="submit-row">
+            <a href="{% url 'framework:admin_apply_qis' original.pk %}">
+                 Apply current QI values to this cycle
+            </a>
+        </div>
+    {% endif %}
+{% endblock %}

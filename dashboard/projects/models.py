@@ -92,6 +92,7 @@ class Project(models.Model):
         else:
             return self.last_review_status
 
+    @property
     def quality_indicator(self):
         x = 0
         for po in self.projectobjective_set.all():
