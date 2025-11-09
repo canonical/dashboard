@@ -1,5 +1,5 @@
 <td class="{{ projectobjective.status|slugify }}">
-  <a href="{% url 'projects:project' projectobjective.project.id %}#{{ projectobjective|slugify }} ">
+  <a href="{% url 'projects:project' projectobjective.project.id %}#{{ projectobjective|slugify }}">
     {{ projectobjective.status|default:"—" }}
   </a>
 </td>
