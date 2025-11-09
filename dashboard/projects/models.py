@@ -2,8 +2,7 @@ from datetime import date, timedelta
 
 from django.db import models
 from django.urls import reverse
-from django.utils.text import slugify
-from django.db.models import Q
+from django.db.models import Sum, F
 from django.utils.functional import cached_property
 
 from framework.models import (
@@ -95,14 +94,12 @@ class Project(models.Model):
             return self.last_review_status
 
     def quality_indicator(self):
-        x = 0
-        for po in self.projectobjective_set.all():
-            # this is a horrendous way to solve the problem and there must be something more elegant
-            try:
-                x = x + po.status.value * po.objective.weight
-            except AttributeError:
-                pass
-        return x
+        result = self.projectobjective_set.filter(
+            level_achieved__isnull=False
+        ).aggregate(
+            total=Sum(F('level_achieved__value') * F('objective__weight'))
+        )
+        return result['total'] or 0
 
     def quality_history(self):
         return QI.objects.filter(project=self)
