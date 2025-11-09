@@ -10,12 +10,18 @@ from .views import (
     status_projects_commitment,
     status_projectobjective,
     status_dashboardprojectobjective,
-    admin_recalculate_all_levels
+    admin_recalculate_all_levels,
+    project_row
 )
 
 app_name = "projects"
 urlpatterns = [
     path("", ProjectListView.as_view(), name="project_list"),
+    path(
+        "status_row/<int:project_id>",
+        project_row,
+        name="project_row",
+        ),
     path("<int:id>/", project, name="project"),
     # forms
     path(

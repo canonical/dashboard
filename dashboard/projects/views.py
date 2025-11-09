@@ -83,7 +83,7 @@ def project(request, id):
     )
 
 
-# status methods
+# detail view status methods
 
 @require_http_methods(["GET"])
 def status_projects_commitment(request, project_id):
@@ -108,7 +108,6 @@ def status_projects_commitment(request, project_id):
         {"project": project, "current_commitments": current_commitments},
     )
 
-# status of a ProjectObjective in detail view
 @require_http_methods("GET")
 def status_projectobjective(request, projectobjective_id):
 
@@ -123,7 +122,8 @@ def status_projectobjective(request, projectobjective_id):
         },
     )
 
-# status of a ProjectObjective in list view
+# list view status methods
+
 @require_http_methods("GET")
 def status_dashboardprojectobjective(request, projectobjective_id):
     projectobjective = ProjectObjective.objects.get(id=projectobjective_id)
@@ -135,6 +135,25 @@ def status_dashboardprojectobjective(request, projectobjective_id):
             "projectobjective": projectobjective,
         },
     )
+
+def project_row(request, project_id):
+    project = Project.objects.get(id=project_id)
+
+    project.projectobjectives = project.projectobjective_set.all().values(
+        "objective__name",
+        "id",
+        "level_achieved__name",
+        "unstarted_reason__name"
+    )
+
+    return render(
+        request,
+        "projects/partial_project_list_row.html",
+        {
+            "project": project,
+        }
+    )
+
 
 
 # action methods
@@ -181,7 +200,6 @@ def action_toggle_condition(request, condition_id):
         {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
     )
 
-
 @permission_required("projects.change_projectobjective")
 @require_http_methods(["PUT"])
 def action_select_reason(request, projectobjective_id):
@@ -212,6 +230,7 @@ def project_basic_form_save(request, project_id):
 
 
 # admin methods
+
 def admin_recalculate_all_levels(request):
     for projectobjective in ProjectObjective.objects.all():
         projectobjective.save()
