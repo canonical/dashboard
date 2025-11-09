@@ -58,8 +58,8 @@ class Project(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, **kwargs):
-        super().save(**kwargs)
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
 
         # when a new Project is added propagate it to all existing Objectives
         for objective in Objective.objects.exclude(project=self):
@@ -140,9 +140,9 @@ class ProjectObjective(models.Model):
     def __str__(self):
         return " > ".join((self.project.name, self.objective.name))
 
-    def save(self):
+    def save(self, *args, **kwargs):
         self.level_achieved = self.achieved_level
-        super().save()
+        super().save(*args, **kwargs)
 
     @cached_property
     def achieved_level(self):
@@ -215,8 +215,8 @@ class ProjectObjectiveCondition(models.Model):
         default="",
         )
 
-    def save(self):
-        super().save()
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
         self.projectobjective().save()
 
     def projectobjective(self):

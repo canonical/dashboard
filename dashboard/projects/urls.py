@@ -9,7 +9,8 @@ from .views import (
     project_basic_form_save,
     status_projects_commitment,
     status_projectobjective,
-    status_dashboardprojectobjective
+    status_dashboardprojectobjective,
+    admin_recalculate_all_levels
 )
 
 app_name = "projects"
@@ -53,5 +54,11 @@ urlpatterns = [
         "status_dashboardprojectobjective/<int:projectobjective_id>",
         status_dashboardprojectobjective,
         name="status_dashboardprojectobjective",
+    ),
+    # admin
+    path(
+        "admin_recalculate_all_levels",
+        admin_recalculate_all_levels,
+        name="admin_recalculate_all_levels"
     ),
 ]

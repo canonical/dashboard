@@ -54,7 +54,7 @@ class WorkCycle(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, **kwargs):
+    def save(self, *args, **kwargs):
 
         from projects.models import (
             ProjectObjective,
@@ -63,7 +63,7 @@ class WorkCycle(models.Model):
             QI,
         )  # avoids circular import
 
-        super().save(**kwargs)
+        super().save(*args, **kwargs)
 
         # get all ProjectObjectives
         projectobjectives = ProjectObjective.objects.all()
@@ -113,7 +113,7 @@ class Objective(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, **kwargs):
+    def save(self, *args, **kwargs):
         # when a new Objective is added propagate it to all existing Projects
 
         from projects.models import (
@@ -122,7 +122,7 @@ class Objective(models.Model):
             Commitment,
         )  # avoids circular import
 
-        super().save(**kwargs)
+        super().save(*args, **kwargs)
 
         # go over the Projects (but not any already with a relation to this objective, because that's unnecessary)
         for project in Project.objects.exclude(objectives=self):
@@ -154,7 +154,7 @@ class Condition(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, **kwargs):
+    def save(self, *args, **kwargs):
         # when a new Condition is added propagate it to all existing ProjectObjectives
 
         from projects.models import (
@@ -162,7 +162,7 @@ class Condition(models.Model):
             ProjectObjectiveCondition,
         )  # avoids circular import
 
-        super().save(**kwargs)
+        super().save(*args, **kwargs)
 
         projectobjectives = ProjectObjective.objects.filter(objective=self.objective)
 

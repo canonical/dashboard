@@ -1,10 +1,12 @@
 import datetime
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView
 from django.views.decorators.http import require_http_methods
 from django.forms import inlineformset_factory
 from django.http import QueryDict
 from django.contrib.auth.decorators import permission_required
+from django.contrib import messages
+from django.urls import reverse
 
 
 from .models import (
@@ -206,4 +208,15 @@ def project_basic_form_save(request, project_id):
         request,
         "projects/partial_project_basics.html",
         {"basics_form": form, "project": instance},
+    )
+
+
+# admin methods
+def admin_recalculate_all_levels(request):
+    for projectobjective in ProjectObjective.objects.all():
+        projectobjective.save()
+
+    messages.info(request, 'Recalculated all levels.')
+    return HttpResponseRedirect(
+       reverse('admin:index')
     )
