@@ -145,7 +145,7 @@ def test_project_objective_achieved_level(project, objective, level1):
 def test_quality_indicator_with_no_objectives():
     """Test QI is 0 when project has no objectives."""
     project = Project.objects.create(name="empty_project")
-    assert project.quality_indicator() == 0
+    assert project.quality_indicator == 0
 
 
 @pytest.mark.django_db
@@ -153,7 +153,7 @@ def test_quality_indicator_with_no_levels_achieved(project, objective):
     """Test QI is 0 when objectives have no levels achieved."""
     po = ProjectObjective.objects.get(project=project, objective=objective)
     assert po.level_achieved is None
-    assert project.quality_indicator() == 0
+    assert project.quality_indicator == 0
 
 
 @pytest.mark.django_db
@@ -167,7 +167,7 @@ def test_quality_indicator_single_objective(project, objective, level1):
         project=project, objective=objective
     ).update(level_achieved=level1)
     
-    assert project.quality_indicator() == 1
+    assert project.quality_indicator == 1
 
 
 @pytest.mark.django_db
@@ -188,7 +188,7 @@ def test_quality_indicator_multiple_objectives(project, objective_group):
     ).update(level_achieved=level_b)
     
     # Expected: (10 * 2) + (5 * 4) = 20 + 20 = 40
-    assert project.quality_indicator() == 40
+    assert project.quality_indicator == 40
 
 
 @pytest.mark.django_db
@@ -207,4 +207,4 @@ def test_quality_indicator_mixed_achieved_and_none(project, objective_group):
     assert po2.level_achieved is None
     
     # Expected: only obj1 counted: 10 * 3 = 30
-    assert project.quality_indicator() == 30
+    assert project.quality_indicator == 30
