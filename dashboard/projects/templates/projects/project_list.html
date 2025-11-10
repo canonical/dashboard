@@ -13,9 +13,9 @@
       <thead>
 
         <tr class="headings">
-          <th scope="col" class="accountability">Project</th>
-          <th scope="col" class="accountability">Owner</th>
-          <th scope="col" class="accountability">Driver</th>
+          <th scope="col" class="acountability">Project</th>
+          <th scope="col" class="acountability">Owner</th>
+          <th scope="col" class="acountability">Driver</th>
 
           <th scope="col" class="quality">Agreement</th>
           <th scope="col" class="quality">Last review</th>
@@ -35,7 +35,7 @@
         </tr>
 
         <tr class="column-groups">
-          <td class="accountability" colspan="3"></td>
+          <td class="acountability" colspan="3"></td>
           <td class="quality" colspan="{{ quality_cols_count }}">Progress and quality</td>
           {% regroup objective_list by group as objectives %}
           {% for group in objectives %}
