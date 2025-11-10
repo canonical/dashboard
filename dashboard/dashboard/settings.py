@@ -33,10 +33,12 @@ ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "django_browser_reload",
+    "django_watchfiles",
     "tinymce",
     "projects",
     "framework",
     "dashboard",
+    "debug_toolbar",
     "django.contrib.admin",
     "django.contrib.admindocs",
     "django.contrib.auth",
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -136,7 +139,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = "projects:project_list"
 LOGOUT_REDIRECT_URL = "projects:project_list"
 
-
 TINYMCE_DEFAULT_CONFIG = {
     "theme": "silver",
     "width": 600,
@@ -147,3 +149,7 @@ TINYMCE_DEFAULT_CONFIG = {
     "statusbar": False,
     "valid_elements": "a[href|target=_blank],strong,em,p,ul,ol,li",
 }
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
