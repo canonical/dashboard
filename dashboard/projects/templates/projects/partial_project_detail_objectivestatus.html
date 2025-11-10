@@ -6,7 +6,7 @@
     change from:tbody#{{ projectobjective|slugify }} input[type='checkbox'] delay:.5s,
     click from:tbody#{{ projectobjective|slugify }} div.attributes delay:.5s"
   hx-get="{% url 'projects:status_projectobjective' projectobjective.id %}"
-  hx-swap-oob="true">{{ projectobjective.level }}
+  hx-swap-oob="true">
   {% if projectobjective.level_achieved %}
 
     {{ projectobjective.status }}
