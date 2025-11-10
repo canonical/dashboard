@@ -93,6 +93,7 @@ class Project(models.Model):
         else:
             return self.last_review_status
 
+    @property
     def quality_indicator(self):
         result = self.projectobjective_set.filter(
             level_achieved__isnull=False
