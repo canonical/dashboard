@@ -2,8 +2,7 @@ from datetime import date, timedelta
 
 from django.db import models
 from django.urls import reverse
-from django.utils.text import slugify
-from django.db.models import Q
+from django.db.models import Sum, F
 from django.utils.functional import cached_property
 
 from framework.models import (
@@ -52,12 +51,14 @@ class Project(models.Model):
     agreement_status = models.ForeignKey(
         AgreementStatus, null=True, blank=True, on_delete=models.SET_NULL
     )
+    current_qi = models.PositiveSmallIntegerField(default=0)
+
 
     def __str__(self):
         return self.name
 
-    def save(self, **kwargs):
-        super().save(**kwargs)
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
 
         # when a new Project is added propagate it to all existing Objectives
         for objective in Objective.objects.exclude(project=self):
@@ -93,14 +94,12 @@ class Project(models.Model):
             return self.last_review_status
 
     def quality_indicator(self):
-        x = 0
-        for po in self.projectobjective_set.all():
-            # this is a horrendous way to solve the problem and there must be something more elegant
-            try:
-                x = x + po.status.value * po.objective.weight
-            except AttributeError:
-                pass
-        return x
+        result = self.projectobjective_set.filter(
+            level_achieved__isnull=False
+        ).aggregate(
+            total=Sum(F('level_achieved__value') * F('objective__weight'))
+        )
+        return result['total'] or 0
 
     def quality_history(self):
         return QI.objects.filter(project=self)
@@ -133,9 +132,14 @@ class ProjectObjective(models.Model):
         null=True,
         blank=True,
     )
+    level_achieved = models.ForeignKey(Level, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return " > ".join((self.project.name, self.objective.name))
+
+    def save(self, *args, **kwargs):
+        self.level_achieved = self.achieved_level
+        super().save(*args, **kwargs)
 
     @cached_property
     def achieved_level(self):
@@ -164,7 +168,7 @@ class ProjectObjective(models.Model):
 
     @cached_property
     def status(self):
-        return self.achieved_level or self.unstarted_reason
+        return self.level_achieved or self.unstarted_reason
 
     def name(self):
         return self.objective.name
@@ -207,6 +211,10 @@ class ProjectObjectiveCondition(models.Model):
         choices=STATUS_CHOICES,
         default="",
         )
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        self.projectobjective().save()
 
     def projectobjective(self):
         return ProjectObjective.objects.get(

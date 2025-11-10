@@ -53,34 +53,14 @@
         {% endif %}
         {% for project in projects %}
 
-          <tr>
-            <th class="sticky project-name" scope="row">
-              <a href="{% url 'projects:project' project.id %}">{{ project }}</a>
-            </th>
-            <td><a href="{% url 'projects:project' project.id %}">{{ project.owner }}</a></td>
-            <td><a href="{% url 'projects:project' project.id %}">{{ project.driver|default:"" }}</a></td>
-
-            <td class="agreement-status"><a href="{% url 'projects:project' project.id %}">{{ project.agreement_status|default:"" }}</a></td>
-            <td class="{{ project.review_freshness }}">
-              <a href="{% url 'projects:project' project.id %}">{{ project.last_review|default:"" }}</a>
-            </td>
-
-            {% for qi in project.quality_history %}<td>{{ qi.value }}</td>{% endfor %}
-
-            <td><a href="{% url 'projects:project' project.id %}">{{ project.quality_indicator }}</a></td>
-            <td class="{{ project.expectations_review_status|slugify }}"><a href="{% url 'projects:project' project.id %}">{{ project.expectations_review_status|default:"Unreviewed" }}</a></td>
-
-            {% for projectobjective in project.projectobjective_set.all %}
-              <td
-                hx-get="{% url 'projects:status_dashboardprojectobjective' projectobjective.id %}"
-                hx-trigger="intersect"
-                hx-swap="outerHTML"
-                >
-                <a href="{% url 'projects:project' projectobjective.project.id %}#{{ projectobjective|slugify }} ">…</a>
-              </td>
-            {% endfor %}
-
+          <tr
+            hx-get="{% url 'projects:project_row' project.id %}"
+            hx-trigger="intersect"
+            hx-swap="outerHTML"
+            >
+            <td>…</td>
           </tr>
+
         {% endfor %}
       {% endfor %}
     </table>

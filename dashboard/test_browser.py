@@ -53,6 +53,8 @@ def page(django_db_serialized_rollback, browser, live_server, client):
 def test_toggling_conditions(page):
     """Check that conditions can be toggled and saved in the database."""
 
+    assert ProjectObjectiveCondition.objects.count() == 1752
+
     # Toggle project objective condition:
     # Nuclear > Agreeableness > Started > Speaks pleasantly
     assert ProjectObjectiveCondition.objects.get(id=94).status == "DO"

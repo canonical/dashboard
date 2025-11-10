@@ -1,13 +1,13 @@
 <td
   id="projectobjective_status_{{ projectobjective.id }}"
-  class="{{ projectobjective.achieved_level|lower|slugify }}"
+  class="{{ projectobjective.level_achieved|lower|slugify }}"
   data-testid="projectobjective_status_{{ projectobjective.id }}"
   hx-trigger="
     change from:tbody#{{ projectobjective|slugify }} input[type='checkbox'] delay:.5s,
     click from:tbody#{{ projectobjective|slugify }} div.attributes delay:.5s"
   hx-get="{% url 'projects:status_projectobjective' projectobjective.id %}"
-  hx-swap-oob="true">
-  {% if projectobjective.achieved_level %}
+  hx-swap-oob="true">{{ projectobjective.level }}
+  {% if projectobjective.level_achieved %}
 
     {{ projectobjective.status }}
 

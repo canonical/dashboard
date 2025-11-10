@@ -1,0 +1,11 @@
+{% extends "admin/index.html" %}
+
+{% block sidebar %}
+  {{ block.super }}
+  <h2>Global actions</h2>
+  <div class="module" id="extra-actions-module">
+    <a href="{% url 'projects:admin_recalculate_all_levels' %}">
+         Recalculate all levels
+    </a>
+  </div>
+{% endblock %}
