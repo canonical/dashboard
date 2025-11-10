@@ -19,7 +19,7 @@ from framework.models import (
 
 class ProjectGroup(models.Model):
 
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
 
     def __str__(self):
         return self.name
@@ -30,7 +30,7 @@ class ProjectGroup(models.Model):
 
 class Project(models.Model):
 
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
     url = models.URLField(blank=True, default="")
     group = models.ForeignKey(
         ProjectGroup, null=True, blank=True, on_delete=models.SET_NULL

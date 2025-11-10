@@ -1,14 +1,13 @@
 table.objectives tr.objective td.name {background-color: #205067; color: white; font-weight: bold;}
 table.objectives tr.level {background-color: #f0f0f0; font-weight: bold;}
 
-
 table.objectives td p, th p {margin: .2rem 0}
 
 table.objectives select {height: 1.2rem;}
 table.objectives select {height: 1.2rem; padding: 0px 6px;}  /* padding is required for Chrome for some reason */
 
 table.objectives td.field-committed {color: white; background: #93C47D;}
-table.objectives td.commitment-blank {color: white; background: #D9EAD3;}
+table.objectives td.commitment-description {color: black; background: #D9EAD3; font-weight: bold;}
 
 table.objectives td.no-activity {outline: 1px solid black;}
 

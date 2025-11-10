@@ -1,4 +1,4 @@
-body {font-family: Helvetica, sans-serif; font-size: 12px;}
+body {font-family: Helvetica, sans-serif; font-size: 12px; margin: 0;}
 
 div.auth a {
     border-radius: 999em;
@@ -38,7 +38,6 @@ th.projectobjectivegroup {
 
 td.workcycle {color: white; background: #6AA84F;}
 td.workcycle.current {color: black; font-weight: bold;}
-td.objective.description {font-style: italic;}
 
 /* work statuses */
 

@@ -2,7 +2,7 @@ from django.db import models
 
 
 class AgreementStatus(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
 
     def __str__(self):
         return self.name
@@ -12,7 +12,7 @@ class AgreementStatus(models.Model):
 
 
 class ProjectStatus(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
 
     def __str__(self):
         return self.name
@@ -23,7 +23,7 @@ class ProjectStatus(models.Model):
 
 
 class Level(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
     value = models.SmallIntegerField()
 
     def __str__(self):
@@ -35,7 +35,7 @@ class Level(models.Model):
 
 
 class Reason(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
     value = models.SmallIntegerField()
 
     def __str__(self):
@@ -47,7 +47,7 @@ class Reason(models.Model):
 
 
 class WorkCycle(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
     timestamp = models.DateField("Ends")
     is_current = models.BooleanField("Is the current cycle", default=False)
 
@@ -91,7 +91,7 @@ class WorkCycle(models.Model):
 
 
 class ObjectiveGroup(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
         return self.name
@@ -103,7 +103,7 @@ class ObjectiveGroup(models.Model):
 class Objective(models.Model):
     # a dimension in which quality can be measured
 
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     description = models.TextField(null=True, blank=True)
     group = models.ForeignKey(
         "ObjectiveGroup", null=True, blank=True, on_delete=models.SET_NULL
