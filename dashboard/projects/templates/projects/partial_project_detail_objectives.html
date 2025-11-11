@@ -16,7 +16,7 @@
 
     {% for projectobjective in projectobjectives %}
 
-      <tbody id="{{ projectobjective|slugify }}">
+      <tbody id="{{ projectobjective.name|slugify }}">
 
         <tr class="objective">
           <td colspan="{{ workcycle_count|add:'2' }}" class="objective name">

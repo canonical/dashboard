@@ -3,8 +3,8 @@
   class="{{ projectobjective.level_achieved|lower|slugify }}"
   data-testid="projectobjective_status_{{ projectobjective.id }}"
   hx-trigger="
-    change from:tbody#{{ projectobjective|slugify }} input[type='checkbox'] delay:.5s,
-    click from:tbody#{{ projectobjective|slugify }} div.attributes delay:.5s"
+    change from:tbody#{{ projectobjective.name|slugify }} input[type='checkbox'] delay:.5s,
+    click from:tbody#{{ projectobjective.name|slugify }} div.attributes delay:.5s"
   hx-get="{% url 'projects:status_projectobjective' projectobjective.id %}"
   hx-swap-oob="true">
   {% if projectobjective.level_achieved %}

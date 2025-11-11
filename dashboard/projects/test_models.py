@@ -60,7 +60,7 @@ def condition2(level2, objective):
 @pytest.mark.django_db
 def test_admin_recalculate_all_levels(client, project, objective, level1, level2, condition1, condition2):
     """Test that admin_recalculate_all_levels recalculates ProjectObjective.level_achieved."""
-    
+
     po = ProjectObjective.objects.get(project=project, objective=objective)
     assert po.level_achieved == None
 
@@ -105,7 +105,7 @@ def test_admin_recalculate_all_levels(client, project, objective, level1, level2
 @pytest.mark.django_db
 def test_project_objective_achieved_level(project, objective, level1):
     """Test that ProjectObjective.achieved_level is calculated correctly."""
-    
+
     # Create two conditions at the same level
     condition1 = Condition.objects.create(
         name="condition_1", level=level1, objective=objective
@@ -113,7 +113,7 @@ def test_project_objective_achieved_level(project, objective, level1):
     condition2 = Condition.objects.create(
         name="condition_2", level=level1, objective=objective
     )
-    
+
     # Mark one as done, one as candidate
     ProjectObjectiveCondition.objects.filter(
         project=project,
@@ -162,11 +162,11 @@ def test_quality_indicator_single_objective(project, objective, level1):
     # objective.weight = 1 (from fixture)
     # level1.value = 1 (from fixture)
     # Expected: 1 * 1 = 1
-    
+
     ProjectObjective.objects.filter(
         project=project, objective=objective
     ).update(level_achieved=level1)
-    
+
     assert project.quality_indicator == 1
 
 
@@ -175,18 +175,18 @@ def test_quality_indicator_multiple_objectives(project, objective_group):
     """Test QI sums across multiple objectives."""
     obj1 = Objective.objects.create(name="obj1", group=objective_group, weight=10)
     obj2 = Objective.objects.create(name="obj2", group=objective_group, weight=5)
-    
+
     level_a = Level.objects.create(name="level_a", value=2)
     level_b = Level.objects.create(name="level_b", value=4)
-    
+
     ProjectObjective.objects.filter(
         project=project, objective=obj1
     ).update(level_achieved=level_a)
-    
+
     ProjectObjective.objects.filter(
         project=project, objective=obj2
     ).update(level_achieved=level_b)
-    
+
     # Expected: (10 * 2) + (5 * 4) = 20 + 20 = 40
     assert project.quality_indicator == 40
 
@@ -196,15 +196,40 @@ def test_quality_indicator_mixed_achieved_and_none(project, objective_group):
     """Test QI ignores objectives with no level_achieved."""
     obj1 = Objective.objects.create(name="obj1", group=objective_group, weight=10)
     obj2 = Objective.objects.create(name="obj2", group=objective_group, weight=5)
-    
+
     level_a = Level.objects.create(name="level_a", value=3)
-    
+
     ProjectObjective.objects.filter(
         project=project, objective=obj1
     ).update(level_achieved=level_a)
-    
+
     po2 = ProjectObjective.objects.get(project=project, objective=obj2)
     assert po2.level_achieved is None
-    
+
     # Expected: only obj1 counted: 10 * 3 = 30
     assert project.quality_indicator == 30
+
+
+@pytest.mark.django_db
+def test_project_detail_anchor_navigation(client, project, objective):
+    """Integration test: verify clicking anchor in list navigates to correct section in detail."""
+    from django.utils.text import slugify
+
+    # Get the detail page
+    url = reverse('projects:project', kwargs={'id': project.id})
+    response = client.get(url)
+
+    assert response.status_code == 200
+
+    # Check that the tbody with the correct id exists
+    expected_id = slugify(objective.name)
+    assert f'id="{expected_id}"' in response.content.decode()
+
+    # Verify we can construct the anchor URL that would be in the list
+    anchor_url = f"{url}#{expected_id}"
+
+    # The anchor should work (we can't test actual browser scroll,
+    # but we can verify the target exists)
+    response_with_anchor = client.get(anchor_url)
+    assert response_with_anchor.status_code == 200
+    assert f'id="{expected_id}"' in response_with_anchor.content.decode()
