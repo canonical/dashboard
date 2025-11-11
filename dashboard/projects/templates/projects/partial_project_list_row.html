@@ -4,6 +4,7 @@
   </th>
   <td><a href="{% url 'projects:project' project.id %}">{{ project.owner }}</a></td>
   <td><a href="{% url 'projects:project' project.id %}">{{ project.driver|default:"" }}</a></td>
+  <td class="{{ project.agreement_status|slugify }}"><a href="{% url 'projects:project' project.id %}">{{ project.agreement_status|default:"" }}</td>
   <td class="{{ project.review_freshness }}">
     <a href="{% url 'projects:project' project.id %}">{{ project.last_review|default:"" }}</a>
   </td>

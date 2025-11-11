@@ -32,7 +32,7 @@ class ProjectListView(ListView):
         context["objective_list"] = Objective.objects.all()
         context["objective_count"] = Objective.objects.count()
         context["column_count"] = (
-            Objective.objects.count() + WorkCycle.objects.count() + 6
+            Objective.objects.count() + WorkCycle.objects.count() + 7
         )
         context["quality_cols_count"] = 4 + WorkCycle.objects.count()
 
