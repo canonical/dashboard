@@ -12,7 +12,7 @@
     <tr><th>Objective</th><th>Level</th><th colspan="2">Status</th></tr>
     {% for commitment in current_commitments %}
       <tr class="condition">
-        <td><a href="#projectobjective-{{ commitment.projectobjective.id }}">{{ commitment.objective }}</a></td>
+        <td><a href="#{{ commitment.projectobjective.name|slugify }}">{{ commitment.objective }}</a></td>
         <td>{{ commitment.level }}</td>
         <td>
           <input
