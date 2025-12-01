@@ -2,10 +2,23 @@ import datetime
 import pytest
 
 from django.urls import reverse
+from django.contrib.auth.models import User, Permission
 from django.contrib.messages import get_messages
 
 from framework.models import WorkCycle, ObjectiveGroup, Objective, Level
 from projects.models import Project, QI, ProjectObjective
+
+
+@pytest.fixture
+def user_can_change(client):
+    user = User.objects.create_user(username="staffmember", password="password")
+    permission = Permission.objects.get(
+        codename="change_workcycle",
+        content_type__app_label="framework",
+    )
+    user.user_permissions.add(permission)
+    client.login(username="staffmember", password="password")
+    return user
 
 
 @pytest.fixture
@@ -41,7 +54,9 @@ def project(objective):
 
 
 @pytest.mark.django_db
-def test_admin_apply_qis(client, work_cycle, project, objective, level):
+def test_admin_apply_qis(
+    client, user_can_change, work_cycle, project, objective, level
+):
     """Test that admin_apply_qis copies current QI values to workcycle QIs."""
 
     # Set up: Create a ProjectObjective with a status that has a value,
@@ -81,7 +96,9 @@ def test_admin_apply_qis(client, work_cycle, project, objective, level):
 
 
 @pytest.mark.django_db
-def test_admin_apply_qis_with_multiple_projects(client, work_cycle, objective, level):
+def test_admin_apply_qis_with_multiple_projects(
+    client, user_can_change, work_cycle, objective, level
+):
     """Test that admin_apply_qis updates QIs for multiple projects."""
 
     # Create multiple projects
@@ -122,7 +139,7 @@ def test_admin_apply_qis_with_multiple_projects(client, work_cycle, objective, l
 
 
 @pytest.mark.django_db
-def test_admin_apply_qis_shows_message(client, work_cycle, project):
+def test_admin_apply_qis_shows_message(client, user_can_change, work_cycle, project):
     """Test that admin_apply_qis displays an info message."""
 
     url = reverse("framework:admin_apply_qis", args=[work_cycle.id])
@@ -135,7 +152,7 @@ def test_admin_apply_qis_shows_message(client, work_cycle, project):
 
 
 @pytest.mark.django_db
-def test_admin_apply_qis_with_no_projects(client, work_cycle):
+def test_admin_apply_qis_with_no_projects(client, user_can_change, work_cycle):
     """Test that admin_apply_qis works even when no projects exist."""
 
     # Call the view with no projects
