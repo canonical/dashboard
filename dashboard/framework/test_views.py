@@ -44,15 +44,17 @@ def project(objective):
 def test_admin_apply_qis(client, work_cycle, project, objective, level):
     """Test that admin_apply_qis copies current QI values to workcycle QIs."""
 
-    # Set up: Create a ProjectObjective with a status that has a value
+    # Set up: Create a ProjectObjective with a status that has a value,
+    # by overriding the ProjectObjective's level calculation
     po = ProjectObjective.objects.get(project=project, objective=objective)
-    po.unstarted_reason = None
+    po.achieved_level = level
     po.save()
 
     # The project's quality_indicator should now have a value
     # quality_indicator = sum(po.status.value * po.objective.weight)
     # For this test, let's assume it calculates to some value
     initial_qi_value = project.quality_indicator
+    assert initial_qi_value != 0
 
     # Get the QI object for this workcycle and project
     qi = QI.objects.get(workcycle=work_cycle, project=project)
@@ -79,18 +81,24 @@ def test_admin_apply_qis(client, work_cycle, project, objective, level):
 
 
 @pytest.mark.django_db
-def test_admin_apply_qis_with_multiple_projects(
-    client, work_cycle, objective_group, objective
-):
+def test_admin_apply_qis_with_multiple_projects(client, work_cycle, objective, level):
     """Test that admin_apply_qis updates QIs for multiple projects."""
 
     # Create multiple projects
     project1 = Project.objects.create(
         name="project_1", owner="owner_1", driver="driver_1"
     )
+    po1 = ProjectObjective.objects.get(project=project1, objective=objective)
+    po1.achieved_level = level
+    po1.save()
+    assert project1.quality_indicator != 0
     project2 = Project.objects.create(
         name="project_2", owner="owner_2", driver="driver_2"
     )
+    po2 = ProjectObjective.objects.get(project=project2, objective=objective)
+    po2.achieved_level = level
+    po2.save()
+    assert project2.quality_indicator != 0
 
     # Get QI objects for both projects
     qi1 = QI.objects.get(workcycle=work_cycle, project=project1)
@@ -102,7 +110,7 @@ def test_admin_apply_qis_with_multiple_projects(
 
     # Call the admin_apply_qis view
     url = reverse("framework:admin_apply_qis", args=[work_cycle.id])
-    response = client.get(url)
+    client.get(url)
 
     # Refresh QIs from database
     qi1.refresh_from_db()
