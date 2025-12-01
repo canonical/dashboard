@@ -22,6 +22,18 @@ def user_can_change(client):
 
 
 @pytest.fixture
+def user_can_view(client):
+    user = User.objects.create_user(username="staffmember", password="password")
+    permission = Permission.objects.get(
+        codename="view_workcycle",
+        content_type__app_label="framework",
+    )
+    user.user_permissions.add(permission)
+    client.login(username="staffmember", password="password")
+    return user
+
+
+@pytest.fixture
 def work_cycle():
     return WorkCycle.objects.create(
         name="test_work_cycle", timestamp=datetime.date.today()
@@ -93,6 +105,37 @@ def test_admin_apply_qis(
 
     # The QI value should now match the project's quality_indicator
     assert qi.value == initial_qi_value
+
+
+@pytest.mark.django_db
+def test_admin_apply_qis_user_disallowed(
+    client, user_can_view, work_cycle, project, objective, level
+):
+    """Test that a user with framework.view_workcycle permission (only) can't copy QI values."""
+
+    # Create a project with non-zero QI
+    po = ProjectObjective.objects.get(project=project, objective=objective)
+    po.achieved_level = level
+    po.save()
+    assert project.quality_indicator != 0
+
+    # Initially, the QI value should be 0 (default)
+    qi = QI.objects.get(workcycle=work_cycle, project=project)
+    assert qi.value == 0
+
+    # Call the admin_apply_qis view
+    url = reverse("framework:admin_apply_qis", args=[work_cycle.id])
+    response = client.get(url)
+
+    # Check that it redirects to the login page
+    assert response.status_code == 302
+    expected_next = reverse("framework:admin_apply_qis", args=[work_cycle.id])
+    expected_redirect = f"{reverse('login')}?next={expected_next}"
+    assert response.url == expected_redirect
+
+    # The QI should still have its initial value
+    qi.refresh_from_db()
+    assert qi.value == 0
 
 
 @pytest.mark.django_db
