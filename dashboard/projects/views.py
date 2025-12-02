@@ -1,10 +1,13 @@
 import datetime
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView
 from django.views.decorators.http import require_http_methods
 from django.forms import inlineformset_factory
 from django.http import QueryDict
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import permission_required
+from django.contrib import messages
+from django.urls import reverse
 
 
 from .models import (
@@ -30,9 +33,9 @@ class ProjectListView(ListView):
         context["objective_list"] = Objective.objects.all()
         context["objective_count"] = Objective.objects.count()
         context["column_count"] = (
-            Objective.objects.count() + WorkCycle.objects.count() + 6
+            Objective.objects.count() + WorkCycle.objects.count() + 7
         )
-        context["quality_cols_count"] = 3 + WorkCycle.objects.count()
+        context["quality_cols_count"] = 4 + WorkCycle.objects.count()
 
         return context
 
@@ -81,7 +84,7 @@ def project(request, id):
     )
 
 
-# status methods
+# detail view status methods
 
 @require_http_methods(["GET"])
 def status_projects_commitment(request, project_id):
@@ -93,20 +96,13 @@ def status_projects_commitment(request, project_id):
 
     return render(
         request,
-        "projects/partial_project_commitments.html",
+        "projects/partial_project_detail_commitments.html",
         {
             "project": project,
             "current_commitments": current_commitments,
         },
     )
 
-    return render(
-        request,
-        "projects/partial_project_commitments.html",
-        {"project": project, "current_commitments": current_commitments},
-    )
-
-# status of a ProjectObjective in detail view
 @require_http_methods("GET")
 def status_projectobjective(request, projectobjective_id):
 
@@ -114,25 +110,45 @@ def status_projectobjective(request, projectobjective_id):
 
     return render(
         request,
-        "projects/partial_objectivestatus.html",
+        "projects/partial_project_detail_objectivestatus.html",
         {
             "projectobjective": projectobjective,
             "unstarted_reasons": Reason.objects.all(),
         },
     )
 
-# status of a ProjectObjective in list view
+# list view status methods
+
 @require_http_methods("GET")
 def status_dashboardprojectobjective(request, projectobjective_id):
     projectobjective = ProjectObjective.objects.get(id=projectobjective_id)
 
     return render(
         request,
-        "projects/partial_dashboardobjectivestatus.html",
+        "projects/partial_project_list_objectivestatus.html",
         {
             "projectobjective": projectobjective,
         },
     )
+
+def project_row(request, project_id):
+    project = Project.objects.get(id=project_id)
+
+    project.projectobjectives = project.projectobjective_set.all().values(
+        "objective__name",
+        "id",
+        "level_achieved__name",
+        "unstarted_reason__name"
+    )
+
+    return render(
+        request,
+        "projects/partial_project_list_row.html",
+        {
+            "project": project,
+        }
+    )
+
 
 
 # action methods
@@ -175,10 +191,9 @@ def action_toggle_condition(request, condition_id):
 
     return render(
         request,
-        "projects/partial_condition.html",
+        "projects/partial_project_detail_condition.html",
         {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
     )
-
 
 @permission_required("projects.change_projectobjective")
 @require_http_methods(["PUT"])
@@ -204,6 +219,20 @@ def project_basic_form_save(request, project_id):
     form.save()
     return render(
         request,
-        "projects/partial_project_basics.html",
+        "projects/partial_project_detail_basics.html",
         {"basics_form": form, "project": instance},
+    )
+
+
+# admin methods
+
+@staff_member_required
+@require_http_methods(["GET"])
+def admin_recalculate_all_levels(request):
+    for projectobjective in ProjectObjective.objects.all():
+        projectobjective.save()
+
+    messages.info(request, 'Recalculated all levels.')
+    return HttpResponseRedirect(
+       reverse('admin:index')
     )
