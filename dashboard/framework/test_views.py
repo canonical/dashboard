@@ -11,25 +11,25 @@ from projects.models import Project, QI, ProjectObjective
 
 @pytest.fixture
 def user_can_change(client):
-    user = User.objects.create_user(username="staffmember", password="password")
+    user = User.objects.create_user(username="user", password="password")
     permission = Permission.objects.get(
         codename="change_workcycle",
         content_type__app_label="framework",
     )
     user.user_permissions.add(permission)
-    client.login(username="staffmember", password="password")
+    client.login(username="user", password="password")
     return user
 
 
 @pytest.fixture
 def user_can_view(client):
-    user = User.objects.create_user(username="staffmember", password="password")
+    user = User.objects.create_user(username="user", password="password")
     permission = Permission.objects.get(
         codename="view_workcycle",
         content_type__app_label="framework",
     )
     user.user_permissions.add(permission)
-    client.login(username="staffmember", password="password")
+    client.login(username="user", password="password")
     return user
 
 
