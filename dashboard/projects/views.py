@@ -4,6 +4,7 @@ from django.views.generic import ListView
 from django.views.decorators.http import require_http_methods
 from django.forms import inlineformset_factory
 from django.http import QueryDict
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import permission_required
 from django.contrib import messages
 from django.urls import reverse
@@ -225,6 +226,8 @@ def project_basic_form_save(request, project_id):
 
 # admin methods
 
+@staff_member_required
+@require_http_methods(["GET"])
 def admin_recalculate_all_levels(request):
     for projectobjective in ProjectObjective.objects.all():
         projectobjective.save()

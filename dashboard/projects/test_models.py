@@ -1,5 +1,6 @@
 import pytest
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 from framework.models import ObjectiveGroup, Objective, Level, Condition
 from projects.models import (
@@ -7,6 +8,13 @@ from projects.models import (
     ProjectObjective,
     ProjectObjectiveCondition,
 )
+
+
+@pytest.fixture
+def user_is_staff(client):
+    user = User.objects.create_user(username="staffmember", password="password", is_staff=True)
+    client.login(username="staffmember", password="password")
+    return user
 
 
 @pytest.fixture
@@ -58,7 +66,7 @@ def condition2(level2, objective):
 
 
 @pytest.mark.django_db
-def test_admin_recalculate_all_levels(client, project, objective, level1, level2, condition1, condition2):
+def test_admin_recalculate_all_levels(client, user_is_staff, project, objective, level1, level2, condition1, condition2):
     """Test that admin_recalculate_all_levels recalculates ProjectObjective.level_achieved."""
 
     po = ProjectObjective.objects.get(project=project, objective=objective)
