@@ -115,6 +115,8 @@ class CommitmentAdmin(admin.ModelAdmin):
 class ProjectObjectiveConditionAdmin(admin.ModelAdmin):
     list_filter = ["project", "objective", "condition", "status"]
 
+@admin.register(QI)
+class QIAdmin(admin.ModelAdmin):
+    list_filter = ["project"]
 
 admin.site.register(ProjectGroup)
-admin.site.register(QI)
