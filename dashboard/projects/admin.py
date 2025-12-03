@@ -115,8 +115,16 @@ class CommitmentAdmin(admin.ModelAdmin):
 class ProjectObjectiveConditionAdmin(admin.ModelAdmin):
     list_filter = ["project", "objective", "condition", "status"]
 
+
+class FilterFieldOrderByName(admin.filters.RelatedFieldListFilter):
+    def field_choices(self, field, request, model_admin):
+        objects_by_name = field.remote_field.model._default_manager.order_by("name")
+        return [(obj.pk, str(obj)) for obj in objects_by_name]
+
+
 @admin.register(QI)
 class QIAdmin(admin.ModelAdmin):
-    list_filter = ["project"]
+    list_filter = [("project", FilterFieldOrderByName)]
+
 
 admin.site.register(ProjectGroup)
