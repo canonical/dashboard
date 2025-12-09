@@ -1,8 +1,9 @@
 div.wrapper {
     overflow: auto;
-    max-height: 90vh;
-    margin-bottom: 10px;
+    height: 100vh;
+    padding-bottom: 10px;
     border: solid black 1px;
+    box-sizing: border-box;
 }
 
 table {
