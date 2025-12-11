@@ -5,7 +5,7 @@ PIP := $(VENV)/bin/pip
 PYTEST := $(VENV)/bin/pytest
 MANAGE := $(VENV)/bin/python ./manage.py
 
-.PHONY: all help clean venv install install-dev migrate init test test-framework test-browser run collectstatic collectstatic-destructive collectstatic-check makemigrations makemigrations-check
+.PHONY: all help clean venv install install-dev migrate init test test-framework test-browser run collectstatic collectstatic-clear collectstatic-check makemigrations makemigrations-check
 
 help:
 	@echo "Available targets:"
@@ -41,15 +41,14 @@ collectstatic: install
 	$(MANAGE) collectstatic --no-input
 
 # For use in CI
-collectstatic-destructive: install
-	rm -rf staticfiles
-	$(MANAGE) collectstatic --no-input
+collectstatic-clear: install
+	$(MANAGE) collectstatic --clear --no-input
 
 # For use in CI
-collectstatic-check: collectstatic-destructive
+collectstatic-check: collectstatic-clear
 	@changes=$$(git status --porcelain staticfiles | wc -l); \
 	if [ $$changes -gt 0 ]; then \
-		echo "Detected changes to static files. Run 'make collectstatic' and commit the changes."; \
+		echo "Detected changes to static files. Run 'make collectstatic-clear' and commit the changes."; \
 		exit 1; \
 	fi
 
