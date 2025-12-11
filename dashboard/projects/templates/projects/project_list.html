@@ -3,43 +3,47 @@
 {% load project_tags static %}
 
 {% block extrahead %}
-  <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+  <link rel="stylesheet" href="{% static 'project-list.css' %}">
   <script src="{% static 'htmx.min.js' %}"></script>
 {% endblock %}
 
 {% block content %}
   <div class="wrapper">
     <table class="table-auto">
+      <thead>
 
-      <tr class="headings">
-        <th scope="col" class="sticky acountability">Project</th>
-        <th scope="col" class="acountability">Owner</th>
-        <th scope="col" class="acountability">Driver</th>
+        <tr class="headings">
+          <th scope="col" class="accountability">Project</th>
+          <th scope="col" class="accountability">Owner</th>
+          <th scope="col" class="accountability">Driver</th>
 
-        <th scope="col" class="quality">Last review</th>
-        {% for workcycle in workcycle_list %}
-          <th scope="col" class="quality">
-            <a href="{% url 'admin:framework_workcycle_change' workcycle.id %}">{{ workcycle.name }}</a>
-          </th>
-        {% endfor %}
-        <th scope="col" class="quality">QI</th>
-        <th scope="col" class="quality">Expectations review</th>
+          <th scope="col" class="quality">Agreement</th>
+          <th scope="col" class="quality">Last review</th>
+          {% for workcycle in workcycle_list %}
+            <th scope="col" class="quality">
+              <a href="{% url 'admin:framework_workcycle_change' workcycle.id %}">{{ workcycle.name }}</a>
+            </th>
+          {% endfor %}
+          <th scope="col" class="quality">QI</th>
+          <th scope="col" class="quality">Expectations review</th>
 
-        {% for objective in objective_list %}
-          <th scope="col" class="objective">
-            <a href="{% url 'admin:framework_objective_change' objective.id %}">{{ objective.name }}</a>
-          </th>
-        {% endfor %}
-      </tr>
+          {% for objective in objective_list %}
+            <th scope="col" class="objective">
+              <a href="{% url 'admin:framework_objective_change' objective.id %}">{{ objective.name }}</a>
+            </th>
+          {% endfor %}
+        </tr>
 
-      <tr class="column-groups">
-        <td class="acountability" colspan="3"></td>
-        <td class="quality" colspan="{{ quality_cols_count }}">Progress and quality</td>
-        {% regroup objective_list by group as objectives %}
-        {% for group in objectives %}
-          <td class="objective" colspan="{{ group.list|length }}">{{ group.grouper }}
-        {% endfor %}
-      </tr>
+        <tr class="column-groups">
+          <td class="accountability" colspan="3"></td>
+          <td class="quality" colspan="{{ quality_cols_count }}">Progress and quality</td>
+          {% regroup objective_list by group as objectives %}
+          {% for group in objectives %}
+            <td class="objective" colspan="{{ group.list|length }}">{{ group.grouper }}
+          {% endfor %}
+        </tr>
+
+      </thead>
 
       {% regroup object_list by group as project_groups %}
 
@@ -49,32 +53,14 @@
         {% endif %}
         {% for project in projects %}
 
-          <tr>
-            <th class="sticky project-name" scope="row">
-              <a href="{% url 'projects:project' project.id %}">{{ project }}</a>
-            </th>
-            <td><a href="{% url 'projects:project' project.id %}">{{ project.owner }}</a></td>
-            <td><a href="{% url 'projects:project' project.id %}">{{ project.driver|default:"" }}</a></td>
-            <td class="{{ project.review_freshness }}">
-              <a href="{% url 'projects:project' project.id %}">{{ project.last_review|default:"" }}</a>
-            </td>
-
-            {% for qi in project.quality_history %}<td>{{ qi.value }}</td>{% endfor %}
-
-            <td><a href="{% url 'projects:project' project.id %}">{{ project.quality_indicator }}</a></td>
-            <td class="{{ project.expectations_review_status|slugify }}"><a href="{% url 'projects:project' project.id %}">{{ project.expectations_review_status|default:"Unreviewed" }}</a></td>
-
-            {% for po in project.projectobjective_set.all %}
-              <td
-                hx-get="{% url 'projects:status_dashboardprojectobjective' po.id %}"
-                hx-trigger="intersect"
-                hx-swap="outerHTML"
-                >
-                …
-              </td>
-            {% endfor %}
-
+          <tr
+            hx-get="{% url 'projects:project_row' project.id %}"
+            hx-trigger="intersect"
+            hx-swap="outerHTML"
+            >
+            <td>…</td>
           </tr>
+
         {% endfor %}
       {% endfor %}
     </table>

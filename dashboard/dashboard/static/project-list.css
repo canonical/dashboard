@@ -1,21 +1,24 @@
 div.wrapper {
-    /* width: 400px; */
-    overflow-x: scroll;
-    margin-bottom: 10px;
+    overflow: auto;
+    height: 100vh;
+    padding-bottom: 10px;
     border: solid black 1px;
+    box-sizing: border-box;
 }
 
 table {
     table-layout: fixed;
-     border-collapse: collapse;
+    border-collapse: collapse;
 }
 
+tr.headings {position: sticky; top: 0; z-index: 20;}
 tr.headings th {color: white; font-weight: bold;}
 tr.headings a, tr.headings a:visited {color: white}
 
+tr.column-groups {position: sticky; top: auto; z-index: 19;}
 tr.column-groups td {font-weight: light; font-style: italic; color: white; text-align: center;}
 
-tr td.acountability, tr th.acountability {background: #284E13;}
+tr td.accountability, tr th.accountability {background: #284E13;}
 tr td.quality, tr th.quality {background: #0C343D;}
 tr td.objective, tr th.objective {background: #284E13;}
 
@@ -23,13 +26,16 @@ tr.row-group td {background: #A0C5E8; font-weight: bold; width: 100%;}
 
 
 /* tr.headings th {rotate: -45deg; white-space: normal} */
-th.sticky {position: sticky; left: 0; background: white;}
+tr.headings th:first-child {position: sticky; top: 0; left: 0; z-index: 30; background: #284E13;}
+th.sticky {position: sticky; left: 0; z-index: 10; background: white;}
 
 th, td {padding: 6px; white-space: nowrap;}
 
 th.project-name {font-weight: normal; text-align: left;}
 
 table a, table a:visited {color: inherit; text-decoration: none}
+
+th.project-name {font-weight: bold;}
 
 td.needs-work {color: black; background: #E66439}
 td.needs-review {color: black; background: #E69138}

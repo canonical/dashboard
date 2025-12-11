@@ -4,7 +4,7 @@
 {% load i18n static %}
 
 {% block extrahead %}
-  <link rel="stylesheet" href="{% static "admin.css" %}">
+  <link rel="stylesheet" href="{% static "project-detail.css" %}">
   <script src="{% static 'htmx.min.js' %}"></script>
 {% endblock %}
 
@@ -41,15 +41,15 @@
         <div id="content" class="colM">
           <div id="content-main">
 
-            <div>{% include "projects/partial_project_basics.html" %}</div>
+            <div>{% include "projects/partial_project_detail_basics.html" %}</div>
 
             <hr>
 
-            <div>{% include "projects/partial_project_commitments.html" %}</div>
+            <div>{% include "projects/partial_project_detail_commitments.html" %}</div>
 
             <hr>
 
-            {% include "projects/partial_projectobjectives.html" %}
+            {% include "projects/partial_project_detail_objectives.html" %}
 
           </div>
         </div>

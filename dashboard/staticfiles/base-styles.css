@@ -1,4 +1,4 @@
-body {font-family: Helvetica, sans-serif; font-size: 12px;}
+body {font-family: Helvetica, sans-serif; font-size: 12px; margin: 0;}
 
 div.auth a {
     border-radius: 999em;
@@ -38,15 +38,15 @@ th.projectobjectivegroup {
 
 td.workcycle {color: white; background: #6AA84F;}
 td.workcycle.current {color: black; font-weight: bold;}
-td.objective.description {font-style: italic;}
 
-/* work statuses */
+/* work and agreement statuses */
 
 td.not-applicable {color: black; background: #CCCCCC}
 td.paused {color: black; background: #FCE5CD}
 td.planned {color: black; background: #FFF2CC}
 td.deferred {color: black; background: #FCE5CD}
 td.blocked, td.inactive {color: black; background: #EAD1DC;}
+td.agreed {color: white; background: #38761D}
 
 /* result statuses */
 

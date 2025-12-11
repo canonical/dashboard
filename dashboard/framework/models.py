@@ -2,7 +2,7 @@ from django.db import models
 
 
 class AgreementStatus(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
 
     def __str__(self):
         return self.name
@@ -12,7 +12,7 @@ class AgreementStatus(models.Model):
 
 
 class ProjectStatus(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
 
     def __str__(self):
         return self.name
@@ -23,7 +23,7 @@ class ProjectStatus(models.Model):
 
 
 class Level(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
     value = models.SmallIntegerField()
 
     def __str__(self):
@@ -35,7 +35,7 @@ class Level(models.Model):
 
 
 class Reason(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
     value = models.SmallIntegerField()
 
     def __str__(self):
@@ -47,14 +47,14 @@ class Reason(models.Model):
 
 
 class WorkCycle(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
     timestamp = models.DateField("Ends")
     is_current = models.BooleanField("Is the current cycle", default=False)
 
     def __str__(self):
         return self.name
 
-    def save(self, **kwargs):
+    def save(self, *args, **kwargs):
 
         from projects.models import (
             ProjectObjective,
@@ -63,7 +63,7 @@ class WorkCycle(models.Model):
             QI,
         )  # avoids circular import
 
-        super().save(**kwargs)
+        super().save(*args, **kwargs)
 
         # get all ProjectObjectives
         projectobjectives = ProjectObjective.objects.all()
@@ -91,7 +91,7 @@ class WorkCycle(models.Model):
 
 
 class ObjectiveGroup(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
         return self.name
@@ -103,7 +103,7 @@ class ObjectiveGroup(models.Model):
 class Objective(models.Model):
     # a dimension in which quality can be measured
 
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     description = models.TextField(null=True, blank=True)
     group = models.ForeignKey(
         "ObjectiveGroup", null=True, blank=True, on_delete=models.SET_NULL
@@ -113,7 +113,7 @@ class Objective(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, **kwargs):
+    def save(self, *args, **kwargs):
         # when a new Objective is added propagate it to all existing Projects
 
         from projects.models import (
@@ -122,7 +122,7 @@ class Objective(models.Model):
             Commitment,
         )  # avoids circular import
 
-        super().save(**kwargs)
+        super().save(*args, **kwargs)
 
         # go over the Projects (but not any already with a relation to this objective, because that's unnecessary)
         for project in Project.objects.exclude(objectives=self):
@@ -154,7 +154,7 @@ class Condition(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, **kwargs):
+    def save(self, *args, **kwargs):
         # when a new Condition is added propagate it to all existing ProjectObjectives
 
         from projects.models import (
@@ -162,7 +162,7 @@ class Condition(models.Model):
             ProjectObjectiveCondition,
         )  # avoids circular import
 
-        super().save(**kwargs)
+        super().save(*args, **kwargs)
 
         projectobjectives = ProjectObjective.objects.filter(objective=self.objective)
 
