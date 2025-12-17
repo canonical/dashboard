@@ -125,6 +125,7 @@ class FilterFieldOrderByName(admin.filters.RelatedFieldListFilter):
 @admin.register(QI)
 class QIAdmin(admin.ModelAdmin):
     list_filter = [("project", FilterFieldOrderByName)]
+    readonly_fields = ["project", "workcycle"]
 
 
 admin.site.register(ProjectGroup)
