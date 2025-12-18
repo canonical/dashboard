@@ -42,11 +42,13 @@ config:
         This configuration option may be removed in the future.
       type: string
     force-https:
+      type: boolean
       description: >-
         Enable this option when the ingress frontend is unaware that the application is served over HTTPS instead of 
         HTTP. This will make the dashboard application enable settings that assume the application is exposed over 
         HTTPS, regardless of what the upstream ingress returns in the ingress URL.
         It may cause some unforeseeable ingress issues, so avoid using this option if possible.
+      default: false
 
 actions:
   load-sample-data:
