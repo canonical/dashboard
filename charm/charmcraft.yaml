@@ -33,7 +33,7 @@ requires:
 config:
   options:
     stripped-prefix:
-      description: |
+      description: >-
         Enable this option when the ingress frontend strips the path prefix before passing requests to the application. 
         For example, if you are using the nginx-ingress-integrator and set the following configuration:
         juju config nginx-ingress-integrator path-routes='/documentation(/|$)(.*)' rewrite-enabled='True' rewrite-target='/$2'
