@@ -43,15 +43,16 @@ if STRIPPED_PREFIX:
     SESSION_COOKIE_PATH = STRIPPED_PREFIX
     CSRF_COOKIE_PATH = STRIPPED_PREFIX
     LANGUAGE_COOKIE_PATH = STRIPPED_PREFIX
-    DJANGO_BASE_URL = os.environ.get('DJANGO_BASE_URL')
-    if DJANGO_BASE_URL:
-        parsed_url = urllib.parse.urlparse(DJANGO_BASE_URL)
-        scheme = parsed_url.scheme
-        if FORCE_HTTPS:
-            scheme = "https"
-        CSRF_TRUSTED_ORIGINS = [
-            f"{scheme}://{parsed_url.netloc}",
-        ]
+
+DJANGO_BASE_URL = os.environ.get('DJANGO_BASE_URL')
+if DJANGO_BASE_URL and STRIPPED_PREFIX:
+    parsed_url = urllib.parse.urlparse(DJANGO_BASE_URL)
+    scheme = parsed_url.scheme
+    if FORCE_HTTPS:
+        scheme = "https"
+    CSRF_TRUSTED_ORIGINS = [
+        f"{scheme}://{parsed_url.netloc}",
+    ]
 
 if FORCE_HTTPS:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
