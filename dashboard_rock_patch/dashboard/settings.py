@@ -35,6 +35,7 @@ DEBUG = os.environ.get('DJANGO_DEBUG', 'false') == 'true'
 ALLOWED_HOSTS = json.loads(os.environ.get('DJANGO_ALLOWED_HOSTS', '[]'))
 
 STRIPPED_PREFIX = os.environ.get('DJANGO_STRIPPED_PREFIX', '')
+FORCE_HTTPS = os.environ.get('DJANGO_FORCE_HTTPS', 'false').lower() == 'true'
 
 if STRIPPED_PREFIX:
     STRIPPED_PREFIX = STRIPPED_PREFIX.rstrip('/')
@@ -45,9 +46,22 @@ if STRIPPED_PREFIX:
     DJANGO_BASE_URL = os.environ.get('DJANGO_BASE_URL')
     if DJANGO_BASE_URL:
         parsed_url = urllib.parse.urlparse(DJANGO_BASE_URL)
+        scheme = parsed_url.scheme
+        if FORCE_HTTPS:
+            scheme = "https"
         CSRF_TRUSTED_ORIGINS = [
-            f"{parsed_url.scheme}://{parsed_url.netloc}",
+            f"{scheme}://{parsed_url.netloc}",
         ]
+
+if FORCE_HTTPS:
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    LANGUAGE_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_HSTS_SECONDS = 365 * 24 * 3600
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
 
 # Application definition
 
