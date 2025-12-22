@@ -1,5 +1,5 @@
 <td id="commitment-{{ commitment.id }}" class="field-committed">
-  <input type="checkbox"
+  <input type="checkbox" autocomplete="off"
     {% if not perms.projects.change_commitment %}disabled{% endif %}
     id="toggle_commitment_{{ commitment.id }}"
     data-testid="toggle_commitment_{{ commitment.id }}"

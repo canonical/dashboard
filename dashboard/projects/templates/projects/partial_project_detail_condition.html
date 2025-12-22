@@ -5,7 +5,7 @@
   "
 >
   <td>
-    <input type="checkbox"
+    <input type="checkbox" autocomplete="off"
       {% if condition.status == 'DO' %} checked {% endif %}
       {% if not perms.projects.change_commitment %}
         disabled
