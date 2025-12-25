@@ -153,6 +153,8 @@ def csv_from_commitment_table(page):
 )
 def test_commitment_table(page):
     """Check that "Current commitments" updates when commitments, unstarted reason, and conditions are changed."""
+    # The table's columns are: objective, level, met (checkbox), unstarted reason.
+    # We're using X to represent a checked checkbox.
     assert csv_from_commitment_table(page) == textwrap.dedent("""\
         Agreeableness,Started,X,
         Colourfulness,Started,,
