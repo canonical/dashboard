@@ -21,7 +21,7 @@
             {% if commitment.met %} checked {% endif %}
             />
           </td>
-          <td>{% if not commitment.met and not commitment.level %}{{ commitment.projectobjective.unstarted_reason|default:"" }}{% endif %}</td>
+          <td>{% if not commitment.projectobjective.level_achieved %}{{ commitment.projectobjective.unstarted_reason|default:"" }}{% endif %}</td>
         </td>
       </tr>
     {% endfor %}
