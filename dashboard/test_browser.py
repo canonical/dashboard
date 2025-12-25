@@ -1,3 +1,5 @@
+import textwrap
+
 import pytest
 
 from playwright.sync_api import expect
@@ -128,6 +130,38 @@ def test_status(page):
     expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text(
         "First results"
     )
+
+
+def csv_from_commitment_table(page):
+    """Convert the "Current commitments" table to CSV."""
+    row_text = []
+    rows = page.query_selector_all("table#commitment-table tr")
+    for row in rows[1:]:
+        row_values = []
+        for cell in row.query_selector_all("td"):
+            checkbox = cell.query_selector("input[type='checkbox']")
+            if checkbox:
+                row_values.append("X" if checkbox.is_checked() else "")
+            else:
+                row_values.append(cell.text_content().strip())
+        row_text.append(",".join(row_values))
+    return "\n".join(row_text)
+
+
+def test_commitment_table(page):
+    """Check that "Current commitments" updates when commitments are changed."""
+    assert csv_from_commitment_table(page) == textwrap.dedent("""\
+        Agreeableness,Started,X,
+        Colourfulness,Started,,
+        Handling,Started,X,""")
+    # Toggle Colourfulness > First results > 2026.
+    with page.expect_response("**/status_projects_commitment/1"):
+        page.get_by_test_id("toggle_commitment_3170").check()
+    assert csv_from_commitment_table(page) == textwrap.dedent("""\
+        Agreeableness,Started,X,
+        Colourfulness,Started,,
+        Colourfulness,First results,,
+        Handling,Started,X,""")
 
 
 def test_last_review(page):
