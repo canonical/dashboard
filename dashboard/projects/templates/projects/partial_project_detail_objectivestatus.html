@@ -12,6 +12,7 @@
   {% else %}
     <select
       {% if not perms.projects.change_projectobjectivecondition %}disabled{% endif %}
+      autocomplete="off"
       name="ifnotstarted"
       id="projectobjective_ifnotstarted_{{ projectobjective.id }}"
       data-testid="projectobjective_ifnotstarted_{{ projectobjective.id }}"
