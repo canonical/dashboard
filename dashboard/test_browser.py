@@ -14,25 +14,29 @@ from projects.models import (
 from framework.models import Level
 
 
-@pytest.fixture
-def page(django_db_serialized_rollback, browser, live_server, client):
-    """Provides a Playwright `Page` that is logged in to a project page in Django's live server."""
-    # Need django_db_serialized_rollback because live server and tests run in different threads.
-    # See https://pytest-django.readthedocs.io/en/stable/helpers.html#live-server
-    # For each test to happen within the scope of a database rollback, our `page` fixture can't
-    # depend on Playwright's `page` fixture. It needs to depend on Playwright's `browser` fixture,
-    # which is a session fixture.
+# Our tests use 'live_server', so we populate the database every time a test starts.
+# See https://pytest-django.readthedocs.io/en/latest/database.html#populate-the-test-database-if-you-use-transactional-or-live-server
+#
+# We define a custom 'page' fixture that depends on 'live_server' and Playwright's 'page' fixture.
+# Since 'live_server' depends on 'transactional_db', we don't need to explicitly mark our tests as
+# @pytest.mark.django_db(transaction=True) or have our tests depend on 'transactional_db'.
 
-    # Load sample data and users into the database.
-    call_command("loaddata", "initial_data.yaml")
+
+@pytest.fixture(scope="function")
+def django_db_setup(django_db_setup, django_db_blocker):
+    with django_db_blocker.unblock():
+        call_command("loaddata", "initial_data.yaml")
+
+
+@pytest.fixture
+def page(page, client, live_server):
+    """Provides a Playwright `Page` that is logged in to a project page in Django's live server."""
 
     # Use Django's mock client to simulate a login and capture the session cookie.
     client.login(username="superuser", password="superuser")
     cookie = client.cookies[settings.SESSION_COOKIE_NAME]
 
-    # Create a page in the browser and inject the session cookie.
-    browser_context = browser.new_context()
-    page = browser_context.new_page()
+    # Inject the session cookie into the browser page.
     page.context.add_cookies([
         {
             "name": settings.SESSION_COOKIE_NAME,
@@ -47,7 +51,6 @@ def page(django_db_serialized_rollback, browser, live_server, client):
     page.goto(f"{live_server.url}{url_end}")
 
     yield page
-    browser_context.close()
 
 
 def test_toggling_conditions(page):
