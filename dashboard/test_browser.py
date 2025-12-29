@@ -78,17 +78,17 @@ def test_toggling_commitments(page):
 
     # Toggle commitment:
     # Nuclear > Agreeableness > Started > 23.10
-    assert Commitment.objects.get(id=705).committed == False
+    assert not Commitment.objects.get(id=705).committed
     with page.expect_response("**/action_toggle_commitment/705"):
         page.get_by_test_id("toggle_commitment_705").check()
-    assert Commitment.objects.get(id=705).committed == True
+    assert Commitment.objects.get(id=705).committed
 
     # Toggle commitment:
     # Nuclear > Agreeableness > Started > 25.04
-    assert Commitment.objects.get(id=474).committed == True
+    assert Commitment.objects.get(id=474).committed
     with page.expect_response("**/action_toggle_commitment/474"):
         page.get_by_test_id("toggle_commitment_474").uncheck()
-    assert Commitment.objects.get(id=474).committed == False
+    assert not Commitment.objects.get(id=474).committed
 
 
 def test_status(page):
@@ -108,7 +108,7 @@ def test_status(page):
     assert ProjectObjectiveCondition.objects.get(id=6).status == "DO"
     assert ProjectObjectiveCondition.objects.get(id=10).status == ""
     assert (
-        ProjectObjectiveCondition.objects.get(id=10).projectobjective().status == None
+        ProjectObjectiveCondition.objects.get(id=10).projectobjective().status is None
     )
     expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text("")
 
