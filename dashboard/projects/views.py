@@ -162,6 +162,10 @@ def action_toggle_commitment(request, commitment_id):
     commitment.committed = not commitment.committed
     commitment.save()
 
+    # Include a custom event in the HTTP header.
+    # On the project detail page, the "Current commitments" table will trigger a refresh when the
+    # page sees the event.
+    # See https://htmx.org/headers/hx-trigger/
     response = HttpResponse("")
     response["HX-Trigger-After-Swap"] = "updateCommitment"
     return response
@@ -198,6 +202,11 @@ def action_toggle_condition(request, condition_id):
         "projects/partial_project_detail_condition.html",
         {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
     )
+    # Include a custom event in the HTTP header.
+    # On the project detail page, the "Current commitments" table and the PO status will trigger a
+    # refresh when the page sees the event. We want to be able to target a specific PO status, so
+    # we attach a value (the PO name) to the event.
+    # See https://htmx.org/headers/hx-trigger/
     response["HX-Trigger-After-Swap"] = json.dumps({
         "updateCondition": slugify(condition.projectobjective().name()),
     })
@@ -216,6 +225,10 @@ def action_select_reason(request, projectobjective_id):
         projectobjective.unstarted_reason = None
     projectobjective.save()
 
+    # Include a custom event in the HTTP header.
+    # On the project detail page, the "Current commitments" table will trigger a refresh when the
+    # page sees the event.
+    # See https://htmx.org/headers/hx-trigger/
     response = HttpResponse("")
     response["HX-Trigger-After-Swap"] = "updateUnstartedReason"
     return response
