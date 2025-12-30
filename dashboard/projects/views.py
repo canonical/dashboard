@@ -1,4 +1,5 @@
 import datetime
+import json
 from django.shortcuts import render, HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView
 from django.views.decorators.http import require_http_methods
@@ -8,6 +9,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import permission_required
 from django.contrib import messages
 from django.urls import reverse
+from django.utils.text import slugify
 
 
 from .models import (
@@ -160,7 +162,13 @@ def action_toggle_commitment(request, commitment_id):
     commitment.committed = not commitment.committed
     commitment.save()
 
-    return HttpResponse("")
+    # Include a custom event in the HTTP header.
+    # On the project detail page, the "Current commitments" table will trigger a refresh when the
+    # page sees the event.
+    # See https://htmx.org/headers/hx-trigger/
+    response = HttpResponse("")
+    response["HX-Trigger-After-Swap"] = "updateCommitment"
+    return response
 
 
 @permission_required("projects.change_projectobjectivecondition")
@@ -189,11 +197,21 @@ def action_toggle_condition(request, condition_id):
 
     condition.save()
 
-    return render(
+    response = render(
         request,
         "projects/partial_project_detail_condition.html",
         {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
     )
+    # Include a custom event in the HTTP header.
+    # On the project detail page, the "Current commitments" table and the PO status will trigger a
+    # refresh when the page sees the event. We want to be able to target a specific PO status, so
+    # we attach a value (the PO name) to the event.
+    # See https://htmx.org/headers/hx-trigger/
+    response["HX-Trigger-After-Swap"] = json.dumps({
+        "updateCondition": slugify(condition.projectobjective().name()),
+    })
+    return response
+
 
 @permission_required("projects.change_projectobjective")
 @require_http_methods(["PUT"])
@@ -207,7 +225,13 @@ def action_select_reason(request, projectobjective_id):
         projectobjective.unstarted_reason = None
     projectobjective.save()
 
-    return HttpResponse("")
+    # Include a custom event in the HTTP header.
+    # On the project detail page, the "Current commitments" table will trigger a refresh when the
+    # page sees the event.
+    # See https://htmx.org/headers/hx-trigger/
+    response = HttpResponse("")
+    response["HX-Trigger-After-Swap"] = "updateUnstartedReason"
+    return response
 
 
 # form methods
