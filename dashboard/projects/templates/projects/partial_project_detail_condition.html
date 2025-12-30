@@ -15,6 +15,7 @@
         hx-target="closest tr"
         hx-swap="outerHTML"
         hx-on:htmx:before-request="this.disabled = true"
+        hx-on:htmx:after-request="this.disabled = false"
       {% endif %}
       />
   </td>
