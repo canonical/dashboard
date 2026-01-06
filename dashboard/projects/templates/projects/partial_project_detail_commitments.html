@@ -3,7 +3,6 @@
   hx-swap-oob="outerHTML"
   hx-trigger="
     change from:input[type='checkbox'] delay:.5s,
-    change from:select.unstarted-reason,
     click from:div.attributes delay:.5s"
   hx-get="{% url 'projects:status_projects_commitment' project.id %}">
 
