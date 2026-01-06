@@ -8,7 +8,7 @@
 
   <h2>Current commitments</h2>
   <tbody>
-    <tr><th>Objective</th><th>Level</th><th colspan="2">Status</th></tr>
+    <tr><th>Objective</th><th>Level</th><th>Status</th></tr>
     {% for commitment in current_commitments %}
       <tr class="condition">
         <td><a href="#{{ commitment.projectobjective.name|slugify }}">{{ commitment.objective }}</a></td>
@@ -20,7 +20,6 @@
             {% if commitment.met %} checked {% endif %}
             />
           </td>
-          <td>{% if not commitment.met and not commitment.level %}{{ commitment.projectobjective.unstarted_reason|default:"" }}{% endif %}</td>
         </td>
       </tr>
     {% endfor %}
