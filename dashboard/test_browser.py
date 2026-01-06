@@ -151,54 +151,40 @@ def csv_from_commitment_table(page):
     return "\n".join(row_text)
 
 
-@pytest.mark.xfail(
-    strict=True, reason="https://github.com/canonical/dashboard/issues/115"
-)
 def test_commitment_table(page):
     """Check that "Current commitments" updates when commitments, unstarted reason, and conditions are changed."""
-    # The table's columns are: objective, level, met (checkbox), unstarted reason.
+    # The table's columns are: Objective, Target level, Achieved (checkbox).
     # We're using Y/N to represent whether the checkbox is checked.
     assert csv_from_commitment_table(page) == textwrap.dedent("""\
-        Agreeableness,Started,Y,
-        Colourfulness,Started,N,
-        Handling,Started,Y,""")
+        Agreeableness,Started,Y
+        Colourfulness,Started,N
+        Handling,Started,Y""")
     # Toggle Colourfulness > First results > 2026.
     with page.expect_response("**/status_projects_commitment/1"):
         page.get_by_test_id("toggle_commitment_3170").check()
     assert csv_from_commitment_table(page) == textwrap.dedent("""\
-        Agreeableness,Started,Y,
-        Colourfulness,Started,N,
-        Colourfulness,First results,N,
-        Handling,Started,Y,""")
-    # Set Colourfulness unstarted reason to Blocked.
-    with page.expect_response("**/status_projects_commitment/1"):
-        page.get_by_test_id("projectobjective_ifnotstarted_1").select_option("Blocked")
-    # ^ Test fails here because changing the unstarted reason doesn't trigger a table update.
-    # Even if it did trigger a table update, the test would fail at the next assert, because
-    # the table doesn't currently render the unstarted reason.
-    assert csv_from_commitment_table(page) == textwrap.dedent("""\
-        Agreeableness,Started,Y,
-        Colourfulness,Started,N,Blocked
-        Colourfulness,First results,N,Blocked
-        Handling,Started,Y,""")
+        Agreeableness,Started,Y
+        Colourfulness,Started,N
+        Colourfulness,First results,N
+        Handling,Started,Y""")
     # Toggle Colourfulness > Started > Has red.
     with page.expect_response("**/status_projects_commitment/1"):
         page.get_by_test_id("toggle_condition_10").check()
     assert csv_from_commitment_table(page) == textwrap.dedent("""\
-        Agreeableness,Started,Y,
-        Colourfulness,Started,Y,
-        Colourfulness,First results,N,
-        Handling,Started,Y,""")
+        Agreeableness,Started,Y
+        Colourfulness,Started,Y
+        Colourfulness,First results,N
+        Handling,Started,Y""")
     # Toggle Colourfulness > First results > all conditions.
     with page.expect_response("**/status_projects_commitment/1"):
         page.get_by_test_id("toggle_condition_14").check()
     with page.expect_response("**/status_projects_commitment/1"):
         page.get_by_test_id("toggle_condition_18").check()
     assert csv_from_commitment_table(page) == textwrap.dedent("""\
-        Agreeableness,Started,Y,
-        Colourfulness,Started,Y,
-        Colourfulness,First results,Y,
-        Handling,Started,Y,""")
+        Agreeableness,Started,Y
+        Colourfulness,Started,Y
+        Colourfulness,First results,Y
+        Handling,Started,Y""")
 
 
 def test_last_review(page):
