@@ -88,7 +88,7 @@ class WorkCycle(models.Model):
     @classmethod
     def name_of_current(cls):
         """Returns a comma-separated list of names, in case multiple cycles are marked as current."""
-        work_cycles = WorkCycle.objects.filter(is_current=True)
+        work_cycles = cls.objects.filter(is_current=True)
         return ", ".join([work_cycle.name for work_cycle in work_cycles])
 
     class Meta:
