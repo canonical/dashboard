@@ -6,7 +6,7 @@
     click from:div.attributes delay:.5s"
   hx-get="{% url 'projects:status_projects_commitment' project.id %}">
 
-  <h2>Current commitments</h2>
+  <h2>{% if current_work_cycle_name %}Commitments for {{ current_work_cycle_name }}{% else %}Commitments{% endif %}</h2>
   <tbody>
     <tr><th>Objective</th><th>Target</th><th>Achieved</th></tr>
     {% for commitment in current_commitments %}

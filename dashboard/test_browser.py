@@ -136,7 +136,7 @@ def test_status(page):
 
 
 def csv_from_commitment_table(page):
-    """Convert the "Current commitments" table to CSV."""
+    """Convert the "Commitments for <cycle>" table to CSV."""
     row_text = []
     rows = page.query_selector_all("table#commitment-table tr")
     for row in rows[1:]:
@@ -152,7 +152,7 @@ def csv_from_commitment_table(page):
 
 
 def test_commitment_table(page):
-    """Check that "Current commitments" updates when commitments, unstarted reason, and conditions are changed."""
+    """Check that "Commitments for <cycle>" updates when commitments, unstarted reason, and conditions are changed."""
     # The table's columns are: Objective, Target, Achieved (checkbox).
     # We're using Y/N to represent whether the checkbox is checked.
     assert csv_from_commitment_table(page) == textwrap.dedent("""\
