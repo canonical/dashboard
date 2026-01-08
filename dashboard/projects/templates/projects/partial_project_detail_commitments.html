@@ -8,7 +8,7 @@
 
   <h2>Current commitments</h2>
   <tbody>
-    <tr><th>Objective</th><th>Target level</th><th>Achieved</th></tr>
+    <tr><th>Objective</th><th>Target</th><th>Achieved</th></tr>
     {% for commitment in current_commitments %}
       <tr class="condition">
         <td><a href="#{{ commitment.projectobjective.name|slugify }}">{{ commitment.objective }}</a></td>
