@@ -67,6 +67,7 @@ def project(request, id):
         {
             "project": project,
             "work_cycles": WorkCycle.objects.all(),
+            "current_work_cycle_name": WorkCycle.name_of_current(),
             "workcycle_count": WorkCycle.objects.count(),
             "objectivegroup_list": ObjectiveGroup.objects.all(),
             "objective_list": Objective.objects.all(),
@@ -99,6 +100,7 @@ def status_projects_commitment(request, project_id):
         "projects/partial_project_detail_commitments.html",
         {
             "project": project,
+            "current_work_cycle_name": WorkCycle.name_of_current(),
             "current_commitments": current_commitments,
         },
     )

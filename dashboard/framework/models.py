@@ -85,6 +85,12 @@ class WorkCycle(models.Model):
         for project in Project.objects.all():
             QI.objects.get_or_create(workcycle=self, project=project)
 
+    @classmethod
+    def name_of_current(cls):
+        """Returns a comma-separated list of names, in case multiple cycles are marked as current."""
+        work_cycles = cls.objects.filter(is_current=True)
+        return ", ".join([work_cycle.name for work_cycle in work_cycles])
+
     class Meta:
         verbose_name = "Cycle"
         ordering = ["timestamp"]

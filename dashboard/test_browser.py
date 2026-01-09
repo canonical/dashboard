@@ -1,3 +1,5 @@
+import textwrap
+
 import pytest
 
 from playwright.sync_api import expect
@@ -77,14 +79,14 @@ def test_toggling_commitments(page):
     """Check that commitments can be toggled and saved in the database."""
 
     # Toggle commitment:
-    # Nuclear > Agreeableness > Started > 23.10
+    # Nuclear > Agreeableness > Started > 2022
     assert not Commitment.objects.get(id=705).committed
     with page.expect_response("**/action_toggle_commitment/705"):
         page.get_by_test_id("toggle_commitment_705").check()
     assert Commitment.objects.get(id=705).committed
 
     # Toggle commitment:
-    # Nuclear > Agreeableness > Started > 25.04
+    # Nuclear > Agreeableness > Started > 2025
     assert Commitment.objects.get(id=474).committed
     with page.expect_response("**/action_toggle_commitment/474"):
         page.get_by_test_id("toggle_commitment_474").uncheck()
@@ -131,6 +133,58 @@ def test_status(page):
     expect(page.get_by_test_id("projectobjective_status_1")).to_contain_text(
         "First results"
     )
+
+
+def csv_from_commitment_table(page):
+    """Convert the "Commitments for <cycle>" table to CSV."""
+    row_text = []
+    rows = page.query_selector_all("table#commitment-table tr")
+    for row in rows[1:]:
+        row_values = []
+        for cell in row.query_selector_all("td"):
+            checkbox = cell.query_selector("input[type='checkbox']")
+            if checkbox:
+                row_values.append("Y" if checkbox.is_checked() else "N")
+            else:
+                row_values.append(cell.text_content().strip())
+        row_text.append(",".join(row_values))
+    return "\n".join(row_text)
+
+
+def test_commitment_table(page):
+    """Check that "Commitments for <cycle>" updates when commitments, unstarted reason, and conditions are changed."""
+    # The table's columns are: Objective, Target, Achieved (checkbox).
+    # We're using Y/N to represent whether the checkbox is checked.
+    assert csv_from_commitment_table(page) == textwrap.dedent("""\
+        Agreeableness,Started,Y
+        Colourfulness,Started,N
+        Handling,Started,Y""")
+    # Toggle Colourfulness > First results > 2026.
+    with page.expect_response("**/status_projects_commitment/1"):
+        page.get_by_test_id("toggle_commitment_3170").check()
+    assert csv_from_commitment_table(page) == textwrap.dedent("""\
+        Agreeableness,Started,Y
+        Colourfulness,Started,N
+        Colourfulness,First results,N
+        Handling,Started,Y""")
+    # Toggle Colourfulness > Started > Has red.
+    with page.expect_response("**/status_projects_commitment/1"):
+        page.get_by_test_id("toggle_condition_10").check()
+    assert csv_from_commitment_table(page) == textwrap.dedent("""\
+        Agreeableness,Started,Y
+        Colourfulness,Started,Y
+        Colourfulness,First results,N
+        Handling,Started,Y""")
+    # Toggle Colourfulness > First results > all conditions.
+    with page.expect_response("**/status_projects_commitment/1"):
+        page.get_by_test_id("toggle_condition_14").check()
+    with page.expect_response("**/status_projects_commitment/1"):
+        page.get_by_test_id("toggle_condition_18").check()
+    assert csv_from_commitment_table(page) == textwrap.dedent("""\
+        Agreeableness,Started,Y
+        Colourfulness,Started,Y
+        Colourfulness,First results,Y
+        Handling,Started,Y""")
 
 
 def test_last_review(page):
