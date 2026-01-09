@@ -2,8 +2,8 @@
   id="commitment-table"
   hx-swap-oob="outerHTML"
   hx-trigger="
-    change from:input[type='checkbox'] delay:.5s,
-    click from:div.attributes delay:.5s"
+    updateCommitment from:body,
+    updateCondition from:body"
   hx-get="{% url 'projects:status_projects_commitment' project.id %}">
 
   <h2>{% if current_work_cycle_name %}Commitments for {{ current_work_cycle_name }}{% else %}Commitments{% endif %}</h2>
