@@ -2,6 +2,11 @@
 Designing a quality framework
 ===================================
 
+All the settings for implementing and configuring the components of the frame work described here are in the application's admin - *Admin* > *Framework*.
+
+For example, objectives can be found at *Admin* > *Framework* > *Objectives*.
+
+
 Objectives
 ==========
 
@@ -141,9 +146,13 @@ Progression
 
 The conditions in the three levels represent getting in motion, achieving results, and completion. It's a good progression, but it's not the only good one.
 
-Another effective progression, also using three levels, can be to use *Started* to establish a baseline or discover what is actually the case, *First results* to demonstrate substantive progress and *Mature* for evidence of long-term and systematic changes in practice.
+Another effective progression, also using three levels, can be to use:
 
-The important thing in any case is that each successive level should make use of what has been achieved already, to build on it, and where possible to lock in the results of those so that they can't be lost.
+* *Started* to establish a baseline or discover what is actually the case
+* *First results* to demonstrate substantive progress
+* *Mature* for evidence of long-term and systematic changes in practice.
+
+Be imaginative and pragmatic. The important thing in any case is that each successive level should make use of what has been achieved already, to build on it, and where possible to lock in the results of those so that they can't be lost.
 
 And don't make anything more complicated than it needs to be. It can be perfectly effective for a particular objective to have a small handful of conditions, all listed under the sole level *Done*.
 
@@ -191,3 +200,15 @@ A suggested set of statuses:
 * *Needs review* (the work has been reviewed, but further review is required)
 * *Planned* (there is a commitment to start work in the current cycle)
 
+
+Numerical values
+================
+
+In order to derive numerical metrics from the framework, that make it easier to get an at-a-glance sense of progress or to see gaps in it, many of the things described above can be associated with a value.
+
+For example, some objectives represent much more work and impact than others - they have more weight. In the admin, an *Objective* has a *Weight* field.
+
+*Levels* need a value, and so do *Unstarted reasons*. Sensible values:
+
+* *Planned*: 1 (because there is at least some progress)
+* *Deferred*, *Not applicable* and *Blocked*: 0 (because nothing is happening)
