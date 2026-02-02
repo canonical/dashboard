@@ -12,7 +12,7 @@ Objectives
 
 At the heart of the framework are the **objectives** you're working towards. An objective is a particular dimension of quality in your field. (For example, if you want to use the framework to drive up engineering standards, one of the dimensions of quality you focus on might be *automated testing*.)
 
-For each one, there will be multiple **conditions** - measurable, checkable states of affairs that demonstrate progress progress towards the objective. Typically, conditions will be arranged according to the **level** of maturity that they represent, providing a progression.
+For each one, there will be multiple **conditions** - measurable, checkable states of affairs that demonstrate progress towards the objective. Typically, conditions will be arranged according to the **level** of maturity that they represent, providing a progression.
 
 Here's a part of quality framework, with just two objectives described, for *Inclusive language* and  *Automated spelling checks*:
 
