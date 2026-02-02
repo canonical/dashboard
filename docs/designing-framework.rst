@@ -2,7 +2,7 @@
 Designing a quality framework
 ===================================
 
-All the settings for implementing and configuring the components of the frame work described here are in the application's admin - *Admin* > *Framework*.
+All the settings for implementing and configuring the components of the framework described here are in the application's admin - *Admin* > *Framework*.
 
 For example, objectives can be found at *Admin* > *Framework* > *Objectives*.
 
