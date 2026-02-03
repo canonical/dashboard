@@ -65,7 +65,7 @@ This is especially important for the first objectives that start appearing in yo
 Conditions and levels
 ~~~~~~~~~~~~~~~~~~~~~
 
-For each objective, you need write out some conditions representing measurable, checkable states of affairs that you want to become the case.
+For each objective, you need to write out some conditions representing measurable, checkable states of affairs that you want to become the case.
 
 Put them in an order of progress or maturity - fundamental ones first, followed by ones that build on them.
 
