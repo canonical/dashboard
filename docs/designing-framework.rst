@@ -89,10 +89,7 @@ By the time you have a few, you will probably see ways of grouping them accordin
 Making it work well
 -------------------
 
-What makes this a good example?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Let's have a look at the conditions. They're arranged in three levels: from *Started* via *First results* to *Mature*. It's a reasonable set of levels, and arguably a good default to reach for.
+What makes our "automated testing" objective a good example? Let's have a look at the conditions. They're arranged in three levels: from *Started* via *First results* to *Mature*. It's a reasonable set of levels, and arguably a good default to reach for.
 
 There's an art to defining conditions that represent the progress you want. Remember that you are interested in quality, and that you want that asipiration to become part of how teams work and think.
 
