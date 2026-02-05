@@ -91,7 +91,7 @@ Making it work well
 
 What makes our "automated testing" objective a good example? Let's have a look at the conditions. They're arranged in three levels: from *Started* via *First results* to *Mature*. It's a reasonable set of levels, and arguably a good default to reach for.
 
-There's an art to defining conditions that represent the progress you want. Remember that you are interested in quality, and that you want that asipiration to become part of how teams work and think.
+There's an art to defining conditions that represent the progress you want. Remember that you are interested in quality, and that you want that aspiration to become part of how teams work and think.
 
 
 Securing acceptance
@@ -133,7 +133,7 @@ In practice you will often find that they want to take on *too much* - their eag
 
 **Ambition**: Who has aspirations to "50%"? If that's the metric you set, you lower the sights of the people whom you want to look upwards. You're encouraging them to think small and you've made your own ambitions for them look petty and pedantic.
 
-The use of the qualititative ("significant") really stands out here, but note that it's also employed in the *Started* list: "We have good test coverage information." Use it confidently and intentionally.
+The use of the qualitative ("significant") really stands out here, but note that it's also employed in the *Started* list: "We have good test coverage information." Use it confidently and intentionally.
 
 In "There is 100% test coverage" 100% isn't just a number: it's completion. But, it only makes useful sense coming *after* the previous conditions, that prepare the mindset and establish the terms of the what we care about and are working towards.
 
