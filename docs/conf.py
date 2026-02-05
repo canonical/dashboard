@@ -146,6 +146,8 @@ html_context = {
     # TODO: To enable or disable the Previous / Next buttons at the bottom of pages
     # Valid options: none, prev, next, both
     # "sequential_nav": "both",
+    # TODO: To enable listing contributors on individual pages, set to True
+    "display_contributors": False,
 
     # Required for feedback button
     'github_issues': 'enabled',
@@ -224,6 +226,7 @@ sitemap_excludes = [
 # NOTE: If undefined, set to None, or empty,
 #       the sphinx_reredirects extension will be disabled.
 
+redirects = {}
 
 
 ###########################
@@ -306,6 +309,10 @@ exclude_patterns = [
 
 # Specifies a reST snippet to be appended to each .rst file
 
+# rst_epilog = """
+# .. include:: /reuse/links.txt
+# .. include:: /reuse/substitutions.txt
+# """
 
 # Feedback button at the top; enabled by default
 #
