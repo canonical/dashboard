@@ -95,7 +95,7 @@ There's an art to defining conditions that represent the progress you want. Reme
 
 
 Securing acceptance
-...................
+~~~~~~~~~~~~~~~~~~~
 
 An effective strategy is to use the first group of conditions not so much to achieve results, but to secure acceptance.
 
@@ -111,7 +111,7 @@ These *Started* objectives are easy for a team to accept. They don't actually co
 
 
 Qualitative conditions
-......................
+~~~~~~~~~~~~~~~~~~~~~~
 
 In *First results*, there is a concrete demand: *a significant increase in test coverage*. It *doesn't* say (for example) "at least 50%".
 
@@ -139,7 +139,7 @@ In "There is 100% test coverage" 100% isn't just a number: it's completion. But,
 
 
 Progression
-...........
+~~~~~~~~~~~
 
 The conditions in the three levels represent getting in motion, achieving results, and completion. It's a good progression, but it's not the only good one.
 
