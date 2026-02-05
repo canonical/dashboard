@@ -6,6 +6,7 @@ urlpatterns = [
     path("admin/doc/", include("django.contrib.admindocs.urls")),
     path("admin/", admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
+    path("oidc/", include("mozilla_django_oidc.urls")),
 
     # Dashboard
     path("", include("projects.urls")),

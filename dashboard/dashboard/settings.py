@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "django_browser_reload",
     "tinymce",
+    "mozilla_django_oidc",
     "projects",
     "framework",
     "dashboard",
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "mozilla_django_oidc.middleware.SessionRefresh",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.contrib.admindocs.middleware.XViewMiddleware",
@@ -135,6 +137,27 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = "projects:project_list"
 LOGOUT_REDIRECT_URL = "projects:project_list"
+
+# OIDC Configuration
+AUTHENTICATION_BACKENDS = [
+    "mozilla_django_oidc.auth.OIDCAuthenticationBackend",
+    "django.contrib.auth.backends.ModelBackend",
+]
+
+# OIDC Settings - Configure these with your OIDC provider details
+OIDC_RP_CLIENT_ID = "your-client-id"
+OIDC_RP_CLIENT_SECRET = "your-client-secret"
+OIDC_OP_AUTHORIZATION_ENDPOINT = "https://your-oidc-provider.com/auth"
+OIDC_OP_TOKEN_ENDPOINT = "https://your-oidc-provider.com/token"
+OIDC_OP_USER_ENDPOINT = "https://your-oidc-provider.com/userinfo"
+OIDC_OP_JWKS_ENDPOINT = "https://your-oidc-provider.com/jwks"
+
+# Optional OIDC Settings
+OIDC_RP_SIGN_ALGO = "RS256"
+OIDC_RP_SCOPES = "openid email profile"
+
+# Session settings for OIDC
+OIDC_RENEW_ID_TOKEN_EXPIRY_SECONDS = 15 * 60  # 15 minutes
 
 
 TINYMCE_DEFAULT_CONFIG = {

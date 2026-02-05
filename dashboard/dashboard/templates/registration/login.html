@@ -3,21 +3,41 @@
 {% block content %}
 
   <h2>Log in</h2>
-  <form method="post">
-    {% csrf_token %}
+  
+  <!-- OIDC Login Button -->
+  <div style="margin-bottom: 2rem;">
+    <a href="{% url 'oidc_authentication_init' %}" style="
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    ">
+      Log in with OIDC
+    </a>
+  </div>
 
-      <table>
+  <!-- Fallback to standard login -->
+  <details>
+    <summary style="cursor: pointer; margin-bottom: 1rem;">Or use standard login</summary>
+    <form method="post">
+      {% csrf_token %}
 
-        {% for field in form %}
-          <tr><td>{{ field.label_tag }}</td><td>{{ field }}</td></tr>
-        {% endfor %}
+        <table>
 
-      </table>
+          {% for field in form %}
+            <tr><td>{{ field.label_tag }}</td><td>{{ field }}</td></tr>
+          {% endfor %}
 
-    <p>
-      <button type="submit">Log In</button>
-    </p>
+        </table>
 
-  </form>
+      <p>
+        <button type="submit">Log In</button>
+      </p>
+
+    </form>
+  </details>
 
 {% endblock %}
