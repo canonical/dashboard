@@ -1,6 +1,6 @@
-===================================
+=============================
 Designing a quality framework
-===================================
+=============================
 
 All the settings for implementing and configuring the components of the framework described here are in the application's admin - *Admin* > *Framework*.
 
