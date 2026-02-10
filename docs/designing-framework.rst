@@ -54,7 +54,7 @@ While designing your framework, you will often need to hush your inner rationali
 Defining objectives
 -------------------
 
-Consider a dimension of quality in your field, an aspect that you care about - like *Inclusive language* or *Automated spelling checks*
+Consider a dimension of quality in your field, an aspect that you care about - like *Inclusive language* or *Automated spelling checks*.
 
 Whatever it is, it should be something meaningful and recognisable to the people that you expect to work with the framework.
 
