@@ -1,14 +1,14 @@
-===================================
+=============================
 Designing a quality framework
-===================================
+=============================
 
 All the settings for implementing and configuring the components of the framework described here are in the application's admin - *Admin* > *Framework*.
 
 For example, objectives can be found at *Admin* > *Framework* > *Objectives*.
 
 
-Objectives
-==========
+The essentials of your framework
+================================
 
 At the heart of the framework are the **objectives** you're working towards. An objective is a particular dimension of quality in your field. (For example, if you want to use the framework to drive up engineering standards, one of the dimensions of quality you focus on might be *automated testing*.)
 
@@ -37,6 +37,10 @@ Here's a part of quality framework, with just two objectives described, for *Inc
       - Automated spelling checks are part of the CI pipeline.
 
 
+Defining your framework
+=======================
+
+
 Working incrementally
 ---------------------
 
@@ -47,13 +51,10 @@ The risk is that people (and you are probably one of them) love to create framew
 While designing your framework, you will often need to hush your inner rationalist so that your inner pragmatist can be heard.
 
 
-Defining the framework
-----------------------
+Defining objectives
+-------------------
 
-Objectives
-~~~~~~~~~~
-
-Consider a dimension of quality in your field, an aspect that you care about - like *Inclusive language* or *Automated spelling checks*
+Consider a dimension of quality in your field, an aspect that you care about - like *Inclusive language* or *Automated spelling checks*.
 
 Whatever it is, it should be something meaningful and recognisable to the people that you expect to work with the framework.
 
@@ -62,8 +63,8 @@ For example, if your framework is concerned with engineering standards, "automat
 This is especially important for the first objectives that start appearing in your scheme. Later objectives can afford to be more abstruse or represent value that needs some explanation, as long as you have already set out ones that are readily accepted, that people are able to buy into without effort.
 
 
-Conditions and levels
-~~~~~~~~~~~~~~~~~~~~~
+Defining conditions and levels
+------------------------------
 
 For each objective, you need to write out some conditions representing measurable, checkable states of affairs that you want to become the case.
 
@@ -86,8 +87,8 @@ By the time you have a few, you will probably see ways of grouping them accordin
     * There is 100% test coverage.
 
 
-Making it work well
--------------------
+Making your framework work well
+===============================
 
 What makes our "automated testing" objective a good example? Let's have a look at the conditions. They're arranged in three levels: from *Started* via *First results* to *Mature*. It's a reasonable set of levels, and arguably a good default to reach for.
 
@@ -95,7 +96,7 @@ There's an art to defining conditions that represent the progress you want. Reme
 
 
 Securing acceptance
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 An effective strategy is to use the first group of conditions not so much to achieve results, but to secure acceptance.
 
@@ -111,7 +112,7 @@ These *Started* objectives are easy for a team to accept. They don't actually co
 
 
 Qualitative conditions
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 In *First results*, there is a concrete demand: *a significant increase in test coverage*. It *doesn't* say (for example) "at least 50%".
 
@@ -139,7 +140,7 @@ In "There is 100% test coverage" 100% isn't just a number: it's completion. But,
 
 
 Progression
-~~~~~~~~~~~
+-----------
 
 The conditions in the three levels represent getting in motion, achieving results, and completion. It's a good progression, but it's not the only good one.
 
@@ -154,6 +155,10 @@ Be imaginative and pragmatic. The important thing in any case is that each succe
 And don't make anything more complicated than it needs to be. It can be perfectly effective for a particular objective to have a small handful of conditions, all listed under the sole level *Done*.
 
 
+More components
+===============
+
+
 Objective groups
 ----------------
 
@@ -163,7 +168,7 @@ It's partly a matter of convenience, but categorising things also has a useful f
 
 
 Unstarted reasons
-=================
+-----------------
 
 If an objective hasn't attained one of the defined levels, then it is *unstarted*. There are different reasons why an objective might be unstarted. A reasonable default set is:
 
@@ -176,7 +181,7 @@ If an objective hasn't attained one of the defined levels, then it is *unstarted
 
 
 Project agreement statuses
-==========================
+--------------------------
 
 A sensible default set:
 
@@ -186,7 +191,7 @@ A sensible default set:
 
 
 Project review statuses
-=======================
+-----------------------
 
 In the review phase, each project's *Review status* should be set.
 
@@ -199,7 +204,7 @@ A suggested set of statuses:
 
 
 Numerical values
-================
+----------------
 
 In order to derive numerical metrics from the framework, that make it easier to get an at-a-glance sense of progress or to see gaps in it, many of the things described above can be associated with a value.
 
