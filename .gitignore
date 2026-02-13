@@ -3,7 +3,7 @@
 **/__pycache__/
 .vscode/
 env
-
+.env.local
 # Ignore the SQLite database used when running the application from source
 dashboard/db.sqlite3
 

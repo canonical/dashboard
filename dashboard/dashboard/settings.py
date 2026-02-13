@@ -11,9 +11,20 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load environment variables from .env file (simple loader, no extra dependencies)
+env_file = BASE_DIR / ".env"
+if env_file.exists():
+    with open(env_file) as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, value = line.split("=", 1)
+                os.environ.setdefault(key, value)
 
 
 # Quick-start development settings - unsuitable for production
@@ -144,13 +155,14 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
 ]
 
-# OIDC Settings - Configure these with your OIDC provider details
-OIDC_RP_CLIENT_ID = "your-client-id"
-OIDC_RP_CLIENT_SECRET = "your-client-secret"
-OIDC_OP_AUTHORIZATION_ENDPOINT = "https://your-oidc-provider.com/auth"
-OIDC_OP_TOKEN_ENDPOINT = "https://your-oidc-provider.com/token"
-OIDC_OP_USER_ENDPOINT = "https://your-oidc-provider.com/userinfo"
-OIDC_OP_JWKS_ENDPOINT = "https://your-oidc-provider.com/jwks"
+# OIDC Settings - Loaded from .env file
+OIDC_RP_CLIENT_ID = os.environ.get("OIDC_RP_CLIENT_ID")
+OIDC_RP_CLIENT_SECRET = os.environ.get("OIDC_RP_CLIENT_SECRET")
+OIDC_OP_AUTHORIZATION_ENDPOINT = os.environ.get("OIDC_OP_AUTHORIZATION_ENDPOINT")
+OIDC_OP_TOKEN_ENDPOINT = os.environ.get("OIDC_OP_TOKEN_ENDPOINT")
+OIDC_OP_USER_ENDPOINT = os.environ.get("OIDC_OP_USER_ENDPOINT")
+OIDC_OP_JWKS_ENDPOINT = os.environ.get("OIDC_OP_JWKS_ENDPOINT")
+OIDC_AUTHENTICATION_CALLBACK_URL = "oidc_authentication_callback"
 
 # Optional OIDC Settings
 OIDC_RP_SIGN_ALGO = "RS256"
