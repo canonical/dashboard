@@ -17,7 +17,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load environment variables from .env file (simple loader, no extra dependencies)
-env_file = BASE_DIR / ".env"
+env_file = BASE_DIR / ".env.local"
 if env_file.exists():
     with open(env_file) as f:
         for line in f:
@@ -167,6 +167,7 @@ OIDC_AUTHENTICATION_CALLBACK_URL = "oidc_authentication_callback"
 # Optional OIDC Settings
 OIDC_RP_SIGN_ALGO = "RS256"
 OIDC_RP_SCOPES = "openid email profile"
+OIDC_TOKEN_USE_BASIC_AUTH = True  # Use client_secret_basic instead of client_secret_post
 
 # Session settings for OIDC
 OIDC_RENEW_ID_TOKEN_EXPIRY_SECONDS = 15 * 60  # 15 minutes
