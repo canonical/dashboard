@@ -6,6 +6,7 @@ from django.forms import inlineformset_factory
 from django.http import QueryDict
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.urls import reverse
 
@@ -21,7 +22,7 @@ from . import forms
 from framework.models import WorkCycle, Objective, ObjectiveGroup, Reason
 
 
-class ProjectListView(ListView):
+class ProjectListView(LoginRequiredMixin, ListView):
     model = Project
 
     def get_context_data(self, **kwargs):
