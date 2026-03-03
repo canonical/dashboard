@@ -26,25 +26,25 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', secrets.token_hex(32))
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", secrets.token_hex(32))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = os.environ.get('DJANGO_DEBUG', 'false') == 'true'
+DEBUG = os.environ.get("DJANGO_DEBUG", "false") == "true"
 
-ALLOWED_HOSTS = json.loads(os.environ.get('DJANGO_ALLOWED_HOSTS', '[]'))
+ALLOWED_HOSTS = json.loads(os.environ.get("DJANGO_ALLOWED_HOSTS", "[]"))
 
-STRIPPED_PREFIX = os.environ.get('DJANGO_STRIPPED_PREFIX', '')
-FORCE_HTTPS = os.environ.get('DJANGO_FORCE_HTTPS', 'false').lower() == 'true'
+STRIPPED_PREFIX = os.environ.get("DJANGO_STRIPPED_PREFIX", "")
+FORCE_HTTPS = os.environ.get("DJANGO_FORCE_HTTPS", "false").lower() == "true"
 
 if STRIPPED_PREFIX:
-    STRIPPED_PREFIX = STRIPPED_PREFIX.rstrip('/')
+    STRIPPED_PREFIX = STRIPPED_PREFIX.rstrip("/")
     FORCE_SCRIPT_NAME = STRIPPED_PREFIX
     SESSION_COOKIE_PATH = STRIPPED_PREFIX
     CSRF_COOKIE_PATH = STRIPPED_PREFIX
     LANGUAGE_COOKIE_PATH = STRIPPED_PREFIX
 
-DJANGO_BASE_URL = os.environ.get('DJANGO_BASE_URL')
+DJANGO_BASE_URL = os.environ.get("DJANGO_BASE_URL")
 if DJANGO_BASE_URL and STRIPPED_PREFIX:
     parsed_url = urllib.parse.urlparse(DJANGO_BASE_URL)
     scheme = parsed_url.scheme
@@ -119,12 +119,12 @@ WSGI_APPLICATION = "dashboard.wsgi.application"
 
 DATABASES = {
     "default": {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': os.environ.get('POSTGRESQL_DB_NAME'),
-    'USER': os.environ.get('POSTGRESQL_DB_USERNAME'),
-    'PASSWORD': os.environ.get('POSTGRESQL_DB_PASSWORD'),
-    'HOST': os.environ.get('POSTGRESQL_DB_HOSTNAME'),
-    'PORT': os.environ.get('POSTGRESQL_DB_PORT'),
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.environ.get("POSTGRESQL_DB_NAME"),
+        "USER": os.environ.get("POSTGRESQL_DB_USERNAME"),
+        "PASSWORD": os.environ.get("POSTGRESQL_DB_PASSWORD"),
+        "HOST": os.environ.get("POSTGRESQL_DB_HOSTNAME"),
+        "PORT": os.environ.get("POSTGRESQL_DB_PORT"),
     }
 }
 
