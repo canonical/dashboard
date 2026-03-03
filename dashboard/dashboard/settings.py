@@ -39,13 +39,30 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 
+# OIDC Settings - Loaded from .env file
+OIDC_RP_CLIENT_ID = os.environ.get("OIDC_RP_CLIENT_ID")
+OIDC_RP_CLIENT_SECRET = os.environ.get("OIDC_RP_CLIENT_SECRET")
+OIDC_OP_AUTHORIZATION_ENDPOINT = os.environ.get("OIDC_OP_AUTHORIZATION_ENDPOINT")
+OIDC_OP_TOKEN_ENDPOINT = os.environ.get("OIDC_OP_TOKEN_ENDPOINT")
+OIDC_OP_USER_ENDPOINT = os.environ.get("OIDC_OP_USER_ENDPOINT")
+OIDC_OP_JWKS_ENDPOINT = os.environ.get("OIDC_OP_JWKS_ENDPOINT")
+OIDC_AUTHENTICATION_CALLBACK_URL = "oidc_authentication_callback"
+
+# Optional OIDC Settings
+OIDC_RP_SIGN_ALGO = "RS256"
+OIDC_RP_SCOPES = "openid email profile"
+OIDC_TOKEN_USE_BASIC_AUTH = True  # Use client_secret_basic instead of client_secret_post
+
+# Session settings for OIDC
+OIDC_RENEW_ID_TOKEN_EXPIRY_SECONDS = 15 * 60  # 15 minutes
+
+
 # Application definition
 
 INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "django_browser_reload",
     "tinymce",
-    "mozilla_django_oidc",
     "projects",
     "framework",
     "dashboard",
@@ -58,6 +75,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
+# Add OIDC app only if configured
+if OIDC_RP_CLIENT_ID:
+    INSTALLED_APPS.insert(3, "mozilla_django_oidc")
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -65,12 +86,15 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "mozilla_django_oidc.middleware.SessionRefresh",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.contrib.admindocs.middleware.XViewMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
+
+# Add OIDC middleware only if configured
+if OIDC_RP_CLIENT_ID:
+    MIDDLEWARE.insert(6, "mozilla_django_oidc.middleware.SessionRefresh")
 
 ROOT_URLCONF = "dashboard.urls"
 
@@ -151,28 +175,14 @@ LOGIN_URL = "/accounts/login/"
 LOGIN_REDIRECT_URL = "projects:project_list"
 LOGOUT_REDIRECT_URL = "projects:project_list"
 
-# OIDC Configuration
+# Authentication backends
 AUTHENTICATION_BACKENDS = [
-    "mozilla_django_oidc.auth.OIDCAuthenticationBackend",
     "django.contrib.auth.backends.ModelBackend",
 ]
 
-# OIDC Settings - Loaded from .env file
-OIDC_RP_CLIENT_ID = os.environ.get("OIDC_RP_CLIENT_ID")
-OIDC_RP_CLIENT_SECRET = os.environ.get("OIDC_RP_CLIENT_SECRET")
-OIDC_OP_AUTHORIZATION_ENDPOINT = os.environ.get("OIDC_OP_AUTHORIZATION_ENDPOINT")
-OIDC_OP_TOKEN_ENDPOINT = os.environ.get("OIDC_OP_TOKEN_ENDPOINT")
-OIDC_OP_USER_ENDPOINT = os.environ.get("OIDC_OP_USER_ENDPOINT")
-OIDC_OP_JWKS_ENDPOINT = os.environ.get("OIDC_OP_JWKS_ENDPOINT")
-OIDC_AUTHENTICATION_CALLBACK_URL = "oidc_authentication_callback"
-
-# Optional OIDC Settings
-OIDC_RP_SIGN_ALGO = "RS256"
-OIDC_RP_SCOPES = "openid email profile"
-OIDC_TOKEN_USE_BASIC_AUTH = True  # Use client_secret_basic instead of client_secret_post
-
-# Session settings for OIDC
-OIDC_RENEW_ID_TOKEN_EXPIRY_SECONDS = 15 * 60  # 15 minutes
+# Add OIDC authentication backend only if configured
+if OIDC_RP_CLIENT_ID:
+    AUTHENTICATION_BACKENDS.insert(0, "mozilla_django_oidc.auth.OIDCAuthenticationBackend")
 
 
 TINYMCE_DEFAULT_CONFIG = {
