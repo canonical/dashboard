@@ -4,6 +4,7 @@
 
   <h2>Log in</h2>
   
+  {% if oidc_configured %}
   <!-- OIDC Login Button -->
   <div style="margin-bottom: 2rem;">
     <a href="{% url 'oidc_authentication_init' %}" style="
@@ -18,10 +19,12 @@
       Log in with OIDC
     </a>
   </div>
-
+  {% endif %}
   <!-- Fallback to standard login -->
   <details>
+  {% if oidc_configured %}
     <summary style="cursor: pointer; margin-bottom: 1rem;">Or use standard login</summary>
+  {% endif %}
     <form method="post">
       {% csrf_token %}
 
@@ -38,6 +41,9 @@
       </p>
 
     </form>
+  
+  {% if oidc_configured %}
   </details>
+  {% endif %}
 
 {% endblock %}
