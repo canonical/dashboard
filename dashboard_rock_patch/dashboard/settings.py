@@ -64,6 +64,7 @@ if FORCE_HTTPS:
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
 
+DJANGO_LOG_LEVEL = os.environ.get("DJANGO_LOG_LEVEL", "INFO").upper()
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -81,11 +82,11 @@ LOGGING = {
     },
     "root": {
         "handlers": ["console"],
-        "level": os.environ.get("DJANGO_LOG_LEVEL", "INFO").upper(),
+        "level": DJANGO_LOG_LEVEL,
     },
     "loggers": {
         "django": {
-            "level": os.environ.get("DJANGO_LOG_LEVEL", "INFO").upper(),
+            "level": DJANGO_LOG_LEVEL,
             "propagate": True,
         },
     },
