@@ -1,4 +1,5 @@
 from datetime import date, timedelta
+import logging
 
 from django.db import models
 from django.urls import reverse
@@ -14,6 +15,8 @@ from framework.models import (
     AgreementStatus,
     WorkCycle,
 )
+
+logger = logging.getLogger(__name__)
 
 
 class ProjectGroup(models.Model):
@@ -138,7 +141,7 @@ class ProjectObjective(models.Model):
 
     @cached_property
     def achieved_level(self):
-
+        logger.info("Calculating level for %s", repr(self))
         levels = (
             Level.objects.filter(condition__objective=self.objective)
             .distinct()
