@@ -11,9 +11,20 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load environment variables from .env file (simple loader, no extra dependencies)
+env_file = BASE_DIR / ".env.local"
+if env_file.exists():
+    with open(env_file) as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, value = line.split("=", 1)
+                os.environ.setdefault(key, value)
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,6 +37,24 @@ SECRET_KEY = "django-insecure-&e&n(qvp!ktv&fjr(j8llvz4(5r0!2h9j0lpr=*40bw6z30exn
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+
+
+# OIDC Settings - Loaded from .env file
+OIDC_RP_CLIENT_ID = os.environ.get("OIDC_RP_CLIENT_ID")
+OIDC_RP_CLIENT_SECRET = os.environ.get("OIDC_RP_CLIENT_SECRET")
+OIDC_OP_AUTHORIZATION_ENDPOINT = os.environ.get("OIDC_OP_AUTHORIZATION_ENDPOINT")
+OIDC_OP_TOKEN_ENDPOINT = os.environ.get("OIDC_OP_TOKEN_ENDPOINT")
+OIDC_OP_USER_ENDPOINT = os.environ.get("OIDC_OP_USER_ENDPOINT")
+OIDC_OP_JWKS_ENDPOINT = os.environ.get("OIDC_OP_JWKS_ENDPOINT")
+OIDC_AUTHENTICATION_CALLBACK_URL = "oidc_authentication_callback"
+
+# Optional OIDC Settings
+OIDC_RP_SIGN_ALGO = "RS256"
+OIDC_RP_SCOPES = "openid email profile"
+OIDC_TOKEN_USE_BASIC_AUTH = True  # Use client_secret_basic instead of client_secret_post
+
+# Session settings for OIDC
+OIDC_RENEW_ID_TOKEN_EXPIRY_SECONDS = 15 * 60  # 15 minutes
 
 
 # Application definition
@@ -46,6 +75,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
+# Add OIDC app only if configured
+if OIDC_RP_CLIENT_ID:
+    INSTALLED_APPS.insert(3, "mozilla_django_oidc")
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -58,6 +91,10 @@ MIDDLEWARE = [
     "django.contrib.admindocs.middleware.XViewMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
+
+# Add OIDC middleware only if configured
+if OIDC_RP_CLIENT_ID:
+    MIDDLEWARE.insert(6, "mozilla_django_oidc.middleware.SessionRefresh")
 
 ROOT_URLCONF = "dashboard.urls"
 
@@ -72,6 +109,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "dashboard.context_processors.oidc_settings",
             ],
         },
     },
@@ -132,9 +170,19 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+LOGIN_URL = "/accounts/login/"
 
 LOGIN_REDIRECT_URL = "projects:project_list"
 LOGOUT_REDIRECT_URL = "projects:project_list"
+
+# Authentication backends
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+]
+
+# Add OIDC authentication backend only if configured
+if OIDC_RP_CLIENT_ID:
+    AUTHENTICATION_BACKENDS.insert(0, "mozilla_django_oidc.auth.OIDCAuthenticationBackend")
 
 
 TINYMCE_DEFAULT_CONFIG = {

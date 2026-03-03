@@ -49,6 +49,34 @@ config:
         HTTPS, regardless of what the upstream ingress returns in the ingress URL.
         It may cause some unforeseeable ingress issues, so avoid using this option if possible.
       default: false
+    OIDC_RP_CLIENT_ID:
+      type: string
+      description: OIDC client ID for authentication.
+      default: ""
+    OIDC_RP_CLIENT_SECRET:
+      type: string
+      description: OIDC client secret for authentication.
+      default: ""
+    OIDC_OP_AUTHORIZATION_ENDPOINT:
+      type: string
+      description: OIDC authorization endpoint for authentication.
+      default: ""
+    OIDC_OP_TOKEN_ENDPOINT:
+      type: string
+      description: OIDC token endpoint for authentication.
+      default: ""
+    OIDC_OP_USER_ENDPOINT:
+      type: string
+      description: OIDC user endpoint for authentication.
+      default: "" 
+    OIDC_OP_JWKS_ENDPOINT:
+      type: string
+      description: OIDC JWKS endpoint for authentication.
+      default: ""
+    OIDC_AUTHENTICATION_CALLBACK_URL:
+      type: string
+      description: OIDC authentication callback URL.
+      default: ""
 
 actions:
   load-sample-data:
