@@ -158,6 +158,7 @@ class ProjectObjective(models.Model):
                     ),
                 )
             )
+            .order_by("value")
         )
 
         level_achieved = None
