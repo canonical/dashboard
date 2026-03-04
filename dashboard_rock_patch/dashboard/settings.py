@@ -64,7 +64,12 @@ if FORCE_HTTPS:
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
 
-DJANGO_LOG_LEVEL = os.environ.get("DJANGO_LOG_LEVEL", "INFO").upper()
+log_level = os.environ.get("DJANGO_LOG_LEVEL", "info")
+valid_log_levels = ["debug", "info", "warning", "error", "critical"]
+if log_level not in valid_log_levels:
+    raise SystemExit(
+        f"Invalid log level {log_level!r}. Valid levels: {', '.join(valid_log_levels)}"
+    )
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -82,11 +87,11 @@ LOGGING = {
     },
     "root": {
         "handlers": ["console"],
-        "level": DJANGO_LOG_LEVEL,
+        "level": log_level.upper(),
     },
     "loggers": {
         "django": {
-            "level": DJANGO_LOG_LEVEL,
+            "level": log_level.upper(),
             "propagate": True,
         },
     },
