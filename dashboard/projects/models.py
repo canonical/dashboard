@@ -141,7 +141,7 @@ class ProjectObjective(models.Model):
 
     @cached_property
     def achieved_level(self):
-        logger.info("Calculating level for %s", repr(self))
+        logger.debug("Calculating level for %s", repr(self))
         levels = (
             Level.objects.filter(condition__objective=self.objective)
             .distinct()
