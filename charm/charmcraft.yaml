@@ -32,6 +32,13 @@ requires:
 
 config:
   options:
+    log-level:
+      type: string
+      default: info
+      description: >-
+        This option controls the verbosity of logs from the dashboard Django application.
+        Valid values: debug, info (default), warning, error, critical.
+        This option does not control the verbosity of request/error logs from the web gateway.
     stripped-prefix:
       description: >-
         Enable this option when the ingress frontend strips the path prefix before passing requests to the application. 
