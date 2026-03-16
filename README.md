@@ -109,7 +109,7 @@ Creating the charm might take several minutes, so this is another good point to 
 ``` { name=deploy-dashboard }
 cd ~/dashboard
 rockcraft.skopeo --insecure-policy copy --dest-tls-verify=false \
-  oci-archive:dashboard_9_amd64.rock \
+  oci-archive:dashboard_0.49_amd64.rock \
   docker://localhost:32000/dashboard:0.49
 juju deploy ./charm/dashboard_ubuntu-22.04-amd64.charm \
   --resource django-app-image=localhost:32000/dashboard:0.49

@@ -1,4 +1,5 @@
 from datetime import date, timedelta
+import logging
 
 from django.db import models
 from django.urls import reverse
@@ -15,9 +16,10 @@ from framework.models import (
     WorkCycle,
 )
 
+logger = logging.getLogger(__name__)
+
 
 class ProjectGroup(models.Model):
-
     name = models.CharField(max_length=200, unique=True)
 
     def __str__(self):
@@ -28,7 +30,6 @@ class ProjectGroup(models.Model):
 
 
 class Project(models.Model):
-
     name = models.CharField(max_length=200, unique=True)
     url = models.URLField(blank=True, default="")
     group = models.ForeignKey(
@@ -52,7 +53,6 @@ class Project(models.Model):
         AgreementStatus, null=True, blank=True, on_delete=models.SET_NULL
     )
     current_qi = models.PositiveSmallIntegerField(default=0)
-
 
     def __str__(self):
         return self.name
@@ -97,10 +97,8 @@ class Project(models.Model):
     def quality_indicator(self):
         result = self.projectobjective_set.filter(
             level_achieved__isnull=False
-        ).aggregate(
-            total=Sum(F('level_achieved__value') * F('objective__weight'))
-        )
-        return result['total'] or 0
+        ).aggregate(total=Sum(F("level_achieved__value") * F("objective__weight")))
+        return result["total"] or 0
 
     def quality_history(self):
         return QI.objects.filter(project=self)
@@ -123,7 +121,6 @@ class Project(models.Model):
 
 
 class ProjectObjective(models.Model):
-
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     objective = models.ForeignKey(Objective, on_delete=models.CASCADE)
     unstarted_reason = models.ForeignKey(
@@ -144,10 +141,9 @@ class ProjectObjective(models.Model):
 
     @cached_property
     def achieved_level(self):
-
+        logger.debug("Calculating level for %s", repr(self))
         levels = (
-            Level.objects
-            .filter(condition__objective=self.objective)
+            Level.objects.filter(condition__objective=self.objective)
             .distinct()
             .annotate(
                 undone_count=Count(
@@ -158,11 +154,14 @@ class ProjectObjective(models.Model):
                     ),
                 )
             )
+            .order_by("value")
         )
 
         level_achieved = None
         for level in levels:
-            if level.undone_count:  # first level with any undone condition stops progress
+            if (
+                level.undone_count
+            ):  # first level with any undone condition stops progress
                 return level_achieved
             level_achieved = level
         return level_achieved
@@ -195,7 +194,6 @@ class ProjectObjective(models.Model):
 
 
 class ProjectObjectiveCondition(models.Model):
-
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     objective = models.ForeignKey(Objective, on_delete=models.CASCADE)
     condition = models.ForeignKey(Condition, on_delete=models.CASCADE)
@@ -204,14 +202,14 @@ class ProjectObjectiveCondition(models.Model):
         "NA": "not-applicable",
         "CA": "candidate",
         "DO": "done",
-        "": "none"
+        "": "none",
     }
 
     status = models.CharField(
         max_length=2,
         choices=STATUS_CHOICES,
         default="",
-        )
+    )
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

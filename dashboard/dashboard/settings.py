@@ -38,6 +38,41 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "simple": {
+            "format": "{levelname} ({name}) - {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "DEBUG",
+    },
+    "loggers": {
+        "django": {
+            "level": "DEBUG",
+            "propagate": True,
+        },
+        "django.db.backends": {
+            "level": "INFO",  # Change to DEBUG to report SQL queries (development only).
+            "propagate": True,
+        },
+        "django.utils.autoreload": {
+            "level": "INFO",  # Change to DEBUG to report file reloads (development only).
+            "propagate": True,
+        },
+    },
+}
+
 
 # OIDC Settings - Loaded from .env file
 OIDC_RP_CLIENT_ID = os.environ.get("OIDC_RP_CLIENT_ID")

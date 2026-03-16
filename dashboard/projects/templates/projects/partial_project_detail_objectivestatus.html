@@ -24,7 +24,7 @@
       <option value></option>
       {% for reason in unstarted_reasons %}
         <option value="{{ reason.id }}"
-          {% if reason.id == projectobjective.unstarted_reason.id %}selected{% endif %}
+          {% if projectobjective.unstarted_reason and reason.id == projectobjective.unstarted_reason.id %}selected{% endif %}
           >
           {{ reason }}
         </option>
