@@ -6,7 +6,7 @@
   
   {% if oidc_configured %}
   <!-- OIDC Login Button -->
-  <div style="margin-bottom: 2rem;">
+  <div style="margin-bottom: 1rem;">
     <a href="{% url 'oidc_authentication_init' %}" style="
       display: inline-block;
       padding: 10px 20px;
@@ -19,31 +19,26 @@
       Log in with OIDC
     </a>
   </div>
+  <p>
+    Or use your Dashboard account:
+  </p>
   {% endif %}
   <!-- Fallback to standard login -->
-  <details open>
-  {% if oidc_configured %}
-    <summary style="cursor: pointer; margin-bottom: 1rem;">Or use standard login</summary>
-  {% endif %}
-    <form method="post">
-      {% csrf_token %}
+  <form method="post">
+    {% csrf_token %}
 
-        <table>
+      <table>
 
-          {% for field in form %}
-            <tr><td>{{ field.label_tag }}</td><td>{{ field }}</td></tr>
-          {% endfor %}
+        {% for field in form %}
+          <tr><td>{{ field.label_tag }}</td><td>{{ field }}</td></tr>
+        {% endfor %}
 
-        </table>
+      </table>
 
-      <p>
-        <button type="submit">Log In</button>
-      </p>
+    <p>
+      <button type="submit">Log In</button>
+    </p>
 
-    </form>
-  
-  {% if oidc_configured %}
-  </details>
-  {% endif %}
+  </form>
 
 {% endblock %}
