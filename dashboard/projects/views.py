@@ -7,11 +7,11 @@ from django.forms import inlineformset_factory
 from django.http import QueryDict
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import permission_required
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.urls import reverse
 from django.utils.text import slugify
 
+from dashboard.auth_decorators import ConditionalLoginRequiredMixin, conditional_login_required
 
 from .models import (
     Project,
@@ -24,7 +24,7 @@ from . import forms
 from framework.models import WorkCycle, Objective, ObjectiveGroup, Reason
 
 
-class ProjectListView(LoginRequiredMixin, ListView):
+class ProjectListView(ConditionalLoginRequiredMixin, ListView):
     model = Project
 
     def get_context_data(self, **kwargs):
@@ -43,6 +43,7 @@ class ProjectListView(LoginRequiredMixin, ListView):
         return context
 
 
+@conditional_login_required
 def project(request, id):
 
     project = Project.objects.get(id=id)
