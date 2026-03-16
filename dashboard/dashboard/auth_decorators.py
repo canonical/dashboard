@@ -8,6 +8,14 @@ from django.contrib.auth.decorators import login_required
 from functools import wraps
 
 
+def oidc_settings(request):
+    """Context processor to make OIDC configuration available in templates."""
+    return {
+        'oidc_configured': bool(settings.OIDC_RP_CLIENT_ID),
+        'oidc_login_button_text': getattr(settings, 'OIDC_LOGIN_BUTTON_TEXT', 'Log in with OIDC'),
+    }
+
+
 class ConditionalLoginRequiredMixin(LoginRequiredMixin):
     """
     Mixin that requires login only when OIDC is configured.

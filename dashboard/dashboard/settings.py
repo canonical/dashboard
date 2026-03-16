@@ -87,6 +87,7 @@ OIDC_AUTHENTICATION_CALLBACK_URL = "oidc_authentication_callback"
 OIDC_RP_SIGN_ALGO = "RS256"
 OIDC_RP_SCOPES = "openid email profile"
 OIDC_TOKEN_USE_BASIC_AUTH = True  # Use client_secret_basic instead of client_secret_post
+OIDC_LOGIN_BUTTON_TEXT = "Canonical Login"  # Customize this text as needed
 
 # Session settings for OIDC
 OIDC_RENEW_ID_TOKEN_EXPIRY_SECONDS = 15 * 60  # 15 minutes
@@ -144,7 +145,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "dashboard.context_processors.oidc_settings",
+                "dashboard.auth_decorators.oidc_settings",
             ],
         },
     },
