@@ -56,31 +56,31 @@ config:
         HTTPS, regardless of what the upstream ingress returns in the ingress URL.
         It may cause some unforeseeable ingress issues, so avoid using this option if possible.
       default: false
-    oidc_rp_client_id:
+    django_dashboard_client_id:
       type: string
       description: OIDC client ID for authentication.
       default: ""
-    oidc_rp_client_secret:
+    django_dashboard_client_secret:
       type: string
       description: OIDC client secret for authentication.
       default: ""
-    oidc_op_authorization_endpoint:
+    django_dashboard_authorize_url:
       type: string
       description: OIDC authorization endpoint for authentication.
       default: ""
-    oidc_op_token_endpoint:
+    django_dashboard_access_token_url:
       type: string
       description: OIDC token endpoint for authentication.
       default: ""
-    oidc_op_user_endpoint:
+    django_dashboard_userinfo_url:
       type: string
       description: OIDC user endpoint for authentication.
       default: "" 
-    oidc_op_jwks_endpoint:
+    django_dashboard_jwks_url:
       type: string
       description: OIDC JWKS endpoint for authentication.
       default: ""
-    oidc_authentication_callback_url:
+    django_dashboard_authentication_callback_url:
       type: string
       description: OIDC authentication callback URL.
       default: ""
