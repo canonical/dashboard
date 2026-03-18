@@ -29,6 +29,9 @@ requires:
   postgresql:
     interface: postgresql_client
     optional: false
+  oauth:
+    interface: oauth
+    optional: true
 
 config:
   options:
