@@ -29,7 +29,7 @@ requires:
   postgresql:
     interface: postgresql_client
     optional: false
-  oauth:
+  oidc:
     interface: oauth
     optional: true
 
