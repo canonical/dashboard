@@ -1,6 +1,6 @@
-table.objectives tr.objective td.name {background-color: #205067; color: white; font-weight: bold; cursor: pointer; user-select: none;}
-table.objectives tr.objective td.name::before {content: "▼ "; font-size: 0.75em; opacity: 0.8;}
-table.objectives tbody.collapsed tr.objective td.name::before {content: "▶ ";}
+table.objectives tr.objective td.name {background-color: #205067; color: white; font-weight: bold; cursor: pointer; user-select: none; border: 0.5px solid #366177;}
+table.objectives tr.objective td.name::before {content: "▶"; font-size: 0.7em; display: inline-block; transform: rotate(90deg); margin-right: 0.4em;}
+table.objectives tbody.collapsed tr.objective td.name::before {content: "▶"; transform: rotate(0deg);}
 table.objectives tbody.collapsed tr:not(.objective) {display: none;}
 table.objectives tr.level {background-color: #f0f0f0; font-weight: bold;}
 
