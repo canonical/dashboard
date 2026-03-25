@@ -189,3 +189,40 @@ def test_commitment_table(page):
 
 def test_last_review(page):
     expect(page.get_by_role("textbox", name="Last review:")).to_have_value("2024-12-16")
+
+
+def test_collapsing_objectives(page):
+    """Check that objective rows collapse/expand on click and the state persists in localStorage."""
+
+    storage_key = "collapsed_objectives_1" 
+    tbody = page.locator("tbody#colourfulness")
+
+    # Clear any leftover state.
+    page.evaluate(f"localStorage.removeItem('{storage_key}')")
+
+    # Colourfulness objective should not be collapsed by default, so description row should be visible.
+    description_row = tbody.locator("tr").nth(1)
+    expect(description_row).to_be_visible()
+
+    # Click the objective name to collapse.
+    tbody.locator("tr.objective td.objective.name").click()
+    assert page.evaluate("document.querySelector('tbody#colourfulness').classList.contains('collapsed')")
+    expect(description_row).to_be_hidden()
+
+    # The slug is written to localStorage.
+    stored = page.evaluate(f"JSON.parse(localStorage.getItem('{storage_key}') || '[]')")
+    assert "colourfulness" in stored
+
+    # Reload the page — collapsed state must be restored from localStorage.
+    page.reload()
+    assert page.evaluate("document.querySelector('tbody#colourfulness').classList.contains('collapsed')")
+    expect(page.locator("tbody#colourfulness tr").nth(1)).to_be_hidden()
+
+    # Click again to expand.
+    page.locator("tbody#colourfulness tr.objective td.objective.name").click()
+    assert not page.evaluate("document.querySelector('tbody#colourfulness').classList.contains('collapsed')")
+    expect(page.locator("tbody#colourfulness tr").nth(1)).to_be_visible()
+
+    # Slug is removed from localStorage.
+    stored = page.evaluate(f"JSON.parse(localStorage.getItem('{storage_key}') || '[]')")
+    assert "colourfulness" not in stored
