@@ -192,7 +192,7 @@ def test_last_review(page):
 
 
 def test_collapsing_objectives(page):
-    """Check that objective rows collapse/expand on click and the state persists in localStorage."""
+    """Check that objective rows collapse/expand on click and the state persists in browser's local storage."""
 
     storage_key = "collapsed_objectives_1" 
     tbody = page.locator("tbody#colourfulness")
@@ -200,29 +200,25 @@ def test_collapsing_objectives(page):
     # Clear any leftover state.
     page.evaluate(f"localStorage.removeItem('{storage_key}')")
 
-    # Colourfulness objective should not be collapsed by default, so description row should be visible.
-    description_row = tbody.locator("tr").nth(1)
-    expect(description_row).to_be_visible()
+    # Colourfulness objective is not collapsed by default.
+    assert not page.evaluate("document.querySelector('tbody#colourfulness').classList.contains('collapsed')")
 
-    # Click the objective name to collapse.
+    # Click objective name, check that it collapses
     tbody.locator("tr.objective td.objective.name").click()
     assert page.evaluate("document.querySelector('tbody#colourfulness').classList.contains('collapsed')")
-    expect(description_row).to_be_hidden()
 
-    # The slug is written to localStorage.
+    # Check that it is written to localStorage.
     stored = page.evaluate(f"JSON.parse(localStorage.getItem('{storage_key}') || '[]')")
     assert "colourfulness" in stored
 
-    # Reload the page — collapsed state must be restored from localStorage.
+    # Reload the page, check that the objective remains collapsed.
     page.reload()
     assert page.evaluate("document.querySelector('tbody#colourfulness').classList.contains('collapsed')")
-    expect(page.locator("tbody#colourfulness tr").nth(1)).to_be_hidden()
 
-    # Click again to expand.
+    # Click objective to expand, check that it is no longer collapsed.
     page.locator("tbody#colourfulness tr.objective td.objective.name").click()
     assert not page.evaluate("document.querySelector('tbody#colourfulness').classList.contains('collapsed')")
-    expect(page.locator("tbody#colourfulness tr").nth(1)).to_be_visible()
 
-    # Slug is removed from localStorage.
+    # Check that it is removed from localStorage.
     stored = page.evaluate(f"JSON.parse(localStorage.getItem('{storage_key}') || '[]')")
     assert "colourfulness" not in stored

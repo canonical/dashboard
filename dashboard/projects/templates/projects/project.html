@@ -61,8 +61,6 @@
 
 {% block eventlisteners %}
 <script>
-  // TODO: unsure how IDs are computed - will the have the same lifetime as 
-  // the local storage? Should we use project.name instead?
   const LOCAL_STORAGE_KEY = 'collapsed_objectives_{{ project.id }}'; 
 
   function getCollapsed() {
@@ -88,7 +86,7 @@
     
     const tbody = nameTd.closest('tbody');
     tbody.classList.toggle('collapsed');
-    
+
     const ids = getCollapsed();
     if (tbody.classList.contains('collapsed')) {
       if (!ids.includes(tbody.id)) ids.push(tbody.id);
