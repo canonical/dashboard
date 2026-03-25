@@ -58,3 +58,14 @@
   </div>
 
 {% endblock content %}
+
+{% block eventlisteners %}
+<script>
+  document.addEventListener('click', function (e) {
+    const nameTd = e.target.closest('tr.objective > td.objective.name');
+    if (nameTd) {
+      nameTd.closest('tbody').classList.toggle('collapsed');
+    }
+  });
+</script>
+{% endblock %}
