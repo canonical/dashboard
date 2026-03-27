@@ -3,6 +3,27 @@
 {% block content %}
 
   <h2>Log in</h2>
+  
+  {% if oidc_configured %}
+  <!-- OIDC Login Button -->
+  <div style="margin-bottom: 1rem;">
+    <a href="{% url 'oidc_authentication_init' %}" style="
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    ">
+      {{ oidc_login_button_text }}
+    </a>
+  </div>
+  <p>
+    Or use your Dashboard account:
+  </p>
+  {% endif %}
+  <!-- Fallback to standard login -->
   <form method="post">
     {% csrf_token %}
 
