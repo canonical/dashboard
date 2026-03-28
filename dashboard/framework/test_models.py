@@ -153,3 +153,44 @@ def test_new_objective_means_new_commitments(
 
     assert project.commitment_set.count() == 2
     assert work_cycle.commitment_set.count() == 2
+
+
+@pytest.mark.django_db
+def test_moving_condition_updates_poc_not_creates_duplicate(
+    project, objective, objective_group, level
+):
+    """Moving a condition to a different objective should update the existing POC,
+    preserving the status, rather than creating a duplicate POC."""
+
+    objective_b = Objective.objects.create(
+        name="test_objective_b", group=objective_group, weight=1
+    )
+
+    condition = Condition.objects.create(
+        name="test_condition", level=level, objective=objective
+    )
+
+    # Set the POC's status to "DO" before moving
+    poc = ProjectObjectiveCondition.objects.get(
+        project=project, objective=objective, condition=condition
+    )
+    poc.status = "DO"
+    poc.save()
+
+    # Move the condition to objective_b
+    condition.objective = objective_b
+    condition.save()
+
+    # There should be exactly one POC for this condition across all projects
+    all_pocs = ProjectObjectiveCondition.objects.filter(condition=condition)
+    assert all_pocs.count() == 1, (
+        f"Expected 1 POC but got {all_pocs.count()}. "
+        "Moving a condition should update the existing POC, not create a duplicate."
+    )
+
+    # The POC should point to objective_b
+    updated_poc = all_pocs.first()
+    assert updated_poc.objective == objective_b
+
+    # The POC should retain its completion status
+    assert updated_poc.status == "DO"
