@@ -189,3 +189,36 @@ def test_commitment_table(page):
 
 def test_last_review(page):
     expect(page.get_by_role("textbox", name="Last review:")).to_have_value("2024-12-16")
+
+
+def test_collapsing_objectives(page):
+    """Check that objective rows collapse/expand on click and the state persists in browser's local storage."""
+
+    storage_key = "collapsed_objectives_1" 
+    tbody = page.locator("tbody#colourfulness")
+
+    # Clear any leftover state.
+    page.evaluate(f"localStorage.removeItem('{storage_key}')")
+
+    # Colourfulness objective is not collapsed by default.
+    assert not page.evaluate("document.querySelector('tbody#colourfulness').classList.contains('collapsed')")
+
+    # Click objective name, check that it collapses
+    tbody.locator("tr.objective td.objective.name").click()
+    assert page.evaluate("document.querySelector('tbody#colourfulness').classList.contains('collapsed')")
+
+    # Check that it is written to localStorage.
+    stored = page.evaluate(f"JSON.parse(localStorage.getItem('{storage_key}') || '[]')")
+    assert "colourfulness" in stored
+
+    # Reload the page, check that the objective remains collapsed.
+    page.reload()
+    assert page.evaluate("document.querySelector('tbody#colourfulness').classList.contains('collapsed')")
+
+    # Click objective to expand, check that it is no longer collapsed.
+    page.locator("tbody#colourfulness tr.objective td.objective.name").click()
+    assert not page.evaluate("document.querySelector('tbody#colourfulness').classList.contains('collapsed')")
+
+    # Check that it is removed from localStorage.
+    stored = page.evaluate(f"JSON.parse(localStorage.getItem('{storage_key}') || '[]')")
+    assert "colourfulness" not in stored
