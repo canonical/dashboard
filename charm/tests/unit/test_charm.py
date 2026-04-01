@@ -3,18 +3,10 @@
 
 """Unit tests for the dashboard charm's custom functionality."""
 
-import pathlib
-import sys
-
 import pytest
+from ops import testing
 
-CHARM_DIR = pathlib.Path(__file__).parents[2]
-sys.path.insert(0, str(CHARM_DIR / "lib"))
-sys.path.insert(0, str(CHARM_DIR / "src"))
-
-from ops import testing  # noqa: E402
-
-import charm  # noqa: E402
+import charm
 
 _LOADDATA_CMD = ["python3", "manage.py", "loaddata", "initial_data.yaml"]
 
