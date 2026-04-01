@@ -6,11 +6,15 @@ on:
       - main
   pull_request:
 
+permissions: {}
+
 jobs:
   app-checks:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - name: Run framework tests
         run: |
           cd dashboard
@@ -31,3 +35,19 @@ jobs:
         run: |
           cd dashboard
           make makemigrations-check
+
+  charm-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@cec208311dfd045dd5311c1add060b2062131d57 # v8.0.0
+      - name: Lint
+        run: |
+          cd charm
+          uvx tox run -e lint
+      - name: Unit tests
+        run: |
+          cd charm
+          uvx tox run -e unit
