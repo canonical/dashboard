@@ -32,7 +32,7 @@ class TestLoadSampleDataAction:
         assert ctx.action_results == {"result": "loaded sample data"}
 
     def test_load_sample_data_fails_on_exec_error(self):
-        """load-sample-data action fails when exec raises ExecError."""
+        """load-sample-data action fails when the manage.py command fails."""
         ctx = testing.Context(charm.DashboardCharm)
         container = testing.Container(
             "django-app",
@@ -47,7 +47,7 @@ class TestLoadSampleDataAction:
         assert "unable to load sample data" in exc_info.value.message
 
     def test_load_sample_data_fails_on_api_error(self):
-        """load-sample-data fails when exec itself raises an APIError."""
+        """load-sample-data fails when manage.py isn't available."""
         ctx = testing.Context(charm.DashboardCharm)
         container = testing.Container("django-app", can_connect=True)
         state = testing.State(containers={container}, leader=True)
