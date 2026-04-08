@@ -97,20 +97,24 @@ LOGGING = {
     },
 }
 
-# OIDC Settings 
+# OIDC Settings
 OIDC_RP_CLIENT_ID = os.environ.get("DJANGO_OIDC_CLIENT_ID")
 OIDC_RP_CLIENT_SECRET = os.environ.get("DJANGO_OIDC_CLIENT_SECRET")
 OIDC_OP_AUTHORIZATION_ENDPOINT = os.environ.get("DJANGO_OIDC_AUTHORIZE_URL")
 OIDC_OP_TOKEN_ENDPOINT = os.environ.get("DJANGO_OIDC_ACCESS_TOKEN_URL")
 OIDC_OP_USER_ENDPOINT = os.environ.get("DJANGO_OIDC_USERINFO_URL")
 OIDC_OP_JWKS_ENDPOINT = os.environ.get("DJANGO_OIDC_JWKS_URL")
-OIDC_AUTHENTICATION_CALLBACK_URL = os.environ.get("DJANGO_OIDC_AUTHENTICATION_CALLBACK_URL")
+OIDC_AUTHENTICATION_CALLBACK_URL = os.environ.get(
+    "DJANGO_OIDC_AUTHENTICATION_CALLBACK_URL"
+)
 
 # Optional OIDC Settings
 OIDC_RP_SIGN_ALGO = "RS256"
 OIDC_RP_SCOPES = "openid email profile"
-OIDC_TOKEN_USE_BASIC_AUTH = True  # Use client_secret_basic instead of client_secret_post
-OIDC_LOGIN_BUTTON_TEXT = "Your Company Login" 
+OIDC_TOKEN_USE_BASIC_AUTH = (
+    True  # Use client_secret_basic instead of client_secret_post
+)
+OIDC_LOGIN_BUTTON_TEXT = "Your Company Login"
 
 # Session settings for OIDC
 OIDC_RENEW_ID_TOKEN_EXPIRY_SECONDS = 15 * 60  # 15 minutes
@@ -237,8 +241,9 @@ AUTHENTICATION_BACKENDS = [
 
 # Add OIDC authentication backend only if configured
 if OIDC_RP_CLIENT_ID:
-    AUTHENTICATION_BACKENDS.insert(0, "mozilla_django_oidc.auth.OIDCAuthenticationBackend")
-
+    AUTHENTICATION_BACKENDS.insert(
+        0, "mozilla_django_oidc.auth.OIDCAuthenticationBackend"
+    )
 
 
 TINYMCE_DEFAULT_CONFIG = {
@@ -251,4 +256,3 @@ TINYMCE_DEFAULT_CONFIG = {
     "statusbar": False,
     "valid_elements": "a[href|target=_blank],strong,em,p,ul,ol,li",
 }
-
