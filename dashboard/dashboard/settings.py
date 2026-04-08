@@ -78,7 +78,7 @@ OIDC_RP_CLIENT_ID = os.environ.get("DJANGO_OIDC_CLIENT_ID")
 OIDC_RP_CLIENT_SECRET = os.environ.get("DJANGO_OIDC_CLIENT_SECRET")
 OIDC_OP_AUTHORIZATION_ENDPOINT = os.environ.get("DJANGO_OIDC_AUTHORIZE_URL")
 OIDC_OP_TOKEN_ENDPOINT = os.environ.get("DJANGO_OIDC_ACCESS_TOKEN_URL")
-OIDC_OP_USER_ENDPOINT = os.environ.get("DJANGO_OIDC_USERINFO_URL")
+OIDC_OP_USER_ENDPOINT = os.environ.get("DJANGO_OIDC_USER_URL")
 OIDC_OP_JWKS_ENDPOINT = os.environ.get("DJANGO_OIDC_JWKS_URL")
 OIDC_AUTHENTICATION_CALLBACK_URL = os.environ.get(
     "oidc_authentication_callback"  # Use /oidc/callback, per mozilla library
