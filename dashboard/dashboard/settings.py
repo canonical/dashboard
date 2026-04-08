@@ -85,12 +85,14 @@ OIDC_AUTHENTICATION_CALLBACK_URL = os.environ.get(
 )
 
 # Optional OIDC Settings
-OIDC_RP_SIGN_ALGO = "RS256"
 OIDC_RP_SCOPES = os.environ.get("DJANGO_OIDC_SCOPES", "openid email profile")
+OIDC_LOGIN_BUTTON_TEXT = os.environ.get(
+    "DJANGO_OIDC_LOGIN_BUTTON_TEXT", "Your company login"
+)
+OIDC_RP_SIGN_ALGO = "RS256"
 OIDC_TOKEN_USE_BASIC_AUTH = (
     True  # Use client_secret_basic instead of client_secret_post
 )
-OIDC_LOGIN_BUTTON_TEXT = "Your Company Login"  # Customize this text as needed
 
 # Session settings for OIDC
 OIDC_RENEW_ID_TOKEN_EXPIRY_SECONDS = 15 * 60  # 15 minutes
