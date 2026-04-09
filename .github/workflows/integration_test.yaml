@@ -17,7 +17,6 @@ jobs:
           "test_charm.py",
           "test_oauth.py"
         ]
-      load-test-enabled: false
       trivy-fs-enabled: false
       juju-channel: 3/stable
       channel: 1.33-classic/stable
