@@ -1,0 +1,31 @@
+name: Integration tests
+
+on:
+  pull_request:
+  schedule:
+  - cron: "0 15 * * SAT"
+
+jobs:
+  integration-tests:
+    uses: 
+      canonical/operator-workflows/.github/workflows/integration_test.yaml@main
+    secrets: inherit
+    with:
+      modules: |
+        [
+          "test_charm.py",
+          "test_oauth.py"
+        ]
+      load-test-enabled: false
+      trivy-fs-enabled: false
+      juju-channel: 3/stable
+      channel: 1.33-classic/stable
+      use-canonical-k8s: true
+      provider: 'k8s'
+      self-hosted-runner: true
+      self-hosted-runner-label: xlarge
+  allure-report:
+    if: ${{ !cancelled() && github.event_name == 'schedule' }}
+    needs:
+    - integration-tests
+    uses: canonical/operator-workflows/.github/workflows/allure_report.yaml@main
