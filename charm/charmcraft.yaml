@@ -59,6 +59,11 @@ config:
         HTTPS, regardless of what the upstream ingress returns in the ingress URL.
         It may cause some unforeseeable ingress issues, so avoid using this option if possible.
       default: false
+    oidc-login-button-text:
+      type: string
+      default: Your company login
+      description: >-
+        This option controls the application's login button text if you integrate with an OpenID Connect provider.
 
 actions:
   load-sample-data:
