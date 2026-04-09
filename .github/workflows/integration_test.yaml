@@ -9,7 +9,7 @@ on:
 jobs:
   integration-tests:
     uses: 
-      canonical/operator-workflows/.github/workflows/integration_test.yaml@main
+      canonical/operator-workflows/.github/workflows/integration_test.yaml@fix_integration_test
     secrets: inherit
     with:
       modules: |
