@@ -28,13 +28,11 @@ jobs:
         run: |
           sudo snap install rockcraft --classic
           sudo snap install charmcraft --classic
-          sudo snap install microk8s --channel=1.35/stable --classic
+          sudo snap install microk8s --channel=1.35-strict/stable --classic
+          sudo snap install juju --channel=3.6/stable --classic
           sudo microk8s enable dns
           sudo microk8s enable registry
           sudo microk8s enable hostpath-storage
-          # Install Juju as a plain binary so it can talk to classic-snap MicroK8s
-          curl -fL -o /tmp/juju.tar.xz https://github.com/juju/juju/releases/download/v3.6.21/juju-3.6.21-linux-amd64.tar.xz
-          sudo tar -xf /tmp/juju.tar.xz -C /usr/local/bin juju
           # Install build tools needed by Python deps (e.g. backports.datetime_fromisoformat)
           sudo apt-get install -y gcc python3-dev python3-venv
 
