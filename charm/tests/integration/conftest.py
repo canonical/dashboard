@@ -160,7 +160,7 @@ def dashboard_barebones_fixture(
         "django-app-image": dashboard_app_image,
     }
     juju.deploy(
-        f"./{dashboard_charm}",
+        dashboard_charm if os.path.isabs(dashboard_charm) else f"./{dashboard_charm}",
         resources=resources,
         config={
             "django-debug": False,
