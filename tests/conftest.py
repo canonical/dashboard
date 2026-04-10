@@ -15,7 +15,7 @@ def pytest_addoption(parser: Parser) -> None:
         parser: Pytest parser.
     """
     parser.addoption(
-        DASHBOARD_IMAGE_PARAM, action="store", help="Dasboard app image to be deployed"
+        DASHBOARD_IMAGE_PARAM, action="store", help="Dashboard app image to be deployed"
     )
     parser.addoption("--kube-config", action="store", default="~/.kube/config")
     parser.addoption("--charm-file", action="store", help="Charm file to be deployed")

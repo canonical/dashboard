@@ -8,12 +8,12 @@ import logging
 import typing
 
 import ops
-import paas_charm.django
+import paas_charm.django  # pylint: disable=import-error  # pyright: ignore[reportMissingImports]
 
 logger = logging.getLogger(__name__)
 
 
-class DashboardCharm(paas_charm.django.Charm):
+class DashboardCharm(paas_charm.django.Charm):  # pylint: disable=too-few-public-methods
     """Django Charm service."""
 
     def __init__(self, *args: typing.Any) -> None:
@@ -25,7 +25,7 @@ class DashboardCharm(paas_charm.django.Charm):
         super().__init__(*args)
         self.framework.observe(self.on.load_sample_data_action, self._on_load_sample_data)
 
-    def _on_load_sample_data(self, event: ops.ActionEvent):
+    def _on_load_sample_data(self, event: ops.ActionEvent) -> None:
         """Load the application's sample data, using a command in the Django container."""
         command = ["python3", "manage.py", "loaddata", "initial_data.yaml"]
         working_dir = str(self._workload_config.app_dir)

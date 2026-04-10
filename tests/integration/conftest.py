@@ -54,6 +54,7 @@ def dashboard_charm_fixture(pytestconfig: Config) -> str:
         charm = os.path.join("..", charm)
     return charm
 
+
 @pytest.fixture(scope="session")
 def juju(request: pytest.FixtureRequest) -> Generator[jubilant.Juju, None, None]:
     """Pytest fixture that wraps :meth:`jubilant.with_model`."""
@@ -99,7 +100,11 @@ def dashboard_ingress_integration_fixture(
     """Integrate Dashboard and gateway-api-integrator for ingress integration."""
     juju.config(
         gateway_app.name,
-        {"external-hostname": dashboard_hostname, "path-routes": "/", "gateway-class": "cilium"},
+        {
+            "external-hostname": dashboard_hostname,
+            "path-routes": "/",
+            "gateway-class": "cilium",
+        },
     )
     try:
         juju.integrate(
@@ -206,14 +211,24 @@ def deploy_identity_bundle_fixture(
     juju.deploy("hydra", channel="latest/edge", revision=399, trust=True)
     juju.deploy("kratos", channel="latest/edge", revision=567, trust=True)
     juju.deploy(
-        "identity-platform-login-ui-operator", channel="latest/edge", revision=200, trust=True
+        "identity-platform-login-ui-operator",
+        channel="latest/edge",
+        revision=200,
+        trust=True,
     )
     juju.deploy("self-signed-certificates", channel="1/stable", revision=317, trust=True)
-    juju.deploy("traefik-k8s", "traefik-admin", channel="latest/stable", revision=176, trust=True)
+    juju.deploy(
+        "traefik-k8s",
+        "traefik-admin",
+        channel="latest/stable",
+        revision=176,
+        trust=True,
+    )
     juju.deploy("traefik-k8s", "traefik-public", channel="latest/edge", revision=270, trust=True)
     # Integrations
     juju.integrate(
-        "hydra:hydra-endpoint-info", "identity-platform-login-ui-operator:hydra-endpoint-info"
+        "hydra:hydra-endpoint-info",
+        "identity-platform-login-ui-operator:hydra-endpoint-info",
     )
     juju.integrate("hydra:hydra-endpoint-info", "kratos:hydra-endpoint-info")
     juju.integrate("kratos:kratos-info", "identity-platform-login-ui-operator:kratos-info")
@@ -221,7 +236,8 @@ def deploy_identity_bundle_fixture(
         "hydra:ui-endpoint-info", "identity-platform-login-ui-operator:ui-endpoint-info"
     )
     juju.integrate(
-        "kratos:ui-endpoint-info", "identity-platform-login-ui-operator:ui-endpoint-info"
+        "kratos:ui-endpoint-info",
+        "identity-platform-login-ui-operator:ui-endpoint-info",
     )
     juju.integrate(f"{postgresql_app.name}:database", "hydra:pg-database")
     juju.integrate(f"{postgresql_app.name}:database", "kratos:pg-database")
@@ -230,7 +246,8 @@ def deploy_identity_bundle_fixture(
     juju.integrate("traefik-public:traefik-route", "hydra:public-route")
     juju.integrate("traefik-public:traefik-route", "kratos:public-route")
     juju.integrate(
-        "traefik-public:traefik-route", "identity-platform-login-ui-operator:public-route"
+        "traefik-public:traefik-route",
+        "identity-platform-login-ui-operator:public-route",
     )
 
     juju.config("kratos", {"enforce_mfa": False})
