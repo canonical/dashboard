@@ -8,25 +8,57 @@ on:
 
 jobs:
   integration-tests:
-    uses: 
-      canonical/operator-workflows/.github/workflows/integration_test.yaml@fix_integration_test
-    secrets: inherit
-    with:
-      modules: |
-        [
-          "test_charm.py",
-          "test_oauth.py"
-        ]
-      trivy-fs-enabled: false
-      juju-channel: 3/stable
-      channel: 1.33-classic/stable
-      use-canonical-k8s: true
-      provider: 'k8s'
-      self-hosted-runner: true
-      self-hosted-runner-label: xlarge
-      working-directory: ./charm
+    runs-on: [self-hosted, xlarge]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        working-directory: ./charm
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install tox
+
+      - name: Install Juju and MicroK8s
+        run: |
+          sudo snap install juju --channel=3/stable
+          sudo snap install microk8s --channel=1.33-classic/stable --classic
+          sudo microk8s enable dns
+
+      - name: Wait for MicroK8s to be ready
+        run: |
+          sudo microk8s.wait --for=condition=ready node --all
+          sudo microk8s.kubectl get nodes
+
+      - name: Setup Juju
+        run: |
+          mkdir -p ~/.local/share/juju
+          juju bootstrap microk8s test-controller
+
+      - name: Run integration tests
+        working-directory: ./charm
+        run: |
+          pytest tests/integration/test_charm.py tests/integration/test_oauth.py -v --tb=short
+        env:
+          JUJU_CONTROLLER: test-controller
+          JUJU_MODEL: test-model
+
+      - name: Cleanup Juju
+        if: always()
+        run: |
+          juju destroy-controller test-controller --destroy-all-models --force --no-prompt || true
+
   allure-report:
     if: ${{ !cancelled() && github.event_name == 'schedule' }}
-    needs:
-    - integration-tests
-    uses: canonical/operator-workflows/.github/workflows/allure_report.yaml@main
+    needs: integration-tests
+    runs-on: [self-hosted, xlarge]
+    steps:
+      - name: Generate Allure Report
+        run: |
+          echo "Allure report generation would go here"
