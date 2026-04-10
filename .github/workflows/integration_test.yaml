@@ -24,6 +24,7 @@ jobs:
       provider: 'k8s'
       self-hosted-runner: true
       self-hosted-runner-label: xlarge
+      working-directory: ./charm
   allure-report:
     if: ${{ !cancelled() && github.event_name == 'schedule' }}
     needs:

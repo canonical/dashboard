@@ -16,7 +16,7 @@ from pytest import Config
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-from tests.conftest import DASHBOARD_IMAGE_PARAM
+from charm.tests.conftest import DASHBOARD_IMAGE_PARAM
 from tests.integration.types import App
 
 logger = logging.getLogger(__name__)
