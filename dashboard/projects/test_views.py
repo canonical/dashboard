@@ -3,6 +3,10 @@ from urllib.parse import parse_qs, urlparse
 
 from django.test import override_settings
 from django.urls import reverse
+from django.contrib.auth.models import Permission, User
+
+from framework.models import Condition, Level, Objective, ObjectiveGroup, Reason, WorkCycle
+from projects.models import Commitment, Project, ProjectObjective, ProjectObjectiveCondition
 
 from framework.models import (
     Condition,
@@ -85,6 +89,7 @@ def reason():
 
 
 @pytest.mark.django_db
+<<<<<<< HEAD
 def test_project_basic_form_save_denies_unauthenticated_user(client, project):
     original_owner = project.owner
     url = reverse("projects:project_basic_form_save", args=[project.id])
@@ -159,6 +164,8 @@ def test_project_basic_form_save_allows_user_with_permission(
 
 
 @pytest.mark.django_db
+=======
+>>>>>>> 3a8a10d (Added a series of tests for view functions)
 def test_action_toggle_commitment_denies_user_without_permission(
     client, user_without_permissions, commitment
 ):
@@ -176,8 +183,13 @@ def test_action_toggle_condition_denies_user_without_permission(
 ):
     url = (
         reverse(
+<<<<<<< HEAD
             "projects:action_toggle_condition",
             args=[project_objective_condition.id],
+=======
+        "projects:action_toggle_condition",
+        args=[project_objective_condition.id],
+>>>>>>> 3a8a10d (Added a series of tests for view functions)
         )
         + "?status=&target=done"
     )
@@ -237,8 +249,13 @@ def test_action_toggle_condition_rejects_non_put_method(
 ):
     url = (
         reverse(
+<<<<<<< HEAD
             "projects:action_toggle_condition",
             args=[project_objective_condition.id],
+=======
+        "projects:action_toggle_condition",
+        args=[project_objective_condition.id],
+>>>>>>> 3a8a10d (Added a series of tests for view functions)
         )
         + "?status=&target=done"
     )
@@ -255,8 +272,13 @@ def test_action_toggle_condition_allows_authorized_put_and_updates_status(
 
     url = (
         reverse(
+<<<<<<< HEAD
             "projects:action_toggle_condition",
             args=[project_objective_condition.id],
+=======
+        "projects:action_toggle_condition",
+        args=[project_objective_condition.id],
+>>>>>>> 3a8a10d (Added a series of tests for view functions)
         )
         + "?status=&target=done"
     )
@@ -295,6 +317,7 @@ def test_action_select_reason_allows_authorized_put_and_sets_reason(
     project_objective.refresh_from_db()
     assert response.status_code == 200
     assert project_objective.unstarted_reason_id == reason.id
+<<<<<<< HEAD
 
 
 # Check that the project list and project detail pages are correctly public/private,
@@ -351,3 +374,5 @@ def test_project_detail_oidc_logged_in(client, user_without_permissions, project
     url = reverse("projects:project", kwargs={"id": project.id})
     response = client.get(url)
     assert response.status_code == 200
+=======
+>>>>>>> 3a8a10d (Added a series of tests for view functions)
