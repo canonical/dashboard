@@ -60,6 +60,18 @@ def user_can_change_projectobjective(client):
 
 
 @pytest.fixture
+def user_can_change_project(client):
+    user = User.objects.create_user(username="change_project", password="password")
+    permission = Permission.objects.get(
+        codename="change_project",
+        content_type__app_label="projects",
+    )
+    user.user_permissions.add(permission)
+    client.login(username="change_project", password="password")
+    return user
+
+
+@pytest.fixture
 def objective_group():
     return ObjectiveGroup.objects.create(name="group")
 
@@ -116,6 +128,78 @@ def commitment(project, objective, level, work_cycle):
 @pytest.fixture
 def reason():
     return Reason.objects.create(name="not-started", value=1)
+
+
+@pytest.mark.django_db
+def test_project_basic_form_save_denies_unauthenticated_user(client, project):
+    original_owner = project.owner
+    url = reverse("projects:project_basic_form_save", args=[project.id])
+    response = client.post(
+        url,
+        data={
+            "name": project.name,
+            "url": project.url,
+            "group": "",
+            "owner": "changed owner",
+            "driver": project.driver or "",
+            "agreement_status": "",
+            "last_review": "",
+            "last_review_status": "",
+        },
+    )
+
+    project.refresh_from_db()
+    assert response.status_code == 302
+    assert response.url == f"{reverse('login')}?next={url}"
+    assert project.owner == original_owner
+
+
+@pytest.mark.django_db
+def test_project_basic_form_save_denies_user_without_permission(
+    client, user_without_permissions, project
+):
+    original_owner = project.owner
+    url = reverse("projects:project_basic_form_save", args=[project.id])
+    response = client.post(
+        url,
+        data={
+            "name": project.name,
+            "url": project.url,
+            "group": "",
+            "owner": "changed owner",
+            "driver": project.driver or "",
+            "agreement_status": "",
+            "last_review": "",
+            "last_review_status": "",
+        },
+    )
+
+    project.refresh_from_db()
+    assert response.status_code == 302
+    assert response.url == f"{reverse('login')}?next={url}"
+    assert project.owner == original_owner
+
+
+@pytest.mark.django_db
+def test_project_basic_form_save_allows_user_with_permission(client, user_can_change_project, project):
+    url = reverse("projects:project_basic_form_save", args=[project.id])
+    response = client.post(
+        url,
+        data={
+            "name": project.name,
+            "url": project.url,
+            "group": "",
+            "owner": "changed owner",
+            "driver": project.driver or "",
+            "agreement_status": "",
+            "last_review": "",
+            "last_review_status": "",
+        },
+    )
+
+    project.refresh_from_db()
+    assert response.status_code == 200
+    assert project.owner == "changed owner"
 
 
 @pytest.mark.django_db
