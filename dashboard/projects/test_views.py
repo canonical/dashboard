@@ -91,6 +91,9 @@ def reason():
 
 @pytest.mark.django_db
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7781581 (Added a permissions constraint for project_basic_form_save)
 def test_project_basic_form_save_denies_unauthenticated_user(client, project):
     original_owner = project.owner
     url = reverse("projects:project_basic_form_save", args=[project.id])
@@ -141,9 +144,13 @@ def test_project_basic_form_save_denies_user_without_permission(
 
 
 @pytest.mark.django_db
+<<<<<<< HEAD
 def test_project_basic_form_save_allows_user_with_permission(
     client, user_can_change_project, project
 ):
+=======
+def test_project_basic_form_save_allows_user_with_permission(client, user_can_change_project, project):
+>>>>>>> 7781581 (Added a permissions constraint for project_basic_form_save)
     url = reverse("projects:project_basic_form_save", args=[project.id])
     response = client.post(
         url,
@@ -165,8 +172,11 @@ def test_project_basic_form_save_allows_user_with_permission(
 
 
 @pytest.mark.django_db
+<<<<<<< HEAD
 =======
 >>>>>>> 3a8a10d (Added a series of tests for view functions)
+=======
+>>>>>>> 7781581 (Added a permissions constraint for project_basic_form_save)
 def test_action_toggle_commitment_denies_user_without_permission(
     client, user_without_permissions, commitment
 ):
