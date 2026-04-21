@@ -27,6 +27,11 @@ from framework.models import WorkCycle, Objective, ObjectiveGroup, Reason
 class ProjectListView(ConditionalLoginRequiredMixin, ListView):
     model = Project
 
+    def get_queryset(self):
+        return super().get_queryset().select_related(
+            "group", "agreement_status", "last_review_status"
+        )
+
     def get_context_data(self, **kwargs):
 
         context = super().get_context_data(**kwargs)
