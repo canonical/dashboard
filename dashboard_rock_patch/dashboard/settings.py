@@ -138,6 +138,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
+# Add OIDC app only if configured
+if OIDC_RP_CLIENT_ID:
+    INSTALLED_APPS.insert(3, "mozilla_django_oidc")
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
