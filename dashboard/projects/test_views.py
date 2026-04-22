@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.contrib.auth.models import Permission, User
 
 from framework.models import Condition, Level, Objective, ObjectiveGroup, Reason, WorkCycle
-from projects.models import Commitment, Project, ProjectObjective, ProjectObjectiveCondition
+from projects.models import Commitment, Project, ProjectObjective, ProjectObjectiveCondition, QI
 
 def test_toggle_condition_url_patterns():
     url = reverse("projects:action_toggle_condition", args=[1])
@@ -339,3 +339,39 @@ def test_action_select_reason_allows_authorized_put_and_sets_reason(
     project_objective.refresh_from_db()
     assert response.status_code == 200
     assert project_objective.unstarted_reason_id == reason.id
+
+
+@pytest.mark.django_db
+def test_project_list_renders_qi_history_current_qi_and_levels(
+    client, objective, project, project_objective, work_cycle
+):
+    user = User.objects.create_user(username="viewer", password="password")
+    client.login(username="viewer", password="password")
+
+    second_work_cycle = WorkCycle.objects.create(
+        name="wc-2", timestamp="2026-02-01", is_current=False
+    )
+    QI.objects.update_or_create(
+        project=project,
+        workcycle=work_cycle,
+        defaults={"value": 3},
+    )
+    QI.objects.update_or_create(
+        project=project,
+        workcycle=second_work_cycle,
+        defaults={"value": 5},
+    )
+
+    level_for_display = Level.objects.create(name="LEVEL-ASSERT-ONLY", value=7)
+    ProjectObjective.objects.filter(id=project_objective.id).update(
+        level_achieved=level_for_display
+    )
+
+    response = client.get(reverse("projects:project_list"))
+    content = response.content.decode()
+
+    assert response.status_code == 200
+    assert "<td>3</td>" in content
+    assert "<td>5</td>" in content
+    assert ">7</a></td>" in content
+    assert "LEVEL-ASSERT-ONLY" in content
