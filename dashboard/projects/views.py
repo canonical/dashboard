@@ -1,5 +1,5 @@
-import datetime
 import json
+from django.db.models import F, Sum
 from django.shortcuts import render, HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView
 from django.views.decorators.http import require_http_methods
@@ -30,20 +30,56 @@ class ProjectListView(ConditionalLoginRequiredMixin, ListView):
     def get_queryset(self):
         return super().get_queryset().select_related(
             "group", "agreement_status", "last_review_status"
-        )
+        ).prefetch_related("qi_set")
 
     def get_context_data(self, **kwargs):
 
         context = super().get_context_data(**kwargs)
 
-        context["workcycle_list"] = WorkCycle.objects.all()
-        context["workcycle_count"] = WorkCycle.objects.count()
-        context["objective_list"] = Objective.objects.all()
-        context["objective_count"] = Objective.objects.count()
-        context["column_count"] = (
-            Objective.objects.count() + WorkCycle.objects.count() + 7
-        )
-        context["quality_cols_count"] = 4 + WorkCycle.objects.count()
+
+        # Build a per-project objective map once to avoid repeated row-level lookups.
+        pos_by_project = {}
+        for po in ProjectObjective.objects.all().values(
+            "project_id",
+            "objective__name",
+            "id",
+            "level_achieved__name",
+            "unstarted_reason__name",
+        ):
+            pos_by_project.setdefault(po["project_id"], []).append(po)
+
+        projects = list(context["object_list"])
+        project_ids = [project.id for project in projects]
+
+        # Collect quality indicator totals in one grouped query.
+        quality_indicator_by_project = {
+            row["project_id"]: row["total"]
+            for row in ProjectObjective.objects.filter(
+                project_id__in=project_ids, level_achieved__isnull=False
+            )
+            .values("project_id")
+            .annotate(total=Sum(F("level_achieved__value") * F("objective__weight")))
+        }
+
+        # Attach prepared values to each project so the template can render without extra ORM work.
+        for project in projects:
+            project.projectobjectives = pos_by_project.get(project.id, [])
+            project.quality_history_values = project.qi_set.all()
+            project.quality_indicator_value = quality_indicator_by_project.get(
+                project.id, 0
+            )
+
+        workcycle_list = list(WorkCycle.objects.all())
+        objective_list = list(Objective.objects.all())
+        workcycle_count = len(workcycle_list)
+        objective_count = len(objective_list)
+
+        context["workcycle_list"] = workcycle_list
+        context["workcycle_count"] = workcycle_count
+        context["objective_list"] = objective_list
+        context["objective_count"] = objective_count
+        context["column_count"] = objective_count + workcycle_count + 7
+        context["quality_cols_count"] = 4 + workcycle_count
 
         return context
 
@@ -141,25 +177,6 @@ def status_dashboardprojectobjective(request, projectobjective_id):
             "projectobjective": projectobjective,
         },
     )
-
-def project_row(request, project_id):
-    project = Project.objects.get(id=project_id)
-
-    project.projectobjectives = project.projectobjective_set.all().values(
-        "objective__name",
-        "id",
-        "level_achieved__name",
-        "unstarted_reason__name"
-    )
-
-    return render(
-        request,
-        "projects/partial_project_list_row.html",
-        {
-            "project": project,
-        }
-    )
-
 
 
 # action methods
