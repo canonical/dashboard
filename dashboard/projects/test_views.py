@@ -90,10 +90,6 @@ def reason():
 
 
 @pytest.mark.django_db
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 7781581 (Added a permissions constraint for project_basic_form_save)
 def test_project_basic_form_save_denies_unauthenticated_user(client, project):
     original_owner = project.owner
     url = reverse("projects:project_basic_form_save", args=[project.id])
@@ -144,13 +140,9 @@ def test_project_basic_form_save_denies_user_without_permission(
 
 
 @pytest.mark.django_db
-<<<<<<< HEAD
 def test_project_basic_form_save_allows_user_with_permission(
     client, user_can_change_project, project
 ):
-=======
-def test_project_basic_form_save_allows_user_with_permission(client, user_can_change_project, project):
->>>>>>> 7781581 (Added a permissions constraint for project_basic_form_save)
     url = reverse("projects:project_basic_form_save", args=[project.id])
     response = client.post(
         url,
@@ -172,11 +164,6 @@ def test_project_basic_form_save_allows_user_with_permission(client, user_can_ch
 
 
 @pytest.mark.django_db
-<<<<<<< HEAD
-=======
->>>>>>> 3a8a10d (Added a series of tests for view functions)
-=======
->>>>>>> 7781581 (Added a permissions constraint for project_basic_form_save)
 def test_action_toggle_commitment_denies_user_without_permission(
     client, user_without_permissions, commitment
 ):
@@ -194,13 +181,8 @@ def test_action_toggle_condition_denies_user_without_permission(
 ):
     url = (
         reverse(
-<<<<<<< HEAD
             "projects:action_toggle_condition",
             args=[project_objective_condition.id],
-=======
-        "projects:action_toggle_condition",
-        args=[project_objective_condition.id],
->>>>>>> 3a8a10d (Added a series of tests for view functions)
         )
         + "?status=&target=done"
     )
@@ -260,13 +242,8 @@ def test_action_toggle_condition_rejects_non_put_method(
 ):
     url = (
         reverse(
-<<<<<<< HEAD
             "projects:action_toggle_condition",
             args=[project_objective_condition.id],
-=======
-        "projects:action_toggle_condition",
-        args=[project_objective_condition.id],
->>>>>>> 3a8a10d (Added a series of tests for view functions)
         )
         + "?status=&target=done"
     )
@@ -283,13 +260,8 @@ def test_action_toggle_condition_allows_authorized_put_and_updates_status(
 
     url = (
         reverse(
-<<<<<<< HEAD
             "projects:action_toggle_condition",
             args=[project_objective_condition.id],
-=======
-        "projects:action_toggle_condition",
-        args=[project_objective_condition.id],
->>>>>>> 3a8a10d (Added a series of tests for view functions)
         )
         + "?status=&target=done"
     )
@@ -328,7 +300,6 @@ def test_action_select_reason_allows_authorized_put_and_sets_reason(
     project_objective.refresh_from_db()
     assert response.status_code == 200
     assert project_objective.unstarted_reason_id == reason.id
-<<<<<<< HEAD
 
 
 @pytest.mark.django_db
@@ -436,5 +407,3 @@ def test_force_login_project_detail_with_user(
     url = reverse("projects:project", kwargs={"id": project.id})
     response = client.get(url)
     assert response.status_code == 200
-=======
->>>>>>> 3a8a10d (Added a series of tests for view functions)
