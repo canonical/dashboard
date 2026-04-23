@@ -16,8 +16,17 @@ from .models import (
 
 
 class ConditionAdmin(admin.ModelAdmin):
-    list_display = ["name", "objective", "level"]
+    list_display = ["display_name", "objective", "level"]
     list_editable = ["objective", "level"]
+
+    formfield_overrides = {
+        models.TextField: {"widget": TinyMCE},
+    }
+
+    def display_name(self, obj):
+        from django.utils.html import strip_tags
+        return strip_tags(obj.name)
+    display_name.short_description = "name"
 
 class ConditionInline(admin.TabularInline):
     model = Condition
