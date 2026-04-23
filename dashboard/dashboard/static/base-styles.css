@@ -17,18 +17,6 @@ div.auth {margin-bottom: 1em;}
 
 th {text-align: left;}
 
-table.objectives.detail {
-    width: 100%;
-    border-collapse: collapse;
-}
-table.objectives tr {background: var(--body-bg)}
-table.objectives td {border-bottom: none;}
-
-table.objectives td, th {padding: 4px 8px 4px;}
-
-
-tr.condition td, th {padding: 2px 8px 2px;}
-
 
 th.projectobjectivegroup {
     background: #D9EAD3;
@@ -53,18 +41,3 @@ td.agreed {color: white; background: #38761D}
 td.started {color: black; background: #B6D7A8}
 td.first-results {color: black; background: #6AA84F}
 td.mature-results, td.done, td.all-ok {color: white; background: #38761D}
-
-/* condition items */
-
-.attributes {float: right; color: #bbb; padding-left: 1em;}
-.attributes span {margin-left: 1em; padding: 0px 4px;}
-
-tr.condition.candidate span.condition.candidate {color: orange;}
-tr.condition.not-applicable span.condition.not-applicable {color: orange;}
-
-tr.condition.not-applicable .condition.name {color: #bbb; text-decoration: line-through;}
-
-tr.condition span.condition.has-perms:hover {
-    cursor: default;
-    border-radius: 999em; outline: 1px solid orange;
-}
