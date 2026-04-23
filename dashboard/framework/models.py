@@ -158,7 +158,8 @@ class Condition(models.Model):
     level = models.ForeignKey(Level, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        from django.utils.html import strip_tags
+        return strip_tags(self.name)
 
     def save(self, *args, **kwargs):
         # when a new Condition is added propagate it to all existing ProjectObjectives
