@@ -187,8 +187,12 @@
 
 .basics-actions {
 	padding-top: 0.2rem;
-	display: flex;
+	display: none;
 	justify-content: flex-end;
+}
+
+.basics-form[data-dirty] .basics-actions {
+	display: flex;
 }
 
 .basics-save {
@@ -197,6 +201,7 @@
 	border: none;
 	border-radius: 6px;
 	padding: 0.45rem 0.9rem;
+	font-size: 1rem;
 	font-weight: 600;
 	cursor: pointer;
 }
