@@ -58,3 +58,43 @@
   </div>
 
 {% endblock content %}
+
+{% block eventlisteners %}
+<script>
+  const LOCAL_STORAGE_KEY = 'collapsed_objectives_{{ project.id }}'; 
+
+  function getCollapsed() {
+    return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || '[]');
+  }
+
+  function saveCollapsed(ids) {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(ids));
+  }
+
+  // Restore collapsed state on page load.
+  const collapsed = getCollapsed();
+  document.querySelectorAll('tbody[id]').forEach(function (tbody) {
+    if (collapsed.includes(tbody.id)) {
+      tbody.classList.add('collapsed');
+    }
+  });
+
+  // Toggle on click.
+  document.addEventListener('click', function (e) {
+    const nameTd = e.target.closest('tr.objective > td.objective.name');
+    if (!nameTd) return;
+    
+    const tbody = nameTd.closest('tbody');
+    tbody.classList.toggle('collapsed');
+
+    const ids = getCollapsed();
+    if (tbody.classList.contains('collapsed')) {
+      if (!ids.includes(tbody.id)) ids.push(tbody.id);
+    } else {
+      const i = ids.indexOf(tbody.id);
+      if (i > -1) ids.splice(i, 1);
+    }
+    saveCollapsed(ids);
+  });
+</script>
+{% endblock %}

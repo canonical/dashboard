@@ -1,4 +1,7 @@
-table.objectives tr.objective td.name {background-color: #205067; color: white; font-weight: bold;}
+table.objectives tr.objective td.name {background-color: #205067; color: white; font-weight: bold; cursor: pointer; user-select: none; border: 0.5px solid #366177;}
+table.objectives tr.objective td.name::before {content: "▶"; font-size: 0.7em; display: inline-block; transform: rotate(90deg); margin-right: 0.4em;}
+table.objectives tbody.collapsed tr.objective td.name::before {content: "▶"; transform: rotate(0deg);}
+table.objectives tbody.collapsed tr:not(.objective) {display: none;}
 table.objectives tr.level {background-color: #f0f0f0; font-weight: bold;}
 
 table.objectives td p, th p {margin: .2rem 0}
