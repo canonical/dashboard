@@ -1,12 +1,6 @@
-<table
-  id="commitment-table"
-  hx-swap-oob="outerHTML"
-  hx-trigger="
-    updateCommitment from:body,
-    updateCondition from:body"
-  hx-get="{% url 'projects:status_projects_commitment' project.id %}">
-
-  <h2>{% if current_work_cycle_name %}Commitments for {{ current_work_cycle_name }}{% else %}Commitments{% endif %}</h2>
+{% if current_commitments %}
+<h2 class="overview-section-title">{% if current_work_cycle_name %}Commitments for {{ current_work_cycle_name }}{% else %}Commitments{% endif %}</h2>
+<table id="commitment-table" class="overview-table commitments-table">
   <tbody>
     <tr><th>Objective</th><th>Target</th><th>Achieved</th></tr>
     {% for commitment in current_commitments %}
@@ -24,3 +18,6 @@
     {% endfor %}
   </tbody>
 </table>
+{% else %}
+<p class="overview-empty-state">No commitments for this cycle</p>
+{% endif %}
