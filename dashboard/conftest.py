@@ -9,20 +9,20 @@ from django.http import HttpResponse
 # tests.
 
 if "mozilla_django_oidc" not in sys.modules:
-	oidc_module = types.ModuleType("mozilla_django_oidc")
-	oidc_views_module = types.ModuleType("mozilla_django_oidc.views")
+    oidc_module = types.ModuleType("mozilla_django_oidc")
+    oidc_views_module = types.ModuleType("mozilla_django_oidc.views")
 
-	class _DummyOIDCView:
-		@classmethod
-		def as_view(cls):
-			def _view(request, *args, **kwargs):
-				return HttpResponse("")
+    class _DummyOIDCView:
+        @classmethod
+        def as_view(cls):
+            def _view(request, *args, **kwargs):
+                return HttpResponse("")
 
-			return _view
+            return _view
 
-	oidc_views_module.OIDCAuthenticationRequestView = _DummyOIDCView
-	oidc_views_module.OIDCAuthenticationCallbackView = _DummyOIDCView
-	oidc_views_module.OIDCLogoutView = _DummyOIDCView
-	oidc_module.views = oidc_views_module
-	sys.modules["mozilla_django_oidc"] = oidc_module
-	sys.modules["mozilla_django_oidc.views"] = oidc_views_module
+    oidc_views_module.OIDCAuthenticationRequestView = _DummyOIDCView
+    oidc_views_module.OIDCAuthenticationCallbackView = _DummyOIDCView
+    oidc_views_module.OIDCLogoutView = _DummyOIDCView
+    oidc_module.views = oidc_views_module
+    sys.modules["mozilla_django_oidc"] = oidc_module
+    sys.modules["mozilla_django_oidc.views"] = oidc_views_module

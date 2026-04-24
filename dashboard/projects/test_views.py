@@ -4,8 +4,21 @@ from urllib.parse import parse_qs, urlparse
 from django.urls import reverse
 from django.contrib.auth.models import Permission, User
 
-from framework.models import Condition, Level, Objective, ObjectiveGroup, Reason, WorkCycle
-from projects.models import Commitment, Project, ProjectObjective, ProjectObjectiveCondition
+from framework.models import (
+    Condition,
+    Level,
+    Objective,
+    ObjectiveGroup,
+    Reason,
+    WorkCycle,
+)
+from projects.models import (
+    Commitment,
+    Project,
+    ProjectObjective,
+    ProjectObjectiveCondition,
+)
+
 
 def test_toggle_condition_url_patterns():
     url = reverse("projects:action_toggle_condition", args=[1])
@@ -136,8 +149,8 @@ def test_action_toggle_condition_denies_user_without_permission(
 ):
     url = (
         reverse(
-        "projects:action_toggle_condition",
-        args=[project_objective_condition.id],
+            "projects:action_toggle_condition",
+            args=[project_objective_condition.id],
         )
         + "?status=&target=done"
     )
@@ -197,8 +210,8 @@ def test_action_toggle_condition_rejects_non_put_method(
 ):
     url = (
         reverse(
-        "projects:action_toggle_condition",
-        args=[project_objective_condition.id],
+            "projects:action_toggle_condition",
+            args=[project_objective_condition.id],
         )
         + "?status=&target=done"
     )
@@ -215,8 +228,8 @@ def test_action_toggle_condition_allows_authorized_put_and_updates_status(
 
     url = (
         reverse(
-        "projects:action_toggle_condition",
-        args=[project_objective_condition.id],
+            "projects:action_toggle_condition",
+            args=[project_objective_condition.id],
         )
         + "?status=&target=done"
     )
