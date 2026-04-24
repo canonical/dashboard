@@ -15,6 +15,35 @@
 {% block content %}
 {% regroup project.projectobjective_set.all by objective.group as projectobjectivegroups %}
 
+<style>
+  /* Default: Overview tab active */
+  .tab-bar a[href="#tab-overview"] {
+    background: #9fc68f !important;
+    font-weight: 600;
+  }
+  
+  {% for pg in projectobjectivegroups %}
+  /* {{ pg.grouper }} tab active when its panel is targeted (direct click) */
+  #container:has(#{{ pg.grouper|slugify }}:target) .tab-bar a[href="#{{ pg.grouper|slugify }}"] {
+    background: #9fc68f !important;
+    font-weight: 600;
+  }
+  
+  /* {{ pg.grouper }} tab active when an element inside is targeted (deep link) */
+  #container:has(#{{ pg.grouper|slugify }} :target) .tab-bar a[href="#{{ pg.grouper|slugify }}"] {
+    background: #9fc68f !important;
+    font-weight: 600;
+  }
+  
+  /* Hide overview when another panel is active */
+  #container:has(#{{ pg.grouper|slugify }}:target) .tab-bar a[href="#tab-overview"],
+  #container:has(#{{ pg.grouper|slugify }} :target) .tab-bar a[href="#tab-overview"] {
+    background: #d9ead3 !important;
+    font-weight: 400;
+  }
+  {% endfor %}
+</style>
+
 <div id="container">
   <div class="tab-panels">
 
