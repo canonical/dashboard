@@ -13,48 +13,69 @@
 {% block body_attributes %}hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'{% endblock %}
 
 {% block content %}
+{% regroup project.projectobjective_set.all by objective.group as projectobjectivegroups %}
 
-  <div id="container">
+<div id="container">
+  <div class="tab-panels">
 
-    <nav class="navigation">
-      <ul>
-        <li><a href="{% url 'projects:project_list' %}">Dashboard</a></li>
-        {% if user.is_authenticated %}
-          <li><a href="{% url 'admin:index' %}">Admin</a></li>
-          <li>Logged in as {{ user.username }}</li>
-          <li>
-            <form action="{% url 'logout' %}?next={{ request.path }}" method="post">
-              {% csrf_token %}
-              <button type="submit">Log out</button>
-            </form>
-          </li>
-        {% else %}
-          <li><a href="{% url 'login' %}?next={{ request.path }}">Log in</a></li>
-        {% endif %}
-      </ul>
-    </nav>
+    <div id="tab-overview" class="tab-panel">
+      <div class="overview-shell">
+        <header class="overview-header">
+          <nav class="navigation">
+            <ul>
+              <li><a href="{% url 'projects:project_list' %}">Dashboard</a></li>
+              {% if user.is_authenticated %}
+                <li><a href="{% url 'admin:index' %}">Admin</a></li>
+                <li class="nav-user">Logged in as {{ user.username }}</li>
+                <li class="nav-logout">
+                  <form action="{% url 'logout' %}?next={{ request.path }}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Log out</button>
+                  </form>
+                </li>
+              {% else %}
+                <li><a href="{% url 'login' %}?next={{ request.path }}">Log in</a></li>
+              {% endif %}
+            </ul>
+          </nav>
 
-    <h1>{{ project }}</h1>
+          <h1>{{ project }}</h1>
+        </header>
 
-    <div class="main" id="main">
-      <main id="content-start" class="content">
-        <div id="content" class="colM">
-          <div id="content-main">
+        <div class="overview-columns">
+          <section class="overview-card overview-basics">
+            {% include "projects/partial_project_detail_basics.html" %}
+          </section>
 
-            <div>{% include "projects/partial_project_detail_basics.html" %}</div>
-
-            <hr>
-
-            <div>{% include "projects/partial_project_detail_commitments.html" %}</div>
-
-            <hr>
-
-            {% include "projects/partial_project_detail_objectives.html" %}
-
-          </div>
+          <section
+            id="commitments-panel"
+            class="overview-card overview-commitments"
+            hx-get="{% url 'projects:status_projects_commitment' project.id %}"
+            hx-trigger="load, updateCommitment from:body, updateCondition from:body"
+            hx-swap="innerHTML">
+            {% include "projects/partial_project_detail_commitments.html" %}
+          </section>
         </div>
-      </main>
+      </div>
     </div>
+
+    {% for pg in projectobjectivegroups %}
+    <div id="{{ pg.grouper|slugify }}" class="tab-panel">
+      <table class="objectives detail">
+        {% include "projects/partial_project_detail_objectives.html" with projectobjectives=pg.list %}
+      </table>
+    </div>
+    {% endfor %}
+
   </div>
+
+  <nav class="tab-bar">
+    <a href="#tab-overview">Overview</a>
+    {% for pg in projectobjectivegroups %}
+      <a href="#{{ pg.grouper|slugify }}">{{ pg.grouper }}</a>
+    {% endfor %}
+  </nav>
+
+</div>
 
 {% endblock content %}
