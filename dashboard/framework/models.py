@@ -168,16 +168,35 @@ class Condition(models.Model):
             ProjectObjectiveCondition,
         )  # avoids circular import
 
+        # Check if the objective is being changed for an existing condition
+        old_objective_id = None
+        if self.pk:
+            try:
+                old_objective_id = Condition.objects.values_list(
+                    "objective_id", flat=True
+                ).get(pk=self.pk)
+            except Condition.DoesNotExist:
+                pass
+
         super().save(*args, **kwargs)
 
-        projectobjectives = ProjectObjective.objects.filter(objective=self.objective)
+        if old_objective_id is not None and old_objective_id != self.objective_id:
+            # Condition moved to a new objective: update existing POCs to the new
+            # objective instead of creating new ones, so that status is preserved
+            ProjectObjectiveCondition.objects.filter(
+                condition=self, objective_id=old_objective_id
+            ).update(objective=self.objective)
+        else:
+            # New condition or objective unchanged: propagate to all existing
+            # ProjectObjectives
+            projectobjectives = ProjectObjective.objects.filter(objective=self.objective)
 
-        for projectobjective in projectobjectives:
-            ProjectObjectiveCondition.objects.get_or_create(
-                project=projectobjective.project,
-                objective=projectobjective.objective,
-                condition=self,
-            )
+            for projectobjective in projectobjectives:
+                ProjectObjectiveCondition.objects.get_or_create(
+                    project=projectobjective.project,
+                    objective=projectobjective.objective,
+                    condition=self,
+                )
 
     class Meta:
         ordering = ["objective__name", "level__value"]
