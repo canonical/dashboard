@@ -11,22 +11,6 @@ from projects.models import (
 
 
 @pytest.fixture
-def user_is_staff(client):
-    user = User.objects.create_user(
-        username="staffmember", password="password", is_staff=True
-    )
-    client.login(username="staffmember", password="password")
-    return user
-
-
-@pytest.fixture
-def user_without_permissions(client):
-    user = User.objects.create_user(username="no_perm", password="password")
-    client.login(username="no_perm", password="password")
-    return user
-
-
-@pytest.fixture
 def objective_group():
     return ObjectiveGroup.objects.create(name="test_objective_group")
 

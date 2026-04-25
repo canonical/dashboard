@@ -3,7 +3,6 @@ from urllib.parse import parse_qs, urlparse
 
 from django.test import override_settings
 from django.urls import reverse
-from django.contrib.auth.models import Permission, User
 
 from framework.models import (
     Condition,
@@ -24,53 +23,6 @@ from projects.models import (
 def test_toggle_condition_url_patterns():
     url = reverse("projects:action_toggle_condition", args=[1])
     assert url == "/action_toggle_condition/1"
-
-
-@pytest.fixture
-def user_without_permissions(client):
-    user = User.objects.create_user(username="no_perm", password="password")
-    client.login(username="no_perm", password="password")
-    return user
-
-
-@pytest.fixture
-def user_can_change_commitment(client):
-    user = User.objects.create_user(username="change_commitment", password="password")
-    permission = Permission.objects.get(
-        codename="change_commitment",
-        content_type__app_label="projects",
-    )
-    user.user_permissions.add(permission)
-    client.login(username="change_commitment", password="password")
-    return user
-
-
-@pytest.fixture
-def user_can_change_projectobjectivecondition(client):
-    user = User.objects.create_user(
-        username="change_projectobjectivecondition", password="password"
-    )
-    permission = Permission.objects.get(
-        codename="change_projectobjectivecondition",
-        content_type__app_label="projects",
-    )
-    user.user_permissions.add(permission)
-    client.login(username="change_projectobjectivecondition", password="password")
-    return user
-
-
-@pytest.fixture
-def user_can_change_projectobjective(client):
-    user = User.objects.create_user(
-        username="change_projectobjective", password="password"
-    )
-    permission = Permission.objects.get(
-        codename="change_projectobjective",
-        content_type__app_label="projects",
-    )
-    user.user_permissions.add(permission)
-    client.login(username="change_projectobjective", password="password")
-    return user
 
 
 @pytest.fixture
@@ -273,6 +225,7 @@ def test_action_select_reason_allows_authorized_put_and_sets_reason(
 
 # Check that the project list and project detail pages are correctly public/private,
 # depending on whether OIDC is configured.
+
 
 @pytest.mark.django_db
 @override_settings(OIDC_RP_CLIENT_ID=None)
