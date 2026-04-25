@@ -1,6 +1,6 @@
 import pytest
 from django.urls import reverse
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Permission
 
 from framework.models import ObjectiveGroup, Objective, Level, Condition
 from projects.models import (
@@ -11,8 +11,22 @@ from projects.models import (
 
 
 @pytest.fixture
+def user_can_view_projects(client):
+    user = User.objects.create_user(username="view_project", password="password")
+    permission = Permission.objects.get(
+        codename="view_project",
+        content_type__app_label="projects",
+    )
+    user.user_permissions.add(permission)
+    client.login(username="view_project", password="password")
+    return user
+
+
+@pytest.fixture
 def user_is_staff(client):
-    user = User.objects.create_user(username="staffmember", password="password", is_staff=True)
+    user = User.objects.create_user(
+        username="staffmember", password="password", is_staff=True
+    )
     client.login(username="staffmember", password="password")
     return user
 
@@ -66,7 +80,9 @@ def condition2(level2, objective):
 
 
 @pytest.mark.django_db
-def test_admin_recalculate_all_levels(client, user_is_staff, project, objective, level1, level2, condition1, condition2):
+def test_admin_recalculate_all_levels(
+    client, user_is_staff, project, objective, level1, level2, condition1, condition2
+):
     """Test that admin_recalculate_all_levels recalculates ProjectObjective.level_achieved."""
 
     po = ProjectObjective.objects.get(project=project, objective=objective)
@@ -140,9 +156,9 @@ def test_project_objective_achieved_level(project, objective, level1):
 
     # Mark the second one as not applicable
     ProjectObjectiveCondition.objects.filter(
-       project=project,
-       objective=objective,
-       condition=condition2,
+        project=project,
+        objective=objective,
+        condition=condition2,
     ).update(status="NA")
 
     po = ProjectObjective.objects.get(project=project, objective=objective)
@@ -171,9 +187,9 @@ def test_quality_indicator_single_objective(project, objective, level1):
     # level1.value = 1 (from fixture)
     # Expected: 1 * 1 = 1
 
-    ProjectObjective.objects.filter(
-        project=project, objective=objective
-    ).update(level_achieved=level1)
+    ProjectObjective.objects.filter(project=project, objective=objective).update(
+        level_achieved=level1
+    )
 
     assert project.quality_indicator == 1
 
@@ -187,13 +203,13 @@ def test_quality_indicator_multiple_objectives(project, objective_group):
     level_a = Level.objects.create(name="level_a", value=2)
     level_b = Level.objects.create(name="level_b", value=4)
 
-    ProjectObjective.objects.filter(
-        project=project, objective=obj1
-    ).update(level_achieved=level_a)
+    ProjectObjective.objects.filter(project=project, objective=obj1).update(
+        level_achieved=level_a
+    )
 
-    ProjectObjective.objects.filter(
-        project=project, objective=obj2
-    ).update(level_achieved=level_b)
+    ProjectObjective.objects.filter(project=project, objective=obj2).update(
+        level_achieved=level_b
+    )
 
     # Expected: (10 * 2) + (5 * 4) = 20 + 20 = 40
     assert project.quality_indicator == 40
@@ -207,9 +223,9 @@ def test_quality_indicator_mixed_achieved_and_none(project, objective_group):
 
     level_a = Level.objects.create(name="level_a", value=3)
 
-    ProjectObjective.objects.filter(
-        project=project, objective=obj1
-    ).update(level_achieved=level_a)
+    ProjectObjective.objects.filter(project=project, objective=obj1).update(
+        level_achieved=level_a
+    )
 
     po2 = ProjectObjective.objects.get(project=project, objective=obj2)
     assert po2.level_achieved is None
@@ -219,12 +235,14 @@ def test_quality_indicator_mixed_achieved_and_none(project, objective_group):
 
 
 @pytest.mark.django_db
-def test_project_detail_anchor_navigation(client, project, objective):
+def test_project_detail_anchor_navigation(
+    client, user_can_view_projects, project, objective
+):
     """Integration test: verify clicking anchor in list navigates to correct section in detail."""
     from django.utils.text import slugify
 
     # Get the detail page
-    url = reverse('projects:project', kwargs={'id': project.id})
+    url = reverse("projects:project", kwargs={"id": project.id})
     response = client.get(url)
 
     assert response.status_code == 200
