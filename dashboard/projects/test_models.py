@@ -11,23 +11,18 @@ from projects.models import (
 
 
 @pytest.fixture
-def user_can_view_projects(client):
-    user = User.objects.create_user(username="view_project", password="password")
-    permission = Permission.objects.get(
-        codename="view_project",
-        content_type__app_label="projects",
-    )
-    user.user_permissions.add(permission)
-    client.login(username="view_project", password="password")
-    return user
-
-
-@pytest.fixture
 def user_is_staff(client):
     user = User.objects.create_user(
         username="staffmember", password="password", is_staff=True
     )
     client.login(username="staffmember", password="password")
+    return user
+
+
+@pytest.fixture
+def user_without_permissions(client):
+    user = User.objects.create_user(username="no_perm", password="password")
+    client.login(username="no_perm", password="password")
     return user
 
 
@@ -236,7 +231,7 @@ def test_quality_indicator_mixed_achieved_and_none(project, objective_group):
 
 @pytest.mark.django_db
 def test_project_detail_anchor_navigation(
-    client, user_can_view_projects, project, objective
+    client, user_without_permissions, project, objective
 ):
     """Integration test: verify clicking anchor in list navigates to correct section in detail."""
     from django.utils.text import slugify
