@@ -234,6 +234,7 @@ def action_select_reason(request, projectobjective_id):
 
 # form methods
 
+@permission_required("projects.change_project")
 @require_http_methods(["POST"])
 def project_basic_form_save(request, project_id):
     instance = Project.objects.get(id=project_id)

@@ -85,6 +85,80 @@ def reason():
 
 
 @pytest.mark.django_db
+def test_project_basic_form_save_denies_unauthenticated_user(client, project):
+    original_owner = project.owner
+    url = reverse("projects:project_basic_form_save", args=[project.id])
+    response = client.post(
+        url,
+        data={
+            "name": project.name,
+            "url": project.url,
+            "group": "",
+            "owner": "changed owner",
+            "driver": project.driver or "",
+            "agreement_status": "",
+            "last_review": "",
+            "last_review_status": "",
+        },
+    )
+
+    project.refresh_from_db()
+    assert response.status_code == 302
+    assert response.url == f"{reverse('login')}?next={url}"
+    assert project.owner == original_owner
+
+
+@pytest.mark.django_db
+def test_project_basic_form_save_denies_user_without_permission(
+    client, user_without_permissions, project
+):
+    original_owner = project.owner
+    url = reverse("projects:project_basic_form_save", args=[project.id])
+    response = client.post(
+        url,
+        data={
+            "name": project.name,
+            "url": project.url,
+            "group": "",
+            "owner": "changed owner",
+            "driver": project.driver or "",
+            "agreement_status": "",
+            "last_review": "",
+            "last_review_status": "",
+        },
+    )
+
+    project.refresh_from_db()
+    assert response.status_code == 302
+    assert response.url == f"{reverse('login')}?next={url}"
+    assert project.owner == original_owner
+
+
+@pytest.mark.django_db
+def test_project_basic_form_save_allows_user_with_permission(
+    client, user_can_change_project, project
+):
+    url = reverse("projects:project_basic_form_save", args=[project.id])
+    response = client.post(
+        url,
+        data={
+            "name": project.name,
+            "url": project.url,
+            "group": "",
+            "owner": "changed owner",
+            "driver": project.driver or "",
+            "agreement_status": "",
+            "last_review": "",
+            "last_review_status": "",
+        },
+    )
+
+    project.refresh_from_db()
+    assert response.status_code == 200
+    assert project.owner == "changed owner"
+
+
+@pytest.mark.django_db
 def test_action_toggle_commitment_denies_user_without_permission(
     client, user_without_permissions, commitment
 ):

@@ -51,6 +51,18 @@ def user_can_change_projectobjective(client):
 
 
 @pytest.fixture
+def user_can_change_project(client):
+    user = User.objects.create_user(username="change_project", password="password")
+    permission = Permission.objects.get(
+        codename="change_project",
+        content_type__app_label="projects",
+    )
+    user.user_permissions.add(permission)
+    client.login(username="change_project", password="password")
+    return user
+
+
+@pytest.fixture
 def user_can_change_workcycle(client):
     user = User.objects.create_user(username="change_workcycle", password="password")
     permission = Permission.objects.get(
