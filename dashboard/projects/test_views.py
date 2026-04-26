@@ -17,6 +17,7 @@ from projects.models import (
     Project,
     ProjectObjective,
     ProjectObjectiveCondition,
+    QI,
 )
 
 
@@ -295,6 +296,39 @@ def test_action_select_reason_allows_authorized_put_and_sets_reason(
     project_objective.refresh_from_db()
     assert response.status_code == 200
     assert project_objective.unstarted_reason_id == reason.id
+
+
+@pytest.mark.django_db
+def test_project_list_renders_qi_history_current_qi_and_levels(
+    client, user_without_permissions, objective, project, project_objective, work_cycle
+):
+    second_work_cycle = WorkCycle.objects.create(
+        name="wc-2", timestamp="2026-02-01", is_current=False
+    )
+    QI.objects.update_or_create(
+        project=project,
+        workcycle=work_cycle,
+        defaults={"value": 3},
+    )
+    QI.objects.update_or_create(
+        project=project,
+        workcycle=second_work_cycle,
+        defaults={"value": 5},
+    )
+
+    level_for_display = Level.objects.create(name="LEVEL-ASSERT-ONLY", value=7)
+    ProjectObjective.objects.filter(id=project_objective.id).update(
+        level_achieved=level_for_display
+    )
+
+    response = client.get(reverse("projects:project_list"))
+    content = response.content.decode()
+
+    assert response.status_code == 200
+    assert "<td>3</td>" in content
+    assert "<td>5</td>" in content
+    assert ">7</a></td>" in content
+    assert "LEVEL-ASSERT-ONLY" in content
 
 
 # Check that the project list and project detail pages are correctly public/private,
