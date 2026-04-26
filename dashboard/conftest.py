@@ -1,7 +1,6 @@
 import pytest
 
 from django.contrib.auth.models import Permission, User
-from django.http import HttpResponse
 
 
 @pytest.fixture
