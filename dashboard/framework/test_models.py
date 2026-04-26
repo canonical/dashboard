@@ -162,9 +162,12 @@ def test_new_condition_with_new_level_backfills_commitment(
     # A new condition at a new level should create a matching commitment
     # for existing rows.
 
-    assert Commitment.objects.filter(
-        project=project, objective=objective, work_cycle=work_cycle
-    ).count() == 1
+    assert (
+        Commitment.objects.filter(
+            project=project, objective=objective, work_cycle=work_cycle
+        ).count()
+        == 1
+    )
 
     new_level = Level.objects.create(name="test_level_2", value=2)
     Condition.objects.create(
