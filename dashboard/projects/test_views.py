@@ -1,62 +1,44 @@
 import pytest
 from urllib.parse import parse_qs, urlparse
 
+from django.test import override_settings
 from django.urls import reverse
 from django.contrib.auth.models import Permission, User
 
-from framework.models import Condition, Level, Objective, ObjectiveGroup, Reason, WorkCycle
-from projects.models import Commitment, Project, ProjectObjective, ProjectObjectiveCondition
+from framework.models import (
+    Condition,
+    Level,
+    Objective,
+    ObjectiveGroup,
+    Reason,
+    WorkCycle,
+)
+from projects.models import (
+    Commitment,
+    Project,
+    ProjectObjective,
+    ProjectObjectiveCondition,
+)
+
+from framework.models import (
+    Condition,
+    Level,
+    Objective,
+    ObjectiveGroup,
+    Reason,
+    WorkCycle,
+)
+from projects.models import (
+    Commitment,
+    Project,
+    ProjectObjective,
+    ProjectObjectiveCondition,
+)
+
 
 def test_toggle_condition_url_patterns():
     url = reverse("projects:action_toggle_condition", args=[1])
     assert url == "/action_toggle_condition/1"
-
-
-@pytest.fixture
-def user_without_permissions(client):
-    user = User.objects.create_user(username="no_perm", password="password")
-    client.login(username="no_perm", password="password")
-    return user
-
-
-@pytest.fixture
-def user_can_change_commitment(client):
-    user = User.objects.create_user(username="change_commitment", password="password")
-    permission = Permission.objects.get(
-        codename="change_commitment",
-        content_type__app_label="projects",
-    )
-    user.user_permissions.add(permission)
-    client.login(username="change_commitment", password="password")
-    return user
-
-
-@pytest.fixture
-def user_can_change_projectobjectivecondition(client):
-    user = User.objects.create_user(
-        username="change_projectobjectivecondition", password="password"
-    )
-    permission = Permission.objects.get(
-        codename="change_projectobjectivecondition",
-        content_type__app_label="projects",
-    )
-    user.user_permissions.add(permission)
-    client.login(username="change_projectobjectivecondition", password="password")
-    return user
-
-
-@pytest.fixture
-def user_can_change_projectobjective(client):
-    user = User.objects.create_user(
-        username="change_projectobjective", password="password"
-    )
-    permission = Permission.objects.get(
-        codename="change_projectobjective",
-        content_type__app_label="projects",
-    )
-    user.user_permissions.add(permission)
-    client.login(username="change_projectobjective", password="password")
-    return user
 
 
 @pytest.fixture
@@ -181,7 +163,9 @@ def test_project_basic_form_save_denies_user_without_permission(
 
 
 @pytest.mark.django_db
-def test_project_basic_form_save_allows_user_with_permission(client, user_can_change_project, project):
+def test_project_basic_form_save_allows_user_with_permission(
+    client, user_can_change_project, project
+):
     url = reverse("projects:project_basic_form_save", args=[project.id])
     response = client.post(
         url,
@@ -220,8 +204,8 @@ def test_action_toggle_condition_denies_user_without_permission(
 ):
     url = (
         reverse(
-        "projects:action_toggle_condition",
-        args=[project_objective_condition.id],
+            "projects:action_toggle_condition",
+            args=[project_objective_condition.id],
         )
         + "?status=&target=done"
     )
@@ -281,8 +265,8 @@ def test_action_toggle_condition_rejects_non_put_method(
 ):
     url = (
         reverse(
-        "projects:action_toggle_condition",
-        args=[project_objective_condition.id],
+            "projects:action_toggle_condition",
+            args=[project_objective_condition.id],
         )
         + "?status=&target=done"
     )
@@ -299,8 +283,8 @@ def test_action_toggle_condition_allows_authorized_put_and_updates_status(
 
     url = (
         reverse(
-        "projects:action_toggle_condition",
-        args=[project_objective_condition.id],
+            "projects:action_toggle_condition",
+            args=[project_objective_condition.id],
         )
         + "?status=&target=done"
     )
@@ -339,3 +323,59 @@ def test_action_select_reason_allows_authorized_put_and_sets_reason(
     project_objective.refresh_from_db()
     assert response.status_code == 200
     assert project_objective.unstarted_reason_id == reason.id
+
+
+# Check that the project list and project detail pages are correctly public/private,
+# depending on whether OIDC is configured.
+
+
+@pytest.mark.django_db
+@override_settings(OIDC_RP_CLIENT_ID=None)
+def test_project_list_no_login(client):
+    url = reverse("projects:project_list")
+    response = client.get(url)
+    assert response.status_code == 200
+
+
+@pytest.mark.django_db
+@override_settings(OIDC_RP_CLIENT_ID="test_client_id")
+def test_project_list_oidc_needs_login(client):
+    url = reverse("projects:project_list")
+    response = client.get(url)
+    assert response.status_code == 302
+    expected_redirect = f"{reverse('login')}?next={url}"
+    assert response.url == expected_redirect
+
+
+@pytest.mark.django_db
+@override_settings(OIDC_RP_CLIENT_ID="test_client_id")
+def test_project_list_oidc_logged_in(client, user_without_permissions):
+    url = reverse("projects:project_list")
+    response = client.get(url)
+    assert response.status_code == 200
+
+
+@pytest.mark.django_db
+@override_settings(OIDC_RP_CLIENT_ID=None)
+def test_project_detail_no_login(client, project):
+    url = reverse("projects:project", kwargs={"id": project.id})
+    response = client.get(url)
+    assert response.status_code == 200
+
+
+@pytest.mark.django_db
+@override_settings(OIDC_RP_CLIENT_ID="test_client_id")
+def test_project_detail_oidc_needs_login(client, project):
+    url = reverse("projects:project", kwargs={"id": project.id})
+    response = client.get(url)
+    assert response.status_code == 302
+    expected_redirect = f"{reverse('login')}?next={url}"
+    assert response.url == expected_redirect
+
+
+@pytest.mark.django_db
+@override_settings(OIDC_RP_CLIENT_ID="test_client_id")
+def test_project_detail_oidc_logged_in(client, user_without_permissions, project):
+    url = reverse("projects:project", kwargs={"id": project.id})
+    response = client.get(url)
+    assert response.status_code == 200
