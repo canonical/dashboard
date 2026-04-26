@@ -25,9 +25,6 @@ install: venv
 	$(PIP) install --upgrade pip
 	$(PIP) install -r requirements.txt
 
-install-dev: install
-	$(PIP) install -r requirements-dev.txt
-
 migrate: install
 	$(MANAGE) migrate
 
@@ -40,11 +37,19 @@ run: init
 collectstatic: install
 	$(MANAGE) collectstatic --no-input
 
-# For use in CI
-collectstatic-clear: install
-	$(MANAGE) collectstatic --clear --no-input
+makemigrations: install
+	$(MANAGE) makemigrations --no-input
 
-# For use in CI
+test: test-framework test-projects test-browser
+
+clean:
+	rm -rf $(VENV)
+	find . -type d -name "__pycache__" -exec rm -r {} +
+	find . -type f -name "*.pyc" -delete
+
+
+# Extra targets for development and CI.
+
 collectstatic-check: collectstatic-clear
 	@changes=$$(git status --porcelain staticfiles | wc -l); \
 	if [ $$changes -gt 0 ]; then \
@@ -52,10 +57,9 @@ collectstatic-check: collectstatic-clear
 		exit 1; \
 	fi
 
-makemigrations: install
-	$(MANAGE) makemigrations --no-input
+collectstatic-clear: install
+	$(MANAGE) collectstatic --clear --no-input
 
-# For use in CI
 makemigrations-check: makemigrations
 	@changes=$$(git status --porcelain */migrations | wc -l); \
 	if [ $$changes -gt 0 ]; then \
@@ -63,22 +67,43 @@ makemigrations-check: makemigrations
 		exit 1; \
 	fi
 
-test: test-framework test-projects test-browser
+install-dev: install
+	$(PIP) install -r requirements-dev.txt
 
-# For use in CI
 test-framework: install-dev
 	$(PYTEST) framework
 
-# For use in CI
 test-projects: install-dev
 	$(PYTEST) projects
 
-# For use in CI
-test-browser: install-dev
+]test-browser: install-dev
 	$(VENV)/bin/python -m playwright install
 	$(PYTEST) test_browser.py
 
-clean:
-	rm -rf $(VENV)
-	find . -type d -name "__pycache__" -exec rm -r {} +
-	find . -type f -name "*.pyc" -delete
+oidc-test-framework: install-dev
+	DJANGO_OIDC_CLIENT_ID=fake_client_id \
+	DJANGO_OIDC_CLIENT_SECRET=fake_client_secret \
+	DJANGO_OIDC_AUTHORIZE_URL=https://example.com/oauth2/auth \
+	DJANGO_OIDC_ACCESS_TOKEN_URL=https://example.com/oauth2/token \
+	DJANGO_OIDC_USER_URL=https://example.com/userinfo \
+	DJANGO_OIDC_JWKS_URL=https://example.com/.well-known/jwks.json \
+	$(PYTEST) framework
+
+oidc-test-projects: install-dev
+	DJANGO_OIDC_CLIENT_ID=fake_client_id \
+	DJANGO_OIDC_CLIENT_SECRET=fake_client_secret \
+	DJANGO_OIDC_AUTHORIZE_URL=https://example.com/oauth2/auth \
+	DJANGO_OIDC_ACCESS_TOKEN_URL=https://example.com/oauth2/token \
+	DJANGO_OIDC_USER_URL=https://example.com/userinfo \
+	DJANGO_OIDC_JWKS_URL=https://example.com/.well-known/jwks.json \
+	$(PYTEST) projects
+
+oidc-test-browser: install-dev
+	$(VENV)/bin/python -m playwright install
+	DJANGO_OIDC_CLIENT_ID=fake_client_id \
+	DJANGO_OIDC_CLIENT_SECRET=fake_client_secret \
+	DJANGO_OIDC_AUTHORIZE_URL=https://example.com/oauth2/auth \
+	DJANGO_OIDC_ACCESS_TOKEN_URL=https://example.com/oauth2/token \
+	DJANGO_OIDC_USER_URL=https://example.com/userinfo \
+	DJANGO_OIDC_JWKS_URL=https://example.com/.well-known/jwks.json \
+	$(PYTEST) test_browser.py
