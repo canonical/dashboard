@@ -138,6 +138,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
+# Add OIDC app only if configured
+if OIDC_RP_CLIENT_ID:
+    INSTALLED_APPS.insert(3, "mozilla_django_oidc")
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -168,6 +172,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "dashboard.auth_decorators.oidc_settings",
             ],
         },
     },
@@ -232,6 +237,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+LOGIN_URL = "login"
 
 LOGIN_REDIRECT_URL = "projects:project_list"
 LOGOUT_REDIRECT_URL = "projects:project_list"
