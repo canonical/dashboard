@@ -3,7 +3,6 @@ from urllib.parse import parse_qs, urlparse
 
 from django.test import override_settings
 from django.urls import reverse
-from django.contrib.auth.models import Permission, User
 
 from framework.models import (
     Condition,
@@ -24,18 +23,6 @@ from projects.models import (
 def test_toggle_condition_url_patterns():
     url = reverse("projects:action_toggle_condition", args=[1])
     assert url == "/action_toggle_condition/1"
-
-
-@pytest.fixture
-def user_can_change_project(client):
-    user = User.objects.create_user(username="change_project", password="password")
-    permission = Permission.objects.get(
-        codename="change_project",
-        content_type__app_label="projects",
-    )
-    user.user_permissions.add(permission)
-    client.login(username="change_project", password="password")
-    return user
 
 
 @pytest.fixture
