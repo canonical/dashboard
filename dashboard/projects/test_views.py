@@ -20,21 +20,6 @@ from projects.models import (
     ProjectObjectiveCondition,
 )
 
-from framework.models import (
-    Condition,
-    Level,
-    Objective,
-    ObjectiveGroup,
-    Reason,
-    WorkCycle,
-)
-from projects.models import (
-    Commitment,
-    Project,
-    ProjectObjective,
-    ProjectObjectiveCondition,
-)
-
 
 def test_toggle_condition_url_patterns():
     url = reverse("projects:action_toggle_condition", args=[1])
