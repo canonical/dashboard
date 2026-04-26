@@ -300,11 +300,8 @@ def test_action_select_reason_allows_authorized_put_and_sets_reason(
 
 @pytest.mark.django_db
 def test_project_list_renders_qi_history_current_qi_and_levels(
-    client, objective, project, project_objective, work_cycle
+    client, user_without_permissions, objective, project, project_objective, work_cycle
 ):
-    user = User.objects.create_user(username="viewer", password="password")
-    client.login(username="viewer", password="password")
-
     second_work_cycle = WorkCycle.objects.create(
         name="wc-2", timestamp="2026-02-01", is_current=False
     )
