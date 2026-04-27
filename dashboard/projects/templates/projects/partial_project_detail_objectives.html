@@ -1,67 +1,51 @@
 {% load project_tags %}
+{% load project_tags %}
 
-{% regroup project.projectobjective_set.all by objective.group as projectobjectivegroups %}
+{% for projectobjective in projectobjectives %}
 
-<table class="objectives detail">
+  <tbody id="{{ projectobjective.name|slugify }}">
 
-  {% for projectobjectivegroup, projectobjectives in projectobjectivegroups %}
+    <tr class="objective">
+      <td colspan="{{ workcycle_count|add:'2' }}" class="objective name">
+        {{ projectobjective.objective }}
+      </td>
+    </tr>
 
-    {% if projectobjectivegroup %}
-      <tr>
-        <th class="projectobjectivegroup" colspan="{{ workcycle_count|add:'2' }}">
-          {{ projectobjectivegroup }}
-        </th>
-      </tr>
-    {% endif %}
+    <tr class="">
+      <td colspan="2" class="objective description">
+        {{ projectobjective.objective.description|default_if_none:""|safe }}
+      </td>
+      <td colspan="{{ workcycle_count }}" class="commitment-description">Commitments</td>
+    </tr>
 
-    {% for projectobjective in projectobjectives %}
+    <tr class="">
+      {% include "projects/partial_project_detail_objectivestatus.html" %}
+      <td></td>
+      {% for work_cycle in work_cycles %}
+        <td class="workcycle {% if work_cycle.is_current %}current{% endif %}">{{ work_cycle }}</td>
+      {% endfor %}
+    </tr>
 
-      <tbody id="{{ projectobjective.name|slugify }}">
+    {% regroup projectobjective.projectobjectiveconditions by level as levels %}
+    {% regroup projectobjective.commitments by level as commitments %}
+    {% pack levels commitments as level_collections %}
 
-        <tr class="objective">
-          <td colspan="{{ workcycle_count|add:'2' }}" class="objective name">
-            {{ projectobjective.objective }}
-          </td>
-        </tr>
+    {% for condition, commitment in level_collections %}
 
-        <tr class="">
-          <td colspan="2" class="objective description">
-            {{ projectobjective.objective.description|safe|default:"" }}
-          </td>
-          <td colspan="{{ workcycle_count }}" class="commitment-description">Commitments</td>
-        </tr>
+      <tr id="" class="level">
+        <td colspan="2" class="">{{ condition.grouper }}</td>
 
-        <tr class="">
-          {% include "projects/partial_project_detail_objectivestatus.html" %}
-          <td></td>
-          {% for work_cycle in work_cycles %}
-            <td class="workcycle {% if work_cycle.is_current %}current{% endif %}">{{ work_cycle }}</td>
-          {% endfor %}
-        </tr>
-
-        {% regroup projectobjective.projectobjectiveconditions by level as levels %}
-        {% regroup projectobjective.commitments by level as commitments %}
-        {% pack levels commitments as level_collections %}
-
-        {% for condition, commitment in level_collections %}
-
-          <tr id="" class="level">
-            <td colspan="2" class="">{{ condition.grouper }}</td>
-
-            {% for commitment in commitment.list %}
-              {% include "projects/partial_project_detail_commitment.html" %}
-            {% endfor %}
-
-          </tr>
-
-          {% for condition in condition.list %}
-            {% include "projects/partial_project_detail_condition.html" %}
-          {% endfor %}
-
+        {% for commitment in commitment.list %}
+          {% include "projects/partial_project_detail_commitment.html" %}
         {% endfor %}
-      </tbody>
+
+      </tr>
+
+      {% for condition in condition.list %}
+        {% include "projects/partial_project_detail_condition.html" %}
+      {% endfor %}
 
     {% endfor %}
-  {% endfor %}
-</table>
+  </tbody>
 
+{% endfor %}
