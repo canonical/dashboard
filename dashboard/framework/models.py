@@ -166,6 +166,7 @@ class Condition(models.Model):
         from projects.models import (
             ProjectObjective,
             ProjectObjectiveCondition,
+            Commitment
         )  # avoids circular import
 
         # Check if the objective is being changed for an existing condition
@@ -197,6 +198,13 @@ class Condition(models.Model):
                     objective=projectobjective.objective,
                     condition=self,
                 )
+                for work_cycle in WorkCycle.objects.all():
+                    Commitment.objects.get_or_create(
+                        work_cycle=work_cycle,
+                        project=projectobjective.project,
+                        objective=projectobjective.objective,
+                        level=self.level,
+                    )
 
     class Meta:
         ordering = ["objective__name", "level__value"]
