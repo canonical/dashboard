@@ -2,35 +2,10 @@ import datetime
 import pytest
 
 from django.urls import reverse
-from django.contrib.auth.models import User, Permission
 from django.contrib.messages import get_messages
 
 from framework.models import WorkCycle, ObjectiveGroup, Objective, Level
 from projects.models import Project, QI, ProjectObjective
-
-
-@pytest.fixture
-def user_can_change(client):
-    user = User.objects.create_user(username="user", password="password")
-    permission = Permission.objects.get(
-        codename="change_workcycle",
-        content_type__app_label="framework",
-    )
-    user.user_permissions.add(permission)
-    client.login(username="user", password="password")
-    return user
-
-
-@pytest.fixture
-def user_can_view(client):
-    user = User.objects.create_user(username="user", password="password")
-    permission = Permission.objects.get(
-        codename="view_workcycle",
-        content_type__app_label="framework",
-    )
-    user.user_permissions.add(permission)
-    client.login(username="user", password="password")
-    return user
 
 
 @pytest.fixture
@@ -67,7 +42,7 @@ def project(objective):
 
 @pytest.mark.django_db
 def test_admin_apply_qis(
-    client, user_can_change, work_cycle, project, objective, level
+    client, user_can_change_workcycle, work_cycle, project, objective, level
 ):
     """Test that admin_apply_qis copies current QI values to workcycle QIs."""
 
@@ -109,7 +84,7 @@ def test_admin_apply_qis(
 
 @pytest.mark.django_db
 def test_admin_apply_qis_user_disallowed(
-    client, user_can_view, work_cycle, project, objective, level
+    client, user_can_view_workcycle, work_cycle, project, objective, level
 ):
     """Test that a user with framework.view_workcycle permission (only) can't copy QI values."""
 
@@ -140,7 +115,7 @@ def test_admin_apply_qis_user_disallowed(
 
 @pytest.mark.django_db
 def test_admin_apply_qis_with_multiple_projects(
-    client, user_can_change, work_cycle, objective, level
+    client, user_can_change_workcycle, work_cycle, objective, level
 ):
     """Test that admin_apply_qis updates QIs for multiple projects."""
 
@@ -182,7 +157,9 @@ def test_admin_apply_qis_with_multiple_projects(
 
 
 @pytest.mark.django_db
-def test_admin_apply_qis_shows_message(client, user_can_change, work_cycle, project):
+def test_admin_apply_qis_shows_message(
+    client, user_can_change_workcycle, work_cycle, project
+):
     """Test that admin_apply_qis displays an info message."""
 
     url = reverse("framework:admin_apply_qis", args=[work_cycle.id])
@@ -195,7 +172,9 @@ def test_admin_apply_qis_shows_message(client, user_can_change, work_cycle, proj
 
 
 @pytest.mark.django_db
-def test_admin_apply_qis_with_no_projects(client, user_can_change, work_cycle):
+def test_admin_apply_qis_with_no_projects(
+    client, user_can_change_workcycle, work_cycle
+):
     """Test that admin_apply_qis works even when no projects exist."""
 
     # Call the view with no projects

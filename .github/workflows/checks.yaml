@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - next-release
   pull_request:
 
 permissions: {}
@@ -27,6 +28,18 @@ jobs:
         run: |
           cd dashboard
           make test-browser
+      - name: Run framework tests with OIDC configured
+        run: |
+          cd dashboard
+          make oidc-test-framework
+      - name: Run projects tests with OIDC configured
+        run: |
+          cd dashboard
+          make oidc-test-projects
+      - name: Run browser tests with OIDC configured
+        run: |
+          cd dashboard
+          make oidc-test-browser
       - name: Check static files
         run: |
           cd dashboard

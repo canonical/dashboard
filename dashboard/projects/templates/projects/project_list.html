@@ -52,15 +52,7 @@
           <tr class="row-group"><td colspan="{{ column_count }}">{{ group }}</td></tr>
         {% endif %}
         {% for project in projects %}
-
-          <tr
-            hx-get="{% url 'projects:project_row' project.id %}"
-            hx-trigger="intersect"
-            hx-swap="outerHTML"
-            >
-            <td>…</td>
-          </tr>
-
+          {% include "projects/partial_project_list_row.html" %}
         {% endfor %}
       {% endfor %}
     </table>

@@ -153,3 +153,32 @@ def test_new_objective_means_new_commitments(
 
     assert project.commitment_set.count() == 2
     assert work_cycle.commitment_set.count() == 2
+
+
+@pytest.mark.django_db
+def test_new_condition_with_new_level_backfills_commitment(
+    project, objective, condition, work_cycle
+):
+    # A new condition at a new level should create a matching commitment
+    # for existing rows.
+
+    assert (
+        Commitment.objects.filter(
+            project=project, objective=objective, work_cycle=work_cycle
+        ).count()
+        == 1
+    )
+
+    new_level = Level.objects.create(name="test_level_2", value=2)
+    Condition.objects.create(
+        name="test_condition_2", objective=objective, level=new_level
+    )
+
+    # Expected behaviour: creating a new condition/level backfills
+    # commitments.
+    assert Commitment.objects.filter(
+        project=project,
+        objective=objective,
+        work_cycle=work_cycle,
+        level=new_level,
+    ).exists()
