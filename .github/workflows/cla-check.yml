@@ -3,7 +3,9 @@ name: Canonical Contributor Licence Agreement check
 
 on:
   pull_request:
-    branches: [main]
+    branches:
+      - main
+      - next-release
 
 jobs:
   cla-check:
