@@ -336,16 +336,16 @@ def test_project_list_renders_qi_history_current_qi_and_levels(
 
 
 @pytest.mark.django_db
-@override_settings(OIDC_RP_CLIENT_ID=None)
-def test_project_list_no_login(client):
+@override_settings(FORCE_LOGIN=False)
+def test_no_login_project_list(client):
     url = reverse("projects:project_list")
     response = client.get(url)
     assert response.status_code == 200
 
 
 @pytest.mark.django_db
-@override_settings(OIDC_RP_CLIENT_ID="test_client_id")
-def test_project_list_oidc_needs_login(client):
+@override_settings(FORCE_LOGIN=True)
+def test_force_login_project_list(client):
     url = reverse("projects:project_list")
     response = client.get(url)
     assert response.status_code == 302
@@ -354,24 +354,24 @@ def test_project_list_oidc_needs_login(client):
 
 
 @pytest.mark.django_db
-@override_settings(OIDC_RP_CLIENT_ID="test_client_id")
-def test_project_list_oidc_logged_in(client, user_without_permissions):
+@override_settings(FORCE_LOGIN=True)
+def test_force_login_project_list_with_user(client, user_without_permissions):
     url = reverse("projects:project_list")
     response = client.get(url)
     assert response.status_code == 200
 
 
 @pytest.mark.django_db
-@override_settings(OIDC_RP_CLIENT_ID=None)
-def test_project_detail_no_login(client, project):
+@override_settings(FORCE_LOGIN=False)
+def test_no_login_project_detail(client, project):
     url = reverse("projects:project", kwargs={"id": project.id})
     response = client.get(url)
     assert response.status_code == 200
 
 
 @pytest.mark.django_db
-@override_settings(OIDC_RP_CLIENT_ID="test_client_id")
-def test_project_detail_oidc_needs_login(client, project):
+@override_settings(FORCE_LOGIN=True)
+def test_force_login_project_detail(client, project):
     url = reverse("projects:project", kwargs={"id": project.id})
     response = client.get(url)
     assert response.status_code == 302
@@ -380,8 +380,8 @@ def test_project_detail_oidc_needs_login(client, project):
 
 
 @pytest.mark.django_db
-@override_settings(OIDC_RP_CLIENT_ID="test_client_id")
-def test_project_detail_oidc_logged_in(client, user_without_permissions, project):
+@override_settings(FORCE_LOGIN=True)
+def test_force_login_project_detail_with_user(client, user_without_permissions, project):
     url = reverse("projects:project", kwargs={"id": project.id})
     response = client.get(url)
     assert response.status_code == 200
