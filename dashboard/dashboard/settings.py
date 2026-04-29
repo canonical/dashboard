@@ -73,6 +73,8 @@ LOGGING = {
     },
 }
 
+FORCE_LOGIN = os.environ.get("DJANGO_FORCE_LOGIN", "false").lower() == "true"
+
 # OIDC Settings - Loaded from .env file
 OIDC_RP_CLIENT_ID = os.environ.get("DJANGO_OIDC_CLIENT_ID")
 OIDC_RP_CLIENT_SECRET = os.environ.get("DJANGO_OIDC_CLIENT_SECRET")

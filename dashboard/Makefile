@@ -81,6 +81,7 @@ test-projects: install-dev
 	$(PYTEST) test_browser.py
 
 oidc-test-framework: install-dev
+	DJANGO_FORCE_LOGIN=true \
 	DJANGO_OIDC_CLIENT_ID=fake_client_id \
 	DJANGO_OIDC_CLIENT_SECRET=fake_client_secret \
 	DJANGO_OIDC_AUTHORIZE_URL=https://example.com/oauth2/auth \
@@ -90,6 +91,7 @@ oidc-test-framework: install-dev
 	$(PYTEST) framework
 
 oidc-test-projects: install-dev
+	DJANGO_FORCE_LOGIN=true \
 	DJANGO_OIDC_CLIENT_ID=fake_client_id \
 	DJANGO_OIDC_CLIENT_SECRET=fake_client_secret \
 	DJANGO_OIDC_AUTHORIZE_URL=https://example.com/oauth2/auth \
@@ -100,6 +102,7 @@ oidc-test-projects: install-dev
 
 oidc-test-browser: install-dev
 	$(VENV)/bin/python -m playwright install
+	DJANGO_FORCE_LOGIN=true \
 	DJANGO_OIDC_CLIENT_ID=fake_client_id \
 	DJANGO_OIDC_CLIENT_SECRET=fake_client_secret \
 	DJANGO_OIDC_AUTHORIZE_URL=https://example.com/oauth2/auth \

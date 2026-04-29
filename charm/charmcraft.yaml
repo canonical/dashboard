@@ -59,6 +59,10 @@ config:
         HTTPS, regardless of what the upstream ingress returns in the ingress URL.
         It may cause some unforeseeable ingress issues, so avoid using this option if possible.
       default: false
+    force-login:
+      type: boolean
+      description: >-
+        This option controls whether users are required to log in to view the project list and project detail pages.
     oidc-login-button-text:
       type: string
       default: Your company login
