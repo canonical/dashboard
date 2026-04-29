@@ -498,3 +498,17 @@ def test_project_detail_edit_user_sees_form_widgets(
     assert "hx-post" in content
     assert 'id="id_name"' in content
     assert 'id="id_group"' in content
+
+
+@pytest.mark.django_db
+def test_project_list_excludes_future_workcycle_columns(client, project):
+    past_wc = WorkCycle.objects.create(name="Past Cycle", timestamp="2026-01-01")
+    future_wc = WorkCycle.objects.create(name="Future Cycle", timestamp="2099-01-01")
+
+    url = reverse("projects:project_list")
+    response = client.get(url)
+
+    assert response.status_code == 200
+    content = response.content.decode()
+    assert past_wc.name in content
+    assert future_wc.name not in content
