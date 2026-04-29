@@ -23,7 +23,7 @@ class ConditionalLoginRequiredMixin(LoginRequiredMixin):
     """
     def dispatch(self, request, *args, **kwargs):
         # Only require login if OIDC is configured
-        if settings.OIDC_RP_CLIENT_ID:
+        if settings.FORCE_LOGIN:
             return super().dispatch(request, *args, **kwargs)
         # Otherwise, skip login requirement
         return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
@@ -37,7 +37,7 @@ def conditional_login_required(view_func):
     @wraps(view_func)
     def wrapper(request, *args, **kwargs):
         # Only require login if OIDC is configured
-        if settings.OIDC_RP_CLIENT_ID:
+        if settings.FORCE_LOGIN:
             return login_required(view_func)(request, *args, **kwargs)
         return view_func(request, *args, **kwargs)
     return wrapper
