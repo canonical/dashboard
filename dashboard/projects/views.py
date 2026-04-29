@@ -30,7 +30,7 @@ class ProjectListView(ConditionalLoginRequiredMixin, ListView):
     def get_queryset(self):
         return super().get_queryset().select_related(
             "group", "agreement_status", "last_review_status"
-        ).prefetch_related("qi_set")
+        ).prefetch_related("qi_set__workcycle")
 
     def get_context_data(self, **kwargs):
 
@@ -61,15 +61,19 @@ class ProjectListView(ConditionalLoginRequiredMixin, ListView):
             .annotate(total=Sum(F("level_achieved__value") * F("objective__weight")))
         }
 
+        today = timezone.now().date()
+
         # Attach prepared values to each project so the template can render without extra ORM work.
         for project in projects:
             project.projectobjectives = pos_by_project.get(project.id, [])
-            project.quality_history_values = project.qi_set.all()
+            project.quality_history_values = [
+                qi for qi in project.qi_set.all() if qi.workcycle.timestamp <= today
+            ]
             project.quality_indicator_value = quality_indicator_by_project.get(
                 project.id, 0
             )
 
-        workcycle_list = list(WorkCycle.objects.all())
+        workcycle_list = list(WorkCycle.objects.filter(timestamp__lte=timezone.now().date()))
         objective_list = list(Objective.objects.all())
         workcycle_count = len(workcycle_list)
         objective_count = len(objective_list)
@@ -111,9 +115,9 @@ def project(request, id):
         "projects/project.html",
         {
             "project": project,
-            "work_cycles": WorkCycle.objects.all(),
+                "work_cycles": WorkCycle.objects.all(),
             "current_work_cycle_name": WorkCycle.name_of_current(),
-            "workcycle_count": WorkCycle.objects.count(),
+                "workcycle_count": WorkCycle.objects.count(),
             "objectivegroup_list": ObjectiveGroup.objects.all(),
             "objective_list": Objective.objects.all(),
             "objective_count": Objective.objects.count(),
@@ -226,7 +230,7 @@ def action_toggle_condition(request, condition_id):
     response = render(
         request,
         "projects/partial_project_detail_condition.html",
-        {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
+           {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
     )
     # Include a custom event in the HTTP header.
     # On the project detail page, the commitments table and the PO status will trigger a refresh
