@@ -332,7 +332,9 @@ def test_project_list_renders_qi_history_current_qi_and_levels(
 
 
 @pytest.mark.django_db
-def test_project_list_excludes_future_workcycle_columns(client, project):
+def test_project_list_excludes_future_workcycle_columns(
+    client, user_without_permissions, project
+):
     past_wc = WorkCycle.objects.create(name="Past Cycle", timestamp="2026-01-01")
     future_wc = WorkCycle.objects.create(name="Future Cycle", timestamp="2099-01-01")
 
