@@ -403,7 +403,7 @@ def test_status(
     assert has_red.projectobjective().status is None
     expect(
         page.get_by_test_id(f"projectobjective_status_{projectobjective.id}")
-    ).to_contain_text("")
+    ).to_have_text("")
 
     for condition_key in condition_keys:
         check_condition_for_status(
@@ -420,7 +420,7 @@ def test_status(
     )
     expect(
         page.get_by_test_id(f"projectobjective_status_{projectobjective.id}")
-    ).to_contain_text(status_text)
+    ).to_have_text(status_text)
 
 
 def csv_from_commitment_table(page):
