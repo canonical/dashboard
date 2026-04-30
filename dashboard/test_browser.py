@@ -292,10 +292,16 @@ def test_toggling_conditions(
     condition = getattr(browser_test_data, condition_key)
     assert condition.status == initial_status
 
+    projectobjective = condition.projectobjective()
+
     toggle = page.get_by_test_id(f"toggle_condition_{condition.id}")
     expect(toggle).to_be_visible()
-    with page.expect_response(
-        f"**/action_toggle_condition/{condition.id}?status={initial_status}&target=done"
+    with (
+        page.expect_response(
+            f"**/action_toggle_condition/{condition.id}?status={initial_status}&target=done"
+        ),
+        page.expect_response(f"**/status_projectobjective/{projectobjective.id}"),
+        page.expect_response(f"**/status_projects_commitment/{project.id}"),
     ):
         getattr(toggle, toggle_action)()
 
@@ -343,15 +349,21 @@ def test_toggling_commitments(
 
     toggle = page.get_by_test_id(f"toggle_commitment_{commitment.id}")
     expect(toggle).to_be_visible()
-    with page.expect_response(f"**/action_toggle_commitment/{commitment.id}"):
+    with (
+        page.expect_response(f"**/action_toggle_commitment/{commitment.id}"),
+        page.expect_response(f"**/status_projects_commitment/{project.id}"),
+    ):
         getattr(toggle, toggle_action)()
 
     commitment.refresh_from_db()
     assert commitment.committed is target_committed
 
 
-def check_condition_for_status(page, projectobjective_id, condition_id):
-    with page.expect_response(f"**/status_projectobjective/{projectobjective_id}"):
+def check_condition_for_status(page, projectobjective_id, condition_id, project_id):
+    with (
+        page.expect_response(f"**/status_projectobjective/{projectobjective_id}"),
+        page.expect_response(f"**/status_projects_commitment/{project_id}"),
+    ):
         page.get_by_test_id(f"toggle_condition_{condition_id}").check()
 
 
@@ -395,7 +407,10 @@ def test_status(
 
     for condition_key in condition_keys:
         check_condition_for_status(
-            page, projectobjective.id, getattr(browser_test_data, condition_key).id
+            page,
+            projectobjective.id,
+            getattr(browser_test_data, condition_key).id,
+            project.id,
         )
 
     final_condition = getattr(browser_test_data, condition_keys[-1])
@@ -437,8 +452,16 @@ def apply_commitment_table_operation(page, project_id, browser_test_data, operat
     obj = getattr(browser_test_data, data_key)
     toggle_kind = "condition" if operation_type == "condition" else "commitment"
 
-    with page.expect_response(f"**/status_projects_commitment/{project_id}"):
-        page.get_by_test_id(f"toggle_{toggle_kind}_{obj.id}").check()
+    if operation_type == "condition":
+        projectobjective_id = obj.projectobjective().id
+        with (
+            page.expect_response(f"**/status_projects_commitment/{project_id}"),
+            page.expect_response(f"**/status_projectobjective/{projectobjective_id}"),
+        ):
+            page.get_by_test_id(f"toggle_{toggle_kind}_{obj.id}").check()
+    else:
+        with page.expect_response(f"**/status_projects_commitment/{project_id}"):
+            page.get_by_test_id(f"toggle_{toggle_kind}_{obj.id}").check()
 
 
 @pytest.mark.parametrize(
