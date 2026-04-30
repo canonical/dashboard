@@ -269,6 +269,13 @@ def page(page, client, live_server, browser_test_data):
 
     yield page
 
+    # Let pending HTMX/live-server requests settle before pytest-django flushes SQLite.
+    try:
+        page.wait_for_load_state("networkidle", timeout=5000)
+    except Exception:
+        # The page can already be closing during fixture teardown.
+        pass
+
 
 @pytest.mark.parametrize(
     "condition_key,initial_status,target_status,toggle_action",
@@ -311,6 +318,7 @@ def test_toggling_conditions(
         page.expect_response(f"**/status_projects_commitment/{project.id}"),
     ):
         getattr(toggle, toggle_action)()
+    page.wait_for_load_state("networkidle")
 
     condition.refresh_from_db()
     assert condition.status == target_status
@@ -362,6 +370,7 @@ def test_toggling_commitments(
         page.expect_response(f"**/status_projects_commitment/{project.id}"),
     ):
         getattr(toggle, toggle_action)()
+    page.wait_for_load_state("networkidle")
 
     commitment.refresh_from_db()
     assert commitment.committed == target_committed
@@ -373,6 +382,7 @@ def check_condition_for_status(page, projectobjective_id, condition_id, project_
         page.expect_response(f"**/status_projects_commitment/{project_id}"),
     ):
         page.get_by_test_id(f"toggle_condition_{condition_id}").check()
+    page.wait_for_load_state("networkidle")
 
 
 @pytest.mark.parametrize(
