@@ -347,7 +347,7 @@ def test_toggling_commitments(
     page.goto(project_url(live_server, project))
 
     commitment = getattr(browser_test_data, commitment_key)
-    assert Commitment.objects.get(pk=commitment.pk).committed is initial_committed
+    assert Commitment.objects.get(pk=commitment.pk).committed == initial_committed
 
     toggle = page.get_by_test_id(f"toggle_commitment_{commitment.id}")
     expect(toggle).to_be_visible()
@@ -358,7 +358,7 @@ def test_toggling_commitments(
         getattr(toggle, toggle_action)()
 
     commitment.refresh_from_db()
-    assert commitment.committed is target_committed
+    assert commitment.committed == target_committed
 
 
 def check_condition_for_status(page, projectobjective_id, condition_id, project_id):
