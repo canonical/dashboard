@@ -116,9 +116,9 @@ def project(request, id):
         "projects/project.html",
         {
             "project": project,
-                "work_cycles": WorkCycle.objects.all(),
+            "work_cycles": WorkCycle.objects.all(),
             "current_work_cycle_name": WorkCycle.name_of_current(),
-                "workcycle_count": WorkCycle.objects.count(),
+            "workcycle_count": WorkCycle.objects.count(),
             "objectivegroup_list": ObjectiveGroup.objects.all(),
             "objective_list": Objective.objects.all(),
             "objective_count": Objective.objects.count(),
@@ -231,7 +231,7 @@ def action_toggle_condition(request, condition_id):
     response = render(
         request,
         "projects/partial_project_detail_condition.html",
-           {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
+        {"condition": condition, "workcycle_count": WorkCycle.objects.count()},
     )
     # Include a custom event in the HTTP header.
     # On the project detail page, the commitments table and the PO status will trigger a refresh
