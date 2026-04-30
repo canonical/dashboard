@@ -242,8 +242,12 @@ def browser_test_data(transactional_db):
     )
 
 
-def project_url(live_server, project):
-    return f"{live_server.url}{reverse('projects:project', None, [project.id])}"
+def project_url(live_server, project, anchor=None):
+    # Tabs are hash-based; objective controls are only visible when their tab is active.
+    url = f"{live_server.url}{reverse('projects:project', None, [project.id])}"
+    if anchor:
+        return f"{url}#{anchor}"
+    return url
 
 
 @pytest.fixture
@@ -287,7 +291,8 @@ def test_toggling_conditions(
     # Check that condition toggles persist each status transition.
 
     project = browser_test_data.project
-    page.goto(project_url(live_server, project))
+    # Open the objective tab that contains the condition toggles used in this test.
+    page.goto(project_url(live_server, project, "agreeableness"))
 
     condition = getattr(browser_test_data, condition_key)
     assert (
@@ -344,7 +349,8 @@ def test_toggling_commitments(
     # Check that commitment toggles persist each committed-state transition.
 
     project = browser_test_data.project
-    page.goto(project_url(live_server, project))
+    # Open the objective tab that contains commitment toggles for Agreeableness.
+    page.goto(project_url(live_server, project, "agreeableness"))
 
     commitment = getattr(browser_test_data, commitment_key)
     assert Commitment.objects.get(pk=commitment.pk).committed == initial_committed
@@ -397,7 +403,8 @@ def test_status(
 
     project = browser_test_data.project
     projectobjective = browser_test_data.colourfulness_projectobjective
-    page.goto(project_url(live_server, project))
+     # Activate the Colourfulness tab so the condition controls are interactable.
+    page.goto(project_url(live_server, project, "colourfulness"))
 
     has_red = browser_test_data.poc_has_red
     assert has_red.projectobjective().project == project
@@ -444,6 +451,7 @@ def csv_from_commitment_table(page):
 
 
 def assert_commitment_table_rows(page, expected_rows):
+    page.wait_for_load_state("networkidle")
     actual_rows = csv_from_commitment_table(page).splitlines()
     assert sorted(actual_rows) == sorted(expected_rows)
 
@@ -456,13 +464,18 @@ def apply_commitment_table_operation(page, project_id, browser_test_data, operat
     if operation_type == "condition":
         projectobjective_id = obj.projectobjective().id
         with (
+            page.expect_response(f"**/action_toggle_condition/{obj.id}**"),
             page.expect_response(f"**/status_projects_commitment/{project_id}"),
             page.expect_response(f"**/status_projectobjective/{projectobjective_id}"),
         ):
             page.get_by_test_id(f"toggle_{toggle_kind}_{obj.id}").check()
     else:
-        with page.expect_response(f"**/status_projects_commitment/{project_id}"):
+        with (
+            page.expect_response(f"**/action_toggle_commitment/{obj.id}"),
+            page.expect_response(f"**/status_projects_commitment/{project_id}"),
+        ):
             page.get_by_test_id(f"toggle_{toggle_kind}_{obj.id}").check()
+    page.wait_for_load_state("networkidle")
 
 
 @pytest.mark.parametrize(
@@ -530,6 +543,8 @@ def test_commitment_table(
     page.goto(project_url(live_server, project))
 
     if operations:
+        # Switch to the objective tab to trigger updates that refresh the summary table.
+        page.goto(project_url(live_server, project, "colourfulness"))
         for operation in operations:
             apply_commitment_table_operation(
                 page, project.id, browser_test_data, operation
