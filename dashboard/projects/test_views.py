@@ -331,6 +331,22 @@ def test_project_list_renders_qi_history_current_qi_and_levels(
     assert "LEVEL-ASSERT-ONLY" in content
 
 
+@pytest.mark.django_db
+def test_project_list_excludes_future_workcycle_columns(
+    client, user_without_permissions, project
+):
+    past_wc = WorkCycle.objects.create(name="Past Cycle", timestamp="2026-01-01")
+    future_wc = WorkCycle.objects.create(name="Future Cycle", timestamp="2099-01-01")
+
+    url = reverse("projects:project_list")
+    response = client.get(url)
+
+    assert response.status_code == 200
+    content = response.content.decode()
+    assert past_wc.name in content
+    assert future_wc.name not in content
+
+
 # Check that the project list and project detail pages are correctly public/private,
 # depending on whether OIDC is configured.
 
@@ -381,7 +397,9 @@ def test_force_login_project_detail(client, project):
 
 @pytest.mark.django_db
 @override_settings(FORCE_LOGIN=True)
-def test_force_login_project_detail_with_user(client, user_without_permissions, project):
+def test_force_login_project_detail_with_user(
+    client, user_without_permissions, project
+):
     url = reverse("projects:project", kwargs={"id": project.id})
     response = client.get(url)
     assert response.status_code == 200
