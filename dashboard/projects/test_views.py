@@ -3,6 +3,7 @@ from urllib.parse import parse_qs, urlparse
 
 from django.test import override_settings
 from django.urls import reverse
+from django.utils import timezone
 
 from framework.models import (
     Condition,
@@ -231,7 +232,6 @@ def test_project_basic_form_save_does_not_set_updated_fields_when_only_non_revie
 def test_project_basic_form_save_preserves_existing_stamp_when_non_review_field_changes(
     client, user_can_change_project, project
 ):
-    from django.utils import timezone
     original_time = timezone.now()
     project.updated_by = user_can_change_project
     project.updated_at = original_time
