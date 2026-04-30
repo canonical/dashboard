@@ -101,6 +101,28 @@
 	gap: 0.35rem;
 }
 
+.basics-section {
+	background: #fff;
+	border: 1px solid #dcead5;
+	border-radius: 8px;
+	padding: 0.45rem 0.7rem;
+}
+
+.basics-section + .basics-section {
+	margin-top: 0.55rem;
+}
+
+.basics-section-title {
+	margin: 0.1rem 0 0.35rem;
+	font-size: 1.05rem;
+	font-weight: 600;
+	color: #205067;
+}
+
+.basics-section-review {
+	background: #f9fcf7;
+}
+
 .basics-row {
 	display: grid;
 	grid-template-columns: 150px minmax(0, 1fr);
@@ -124,6 +146,10 @@
 .basics-label label {
 	font-weight: 600;
 	color: black;
+}
+
+.basics-form-readonly .basics-label {
+	padding-top: 0;
 }
 
 .basics-input {
