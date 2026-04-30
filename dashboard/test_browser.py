@@ -416,7 +416,6 @@ def test_status(
         )
 
     final_condition = getattr(browser_test_data, condition_keys[-1])
-    final_condition.refresh_from_db()
     assert final_condition.projectobjective().status == getattr(
         browser_test_data, status_level_key
     )
