@@ -259,11 +259,28 @@ def test_project_basic_form_save_preserves_existing_stamp_when_non_review_field_
 
 
 @pytest.mark.django_db
-@pytest.mark.parametrize("review_field,value_fn", [
-    ("last_review", lambda: "2026-04-28"),
-    ("agreement_status", lambda: __import__("framework.models", fromlist=["AgreementStatus"]).AgreementStatus.objects.create(name="agreed").id),
-    ("last_review_status", lambda: __import__("framework.models", fromlist=["ProjectStatus"]).ProjectStatus.objects.create(name="green").id),
-])
+@pytest.mark.parametrize(
+    "review_field,value_fn",
+    [
+        ("last_review", lambda: "2026-04-28"),
+        (
+            "agreement_status",
+            lambda: (
+                __import__("framework.models", fromlist=["AgreementStatus"])
+                .AgreementStatus.objects.create(name="agreed")
+                .id
+            ),
+        ),
+        (
+            "last_review_status",
+            lambda: (
+                __import__("framework.models", fromlist=["ProjectStatus"])
+                .ProjectStatus.objects.create(name="green")
+                .id
+            ),
+        ),
+    ],
+)
 def test_project_basic_form_save_sets_updated_fields_for_each_review_field(
     client, user_can_change_project, project, review_field, value_fn
 ):
