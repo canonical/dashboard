@@ -395,7 +395,9 @@ def test_force_login_project_detail(client, project):
 
 @pytest.mark.django_db
 @override_settings(FORCE_LOGIN=True)
-def test_force_login_project_detail_with_user(client, user_without_permissions, project):
+def test_force_login_project_detail_with_user(
+    client, user_without_permissions, project
+):
     url = reverse("projects:project", kwargs={"id": project.id})
     response = client.get(url)
     assert response.status_code == 200
