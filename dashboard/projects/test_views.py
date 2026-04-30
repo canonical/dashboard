@@ -3,7 +3,6 @@ from urllib.parse import parse_qs, urlparse
 
 from django.test import override_settings
 from django.urls import reverse
-from django.contrib.auth.models import Permission, User
 
 from framework.models import (
     Condition,
