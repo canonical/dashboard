@@ -17,6 +17,21 @@ from projects.models import (
     Project,
     ProjectObjective,
     ProjectObjectiveCondition,
+)
+
+from framework.models import (
+    Condition,
+    Level,
+    Objective,
+    ObjectiveGroup,
+    Reason,
+    WorkCycle,
+)
+from projects.models import (
+    Commitment,
+    Project,
+    ProjectObjective,
+    ProjectObjectiveCondition,
     QI,
 )
 
