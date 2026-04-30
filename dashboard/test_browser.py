@@ -242,12 +242,8 @@ def browser_test_data(transactional_db):
     )
 
 
-def project_url(live_server, project, anchor=None):
-    # Tabs are hash-based; objective controls are only visible when their tab is active.
-    url = f"{live_server.url}{reverse('projects:project', None, [project.id])}"
-    if anchor:
-        return f"{url}#{anchor}"
-    return url
+def project_url(live_server, project):
+    return f"{live_server.url}{reverse('projects:project', None, [project.id])}"
 
 
 @pytest.fixture
@@ -291,8 +287,7 @@ def test_toggling_conditions(
     # Check that condition toggles persist each status transition.
 
     project = browser_test_data.project
-    # Open the objective tab that contains the condition toggles used in this test.
-    page.goto(project_url(live_server, project, "agreeableness"))
+    page.goto(project_url(live_server, project))
 
     condition = getattr(browser_test_data, condition_key)
     assert condition.status == initial_status
@@ -341,8 +336,7 @@ def test_toggling_commitments(
     # Check that commitment toggles persist each committed-state transition.
 
     project = browser_test_data.project
-    # Open the objective tab that contains commitment toggles for Agreeableness.
-    page.goto(project_url(live_server, project, "agreeableness"))
+    page.goto(project_url(live_server, project))
 
     commitment = getattr(browser_test_data, commitment_key)
     assert commitment.committed is initial_committed
@@ -389,8 +383,7 @@ def test_status(
 
     project = browser_test_data.project
     projectobjective = browser_test_data.colourfulness_projectobjective
-    # Activate the Colourfulness tab so the condition controls are interactable.
-    page.goto(project_url(live_server, project, "colourfulness"))
+    page.goto(project_url(live_server, project))
 
     has_red = browser_test_data.poc_has_red
     assert has_red.projectobjective().project == project
@@ -513,8 +506,6 @@ def test_commitment_table(
     page.goto(project_url(live_server, project))
 
     if operations:
-        # Switch to the objective tab to trigger updates that refresh the summary table.
-        page.goto(project_url(live_server, project, "colourfulness"))
         for operation in operations:
             apply_commitment_table_operation(
                 page, project.id, browser_test_data, operation
