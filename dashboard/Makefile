@@ -76,7 +76,7 @@ test-framework: install-dev
 test-projects: install-dev
 	$(PYTEST) projects
 
-]test-browser: install-dev
+test-browser: install-dev
 	$(VENV)/bin/python -m playwright install
 	$(PYTEST) test_browser.py
 
