@@ -461,6 +461,35 @@ def test_project_list_renders_qi_history_current_qi_and_levels(
 
 
 @pytest.mark.django_db
+def test_project_detail_readonly_user_sees_plain_data_without_form_widgets(
+    client, user_without_permissions, project
+):
+    url = reverse("projects:project", kwargs={"id": project.id})
+    response = client.get(url)
+
+    assert response.status_code == 200
+    content = response.content.decode()
+    assert "hx-post" not in content
+    assert "id_name" not in content
+    assert "id_group" not in content
+    assert "id_last_review" not in content
+
+
+@pytest.mark.django_db
+def test_project_detail_edit_user_sees_form_widgets(
+    client, user_can_change_project, project
+):
+    url = reverse("projects:project", kwargs={"id": project.id})
+    response = client.get(url)
+
+    assert response.status_code == 200
+    content = response.content.decode()
+    assert "hx-post" in content
+    assert 'id="id_name"' in content
+    assert 'id="id_group"' in content
+
+
+@pytest.mark.django_db
 def test_project_list_excludes_future_workcycle_columns(
     client, user_without_permissions, project
 ):
@@ -532,32 +561,3 @@ def test_force_login_project_detail_with_user(
     url = reverse("projects:project", kwargs={"id": project.id})
     response = client.get(url)
     assert response.status_code == 200
-
-
-@pytest.mark.django_db
-def test_project_detail_readonly_user_sees_plain_data_without_form_widgets(
-    client, user_without_permissions, project
-):
-    url = reverse("projects:project", kwargs={"id": project.id})
-    response = client.get(url)
-
-    assert response.status_code == 200
-    content = response.content.decode()
-    assert "hx-post" not in content
-    assert "id_name" not in content
-    assert "id_group" not in content
-    assert "id_last_review" not in content
-
-
-@pytest.mark.django_db
-def test_project_detail_edit_user_sees_form_widgets(
-    client, user_can_change_project, project
-):
-    url = reverse("projects:project", kwargs={"id": project.id})
-    response = client.get(url)
-
-    assert response.status_code == 200
-    content = response.content.decode()
-    assert "hx-post" in content
-    assert 'id="id_name"' in content
-    assert 'id="id_group"' in content
