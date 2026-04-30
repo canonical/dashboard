@@ -94,8 +94,9 @@ def project(request, id):
 
     project = Project.objects.get(id=id)
 
+    can_edit_project = request.user.has_perm("projects.change_project")
     basics_form = forms.ProjectDetailForm(instance=project)
-    if not request.user.has_perm('projects.change_project'):
+    if not can_edit_project:
         for fieldname in basics_form.fields:
             basics_form.fields[fieldname].disabled = True
 
@@ -128,6 +129,7 @@ def project(request, id):
             ),
             "unstarted_reasons": Reason.objects.all(),
             "basics_form": basics_form,
+            "can_edit_project": can_edit_project,
             "projectobjectives_formset": ProjectObjectiveInlineFormSet(
                 instance=project
             ),
@@ -266,11 +268,22 @@ def action_select_reason(request, projectobjective_id):
 def project_basic_form_save(request, project_id):
     instance = Project.objects.get(id=project_id)
     form = forms.ProjectDetailForm(request.POST, instance=instance)
-    form.save()
+    review_fields = {"agreement_status", "last_review", "last_review_status"}
+    changed_review_fields = review_fields.intersection(form.changed_data)
+
+    instance = form.save(commit=False)
+    if changed_review_fields:
+        instance.updated_by = request.user
+        instance.updated_at = timezone.now()
+    instance.save()
     return render(
         request,
         "projects/partial_project_detail_basics.html",
-        {"basics_form": form, "project": instance},
+        {
+            "basics_form": form,
+            "project": instance,
+            "can_edit_project": request.user.has_perm("projects.change_project"),
+        },
     )
 
 

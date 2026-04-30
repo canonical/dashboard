@@ -3,6 +3,7 @@ from urllib.parse import parse_qs, urlparse
 
 from django.test import override_settings
 from django.urls import reverse
+from django.utils import timezone
 
 from framework.models import (
     Condition,
@@ -175,6 +176,136 @@ def test_project_basic_form_save_allows_user_with_permission(
 
 
 @pytest.mark.django_db
+def test_project_basic_form_save_sets_updated_fields_when_review_field_changes(
+    client, user_can_change_project, project
+):
+    assert project.updated_by is None
+    assert project.updated_at is None
+
+    url = reverse("projects:project_basic_form_save", args=[project.id])
+    response = client.post(
+        url,
+        data={
+            "name": project.name,
+            "url": project.url,
+            "group": "",
+            "owner": project.owner or "",
+            "driver": project.driver or "",
+            "agreement_status": "",
+            "last_review": "2026-04-28",
+            "last_review_status": "",
+        },
+    )
+
+    project.refresh_from_db()
+    assert response.status_code == 200
+    assert project.updated_by == user_can_change_project
+    assert project.updated_at is not None
+
+
+@pytest.mark.django_db
+def test_project_basic_form_save_does_not_set_updated_fields_when_only_non_review_field_changes(
+    client, user_can_change_project, project
+):
+    url = reverse("projects:project_basic_form_save", args=[project.id])
+    response = client.post(
+        url,
+        data={
+            "name": project.name,
+            "url": project.url,
+            "group": "",
+            "owner": "new owner",
+            "driver": project.driver or "",
+            "agreement_status": "",
+            "last_review": "",
+            "last_review_status": "",
+        },
+    )
+
+    project.refresh_from_db()
+    assert response.status_code == 200
+    assert project.updated_by is None
+    assert project.updated_at is None
+
+
+@pytest.mark.django_db
+def test_project_basic_form_save_preserves_existing_stamp_when_non_review_field_changes(
+    client, user_can_change_project, project
+):
+    original_time = timezone.now()
+    project.updated_by = user_can_change_project
+    project.updated_at = original_time
+    project.save(update_fields=["updated_by", "updated_at"])
+
+    url = reverse("projects:project_basic_form_save", args=[project.id])
+    response = client.post(
+        url,
+        data={
+            "name": project.name,
+            "url": project.url,
+            "group": "",
+            "owner": "new owner",
+            "driver": project.driver or "",
+            "agreement_status": "",
+            "last_review": "",
+            "last_review_status": "",
+        },
+    )
+
+    project.refresh_from_db()
+    assert response.status_code == 200
+    assert project.updated_by == user_can_change_project
+    assert project.updated_at == original_time
+
+
+@pytest.mark.django_db
+@pytest.mark.parametrize(
+    "review_field,value_fn",
+    [
+        ("last_review", lambda: "2026-04-28"),
+        (
+            "agreement_status",
+            lambda: (
+                __import__("framework.models", fromlist=["AgreementStatus"])
+                .AgreementStatus.objects.create(name="agreed")
+                .id
+            ),
+        ),
+        (
+            "last_review_status",
+            lambda: (
+                __import__("framework.models", fromlist=["ProjectStatus"])
+                .ProjectStatus.objects.create(name="green")
+                .id
+            ),
+        ),
+    ],
+)
+def test_project_basic_form_save_sets_updated_fields_for_each_review_field(
+    client, user_can_change_project, project, review_field, value_fn
+):
+    url = reverse("projects:project_basic_form_save", args=[project.id])
+    data = {
+        "name": project.name,
+        "url": project.url,
+        "group": "",
+        "owner": project.owner or "",
+        "driver": project.driver or "",
+        "agreement_status": "",
+        "last_review": "",
+        "last_review_status": "",
+    }
+    data[review_field] = value_fn()
+
+    response = client.post(url, data=data)
+
+    project.refresh_from_db()
+    assert response.status_code == 200
+    assert project.updated_by == user_can_change_project
+    assert project.updated_at is not None
+
+
+@pytest.mark.django_db
 def test_action_toggle_commitment_denies_user_without_permission(
     client, user_without_permissions, commitment
 ):
@@ -344,6 +475,35 @@ def test_project_list_renders_qi_history_current_qi_and_levels(
     assert "<td>5</td>" in content
     assert ">7</a></td>" in content
     assert "LEVEL-ASSERT-ONLY" in content
+
+
+@pytest.mark.django_db
+def test_project_detail_readonly_user_sees_plain_data_without_form_widgets(
+    client, user_without_permissions, project
+):
+    url = reverse("projects:project", kwargs={"id": project.id})
+    response = client.get(url)
+
+    assert response.status_code == 200
+    content = response.content.decode()
+    assert "hx-post" not in content
+    assert "id_name" not in content
+    assert "id_group" not in content
+    assert "id_last_review" not in content
+
+
+@pytest.mark.django_db
+def test_project_detail_edit_user_sees_form_widgets(
+    client, user_can_change_project, project
+):
+    url = reverse("projects:project", kwargs={"id": project.id})
+    response = client.get(url)
+
+    assert response.status_code == 200
+    content = response.content.decode()
+    assert "hx-post" in content
+    assert 'id="id_name"' in content
+    assert 'id="id_group"' in content
 
 
 @pytest.mark.django_db

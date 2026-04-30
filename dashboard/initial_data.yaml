@@ -724,6 +724,8 @@
     last_review: 2024-12-16
     last_review_status: 1
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 2
@@ -736,6 +738,8 @@
     last_review: null
     last_review_status: 1
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 3
@@ -748,6 +752,8 @@
     last_review: 2023-08-16
     last_review_status: 2
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 4
@@ -760,6 +766,8 @@
     last_review: 2025-02-02
     last_review_status: 4
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 5
@@ -772,6 +780,8 @@
     last_review: null
     last_review_status: 3
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 6
@@ -784,6 +794,8 @@
     last_review: 2024-12-26
     last_review_status: 5
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 7
@@ -796,6 +808,8 @@
     last_review: 2025-02-02
     last_review_status: 1
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 9
@@ -808,6 +822,8 @@
     last_review: 2025-02-09
     last_review_status: 2
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 10
@@ -820,6 +836,8 @@
     last_review: 2024-11-20
     last_review_status: 3
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 11
@@ -832,6 +850,8 @@
     last_review: 2024-03-13
     last_review_status: 1
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 12
@@ -844,6 +864,8 @@
     last_review: null
     last_review_status: 2
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 13
@@ -856,6 +878,8 @@
     last_review: 2023-11-14
     last_review_status: 5
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 14
@@ -868,6 +892,8 @@
     last_review: 2025-02-13
     last_review_status: 2
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 15
@@ -880,6 +906,8 @@
     last_review: 2025-02-13
     last_review_status: 4
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 16
@@ -892,6 +920,8 @@
     last_review: 2025-02-13
     last_review_status: 4
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 17
@@ -904,6 +934,8 @@
     last_review: 2024-11-18
     last_review_status: 3
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 18
@@ -916,6 +948,8 @@
     last_review: 2024-11-21
     last_review_status: 1
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 19
@@ -928,6 +962,8 @@
     last_review: 2025-11-01
     last_review_status: null
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 20
@@ -940,6 +976,8 @@
     last_review: null
     last_review_status: null
     agreement_status: 3
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 21
@@ -952,6 +990,8 @@
     last_review: null
     last_review_status: null
     agreement_status: 2
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 22
@@ -964,6 +1004,8 @@
     last_review: null
     last_review_status: null
     agreement_status: null
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 23
@@ -976,6 +1018,8 @@
     last_review: null
     last_review_status: null
     agreement_status: null
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 24
@@ -988,6 +1032,8 @@
     last_review: null
     last_review_status: null
     agreement_status: null
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.project
   pk: 25
@@ -1000,6 +1046,8 @@
     last_review: null
     last_review_status: null
     agreement_status: null
+    updated_by: null
+    updated_at: null
     current_qi: 0
 - model: projects.projectobjective
   pk: 1
