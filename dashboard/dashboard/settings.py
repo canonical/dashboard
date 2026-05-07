@@ -83,7 +83,7 @@ OIDC_OP_TOKEN_ENDPOINT = os.environ.get("DJANGO_OIDC_ACCESS_TOKEN_URL")
 OIDC_OP_USER_ENDPOINT = os.environ.get("DJANGO_OIDC_USER_URL")
 OIDC_OP_JWKS_ENDPOINT = os.environ.get("DJANGO_OIDC_JWKS_URL")
 
-# The callback path will be /oidc/callback - see dashboard/dashboard/urls.py
+# The callback path will be /oidc/callback/ - see dashboard/dashboard/urls.py
 
 # Optional OIDC Settings
 OIDC_RP_SCOPES = os.environ.get("DJANGO_OIDC_SCOPES", "openid email profile")
