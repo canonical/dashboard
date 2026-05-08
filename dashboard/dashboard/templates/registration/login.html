@@ -1,44 +1,124 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block extrahead %}
+<style>
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+  }
 
+  .login-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .login-card h2 {
+    margin: 0 0 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #111;
+  }
+
+  .login-btn-primary {
+    display: block;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    background-color: #0066cc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  .login-btn-primary:hover {
+    background-color: #0055aa;
+  }
+
+  .login-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+    color: #888;
+    font-size: 0.85rem;
+  }
+
+  .login-divider::before,
+  .login-divider::after {
+    content: "";
+    flex: 1;
+    border-top: 1px solid #ddd;
+  }
+
+  .login-field {
+    margin-bottom: 1rem;
+  }
+
+  .login-field label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+  }
+
+  .login-field input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+  }
+
+  .login-field input:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 1px;
+    border-color: #0066cc;
+  }
+
+  .login-submit {
+    margin-top: 1.25rem;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="login-card">
   <h2>Log in</h2>
-  
+
   {% if oidc_configured %}
-  <!-- OIDC Login Button -->
-  <div style="margin-bottom: 1rem;">
-    <a href="{% url 'oidc_authentication_init' %}" style="
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #0066cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
-    ">
-      {{ oidc_login_button_text }}
-    </a>
-  </div>
-  <p>
-    Or use your Dashboard account:
-  </p>
+  <a href="{% url 'oidc_authentication_init' %}" class="login-btn-primary">
+    {{ oidc_login_button_text }}
+  </a>
+  <div class="login-divider">or</div>
   {% endif %}
-  <!-- Fallback to standard login -->
+
   <form method="post">
     {% csrf_token %}
-
-      <table>
-
-        {% for field in form %}
-          <tr><td>{{ field.label_tag }}</td><td>{{ field }}</td></tr>
-        {% endfor %}
-
-      </table>
-
-    <p>
-      <button type="submit">Log In</button>
-    </p>
-
+    {% for field in form %}
+    <div class="login-field">
+      <label for="{{ field.auto_id }}">{{ field.label }}</label>
+      {{ field }}
+    </div>
+    {% endfor %}
+    <div class="login-submit">
+      <button type="submit" class="login-btn-primary">Log In</button>
+    </div>
   </form>
-
+</div>
 {% endblock %}
