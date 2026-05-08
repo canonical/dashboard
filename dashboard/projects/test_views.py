@@ -403,3 +403,138 @@ def test_force_login_project_detail_with_user(
     url = reverse("projects:project", kwargs={"id": project.id})
     response = client.get(url)
     assert response.status_code == 200
+
+
+@pytest.mark.django_db
+@override_settings(FORCE_LOGIN=False)
+def test_status_projects_commitment_returns_404_for_unknown_id(client):
+    url = reverse("projects:status_projects_commitment", kwargs={"project_id": 999999})
+    response = client.get(url)
+    assert response.status_code == 404
+
+
+@pytest.mark.django_db
+@override_settings(FORCE_LOGIN=False)
+def test_no_login_status_projects_commitment(client, project):
+    url = reverse(
+        "projects:status_projects_commitment", kwargs={"project_id": project.id}
+    )
+    response = client.get(url)
+    assert response.status_code == 200
+
+
+@pytest.mark.django_db
+@override_settings(FORCE_LOGIN=True)
+def test_force_login_status_projects_commitment(client, project):
+    url = reverse(
+        "projects:status_projects_commitment", kwargs={"project_id": project.id}
+    )
+    response = client.get(url)
+    assert response.status_code == 302
+    assert response.url == f"{reverse('login')}?next={url}"
+
+
+@pytest.mark.django_db
+@override_settings(FORCE_LOGIN=True)
+def test_force_login_status_projects_commitment_with_user(
+    client, user_without_permissions, project
+):
+    url = reverse(
+        "projects:status_projects_commitment", kwargs={"project_id": project.id}
+    )
+    response = client.get(url)
+    assert response.status_code == 200
+
+
+@pytest.mark.django_db
+@override_settings(FORCE_LOGIN=False)
+def test_status_projectobjective_returns_404_for_unknown_id(client):
+    url = reverse(
+        "projects:status_projectobjective",
+        kwargs={"projectobjective_id": 999999},
+    )
+    response = client.get(url)
+    assert response.status_code == 404
+
+
+@pytest.mark.django_db
+@override_settings(FORCE_LOGIN=False)
+def test_no_login_status_projectobjective(client, project_objective):
+    url = reverse(
+        "projects:status_projectobjective",
+        kwargs={"projectobjective_id": project_objective.id},
+    )
+    response = client.get(url)
+    assert response.status_code == 200
+
+
+@pytest.mark.django_db
+@override_settings(FORCE_LOGIN=True)
+def test_force_login_status_projectobjective(client, project_objective):
+    url = reverse(
+        "projects:status_projectobjective",
+        kwargs={"projectobjective_id": project_objective.id},
+    )
+    response = client.get(url)
+    assert response.status_code == 302
+    assert response.url == f"{reverse('login')}?next={url}"
+
+
+@pytest.mark.django_db
+@override_settings(FORCE_LOGIN=True)
+def test_force_login_status_projectobjective_with_user(
+    client, user_without_permissions, project_objective
+):
+    url = reverse(
+        "projects:status_projectobjective",
+        kwargs={"projectobjective_id": project_objective.id},
+    )
+    response = client.get(url)
+    assert response.status_code == 200
+
+
+@pytest.mark.django_db
+@override_settings(FORCE_LOGIN=False)
+def test_status_dashboardprojectobjective_returns_404_for_unknown_id(client):
+    url = reverse(
+        "projects:status_dashboardprojectobjective",
+        kwargs={"projectobjective_id": 999999},
+    )
+    response = client.get(url)
+    assert response.status_code == 404
+
+
+@pytest.mark.django_db
+@override_settings(FORCE_LOGIN=False)
+def test_no_login_status_dashboardprojectobjective(client, project_objective):
+    url = reverse(
+        "projects:status_dashboardprojectobjective",
+        kwargs={"projectobjective_id": project_objective.id},
+    )
+    response = client.get(url)
+    assert response.status_code == 200
+
+
+@pytest.mark.django_db
+@override_settings(FORCE_LOGIN=True)
+def test_force_login_status_dashboardprojectobjective(client, project_objective):
+    url = reverse(
+        "projects:status_dashboardprojectobjective",
+        kwargs={"projectobjective_id": project_objective.id},
+    )
+    response = client.get(url)
+    assert response.status_code == 302
+    assert response.url == f"{reverse('login')}?next={url}"
+
+
+@pytest.mark.django_db
+@override_settings(FORCE_LOGIN=True)
+def test_force_login_status_dashboardprojectobjective_with_user(
+    client, user_without_permissions, project_objective
+):
+    url = reverse(
+        "projects:status_dashboardprojectobjective",
+        kwargs={"projectobjective_id": project_objective.id},
+    )
+    response = client.get(url)
+    assert response.status_code == 200
