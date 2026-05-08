@@ -1,6 +1,6 @@
 import json
 from django.db.models import F, Sum
-from django.shortcuts import render, HttpResponse, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render, HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView
 from django.views.decorators.http import require_http_methods
 from django.forms import inlineformset_factory
@@ -137,10 +137,11 @@ def project(request, id):
 
 # detail view status methods
 
+@conditional_login_required
 @require_http_methods(["GET"])
 def status_projects_commitment(request, project_id):
 
-    project = Project.objects.get(id=project_id)
+    project = get_object_or_404(Project, id=project_id)
     current_commitments = Commitment.objects.filter(
         project=project, work_cycle__is_current=True, committed=True
     )
@@ -155,10 +156,11 @@ def status_projects_commitment(request, project_id):
         },
     )
 
-@require_http_methods("GET")
+@conditional_login_required
+@require_http_methods(["GET"])
 def status_projectobjective(request, projectobjective_id):
 
-    projectobjective = ProjectObjective.objects.get(id=projectobjective_id)
+    projectobjective = get_object_or_404(ProjectObjective, id=projectobjective_id)
 
     return render(
         request,
@@ -171,9 +173,10 @@ def status_projectobjective(request, projectobjective_id):
 
 # list view status methods
 
-@require_http_methods("GET")
+@conditional_login_required
+@require_http_methods(["GET"])
 def status_dashboardprojectobjective(request, projectobjective_id):
-    projectobjective = ProjectObjective.objects.get(id=projectobjective_id)
+    projectobjective = get_object_or_404(ProjectObjective, id=projectobjective_id)
 
     return render(
         request,
