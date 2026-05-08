@@ -489,9 +489,7 @@ def test_force_login_status_projectobjective_with_user(
         "projects:status_projectobjective",
         kwargs={"projectobjective_id": project_objective.id},
     )
-
     response = client.get(url)
-
     assert response.status_code == 200
 
 
