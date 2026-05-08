@@ -1,43 +1,222 @@
 <div id="basic_information" class="basics-panel">
+  {% if can_edit_project %}
   <form
     class="basics-form"
     hx-post="{% url 'projects:project_basic_form_save' project.id %}"
     hx-target="#basic_information"
     hx-swap="outerHTML"
   >
-    {% if project.url %}
-      <div class="basics-row basics-row-website">
-        <div class="basics-label">Website</div>
-        <div class="basics-input">
-          <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">{{ project.url }}</a>
+    <section class="basics-section">
+      {% if project.url %}
+        <div class="basics-row basics-row-website">
+          <div class="basics-label">Website</div>
+          <div class="basics-input">
+            <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">{{ project.url }}</a>
+          </div>
         </div>
-      </div>
-    {% endif %}
+      {% endif %}
 
-    {% for field in basics_form %}
       <div class="basics-row">
         <div class="basics-label">
-          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+          <label for="{{ basics_form.name.id_for_label }}">{{ basics_form.name.label }}</label>
         </div>
         <div class="basics-input">
-          {{ field }}
-
-          {% if field.help_text %}
-            <div class="basics-help">{{ field.help_text|safe }}</div>
+          {{ basics_form.name }}
+          {% if basics_form.name.help_text %}
+            <div class="basics-help">{{ basics_form.name.help_text|safe }}</div>
           {% endif %}
-
-          {% for error in field.errors %}
+          {% for error in basics_form.name.errors %}
             <div class="basics-error">{{ error }}</div>
           {% endfor %}
         </div>
       </div>
-    {% endfor %}
 
-    {% if perms.projects.change_projectobjectivecondition %}
+      <div class="basics-row">
+        <div class="basics-label">
+          <label for="{{ basics_form.group.id_for_label }}">{{ basics_form.group.label }}</label>
+        </div>
+        <div class="basics-input">
+          {{ basics_form.group }}
+          {% if basics_form.group.help_text %}
+            <div class="basics-help">{{ basics_form.group.help_text|safe }}</div>
+          {% endif %}
+          {% for error in basics_form.group.errors %}
+            <div class="basics-error">{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="basics-row">
+        <div class="basics-label">
+          <label for="{{ basics_form.owner.id_for_label }}">{{ basics_form.owner.label }}</label>
+        </div>
+        <div class="basics-input">
+          {{ basics_form.owner }}
+          {% if basics_form.owner.help_text %}
+            <div class="basics-help">{{ basics_form.owner.help_text|safe }}</div>
+          {% endif %}
+          {% for error in basics_form.owner.errors %}
+            <div class="basics-error">{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="basics-row">
+        <div class="basics-label">
+          <label for="{{ basics_form.driver.id_for_label }}">{{ basics_form.driver.label }}</label>
+        </div>
+        <div class="basics-input">
+          {{ basics_form.driver }}
+          {% if basics_form.driver.help_text %}
+            <div class="basics-help">{{ basics_form.driver.help_text|safe }}</div>
+          {% endif %}
+          {% for error in basics_form.driver.errors %}
+            <div class="basics-error">{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="basics-section basics-section-review">
+
+      <div class="basics-row">
+        <div class="basics-label">
+          <label for="{{ basics_form.agreement_status.id_for_label }}">{{ basics_form.agreement_status.label }}</label>
+        </div>
+        <div class="basics-input">
+          {{ basics_form.agreement_status }}
+          {% if basics_form.agreement_status.help_text %}
+            <div class="basics-help">{{ basics_form.agreement_status.help_text|safe }}</div>
+          {% endif %}
+          {% for error in basics_form.agreement_status.errors %}
+            <div class="basics-error">{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="basics-row">
+        <div class="basics-label">
+          <label for="{{ basics_form.last_review.id_for_label }}">{{ basics_form.last_review.label }}</label>
+        </div>
+        <div class="basics-input">
+          {{ basics_form.last_review }}
+          {% if basics_form.last_review.help_text %}
+            <div class="basics-help">{{ basics_form.last_review.help_text|safe }}</div>
+          {% endif %}
+          {% for error in basics_form.last_review.errors %}
+            <div class="basics-error">{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="basics-row">
+        <div class="basics-label">
+          <label for="{{ basics_form.last_review_status.id_for_label }}">{{ basics_form.last_review_status.label }}</label>
+        </div>
+        <div class="basics-input">
+          {{ basics_form.last_review_status }}
+          {% if basics_form.last_review_status.help_text %}
+            <div class="basics-help">{{ basics_form.last_review_status.help_text|safe }}</div>
+          {% endif %}
+          {% for error in basics_form.last_review_status.errors %}
+            <div class="basics-error">{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+
+      {% if project.updated_by %}
+        <div class="basics-row">
+          <div class="basics-label">Updated</div>
+          <div class="basics-input">
+              {{ project.updated_by }}
+              ({{ project.updated_at|date:"Y-m-d" }})
+          </div>
+        </div>
+      {% endif %}
+
+
+    </section>
+
+    {% if can_edit_project %}
       <div class="basics-actions">
         <button type="submit" class="basics-save">Save</button>
       </div>
     {% endif %}
   </form>
+  {% else %}
+  <div class="basics-form basics-form-readonly">
+    <section class="basics-section">
+      {% if project.url %}
+        <div class="basics-row basics-row-website">
+          <div class="basics-label">Website</div>
+          <div class="basics-input">
+            <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">{{ project.url }}</a>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="basics-row">
+        <div class="basics-label">
+          <label>{{ basics_form.name.label }}</label>
+        </div>
+        <div class="basics-input">{{ project.name }}</div>
+      </div>
+
+      <div class="basics-row">
+        <div class="basics-label">
+          <label>{{ basics_form.group.label }}</label>
+        </div>
+        <div class="basics-input">{{ project.group }}</div>
+      </div>
+
+      <div class="basics-row">
+        <div class="basics-label">
+          <label>{{ basics_form.owner.label }}</label>
+        </div>
+        <div class="basics-input">{{ project.owner }}</div>
+      </div>
+
+      <div class="basics-row">
+        <div class="basics-label">
+          <label>{{ basics_form.driver.label }}</label>
+        </div>
+        <div class="basics-input">{{ project.driver }}</div>
+      </div>
+    </section>
+
+    <section class="basics-section basics-section-review">
+      <div class="basics-row">
+        <div class="basics-label">
+          <label>{{ basics_form.agreement_status.label }}</label>
+        </div>
+        <div class="basics-input">{{ project.agreement_status }}</div>
+      </div>
+
+      <div class="basics-row">
+        <div class="basics-label">
+          <label>{{ basics_form.last_review.label }}</label>
+        </div>
+        <div class="basics-input">{{ project.last_review|date:"Y-m-d" }}</div>
+      </div>
+
+      <div class="basics-row">
+        <div class="basics-label">
+          <label>{{ basics_form.last_review_status.label }}</label>
+        </div>
+        <div class="basics-input">{{ project.last_review_status }}</div>
+      </div>
+
+      {% if project.updated_by %}
+        <div class="basics-row">
+          <div class="basics-label">Updated</div>
+          <div class="basics-input">
+              {{ project.updated_by }}
+              ({{ project.updated_at|date:"Y-m-d" }})
+          </div>
+        </div>
+      {% endif %}
+    </section>
+  </div>
+  {% endif %}
 </div>
 

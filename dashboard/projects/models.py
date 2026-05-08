@@ -1,6 +1,7 @@
 from datetime import date, timedelta
 import logging
 
+from django.conf import settings
 from django.db import models
 from django.urls import reverse
 from django.db.models import Sum, Count, F, Q
@@ -52,6 +53,14 @@ class Project(models.Model):
     agreement_status = models.ForeignKey(
         AgreementStatus, null=True, blank=True, on_delete=models.SET_NULL
     )
+    updated_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    updated_at = models.DateTimeField(null=True, blank=True)
     current_qi = models.PositiveSmallIntegerField(default=0)
 
     def __str__(self):
