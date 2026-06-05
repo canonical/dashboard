@@ -9,7 +9,7 @@ This repo contains the source code of the application. [Run the application from
 This repo also contains the source code of a Kubernetes charm for operating the application as part of a Juju deployment. To learn about Juju and charms, see https://juju.is/docs.
 
 > [!IMPORTANT]
-> To use the dashboard charm in a real Juju deployment, see [TODO: docs on Charmhub] instead of this repo.
+> To use the dashboard charm in a real Juju deployment, see the [Juju docs](https://canonical.com/juju/docs) instead of this repo.
 > This repo is the right place to look if you'd like to test the charm, customise it for your own purposes, or contribute to development!
 
 In this README:
@@ -248,7 +248,7 @@ You should see the dashboard in your browser. Congratulations!
     juju run dashboard/0 load-sample-data
     ```
 
-    This uses a Juju "action" to run [manage.py](./dashboard/manage.py) inside the dashboard application's container. For technical details, see [TODO: doc in progress].
+    This uses a Juju "action" to run [manage.py](./dashboard/manage.py) inside the dashboard application's container.
 
   - To inspect the configuration of the dashboard's web server, run the following commands inside your `charm-dev` virtual machine:
 
