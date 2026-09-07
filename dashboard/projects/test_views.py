@@ -6,10 +6,12 @@ from django.urls import reverse
 from django.utils import timezone
 
 from framework.models import (
+    AgreementStatus,
     Condition,
     Level,
     Objective,
     ObjectiveGroup,
+    ProjectStatus,
     Reason,
     WorkCycle,
 )
@@ -250,19 +252,11 @@ def test_project_basic_form_save_preserves_existing_stamp_when_non_review_field_
         ("last_review", lambda: "2026-04-28"),
         (
             "agreement_status",
-            lambda: (
-                __import__("framework.models", fromlist=["AgreementStatus"])
-                .AgreementStatus.objects.create(name="agreed")
-                .id
-            ),
+            lambda: AgreementStatus.objects.create(name="agreed").id,
         ),
         (
             "last_review_status",
-            lambda: (
-                __import__("framework.models", fromlist=["ProjectStatus"])
-                .ProjectStatus.objects.create(name="green")
-                .id
-            ),
+            lambda: ProjectStatus.objects.create(name="green").id,
         ),
     ],
 )
