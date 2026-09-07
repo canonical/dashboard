@@ -46,32 +46,34 @@
 </style>
 
 <div id="container">
+  <div class="overview-shell">
+    <header class="overview-header">
+      <nav class="navigation">
+        <ul>
+          <li><a href="{% url 'projects:project_list' %}">Dashboard</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'admin:index' %}">Admin</a></li>
+            <li class="nav-user">Logged in as {{ user.username }}</li>
+            <li class="nav-logout">
+              <form action="{% url 'logout' %}?next={{ request.path }}" method="post">
+                {% csrf_token %}
+                <button type="submit">Log out</button>
+              </form>
+            </li>
+          {% else %}
+            <li><a href="{% url 'login' %}?next={{ request.path }}">Log in</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+
+      <h1>{{ project }}</h1>
+    </header>
+  </div>
+
   <div class="tab-panels">
 
     <div id="tab-overview" class="tab-panel">
       <div class="overview-shell">
-        <header class="overview-header">
-          <nav class="navigation">
-            <ul>
-              <li><a href="{% url 'projects:project_list' %}">Dashboard</a></li>
-              {% if user.is_authenticated %}
-                <li><a href="{% url 'admin:index' %}">Admin</a></li>
-                <li class="nav-user">Logged in as {{ user.username }}</li>
-                <li class="nav-logout">
-                  <form action="{% url 'logout' %}?next={{ request.path }}" method="post">
-                    {% csrf_token %}
-                    <button type="submit">Log out</button>
-                  </form>
-                </li>
-              {% else %}
-                <li><a href="{% url 'login' %}?next={{ request.path }}">Log in</a></li>
-              {% endif %}
-            </ul>
-          </nav>
-
-          <h1>{{ project }}</h1>
-        </header>
-
         <div class="overview-columns">
           <section class="overview-card overview-basics">
             {% include "projects/partial_project_detail_basics.html" %}
