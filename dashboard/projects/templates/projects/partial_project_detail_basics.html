@@ -180,7 +180,7 @@
         <div class="basics-label">
           <label>{{ basics_form.driver.label }}</label>
         </div>
-        <div class="basics-input">{{ project.driver }}</div>
+        <div class="basics-input">{{ project.driver|default_if_none:"(not set)" }}</div>
       </div>
     </section>
 
@@ -189,21 +189,21 @@
         <div class="basics-label">
           <label>{{ basics_form.agreement_status.label }}</label>
         </div>
-        <div class="basics-input">{{ project.agreement_status }}</div>
+        <div class="basics-input">{{ project.agreement_status|default_if_none:"(not set)" }}</div>
       </div>
 
       <div class="basics-row">
         <div class="basics-label">
           <label>{{ basics_form.last_review.label }}</label>
         </div>
-        <div class="basics-input">{{ project.last_review|date:"Y-m-d" }}</div>
+        <div class="basics-input">{{ project.last_review|date:"Y-m-d"|default:"(not set)" }}</div>
       </div>
 
       <div class="basics-row">
         <div class="basics-label">
           <label>{{ basics_form.last_review_status.label }}</label>
         </div>
-        <div class="basics-input">{{ project.last_review_status }}</div>
+        <div class="basics-input">{{ project.last_review_status|default_if_none:"(not set)" }}</div>
       </div>
 
       {% if project.updated_by %}
