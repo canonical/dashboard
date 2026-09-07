@@ -6,7 +6,7 @@
 
     <tr class="objective">
       <td colspan="{{ workcycle_count|add:'2' }}" class="objective name">
-        {{ projectobjective.objective }}
+        <a href="#{{ projectobjective.name|slugify }}">{{ projectobjective.objective }}</a>
       </td>
     </tr>
 

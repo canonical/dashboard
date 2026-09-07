@@ -42,33 +42,35 @@
     background: #d9ead3 !important;
     font-weight: 400;
   }
+  #container:has(#{{ pg.grouper|slugify }}:target) #tab-overview,
+  #container:has(#{{ pg.grouper|slugify }} :target) #tab-overview {
+    display: none;
+  }
   {% endfor %}
 </style>
 
 <div id="container">
-  <div class="overview-shell">
-    <header class="overview-header">
-      <nav class="navigation">
-        <ul>
-          <li><a href="{% url 'projects:project_list' %}">Dashboard</a></li>
-          {% if user.is_authenticated %}
-            <li><a href="{% url 'admin:index' %}">Admin</a></li>
-            <li class="nav-user">Logged in as {{ user.username }}</li>
-            <li class="nav-logout">
-              <form action="{% url 'logout' %}?next={{ request.path }}" method="post">
-                {% csrf_token %}
-                <button type="submit">Log out</button>
-              </form>
-            </li>
-          {% else %}
-            <li><a href="{% url 'login' %}?next={{ request.path }}">Log in</a></li>
-          {% endif %}
-        </ul>
-      </nav>
+  <header class="overview-header">
+    <nav class="navigation">
+      <ul>
+        <li><a href="{% url 'projects:project_list' %}">Dashboard</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'admin:index' %}">Admin</a></li>
+          <li class="nav-user">Logged in as {{ user.username }}</li>
+          <li class="nav-logout">
+            <form action="{% url 'logout' %}?next={{ request.path }}" method="post">
+              {% csrf_token %}
+              <button type="submit">Log out</button>
+            </form>
+          </li>
+        {% else %}
+          <li><a href="{% url 'login' %}?next={{ request.path }}">Log in</a></li>
+        {% endif %}
+      </ul>
+    </nav>
 
-      <h1>{{ project }}</h1>
-    </header>
-  </div>
+    <h1>{{ project }}</h1>
+  </header>
 
   <div class="tab-panels">
 
