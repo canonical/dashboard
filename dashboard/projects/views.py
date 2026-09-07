@@ -271,6 +271,16 @@ def action_select_reason(request, projectobjective_id):
 def project_basic_form_save(request, project_id):
     instance = Project.objects.get(id=project_id)
     form = forms.ProjectDetailForm(request.POST, instance=instance)
+    if not form.is_valid():
+        return render(
+            request,
+            "projects/partial_project_detail_basics.html",
+            {
+                "basics_form": form,
+                "project": instance,
+                "can_edit_project": True,
+            },
+        )
     review_fields = {"agreement_status", "last_review", "last_review_status"}
     changed_review_fields = review_fields.intersection(form.changed_data)
 
