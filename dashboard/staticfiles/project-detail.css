@@ -106,12 +106,12 @@
 }
 
 .nav-button {
-	color: #18475e;
+	color: #333;
 	text-decoration: none;
 	padding: 0.22rem 0.6rem;
 	border-radius: 6px;
 	background: #fff;
-	border: 1px solid #7fab6d;
+	border: 1px solid #ccc;
 	font: inherit;
 	font-size: 0.84rem;
 	line-height: 1.15;
@@ -122,8 +122,8 @@
 }
 
 .nav-button:hover {
-	background: #eef7e8;
-	border-color: #6aa84f;
+	background: #f0f0f0;
+	border-color: #999;
 	text-decoration: none;
 }
 
