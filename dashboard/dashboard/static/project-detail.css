@@ -418,6 +418,8 @@ table.objectives tr.condition td:first-child input[type="checkbox"] {margin: 0;}
 table.objectives tr.objective td.name {background-color: #205067; color: white; font-weight: bold;}
 table.objectives tr.objective td.name a {color: inherit; text-decoration: none;}
 table.objectives tr.objective td.name a:hover {text-decoration: underline;}
+table.objectives tr.objective td.name .link-icon {color: white; font-size: 0.7em; margin-left: 0.56em; font-weight: 400; position: relative; top: -1px; opacity: 0; transition: opacity 0.15s;}
+table.objectives tr.objective:hover td.name .link-icon {opacity: 1;}
 table.objectives tr.level {background-color: #f0f0f0; font-weight: bold;}
 
 table.objectives td p, table.objectives th p {margin: .2rem 0}
