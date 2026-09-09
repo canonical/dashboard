@@ -69,6 +69,8 @@ jobs:
           echo "CHARMCRAFT_AUTH length: ${#CHARMCRAFT_AUTH}"
           echo "CHARMCRAFT_AUTH first 20 chars: ${CHARMCRAFT_AUTH:0:20}..."
           echo "CHARMCRAFT_AUTH last 10 chars: ...${CHARMCRAFT_AUTH: -10}"
+          echo "--- Running charmcraft whoami with CHARMCRAFT_AUTH ---"
+          charmcraft whoami || echo "whoami failed with exit code $?"
         env:
           CHARMCRAFT_AUTH: ${{ secrets.CHARMHUB_TOKEN }}
       - name: publish charm
