@@ -1,6 +1,7 @@
 <div id="basic_information" class="basics-panel">
   {% if can_edit_project %}
   <form
+    id="basic_form"
     class="basics-form"
     hx-post="{% url 'projects:project_basic_form_save' project.id %}"
     hx-target="#basic_information"
@@ -136,12 +137,6 @@
 
 
     </section>
-
-    {% if can_edit_project %}
-      <div class="basics-actions">
-        <button type="submit" class="basics-save">Save</button>
-      </div>
-    {% endif %}
   </form>
   {% else %}
   <div class="basics-form basics-form-readonly">

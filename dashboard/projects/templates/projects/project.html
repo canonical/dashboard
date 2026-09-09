@@ -85,14 +85,22 @@
             {% include "projects/partial_project_detail_commitments.html" %}
           </section>
         </div>
+
+        {% if can_edit_project %}
+          <div class="basics-actions">
+            <button type="submit" class="basics-save" form="basic_form">Save</button>
+          </div>
+        {% endif %}
       </div>
     </div>
 
     {% for pg in projectobjectivegroups %}
     <div id="{{ pg.grouper|slugify }}" class="tab-panel">
-      <table class="objectives detail">
-        {% include "projects/partial_project_detail_objectives.html" with projectobjectives=pg.list %}
-      </table>
+      <div class="objectives-scroll">
+        <table class="objectives detail">
+          {% include "projects/partial_project_detail_objectives.html" with projectobjectives=pg.list %}
+        </table>
+      </div>
     </div>
     {% endfor %}
 
