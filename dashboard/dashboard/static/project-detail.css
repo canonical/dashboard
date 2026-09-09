@@ -325,7 +325,7 @@
 }
 
 .overview-section-title {
-	margin: 0 0 0.35rem;
+	margin: 0.3rem 0 0.35rem;
 	font-size: 1.15rem;
 	font-weight: 600;
 	color: #205067;
@@ -379,12 +379,10 @@
 .commitments-table a {
 	color: #18475e;
 	text-decoration: none;
-	border-bottom: 1px dotted #93c47d;
 }
 
 .commitments-table a:hover {
-	color: #103847;
-	border-bottom-color: #6aa84f;
+	text-decoration: underline;
 }
 
 /* tab bar — fixed at bottom of viewport */
