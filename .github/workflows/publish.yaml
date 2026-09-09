@@ -64,6 +64,13 @@ jobs:
       - name: show charmcraft.yaml
         run: |
           cat charmcraft.yaml
+      - name: debug credentials
+        run: |
+          echo "CHARMCRAFT_AUTH length: ${#CHARMCRAFT_AUTH}"
+          echo "CHARMCRAFT_AUTH first 20 chars: ${CHARMCRAFT_AUTH:0:20}..."
+          echo "CHARMCRAFT_AUTH last 10 chars: ...${CHARMCRAFT_AUTH: -10}"
+        env:
+          CHARMCRAFT_AUTH: ${{ secrets.CHARMHUB_TOKEN }}
       - name: publish charm
         uses: canonical/charming-actions/upload-charm@2.7.0
         with:
