@@ -238,4 +238,5 @@ TINYMCE_DEFAULT_CONFIG = {
     "toolbar": False,
     "statusbar": False,
     "valid_elements": "a[href|target=_blank],strong,em,p,ul,ol,li",
+    "content_style": "body { font-size: 13px; margin: 4px; }",
 }

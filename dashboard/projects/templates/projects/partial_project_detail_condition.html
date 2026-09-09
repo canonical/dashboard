@@ -21,8 +21,9 @@
   </td>
 
   <td class="condition name">
-    {{ condition.name|safe }}
-    <div class="attributes">
+    <div class="condition-layout">
+      <div class="condition-text">{{ condition.name|safe }}</div>
+      <div class="attributes">
       <span
         {% if not perms.projects.change_projectobjectivecondition %}
           class="condition not-applicable"
@@ -41,7 +42,8 @@
           hx-target="closest tr"
           hx-swap="outerHTML"
       {% endif %}>candidate</span>
-  </div>
+      </div>
+    </div>
   </td>
 
   <td class="commitment-blank" colspan="{{ workcycle_count }}"></td>
