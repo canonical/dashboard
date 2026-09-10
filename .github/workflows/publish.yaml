@@ -9,6 +9,8 @@ on:
 jobs:
   publish-charm:
     name: Publish charm and rock
+    permissions:
+      contents: write
     strategy:
       fail-fast: false
       max-parallel: 1
