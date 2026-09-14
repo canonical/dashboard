@@ -1,0 +1,4 @@
+cosl ==1.9.1
+jubilant ==1.8.0
+juju ==3.6.1.3
+pytest-playwright ==0.7.2
