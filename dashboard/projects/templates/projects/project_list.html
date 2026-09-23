@@ -20,17 +20,13 @@
           <th scope="col" class="quality">Agreement</th>
           <th scope="col" class="quality">Last review</th>
           {% for workcycle in workcycle_list %}
-            <th scope="col" class="quality">
-              <a href="{% url 'admin:framework_workcycle_change' workcycle.id %}">{{ workcycle.name }}</a>
-            </th>
+            <th scope="col" class="quality">{{ workcycle.name }}</th>
           {% endfor %}
           <th scope="col" class="quality">QI</th>
           <th scope="col" class="quality">Expectations review</th>
 
           {% for objective in objective_list %}
-            <th scope="col" class="objective">
-              <a href="{% url 'admin:framework_objective_change' objective.id %}">{{ objective.name }}</a>
-            </th>
+            <th scope="col" class="objective">{{ objective.name }}</th>
           {% endfor %}
         </tr>
 
