@@ -14,3 +14,13 @@ def work_cycle_commitment(work_cycle, project, objective, level):
 @register.simple_tag
 def pack(*args):
     return zip(*args)
+
+
+@register.filter
+def display_name(user):
+    """Return a friendly name for displaying in the UI; needed because OIDC usernames are hashes."""
+    if not user:
+        return ""
+    if user.email:
+        return user.email
+    return user.username

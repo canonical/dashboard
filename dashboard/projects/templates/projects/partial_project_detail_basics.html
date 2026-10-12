@@ -1,3 +1,4 @@
+{% load project_tags %}
 <div id="basic_information" class="basics-panel">
   {% if can_edit_project %}
   <form
@@ -129,7 +130,7 @@
         <div class="basics-row">
           <div class="basics-label">Updated</div>
           <div class="basics-input">
-              {{ project.updated_by }}
+              {{ project.updated_by|display_name }}
               ({{ project.updated_at|date:"Y-m-d" }})
           </div>
         </div>
@@ -205,7 +206,7 @@
         <div class="basics-row">
           <div class="basics-label">Updated</div>
           <div class="basics-input">
-              {{ project.updated_by }}
+              {{ project.updated_by|display_name }}
               ({{ project.updated_at|date:"Y-m-d" }})
           </div>
         </div>

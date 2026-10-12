@@ -52,7 +52,7 @@
       <div class="overview-header-content">
         <h1>{{ project }}</h1>
         {% if user.is_authenticated %}
-          <span class="nav-user">Logged in as {{ user.username }}</span>
+          <span class="nav-user">Logged in as {{ user|display_name }}</span>
           <form action="{% url 'logout' %}?next={{ request.path }}" method="post" class="nav-logout" data-preserve-hash>
             {% csrf_token %}
             <button type="submit" class="nav-button">Log out</button>
