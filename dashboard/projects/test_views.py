@@ -407,19 +407,6 @@ def test_project_detail_readonly_user_sees_plain_data_without_form_widgets(
     assert "id_last_review" not in content
 
 
-def save_review_field(client, project):
-    """Save a review field and return the audit trail's rendered content."""
-    response = post_basic_form(
-        client, project, review_field="last_review", review_value="2026-04-28"
-    )
-
-    project.refresh_from_db()
-    assert response.status_code == 200
-    # The template puts the name and date on separate lines; HTML collapses
-    # the whitespace when rendering, so normalize it before asserting.
-    return re.sub(r"\s+", " ", response.content.decode())
-
-
 @pytest.mark.django_db
 def test_project_detail_shows_email(client, user_can_change_project, project):
     # Ensure the user has an email address.
@@ -436,8 +423,16 @@ def test_project_detail_shows_email(client, user_can_change_project, project):
     assert f"Logged in as {user_can_change_project.username}" not in content
 
     # The audit trail shows the email address of the user who updated the project.
-    content = save_review_field(client, project)
+    response = post_basic_form(
+        client, project, review_field="last_review", review_value="2026-04-28"
+    )
+
+    project.refresh_from_db()
+    assert response.status_code == 200
     updated_on = project.updated_at.date().isoformat()
+    # The template puts the name and date on separate lines; HTML collapses
+    # the whitespace when rendering, so normalize it before asserting.
+    content = re.sub(r"\s+", " ", response.content.decode())
     assert f"user@example.com ({updated_on})" in content
     assert f"{user_can_change_project.username} ({updated_on})" not in content
 
@@ -459,8 +454,16 @@ def test_project_detail_shows_username_when_no_email(
     assert f"Logged in as {user_can_change_project.username}" in content
 
     # The audit trail shows the username of the user who updated the project.
-    content = save_review_field(client, project)
+    response = post_basic_form(
+        client, project, review_field="last_review", review_value="2026-04-28"
+    )
+
+    project.refresh_from_db()
+    assert response.status_code == 200
     updated_on = project.updated_at.date().isoformat()
+    # The template puts the name and date on separate lines; HTML collapses
+    # the whitespace when rendering, so normalize it before asserting.
+    content = re.sub(r"\s+", " ", response.content.decode())
     assert f"{user_can_change_project.username} ({updated_on})" in content
 
 
