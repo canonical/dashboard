@@ -21,6 +21,4 @@ def display_name(user):
     """Return a friendly name for displaying in the UI; needed because OIDC usernames are hashes."""
     if not user:
         return ""
-    if user.email:
-        return user.email
-    return user.username
+    return user.email or user.username
