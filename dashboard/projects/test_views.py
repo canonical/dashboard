@@ -1,4 +1,5 @@
 import pytest
+import re
 from urllib.parse import parse_qs, urlparse
 
 from django.test import override_settings
@@ -88,23 +89,31 @@ def reason():
     return Reason.objects.create(name="not-started", value=1)
 
 
+def post_basic_form(client, project, owner=None, review_field=None, review_value=None):
+    """POST the project basic form, customizing fields as needed."""
+    form_data = {
+        "name": project.name,
+        "url": project.url,
+        "group": "",
+        "owner": project.owner or "",
+        "driver": project.driver or "",
+        "agreement_status": "",
+        "last_review": "",
+        "last_review_status": "",
+    }
+    if owner is not None:
+        form_data["owner"] = owner
+    if review_field is not None:
+        form_data[review_field] = review_value
+    url = reverse("projects:project_basic_form_save", args=[project.id])
+    return client.post(url, data=form_data)
+
+
 @pytest.mark.django_db
 def test_project_basic_form_save_denies_unauthenticated_user(client, project):
     original_owner = project.owner
     url = reverse("projects:project_basic_form_save", args=[project.id])
-    response = client.post(
-        url,
-        data={
-            "name": project.name,
-            "url": project.url,
-            "group": "",
-            "owner": "changed owner",
-            "driver": project.driver or "",
-            "agreement_status": "",
-            "last_review": "",
-            "last_review_status": "",
-        },
-    )
+    response = post_basic_form(client, project, owner="changed owner")
 
     project.refresh_from_db()
     assert response.status_code == 302
@@ -118,19 +127,7 @@ def test_project_basic_form_save_denies_user_without_permission(
 ):
     original_owner = project.owner
     url = reverse("projects:project_basic_form_save", args=[project.id])
-    response = client.post(
-        url,
-        data={
-            "name": project.name,
-            "url": project.url,
-            "group": "",
-            "owner": "changed owner",
-            "driver": project.driver or "",
-            "agreement_status": "",
-            "last_review": "",
-            "last_review_status": "",
-        },
-    )
+    response = post_basic_form(client, project, owner="changed owner")
 
     project.refresh_from_db()
     assert response.status_code == 302
@@ -142,20 +139,7 @@ def test_project_basic_form_save_denies_user_without_permission(
 def test_project_basic_form_save_allows_user_with_permission(
     client, user_can_change_project, project
 ):
-    url = reverse("projects:project_basic_form_save", args=[project.id])
-    response = client.post(
-        url,
-        data={
-            "name": project.name,
-            "url": project.url,
-            "group": "",
-            "owner": "changed owner",
-            "driver": project.driver or "",
-            "agreement_status": "",
-            "last_review": "",
-            "last_review_status": "",
-        },
-    )
+    response = post_basic_form(client, project, owner="changed owner")
 
     project.refresh_from_db()
     assert response.status_code == 200
@@ -169,19 +153,8 @@ def test_project_basic_form_save_sets_updated_fields_when_review_field_changes(
     assert project.updated_by is None
     assert project.updated_at is None
 
-    url = reverse("projects:project_basic_form_save", args=[project.id])
-    response = client.post(
-        url,
-        data={
-            "name": project.name,
-            "url": project.url,
-            "group": "",
-            "owner": project.owner or "",
-            "driver": project.driver or "",
-            "agreement_status": "",
-            "last_review": "2026-04-28",
-            "last_review_status": "",
-        },
+    response = post_basic_form(
+        client, project, review_field="last_review", review_value="2026-04-28"
     )
 
     project.refresh_from_db()
@@ -194,20 +167,7 @@ def test_project_basic_form_save_sets_updated_fields_when_review_field_changes(
 def test_project_basic_form_save_does_not_set_updated_fields_when_only_non_review_field_changes(
     client, user_can_change_project, project
 ):
-    url = reverse("projects:project_basic_form_save", args=[project.id])
-    response = client.post(
-        url,
-        data={
-            "name": project.name,
-            "url": project.url,
-            "group": "",
-            "owner": "new owner",
-            "driver": project.driver or "",
-            "agreement_status": "",
-            "last_review": "",
-            "last_review_status": "",
-        },
-    )
+    response = post_basic_form(client, project, owner="new owner")
 
     project.refresh_from_db()
     assert response.status_code == 200
@@ -224,20 +184,7 @@ def test_project_basic_form_save_preserves_existing_stamp_when_non_review_field_
     project.updated_at = original_time
     project.save(update_fields=["updated_by", "updated_at"])
 
-    url = reverse("projects:project_basic_form_save", args=[project.id])
-    response = client.post(
-        url,
-        data={
-            "name": project.name,
-            "url": project.url,
-            "group": "",
-            "owner": "new owner",
-            "driver": project.driver or "",
-            "agreement_status": "",
-            "last_review": "",
-            "last_review_status": "",
-        },
-    )
+    response = post_basic_form(client, project, owner="new owner")
 
     project.refresh_from_db()
     assert response.status_code == 200
@@ -263,20 +210,9 @@ def test_project_basic_form_save_preserves_existing_stamp_when_non_review_field_
 def test_project_basic_form_save_sets_updated_fields_for_each_review_field(
     client, user_can_change_project, project, review_field, value_fn
 ):
-    url = reverse("projects:project_basic_form_save", args=[project.id])
-    data = {
-        "name": project.name,
-        "url": project.url,
-        "group": "",
-        "owner": project.owner or "",
-        "driver": project.driver or "",
-        "agreement_status": "",
-        "last_review": "",
-        "last_review_status": "",
-    }
-    data[review_field] = value_fn()
-
-    response = client.post(url, data=data)
+    response = post_basic_form(
+        client, project, review_field=review_field, review_value=value_fn()
+    )
 
     project.refresh_from_db()
     assert response.status_code == 200
@@ -469,6 +405,66 @@ def test_project_detail_readonly_user_sees_plain_data_without_form_widgets(
     assert "id_name" not in content
     assert "id_group" not in content
     assert "id_last_review" not in content
+
+
+@pytest.mark.django_db
+def test_project_detail_shows_email(client, user_can_change_project, project):
+    # Ensure the user has an email address.
+    user_can_change_project.email = "user@example.com"
+    user_can_change_project.save(update_fields=["email"])
+
+    # The banner shows the email address.
+    url = reverse("projects:project", kwargs={"id": project.id})
+    response = client.get(url)
+
+    assert response.status_code == 200
+    content = response.content.decode()
+    assert "Logged in as user@example.com" in content
+    assert f"Logged in as {user_can_change_project.username}" not in content
+
+    # The audit trail shows the email address of the user who updated the project.
+    response = post_basic_form(
+        client, project, review_field="last_review", review_value="2026-04-28"
+    )
+
+    project.refresh_from_db()
+    assert response.status_code == 200
+    updated_on = project.updated_at.date().isoformat()
+    # The template puts the name and date on separate lines; HTML collapses
+    # the whitespace when rendering, so normalize it before asserting.
+    content = re.sub(r"\s+", " ", response.content.decode())
+    assert f"user@example.com ({updated_on})" in content
+    assert f"{user_can_change_project.username} ({updated_on})" not in content
+
+
+@pytest.mark.django_db
+def test_project_detail_shows_username_when_no_email(
+    client, user_can_change_project, project
+):
+    # Ensure the user has no email address.
+    user_can_change_project.email = ""
+    user_can_change_project.save(update_fields=["email"])
+
+    # The banner shows the username.
+    url = reverse("projects:project", kwargs={"id": project.id})
+    response = client.get(url)
+
+    assert response.status_code == 200
+    content = response.content.decode()
+    assert f"Logged in as {user_can_change_project.username}" in content
+
+    # The audit trail shows the username of the user who updated the project.
+    response = post_basic_form(
+        client, project, review_field="last_review", review_value="2026-04-28"
+    )
+
+    project.refresh_from_db()
+    assert response.status_code == 200
+    updated_on = project.updated_at.date().isoformat()
+    # The template puts the name and date on separate lines; HTML collapses
+    # the whitespace when rendering, so normalize it before asserting.
+    content = re.sub(r"\s+", " ", response.content.decode())
+    assert f"{user_can_change_project.username} ({updated_on})" in content
 
 
 @pytest.mark.django_db
